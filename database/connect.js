@@ -9,7 +9,9 @@ module.exports = () => {
 
 	const db = mongoose.connection;
 
-	db.on('error', console.error.bind(console, 'Connection error:'));
+	db.on('error', console.error.bind(console, 'Mongoose connection error:'));
 
-	db.once('open', () => console.log(`Connected to: ${config.url}`));
+	db.once('open', () => console.log(`Mongoose connected to: ${config.url}`));
+
+	db.on('disconnected', () => console.log('Mongoose disconnected'))
 };
