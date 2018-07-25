@@ -8,6 +8,10 @@ yarn-error.log*
 # IDE
 .idea/
 
+# Config files
+config/*.json
+!config/*.example.json
+
 # Runtime data
 pids
 *.pid
