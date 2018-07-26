@@ -1,6 +1,6 @@
-const {Schema, model} = require('mongoose');
+const mongoose = require('mongoose');
 
-const ItemSchema = new Schema({
+const ItemSchema = new mongoose.Schema({
 	name: String,
 	type: String,
 	rarity: String,
@@ -8,4 +8,4 @@ const ItemSchema = new Schema({
 	imageSrc: String
 });
 
-module.exports = model('Item', ItemSchema);
+module.exports = mongoose.model('Item', ItemSchema);
