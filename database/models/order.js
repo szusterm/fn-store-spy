@@ -6,4 +6,4 @@ const OrderSchema = new mongoose.Schema({
 	items: [{id: String, done: Boolean}]
 });
 
-module.exports = mongoose.model('Dream', OrderSchema);
+module.exports = mongoose.model('Order', OrderSchema);
