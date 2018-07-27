@@ -6,4 +6,4 @@ class Shop {
 	}
 }
 
-module.exports = () => new Shop();
+module.exports = new Shop();
