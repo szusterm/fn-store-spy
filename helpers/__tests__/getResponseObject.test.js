@@ -1,4 +1,4 @@
-import getResponseObject from '../getResponseObject';
+const getResponseObject = require('../getResponseObject');
 
 describe('getResponseObject Function', () => {
 	it('return response object', () => {

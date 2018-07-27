@@ -1,4 +1,4 @@
-export default (err, data) => {
+module.exports = (err, data) => {
 	return {
 		err,
 		data
