@@ -1,10 +1,26 @@
+const item = require('../database/factories/item.factory');
+
 class Shop {
 	constructor() {
 		this._items = [];
 	}
 
-	update() {
-		this._items = [{name: 'Battle Hound'}];
+	async update() {
+		const offeredItems = [{name: 'Battle Hound'}];
+		await this._completeWithDatabase(offeredItems);
+	}
+
+	async _completeWithDatabase() {
+		const offeredItemsNames = this._getNamesFromObjects(offeredItems);
+		this._items = item.findByName(offeredItemsNames);
+	}
+
+	_getNamesFromObjects(objects) {
+		const names = [];
+		for (const {name} of objects) {
+			names.push(name);
+		}
+		return names;
 	}
 
 	get items() {
