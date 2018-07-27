@@ -2,7 +2,7 @@ const ItemModel = require('../models/item');
 const getObject = require('../../helpers/getResponseObject');
 
 class Item {
-	async find(data) {
+	static async find(data) {
 		try {
 			const query = ItemModel.find(data);
 			const response = await query.exec();
