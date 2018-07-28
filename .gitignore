@@ -8,6 +8,9 @@ yarn-error.log*
 # IDE
 .idea/
 
+# Dist directory
+dist/
+
 # Config files
 config/*.json
 !config/*.example.json
