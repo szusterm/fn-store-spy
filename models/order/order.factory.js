@@ -2,9 +2,8 @@ const OrderModel = require('./order.model');
 const getObject = require('../../helpers/getResponseObject');
 
 class Order {
-	async add(itemIds = []) {
+	async add(itemIds = [], code) {
 		try {
-			const code = this._createCode();
 			const items = this._createItemsArray(itemIds);
 
 			const order = new OrderModel({
@@ -39,10 +38,6 @@ class Order {
 		catch(error) {
 			return getObject(true, error);
 		}
-	}
-
-	_createCode() {
-		return 'code';
 	}
 
 	_createItemsArray(itemIds) {
