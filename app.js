@@ -8,7 +8,6 @@ require('./models/connect')();
 const spy = require('./controllers/spy');
 setTimeout(() => spy.run(), 3000);
 
-const indexRouter = require('./routes/index');
 const orderRouter = require('./routes/order');
 
 const app = express();
@@ -25,7 +24,6 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/order', orderRouter);
 
 module.exports = app;
