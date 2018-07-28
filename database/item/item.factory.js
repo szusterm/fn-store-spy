@@ -1,4 +1,4 @@
-const ItemModel = require('../models/item');
+const ItemModel = require('./item.model');
 const getObject = require('../../helpers/getResponseObject');
 
 class Item {

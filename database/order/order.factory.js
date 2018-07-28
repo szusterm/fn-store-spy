@@ -1,4 +1,4 @@
-const OrderModel = require('../models/order');
+const OrderModel = require('./order.model');
 const getObject = require('../../helpers/getResponseObject');
 
 class Order {
