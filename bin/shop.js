@@ -6,13 +6,18 @@ class Shop {
 	}
 
 	async update() {
-		const offeredItems = [{name: 'Battle Hound'}];
+		const offeredItems = [
+			{
+				id: '5b5873f0fb6fc0105da12b28',
+				name: 'Battle Hound'
+			}
+		];
 		await this._completeWithDatabase(offeredItems);
 	}
 
-	async _completeWithDatabase() {
+	async _completeWithDatabase(offeredItems) {
 		const offeredItemsNames = this._getNamesFromObjects(offeredItems);
-		this._items = item.findByName(offeredItemsNames);
+		this._items = await item.findByName(offeredItemsNames);
 	}
 
 	_getNamesFromObjects(objects) {
