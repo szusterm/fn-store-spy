@@ -4,7 +4,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 
-require('./database/connect')();
+require('./models/connect')();
+const spy = require('./controllers/spy');
+setTimeout(() => spy.run(), 3000);
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
