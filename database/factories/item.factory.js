@@ -2,7 +2,7 @@ const ItemModel = require('../models/item');
 const getObject = require('../../helpers/getResponseObject');
 
 class Item {
-	async find(data) {
+	async _find(data) {
 		try {
 			const query = ItemModel.find(data);
 			const response = await query.exec();
@@ -19,7 +19,7 @@ class Item {
 			_id: {$in: ids}
 		};
 
-		return await this.find(data);
+		return await this._find(data);
 	}
 
 	async findByName(names) {
@@ -27,7 +27,7 @@ class Item {
 			name: {$in: names}
 		};
 
-		return await this.find(data);
+		return await this._find(data);
 	}
 }
 
