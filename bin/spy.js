@@ -1,4 +1,4 @@
-const order = require('../database/order');
+const order = require('../models/order');
 const shop = require('./shop');
 
 class Spy {
