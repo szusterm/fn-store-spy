@@ -17,7 +17,13 @@ class Shop {
 
 	async _completeWithDatabase(offeredItems) {
 		const offeredItemsNames = this._getNamesFromObjects(offeredItems);
-		this._items = await item.findByName(offeredItemsNames);
+		const response = await item.findByName(offeredItemsNames);
+		if (!response.err) {
+			this._items = response.data;
+		}
+		else {
+			return false;
+		}
 	}
 
 	_getNamesFromObjects(objects) {
