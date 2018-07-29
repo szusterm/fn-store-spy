@@ -21,7 +21,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Fn Store Spy',
-			template: './src/index.html'
+			template: './src/template.html'
 		})
 	]
 };
