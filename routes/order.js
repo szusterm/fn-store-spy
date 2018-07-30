@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/', (req, res, next) => {
-	console.log('It is me');
+const order = require('../models/order');
+
+router.post('/add', async (req, res) => {
+	const {items} = req.body;
+	const dbResponse = await order.add(items, 'code');
+
+	res.json(dbResponse);
 });
 
 module.exports = router;
