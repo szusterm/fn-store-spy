@@ -3,40 +3,17 @@ const getObject = require('../../helpers/getResponseObject');
 
 class Item {
 	constructor() {
-		this._findQuery = null;
+		this._findingQuery = null;
 	}
 
-	async find() {
-
-	}
-
-	_getFilterFunctions() {
-		return {
-			ids: this._filterByIds,
-			name: this._filterByName,
-			type: this._filterByType
-		}
-	}
-
-	_filterByIds(ids) {
-		this._findQuery.where('_id').in(ids);
+	find() {
+		this._findingQuery = ItemModel.find({});
 		return this._getFilterFunctions();
 	}
 
-	_filterByName(name) {
-		//here
-		this._findQuery.where('name').equals()
-	}
-
-	_filterByType(type) {
-		this._findQuery.where('type').equals(type);
-		return this._getFilterFunctions();
-	}
-
-	async _find(data) {
+	async exec() {
 		try {
-			const query = ItemModel.find(data);
-			const response = await query.exec();
+			const response = await this._findingQuery.exec();
 
 			return getObject(false, response);
 		}
@@ -45,20 +22,35 @@ class Item {
 		}
 	}
 
-	async findById(ids) {
-		const data = {
-			_id: {$in: ids}
-		};
-
-		return await this._find(data);
+	_getFilterFunctions() {
+		return {
+			ids: (data) => this._filterByIds(data),
+			name: (data) => this._filterByNameContainingText(data),
+			names: (data) => this._filterByNames(data),
+			type: (data) => this._filterByType(data),
+			exec: (data) => this.exec(data)
+		}
 	}
 
-	async findByName(names) {
-		const data = {
-			name: {$in: names}
-		};
+	_filterByIds(ids) {
+		this._findingQuery.where('_id').in(ids);
+		return this._getFilterFunctions();
+	}
 
-		return await this._find(data);
+	_filterByNameContainingText(name) {
+		const nameContaining = new RegExp(`^.*${name}.*$`);
+		this._findingQuery.where('name').equals(nameContaining);
+		return this._getFilterFunctions();
+	}
+
+	_filterByNames(names) {
+		this._findingQuery.where('name').in(names);
+		return this._getFilterFunctions();
+	}
+
+	_filterByType(type) {
+		this._findingQuery.where('type').equals(type);
+		return this._getFilterFunctions();
 	}
 }
 
