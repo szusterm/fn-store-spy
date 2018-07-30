@@ -21,7 +21,7 @@ class Spy {
 
 	async _getMatchingOrders() {
 		const offeredItemsIds = shop.ids;
-		const response = await order.findMatching(offeredItemsIds);
+		const response = await order.findMatchingByIds(offeredItemsIds);
 		if (!response.err) {
 			return response.data;
 		}

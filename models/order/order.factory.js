@@ -21,7 +21,7 @@ class Order {
 		}
 	}
 
-	async findMatching(itemIds = []) {
+	async findMatchingByIds(itemIds = []) {
 		try {
 			if (itemIds.length > 0) {
 				const query = OrderModel.find({
