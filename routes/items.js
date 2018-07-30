@@ -4,7 +4,9 @@ const router = express.Router();
 const item = require('../models/item');
 
 router.get('/get', async (req, res) => {
-	const {name, page, type} = req.params;
+	const name = req.param('name');
+	const type = req.param('type');
+	const page = Number(req.param('page'));
 
 	const {err, data} = await item.find()
 		.name(name)
