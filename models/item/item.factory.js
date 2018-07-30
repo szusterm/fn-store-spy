@@ -12,7 +12,7 @@ class Item {
 		return this._getFilterFunctions();
 	}
 
-	async exec() {
+	async _execQuery() {
 		try {
 			const response = await this._findingQuery.exec();
 
@@ -30,7 +30,7 @@ class Item {
 			names: (data) => this._filterByNames(data),
 			type: (data) => this._filterByType(data),
 			page: (data) => this._setPage(data),
-			exec: (data) => this.exec(data)
+			exec: (data) => this._execQuery(data)
 		}
 	}
 
