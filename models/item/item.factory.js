@@ -1,5 +1,6 @@
 const ItemModel = require('./item.model');
 const getObject = require('../../helpers/getResponseObject');
+const clientConfig = require('../../config/client');
 
 class Item {
 	constructor() {
@@ -28,6 +29,7 @@ class Item {
 			name: (data) => this._filterByNameContainingText(data),
 			names: (data) => this._filterByNames(data),
 			type: (data) => this._filterByType(data),
+			page: (data) => this._setPage(data),
 			exec: (data) => this.exec(data)
 		}
 	}
@@ -57,6 +59,18 @@ class Item {
 	_filterByType(type = null) {
 		if (type) {
 			this._findingQuery.where('type').equals(type);
+		}
+		return this._getFilterFunctions();
+	}
+
+	_setPage(page = null) {
+		const {maxItemsPerPage} = clientConfig;
+		const firstItemOnPage = (maxItemsPerPage*page - maxItemsPerPage);
+
+		if (page) {
+			this._findingQuery
+				.limit(maxItemsPerPage)
+				.skip(firstItemOnPage);
 		}
 		return this._getFilterFunctions();
 	}
