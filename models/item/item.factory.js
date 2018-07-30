@@ -32,24 +32,32 @@ class Item {
 		}
 	}
 
-	_filterByIds(ids) {
-		this._findingQuery.where('_id').in(ids);
+	_filterByIds(ids = null) {
+		if (ids) {
+			this._findingQuery.where('_id').in(ids);
+		}
 		return this._getFilterFunctions();
 	}
 
-	_filterByNameContainingText(name) {
-		const nameContaining = new RegExp(`^.*${name}.*$`);
-		this._findingQuery.where('name').equals(nameContaining);
+	_filterByNameContainingText(name = null) {
+		if (name) {
+			const nameContaining = new RegExp(`^.*${name}.*$`);
+			this._findingQuery.where('name').equals(nameContaining);
+		}
 		return this._getFilterFunctions();
 	}
 
-	_filterByNames(names) {
-		this._findingQuery.where('name').in(names);
+	_filterByNames(names = null) {
+		if (names) {
+			this._findingQuery.where('name').in(names);
+		}
 		return this._getFilterFunctions();
 	}
 
-	_filterByType(type) {
-		this._findingQuery.where('type').equals(type);
+	_filterByType(type = null) {
+		if (type) {
+			this._findingQuery.where('type').equals(type);
+		}
 		return this._getFilterFunctions();
 	}
 }
