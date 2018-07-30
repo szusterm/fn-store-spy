@@ -64,10 +64,10 @@ class Item {
 	}
 
 	_setPage(page = null) {
-		const {maxItemsPerPage} = clientConfig;
-		const firstItemOnPage = (maxItemsPerPage*page - maxItemsPerPage);
-
 		if (page) {
+			const {maxItemsPerPage} = clientConfig;
+			const firstItemOnPage = (maxItemsPerPage*page - maxItemsPerPage);
+
 			this._findingQuery
 				.limit(maxItemsPerPage)
 				.skip(firstItemOnPage);
