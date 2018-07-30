@@ -3,10 +3,16 @@ const router = express.Router();
 
 const item = require('../models/item');
 
-router.get('/get/:page/:type/:name', async (req, res) => {
+router.get('/get', async (req, res) => {
 	const {name, page, type} = req.params;
 
-	res.json(req.params);
+	const {err, data} = await item.find()
+		.name(name)
+		.type(type)
+		.page(page)
+		.exec();
+
+	res.json((err) ? {err} : {err, data});
 });
 
 module.exports = router;
