@@ -63,15 +63,16 @@ class Item {
 		return this._getFilterFunctions();
 	}
 
-	_setPage(page = null) {
-		if (page) {
-			const {maxItemsPerPage} = clientConfig;
-			const firstItemOnPage = (maxItemsPerPage*page - maxItemsPerPage);
+	_setPage(page = 1) {
+		const fixedPage = (Number.isInteger(page) && page >= 1) ? page : 1;
 
-			this._findingQuery
-				.limit(maxItemsPerPage)
-				.skip(firstItemOnPage);
-		}
+		const {maxItemsPerPage} = clientConfig;
+		const firstItemOnPage = (maxItemsPerPage * fixedPage - maxItemsPerPage);
+
+		this._findingQuery
+			.limit(maxItemsPerPage)
+			.skip(firstItemOnPage);
+
 		return this._getFilterFunctions();
 	}
 }
