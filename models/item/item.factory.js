@@ -31,7 +31,7 @@ class Item {
 			type: (data) => this._filterByType(data),
 			page: (data) => this._setPage(data),
 			exec: (data) => this._execQuery(data)
-		}
+		};
 	}
 
 	_filterByIds(ids = null) {
