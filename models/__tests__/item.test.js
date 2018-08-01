@@ -45,7 +45,7 @@ describe('Item Factory', () => {
 			expect(item._findingQuery.exec).toHaveBeenCalledTimes(1);
 		});
 
-		it ('returns object with occurrence of an error and response data', async () => {
+		it('returns object with occurrence of an error and response data', async () => {
 			const returnedText = 'me';
 			const returnedError = 'error';
 
