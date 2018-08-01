@@ -3,23 +3,31 @@ const ItemModel = require('../item/item.model');
 const getResponseObject = require('../../helpers/getResponseObject');
 const clientConfig = require('../../config/client');
 
-jest.mock('../item/item.model', () => {
-	return {
-		find: jest.fn().mockReturnValue({
-			exec: jest.fn()
-		})
-	}
-});
+const getQUeryMocks = () => {
+	const obj = {
+		exec: jest.fn(() => obj),
+		find: jest.fn(() => obj),
+		where: jest.fn(() => obj),
+		equals: jest.fn(() => obj),
+		in: jest.fn(() => obj),
+		limit: jest.fn(() => obj),
+		skip: jest.fn(() => obj)
+	};
+
+	return obj;
+};
+
+jest.mock('../item/item.model', () => true);
 jest.mock('../../helpers/getResponseObject');
 
 describe('Item Factory', () => {
 	let item = null;
 	beforeEach(() => {
 		item = itemInstance;
+		item._findingQuery = getQUeryMocks();
 	});
 	afterEach(() => {
 		item = null;
-		jest.restoreAllMocks();
 	});
 
 	describe('find()', () => {
@@ -37,10 +45,6 @@ describe('Item Factory', () => {
 
 	describe('_execQuery()', () => {
 		it('exec query to find matching items', async () => {
-			item._findingQuery = {
-				exec: jest.fn()
-			};
-
 			await item._execQuery();
 			expect(item._findingQuery.exec).toHaveBeenCalledTimes(1);
 		});
@@ -49,11 +53,10 @@ describe('Item Factory', () => {
 			const returnedText = 'me';
 			const returnedError = 'error';
 
-			item._findingQuery = {
-				exec: jest.fn()
-					.mockReturnValueOnce(Promise.resolve(returnedText))
-					.mockReturnValueOnce(Promise.reject(returnedError))
-			};
+			item._findingQuery.exec
+				.mockReturnValueOnce(Promise.resolve(returnedText))
+				.mockReturnValueOnce(Promise.reject(returnedError));
+
 
 			await item._execQuery();
 			expect(getResponseObject).toHaveBeenCalledWith(false, returnedText);
@@ -74,16 +77,10 @@ describe('Item Factory', () => {
 		it('adds id filter with ids array', () => {
 			const ids = ['123', '432'];
 
-			item._findingQuery = {
-					where: jest.fn().mockReturnValue({
-						in: jest.fn()
-					})
-			};
-
 			item._filterByIds(ids);
 
 			expect(item._findingQuery.where).toHaveBeenCalledWith('_id');
-			expect(item._findingQuery.where().in).toHaveBeenCalledWith(ids);
+			expect(item._findingQuery.in).toHaveBeenCalledWith(ids);
 		});
 
 		it('call _getFilterFunctions() to return filters and exec methods', () => {
@@ -98,16 +95,10 @@ describe('Item Factory', () => {
 			const name = 'Ann';
 			const nameRegExp = new RegExp(`^.*${name}.*$`);
 
-			item._findingQuery = {
-				where: jest.fn().mockReturnValue({
-					equals: jest.fn()
-				})
-			};
-
 			item._filterByNameContainingText(name);
 
 			expect(item._findingQuery.where).toHaveBeenCalledWith('name');
-			expect(item._findingQuery.where().equals).toHaveBeenCalledWith(nameRegExp);
+			expect(item._findingQuery.equals).toHaveBeenCalledWith(nameRegExp);
 		});
 
 		it('call _getFilterFunctions() to return filters and exec methods', () => {
@@ -121,16 +112,10 @@ describe('Item Factory', () => {
 		it('adds name filter with names array', () => {
 			const names = ['Ann', 'Toy'];
 
-			item._findingQuery = {
-				where: jest.fn().mockReturnValue({
-					in: jest.fn()
-				})
-			};
-
 			item._filterByNames(names);
 
 			expect(item._findingQuery.where).toHaveBeenCalledWith('name');
-			expect(item._findingQuery.where().in).toHaveBeenCalledWith(names);
+			expect(item._findingQuery.in).toHaveBeenCalledWith(names);
 		});
 
 		it('call _getFilterFunctions() to return filters and exec methods', () => {
@@ -144,16 +129,10 @@ describe('Item Factory', () => {
 		it('adds type filter with names array', () => {
 			const type = 'axe';
 
-			item._findingQuery = {
-				where: jest.fn().mockReturnValue({
-					equals: jest.fn()
-				})
-			};
-
 			item._filterByType(type);
 
 			expect(item._findingQuery.where).toHaveBeenCalledWith('type');
-			expect(item._findingQuery.where().equals).toHaveBeenCalledWith(type);
+			expect(item._findingQuery.equals).toHaveBeenCalledWith(type);
 		});
 
 		it('call _getFilterFunctions() to return filters and exec methods', () => {
@@ -164,18 +143,6 @@ describe('Item Factory', () => {
 	});
 
 	describe('_setPage()', () => {
-		beforeEach(() => {
-			item._findingQuery = {
-				limit: jest.fn().mockReturnValue({
-					skip: jest.fn()
-				})
-			};
-		});
-
-		afterEach(() => {
-			item._findingQuery.limit.mockRestore();
-		});
-
 		it('limits getting items', () => {
 			const {maxItemsPerPage} = clientConfig;
 
@@ -192,7 +159,7 @@ describe('Item Factory', () => {
 				const firstItemOnPage = (maxItemsPerPage * page - maxItemsPerPage);
 				item._setPage(page);
 
-				expect(item._findingQuery.limit().skip).toHaveBeenCalledWith(firstItemOnPage);
+				expect(item._findingQuery.skip).toHaveBeenCalledWith(firstItemOnPage);
 			}
 		});
 
