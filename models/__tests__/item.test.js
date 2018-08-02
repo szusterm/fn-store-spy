@@ -32,6 +32,7 @@ describe('Item Factory', () => {
 	});
 	afterEach(() => {
 		item = null;
+		jest.clearAllMocks();
 	});
 
 	describe('find()', () => {
