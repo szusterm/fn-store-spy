@@ -3,7 +3,7 @@ const ItemModel = require('../item/item.model');
 const getResponseObject = require('../../helpers/getResponseObject');
 const clientConfig = require('../../config/client');
 
-const getQUeryMocks = () => {
+const getQueryMocks = () => {
 	const obj = {
 		exec: jest.fn(() => obj),
 		find: jest.fn(() => obj),
@@ -24,7 +24,7 @@ describe('Item Factory', () => {
 	let item = null;
 	beforeEach(() => {
 		item = itemInstance;
-		item._findingQuery = getQUeryMocks();
+		item._findingQuery = getQueryMocks();
 	});
 	afterEach(() => {
 		item = null;
