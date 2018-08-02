@@ -17,7 +17,11 @@ const getQueryMocks = () => {
 	return obj;
 };
 
-jest.mock('../item/item.model', () => true);
+jest.mock('../item/item.model', () => {
+	return {
+		find: jest.fn()
+	};
+});
 jest.mock('../../helpers/getResponseObject');
 
 describe('Item Factory', () => {
