@@ -10,8 +10,6 @@ jest.mock('../item/item.model', () => {
 });
 jest.mock('../../helpers/getResponseObject');
 
-let item = null;
-
 const getQueryMocks = () => {
 	const obj = {
 		exec: jest.fn(() => obj),
@@ -26,13 +24,15 @@ const getQueryMocks = () => {
 	return obj;
 };
 
+let item;
+let getFilterFunctions;
+
 const returningFilters = {
 	description: 'call _getFilterFunctions() to return filters and exec methods',
 	test: (method) => {
-		item._getFilterFunctions = jest.fn();
 		item[method]();
-		expect(item._getFilterFunctions).toHaveBeenCalledTimes(1);
-		item._getFilterFunctions.mockReset();
+		expect(getFilterFunctions).toHaveBeenCalledTimes(1);
+		getFilterFunctions.mockRestore();
 	}
 };
 
@@ -40,10 +40,12 @@ describe('Item Factory', () => {
 	beforeEach(() => {
 		item = itemInstance;
 		item._findingQuery = getQueryMocks();
+		getFilterFunctions = jest.spyOn(item, '_getFilterFunctions');
 	});
 	afterEach(() => {
+		jest.resetAllMocks();
 		item = null;
-		jest.clearAllMocks();
+		getFilterFunctions.mockRestore();
 	});
 
 	describe('find()', () => {
