@@ -80,12 +80,16 @@ describe('Item Factory', () => {
 		});
 	});
 
-	// describe('_getFilterFunctions()', () => {
-	// 	it('returns different functions to filter and exec query', () => {
-	// 		const returnedObject = item._getFilterFunctions();
-	// 		expect(typeof item._getFilterFunctions()).toBe('object');
-	// 	});
-	// });
+	describe('_getFilterFunctions()', () => {
+		beforeEach(() => getFilterFunctions.mockRestore());
+
+		it('returns different functions to filter and exec query', () => {
+			for (const methodName in item._getFilterFunctions()) {
+				const gotMethod = item._getFilterFunctions()[methodName];
+				expect(typeof gotMethod).toBe('function');
+			}
+		});
+	});
 
 	describe('_filterByIds()', () => {
 		it('adds id filter with ids array', () => {
