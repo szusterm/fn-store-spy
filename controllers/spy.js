@@ -13,7 +13,7 @@ class Spy {
 		for (const {items} of matchingOrders) {
 			for (const {id, done} of items) {
 				if (!done && shop.ids.includes(id)) {
-					console.log('Got:', id)
+					console.log('Got:', id);
 				}
 			}
 		}
