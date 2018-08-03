@@ -43,7 +43,7 @@ describe('Item Factory', () => {
 		getFilterFunctions = jest.spyOn(item, '_getFilterFunctions');
 	});
 	afterEach(() => {
-		jest.resetAllMocks();
+		jest.clearAllMocks();
 		item = null;
 		getFilterFunctions.mockRestore();
 	});
