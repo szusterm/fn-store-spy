@@ -32,10 +32,10 @@ describe('Order Factory', () => {
 	});
 
 	describe('add()', () => {
-		const ids = ['123', '666'];
-		const idsToSave = [
-			{id: ids[0], done: false},
-			{id: ids[1], done: false}
+		const itemsIds = ['123', '666'];
+		const itemsIdsToSave = [
+			{id: itemsIds[0], done: false},
+			{id: itemsIds[1], done: false}
 		];
 		const code = 'fn23d';
 		let createItemsArray;
@@ -43,17 +43,17 @@ describe('Order Factory', () => {
 		beforeEach(() => {
 			createItemsArray = jest
 				.spyOn(order, '_createItemsArray')
-				.mockReturnValue(idsToSave);
+				.mockReturnValue(itemsIdsToSave);
 		});
 		afterEach(() => createItemsArray.mockRestore());
 
 		it('adds new order to database', async () => {
-			await order.add(ids, code);
+			await order.add(itemsIds, code);
 
 			expect(OrderModel).toHaveBeenCalledWith({
 				code,
 				connected: false,
-				items: idsToSave
+				items: itemsIdsToSave
 			});
 			expect(mockOrderModel.save).toHaveBeenCalledTimes(1);
 		});
@@ -66,10 +66,10 @@ describe('Order Factory', () => {
 				.mockReturnValueOnce(Promise.reject(returnedError));
 
 
-			await order.add(ids, code);
-			expect(getResponseObject).toHaveBeenCalledWith(false, {code, items: idsToSave});
+			await order.add(itemsIds, code);
+			expect(getResponseObject).toHaveBeenCalledWith(false, {code, items: itemsIdsToSave});
 
-			await order.add(ids, code);
+			await order.add(itemsIds, code);
 			expect(getResponseObject).toHaveBeenCalledWith(true, returnedError);
 		});
 	});
