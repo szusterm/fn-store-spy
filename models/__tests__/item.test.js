@@ -38,12 +38,12 @@ const returningFilters = {
 
 describe('Item Factory', () => {
 	beforeEach(() => {
+		jest.clearAllMocks();
 		item = itemInstance;
 		item._findingQuery = getQueryMocks();
 		getFilterFunctions = jest.spyOn(item, '_getFilterFunctions');
 	});
 	afterEach(() => {
-		jest.clearAllMocks();
 		item = null;
 		getFilterFunctions.mockRestore();
 	});
