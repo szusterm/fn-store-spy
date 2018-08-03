@@ -6,13 +6,15 @@ jest.mock('../../helpers/getResponseObject', () => jest.fn());
 
 const mockOrderModel = {
 	save: jest.fn(),
-	find: jest.fn()
+	find: jest.fn(),
+	exec: jest.fn()
 };
 jest.mock('../order/order.model', () => {
 	return jest.fn().mockImplementation(() => {
 		return {
 			save: mockOrderModel.save,
-			find: mockOrderModel.find
+			find: mockOrderModel.find,
+			exec: mockOrderModel.exec
 		};
 	});
 });
