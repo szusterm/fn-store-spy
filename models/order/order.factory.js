@@ -21,11 +21,11 @@ class Order {
 		}
 	}
 
-	async findMatchingByIds(itemIds = []) {
+	async findMatchingByIds(itemsIds = []) {
 		try {
-			if (itemIds.length > 0) {
+			if (itemsIds.length > 0) {
 				const query = OrderModel.find({
-					'items.id': {$in: itemIds}
+					'items.id': {$in: itemsIds}
 				});
 				const response = await query.exec();
 
