@@ -74,6 +74,24 @@ describe('Order Factory', () => {
 		});
 	});
 
+	xdescribe('findMatchingByIds()', () => {
+		const itemsIds = ['123', '666'];
+
+		it('finds orders with matching items ids', async () => {
+			const orders = ['order-1', 'order-2'];
+
+			mockOrderModel.exec.mockReturnValueOnce(Promise.resolve(orders));
+
+			await order.findMatchingByIds(itemsIds);
+
+			expect(OrderModel).toHaveBeenCalledTimes(1);
+			expect(mockOrderModel.find).toHaveBeenCalledWith({
+				'items.id': {$in: itemsIds}
+			});
+			expect(mockOrderModel.exec).toHaveBeenCalledTimes(1);
+		});
+	});
+
 	describe('_createItemsArray()', () => {
 		it('returns items array ready to add to order', () => {
 			const itemsIds = ['123', '666'];
