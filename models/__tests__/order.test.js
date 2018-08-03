@@ -73,4 +73,18 @@ describe('Order Factory', () => {
 			expect(getResponseObject).toHaveBeenCalledWith(true, returnedError);
 		});
 	});
+
+	describe('_createItemsArray()', () => {
+		it('returns items array ready to add to order', () => {
+			const itemsIds = ['123', '666'];
+			const readyItemsIds = [
+				{id: itemsIds[0], done: false},
+				{id: itemsIds[1], done: false}
+			];
+
+			const returnedItemsArray = order._createItemsArray(itemsIds);
+
+			expect(returnedItemsArray).toEqual(readyItemsIds);
+		});
+	});
 });
