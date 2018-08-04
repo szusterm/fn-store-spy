@@ -20,7 +20,7 @@ describe('Shop Controller', () => {
 			mockGetNamesFromObjects.mockRestore();
 		});
 
-		it('update property to current fortnite shop offer', async () => {
+		it('update shop offer', async () => {
 			const exampleItems = [
 				{name: 'Some Axe'},
 				{name: 'Super Backapck'}
