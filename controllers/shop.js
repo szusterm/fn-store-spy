@@ -12,14 +12,16 @@ class Shop {
 				name: 'Battle Hound'
 			}
 		];
-		await this._completeWithDatabase(offeredItems);
+
+		const itemsNames = this._getNamesFromObjects(offeredItems);
+		return await this._updateItemsWithDatabase(itemsNames);
 	}
 
-	async _completeWithDatabase(offeredItems) {
-		const offeredItemsNames = this._getNamesFromObjects(offeredItems);
-		const response = await item.find().names(offeredItemsNames).exec();
+	async _updateItemsWithDatabase(itemsNames) {
+		const response = await item.find().names(itemsNames).exec();
 		if (!response.err) {
 			this._items = response.data;
+			return true;
 		}
 		else {
 			return false;
