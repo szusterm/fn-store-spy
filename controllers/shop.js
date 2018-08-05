@@ -1,4 +1,4 @@
-const item = require('../models/item/index');
+const item = require('../database/factories/item');
 
 class Shop {
 	constructor() {

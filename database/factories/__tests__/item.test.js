@@ -3,12 +3,12 @@ const ItemModel = require('../../models/item');
 const getResponseObject = require('../../../helpers/getResponseObject');
 const clientConfig = require('../../../config/client');
 
-jest.mock('../item/item.model', () => {
+jest.mock('../../models/item', () => {
 	return {
 		find: jest.fn()
 	};
 });
-jest.mock('../../helpers/getResponseObject');
+jest.mock('../../../helpers/getResponseObject');
 
 const getQueryMocks = () => {
 	const obj = {

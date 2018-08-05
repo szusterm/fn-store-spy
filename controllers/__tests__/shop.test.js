@@ -1,7 +1,7 @@
 const shop = require('../shop');
-const itemFactory = require('../../models/item');
+const itemFactory = require('../../database/factories/item');
 
-jest.mock('../../models/item', () => jest.fn());
+jest.mock('../../database/factories/item');
 
 describe('Shop Controller', () => {
 	beforeEach(() => {

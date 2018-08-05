@@ -1,15 +1,15 @@
-const orderInstance = require('../../../models/order/index');
+const orderInstance = require('../../factories/order');
 const OrderModel = require('../../models/order');
 const getResponseObject = require('../../../helpers/getResponseObject');
 
-jest.mock('../../helpers/getResponseObject', () => jest.fn());
+jest.mock('../../../helpers/getResponseObject', () => jest.fn());
 
 const mockOrderModel = {
 	save: jest.fn(),
 	find: jest.fn(),
 	exec: jest.fn()
 };
-jest.mock('../order/order.model', () => {
+jest.mock('../../models/order', () => {
 	return jest.fn().mockImplementation(() => {
 		return {
 			save: mockOrderModel.save,
