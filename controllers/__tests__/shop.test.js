@@ -87,4 +87,21 @@ describe('Shop Controller', () => {
 
 		});
 	});
+
+	describe('_getNamesFromObjects()', () => {
+		it('returns an array of names which had been got from objects', () => {
+			const items = [
+				{name: 'Huge Axe'},
+				{name: 'Big Outfit'}
+			];
+			const itemsNames = [
+				items[0].name,
+				items[1].name
+			];
+
+			const response = shop._getNamesFromObjects(items);
+
+			expect(response).toEqual(itemsNames);
+		});
+	});
 });
