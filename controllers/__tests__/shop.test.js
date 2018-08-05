@@ -46,7 +46,25 @@ describe('Shop Controller', () => {
 	});
 
 	describe('_updateItemsWithDatabase()', () => {
-		it('update offer with database data using items names', async () => {
+		it('update offer with database data using items names array', async () => {
+			const returnedResponse = {
+				err: false,
+				data: [
+					{id: '123'},
+					{id: '666'}
+				]
+			};
+
+			shop._items = [];
+
+			itemFactory.exec.mockReturnValueOnce(returnedResponse);
+
+			await shop._updateItemsWithDatabase([]);
+
+			expect(shop._items).toEqual(returnedResponse.data);
+		});
+
+		it('download items from database', async () => {
 			const itemsNames = ['My axe', 'Super Boots'];
 
 			await shop._updateItemsWithDatabase(itemsNames);
