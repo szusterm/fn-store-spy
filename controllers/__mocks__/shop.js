@@ -1,9 +1,8 @@
 const shop = {
-	update: jest.fn()
+	update: jest.fn(),
+	items: [],
+	ids: [],
+	names: []
 };
-
-Object.defineProperty(shop, 'items', {get: () => true});
-Object.defineProperty(shop, 'ids', {get: () => true});
-Object.defineProperty(shop, 'names', {get: () => true});
 
 module.exports = shop;
