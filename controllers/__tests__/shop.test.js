@@ -73,5 +73,18 @@ describe('Shop Controller', () => {
 			expect(itemFactory.names).toHaveBeenCalledWith(itemsNames);
 			expect(itemFactory.exec).toHaveBeenCalledTimes(1);
 		});
+
+		it('returns boolean that an error occurred', async () => {
+			let response;
+
+			itemFactory.exec.mockReturnValueOnce({err: true, data: {}});
+			response = await shop._updateItemsWithDatabase([]);
+			expect(response).toBeFalsy();
+
+			itemFactory.exec.mockReturnValueOnce({err: false, data: {}});
+			response = await shop._updateItemsWithDatabase([]);
+			expect(response).toBeTruthy();
+
+		});
 	});
 });
