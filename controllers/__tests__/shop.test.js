@@ -104,4 +104,49 @@ describe('Shop Controller', () => {
 			expect(response).toEqual(itemsNames);
 		});
 	});
+
+	describe('GETTERS', () => {
+		const items = [
+			{
+				id: '123',
+				name: 'Huge Coo',
+				type: 'axe'
+			},
+			{
+				id: '789',
+				name: 'Minimal Venom',
+				type: 'outfit'
+			}
+		];
+
+		beforeEach(() => shop._items = items);
+
+		describe('items', () => {
+			it('returns an items names array', () => {
+				expect(shop.items).toEqual(items);
+			});
+		});
+
+		describe('ids', () => {
+			it('returns an items ids array', () => {
+				const itemsIds = [
+					items[0].id,
+					items[1].id
+				];
+
+				expect(shop.ids).toEqual(itemsIds);
+			});
+		});
+
+		describe('names', () => {
+			it('returns an items names array', () => {
+				const itemsNames = [
+					items[0].name,
+					items[1].name
+				];
+
+				expect(shop.names).toEqual(itemsNames);
+			});
+		});
+	});
 });
