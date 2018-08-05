@@ -45,7 +45,15 @@ describe('Shop Controller', () => {
 		});
 	});
 
-	describe('_updateItemsWithDatabase', () => {
+	describe('_updateItemsWithDatabase()', () => {
+		it('update offer with database data using items names', async () => {
+			const itemsNames = ['My axe', 'Super Boots'];
 
+			await shop._updateItemsWithDatabase(itemsNames);
+
+			expect(itemFactory.find).toHaveBeenCalledTimes(1);
+			expect(itemFactory.names).toHaveBeenCalledWith(itemsNames);
+			expect(itemFactory.exec).toHaveBeenCalledTimes(1);
+		});
 	});
 });
