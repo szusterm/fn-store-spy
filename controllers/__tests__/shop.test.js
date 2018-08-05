@@ -20,7 +20,7 @@ describe('Shop Controller', () => {
 			mockGetNamesFromObjects.mockRestore();
 		});
 
-		it('update shop offer', async () => {
+		it('updates a shop offer', async () => {
 			const exampleItems = [
 				{name: 'Some Axe'},
 				{name: 'Super Backapck'}
@@ -46,7 +46,7 @@ describe('Shop Controller', () => {
 	});
 
 	describe('_updateItemsWithDatabase()', () => {
-		it('update offer with database data using items names array', async () => {
+		it('updates an offer with database data using an items names array', async () => {
 			const returnedResponse = {
 				err: false,
 				data: [
@@ -64,7 +64,7 @@ describe('Shop Controller', () => {
 			expect(shop._items).toEqual(returnedResponse.data);
 		});
 
-		it('download items from database', async () => {
+		it('download items from a database', async () => {
 			const itemsNames = ['My axe', 'Super Boots'];
 
 			await shop._updateItemsWithDatabase(itemsNames);

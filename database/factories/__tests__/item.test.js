@@ -28,7 +28,7 @@ let item;
 let getFilterFunctions;
 
 const returningFilters = {
-	description: 'call _getFilterFunctions() to return filters and exec methods',
+	description: 'calls _getFilterFunctions() to return filters and exec methods',
 	test: (method) => {
 		item[method]();
 		expect(getFilterFunctions).toHaveBeenCalledTimes(1);
@@ -49,7 +49,7 @@ describe('Item Factory', () => {
 	});
 
 	describe('find()', () => {
-		it('call find() method of ItemModel', () => {
+		it('calls find() method of ItemModel', () => {
 			item.find();
 			expect(ItemModel.find).toHaveBeenCalledTimes(1);
 		});
@@ -58,12 +58,12 @@ describe('Item Factory', () => {
 	});
 
 	describe('_execQuery()', () => {
-		it('exec query to find matching items', async () => {
+		it('execs a query to find matching items', async () => {
 			await item._execQuery();
 			expect(item._findingQuery.exec).toHaveBeenCalledTimes(1);
 		});
 
-		it('returns object with occurrence of an error and response data', async () => {
+		it('returns an object with occurrence of an error and response data', async () => {
 			const returnedText = 'me';
 			const returnedError = 'error';
 
@@ -92,7 +92,7 @@ describe('Item Factory', () => {
 	});
 
 	describe('_filterByIds()', () => {
-		it('adds id filter with ids array', () => {
+		it('adds an id filter with an ids array', () => {
 			const ids = ['123', '432'];
 
 			item._filterByIds(ids);
@@ -105,7 +105,7 @@ describe('Item Factory', () => {
 	});
 
 	describe('_filterByNameContainingText()', () => {
-		it('adds name filter with containing string', () => {
+		it('adds a name filter with containing string', () => {
 			const name = 'Ann';
 			const nameRegExp = new RegExp(`^.*${name}.*$`);
 
@@ -119,7 +119,7 @@ describe('Item Factory', () => {
 	});
 
 	describe('_filterByNames()', () => {
-		it('adds name filter with names array', () => {
+		it('adds a name filter with a names array', () => {
 			const names = ['Ann', 'Toy'];
 
 			item._filterByNames(names);
@@ -132,7 +132,7 @@ describe('Item Factory', () => {
 	});
 
 	describe('_filterByType()', () => {
-		it('adds type filter with names array', () => {
+		it('adds a type filter with a names array', () => {
 			const type = 'axe';
 
 			item._filterByType(type);

@@ -47,7 +47,7 @@ describe('Order Factory', () => {
 		});
 		afterEach(() => createItemsArray.mockRestore());
 
-		it('adds new order to database', async () => {
+		it('adds new order to a database', async () => {
 			await order.add(itemsIds, code);
 
 			expect(OrderModel).toHaveBeenCalledWith({
@@ -58,7 +58,7 @@ describe('Order Factory', () => {
 			expect(mockOrderModel.save).toHaveBeenCalledTimes(1);
 		});
 
-		it('returns object with occurrence of an error and response data', async () => {
+		it('returns an object with occurrence of an error and response data', async () => {
 			const returnedError = 'error';
 
 			mockOrderModel.save
@@ -93,7 +93,7 @@ describe('Order Factory', () => {
 	});
 
 	describe('_createItemsArray()', () => {
-		it('returns items array ready to add to order', () => {
+		it('returns items array ready to add to an order', () => {
 			const itemsIds = ['123', '666'];
 			const readyItemsIds = [
 				{id: itemsIds[0], done: false},
