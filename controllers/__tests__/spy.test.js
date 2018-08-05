@@ -57,4 +57,27 @@ describe('Spy Controller', () => {
 			expect(mockCallback).toHaveBeenCalledTimes(2);
 		});
 	});
+
+	describe('_getOrdersMatchingToOffer()', () => {
+		it('downloads orders matching to a current offer', async () => {
+			const offerItemsIds = ['666'];
+			const matchingOrders = [{items: []}, {items: []}];
+
+			shop.ids = offerItemsIds;
+			orderFactory.findMatchingByIds.mockReturnValueOnce({err: false, data: matchingOrders});
+
+			const returnedOffers = await spy._getOrdersMatchingToOffer();
+
+			expect(orderFactory.findMatchingByIds).toHaveBeenCalledWith(offerItemsIds);
+			expect(returnedOffers).toEqual(matchingOrders);
+		});
+
+		it('returns false, if getting from a database has an error', async () => {
+			orderFactory.findMatchingByIds.mockReturnValueOnce({err: true, data: {}});
+
+			const response = await spy._getOrdersMatchingToOffer();
+
+			expect(response).toBeFalsy();
+		});
+	});
 });
