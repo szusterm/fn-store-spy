@@ -4,22 +4,23 @@ const shop = require('./shop');
 class Spy {
 	async run() {
 		await shop.update();
-		await this._checkItemsInOrders();
+		await this._callFuncAfterFindItemInOrder(() => {});
 	}
 
-	async _checkItemsInOrders() {
-		const matchingOrders = await this._getMatchingOrders();
+	async _callFuncAfterFindItemInOrder(onMatch) {
+		const matchingOrders = await this._getOrdersMatchingToOffer();
 
 		for (const {items} of matchingOrders) {
 			for (const {id, done} of items) {
 				if (!done && shop.ids.includes(id)) {
+					onMatch();
 					console.log('Got:', id);
 				}
 			}
 		}
 	}
 
-	async _getMatchingOrders() {
+	async _getOrdersMatchingToOffer() {
 		const offeredItemsIds = shop.ids;
 		const response = await order.findMatchingByIds(offeredItemsIds);
 		if (!response.err) {
