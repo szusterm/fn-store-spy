@@ -1,28 +1,10 @@
 const itemInstance = require('../item');
-const ItemModel = require('../../models/item');
+const ItemModel = require('../../models/item.model');
 const getResponseObject = require('../../../helpers/getResponseObject');
 const clientConfig = require('../../../config/client');
 
-jest.mock('../../models/item', () => {
-	return {
-		find: jest.fn()
-	};
-});
+jest.mock('../../models/item');
 jest.mock('../../../helpers/getResponseObject');
-
-const getQueryMocks = () => {
-	const obj = {
-		exec: jest.fn(() => obj),
-		find: jest.fn(() => obj),
-		where: jest.fn(() => obj),
-		equals: jest.fn(() => obj),
-		in: jest.fn(() => obj),
-		limit: jest.fn(() => obj),
-		skip: jest.fn(() => obj)
-	};
-
-	return obj;
-};
 
 let item;
 let getFilterFunctions;
@@ -40,7 +22,6 @@ describe('Item Factory', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 		item = itemInstance;
-		item._findingQuery = getQueryMocks();
 		getFilterFunctions = jest.spyOn(item, '_getFilterFunctions');
 	});
 	afterEach(() => {
@@ -60,14 +41,14 @@ describe('Item Factory', () => {
 	describe('_execQuery()', () => {
 		it('execs a query to find matching items', async () => {
 			await item._execQuery();
-			expect(item._findingQuery.exec).toHaveBeenCalledTimes(1);
+			expect(ItemModel.exec).toHaveBeenCalledTimes(1);
 		});
 
 		it('returns an object with occurrence of an error and response data', async () => {
 			const returnedText = 'me';
 			const returnedError = 'error';
 
-			item._findingQuery.exec
+			ItemModel.exec
 				.mockReturnValueOnce(Promise.resolve(returnedText))
 				.mockReturnValueOnce(Promise.reject(returnedError));
 
@@ -97,8 +78,8 @@ describe('Item Factory', () => {
 
 			item._filterByIds(ids);
 
-			expect(item._findingQuery.where).toHaveBeenCalledWith('_id');
-			expect(item._findingQuery.in).toHaveBeenCalledWith(ids);
+			expect(ItemModel.where).toHaveBeenCalledWith('_id');
+			expect(ItemModel.in).toHaveBeenCalledWith(ids);
 		});
 
 		it(returningFilters.description, () => returningFilters.test('_filterByIds'));
@@ -111,8 +92,8 @@ describe('Item Factory', () => {
 
 			item._filterByNameContainingText(name);
 
-			expect(item._findingQuery.where).toHaveBeenCalledWith('name');
-			expect(item._findingQuery.equals).toHaveBeenCalledWith(nameRegExp);
+			expect(ItemModel.where).toHaveBeenCalledWith('name');
+			expect(ItemModel.equals).toHaveBeenCalledWith(nameRegExp);
 		});
 
 		it(returningFilters.description, () => returningFilters.test('_filterByNameContainingText'));
@@ -124,8 +105,8 @@ describe('Item Factory', () => {
 
 			item._filterByNames(names);
 
-			expect(item._findingQuery.where).toHaveBeenCalledWith('name');
-			expect(item._findingQuery.in).toHaveBeenCalledWith(names);
+			expect(ItemModel.where).toHaveBeenCalledWith('name');
+			expect(ItemModel.in).toHaveBeenCalledWith(names);
 		});
 
 		it(returningFilters.description, () => returningFilters.test('_filterByNames'));
@@ -137,8 +118,8 @@ describe('Item Factory', () => {
 
 			item._filterByType(type);
 
-			expect(item._findingQuery.where).toHaveBeenCalledWith('type');
-			expect(item._findingQuery.equals).toHaveBeenCalledWith(type);
+			expect(ItemModel.where).toHaveBeenCalledWith('type');
+			expect(ItemModel.equals).toHaveBeenCalledWith(type);
 		});
 
 		it(returningFilters.description, () => returningFilters.test('_filterByType'));
@@ -150,7 +131,7 @@ describe('Item Factory', () => {
 
 			item._setPage();
 
-			expect(item._findingQuery.limit).toHaveBeenCalledWith(maxItemsPerPage);
+			expect(ItemModel.limit).toHaveBeenCalledWith(maxItemsPerPage);
 		});
 
 		it('starts getting items from specific one', () => {
@@ -161,7 +142,7 @@ describe('Item Factory', () => {
 				const firstItemOnPage = (maxItemsPerPage * page - maxItemsPerPage);
 				item._setPage(page);
 
-				expect(item._findingQuery.skip).toHaveBeenCalledWith(firstItemOnPage);
+				expect(ItemModel.skip).toHaveBeenCalledWith(firstItemOnPage);
 			}
 		});
 
