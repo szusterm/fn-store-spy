@@ -1,4 +1,4 @@
-const ItemModel = require('../models/item.model');
+const ItemModel = require('../models/item');
 const getObject = require('../../helpers/getResponseObject');
 const clientConfig = require('../../config/client');
 

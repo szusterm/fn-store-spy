@@ -1,5 +1,5 @@
 const orderInstance = require('../../../models/order/index');
-const OrderModel = require('../../models/order.model');
+const OrderModel = require('../../models/order');
 const getResponseObject = require('../../../helpers/getResponseObject');
 
 jest.mock('../../helpers/getResponseObject', () => jest.fn());

@@ -1,5 +1,5 @@
 const itemInstance = require('../item');
-const ItemModel = require('../../models/item.model');
+const ItemModel = require('../../models/item');
 const getResponseObject = require('../../../helpers/getResponseObject');
 const clientConfig = require('../../../config/client');
 
