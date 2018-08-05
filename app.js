@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-require('./models/connect')();
+require('./database/connect')();
 const spy = require('./controllers/spy');
 setTimeout(() => spy.run(), 3000);
 

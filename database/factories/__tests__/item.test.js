@@ -1,7 +1,7 @@
 const itemInstance = require('../item');
-const ItemModel = require('../item/item.model');
-const getResponseObject = require('../../helpers/getResponseObject');
-const clientConfig = require('../../config/client');
+const ItemModel = require('../../models/item.model');
+const getResponseObject = require('../../../helpers/getResponseObject');
+const clientConfig = require('../../../config/client');
 
 jest.mock('../item/item.model', () => {
 	return {
