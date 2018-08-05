@@ -30,7 +30,7 @@ describe('Spy Controller', () => {
 		beforeEach(() => mockGetOrdersMatchingToOffer = jest.spyOn(spy, '_getOrdersMatchingToOffer'));
 		afterEach(() => mockGetOrdersMatchingToOffer.mockRestore());
 
-		it('call a callback after find an offered item in matching orders, if this item is not done', async () => {
+		it('calls a callback after find an offered item in matching orders, if this item is not done', async () => {
 			const offeredItemsIds = ['666', '213'];
 			const matchingOffers = [
 				{
