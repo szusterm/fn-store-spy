@@ -3,7 +3,7 @@ const ItemModel = require('../../models/item.model');
 const getResponseObject = require('../../../helpers/getResponseObject');
 const clientConfig = require('../../../config/client');
 
-jest.mock('../../models/item');
+jest.mock('../../models/item.model');
 jest.mock('../../../helpers/getResponseObject');
 
 let item;
