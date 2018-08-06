@@ -8,7 +8,7 @@ class ItemCard extends Component {
 		const {name, price, rarity, imgSrc} = this.props;
 
 		return (
-			<div className={`item-card item-card--${rarity}`}>
+			<div className={`item-card item-card--raised item-card--${rarity}`}>
 				<div className={'item-card--img-box'}>
 					<img
 						className={'img-box--image'}
