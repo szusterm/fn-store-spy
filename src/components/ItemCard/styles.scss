@@ -1,9 +1,14 @@
 @import '../../scss/item-rarities-gradients';
 
 .item-card {
+	$border-radius: 13px;
+
 	position: relative;
-	width: 250px;
-	height: 250px;
+	max-width: 100%;
+	height: auto;
+	margin: 10px;
+
+	border-radius: $border-radius;
 
 	&--uncommon {background: $gradient-uncommon;}
 	&--rare {background: $gradient-rare;}
@@ -18,6 +23,8 @@
 			&--image {
 				width: 100%;
 				height: 100%;
+
+				border-radius: $border-radius;
 			}
 		}
 	}
@@ -30,6 +37,8 @@
 
 		padding: 10px;
 		background-color: rgba(0, 0, 0, 0.5);
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
 
 		display: flex;
 		flex-direction: column;
