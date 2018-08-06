@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const order = require('../models/order');
+const order = require('../database/factories/order');
 
 router.post('/add', async (req, res) => {
 	const {items} = req.body;

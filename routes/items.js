@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const item = require('../models/item');
+const item = require('../database/factories/item');
 
 router.get('/get', async (req, res) => {
 	const name = req.param('name');
