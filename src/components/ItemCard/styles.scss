@@ -1,0 +1,54 @@
+@import '../../scss/item-rarities-gradients';
+
+.item-card {
+	position: relative;
+	width: 250px;
+	height: 250px;
+
+	&--uncommon {background: $gradient-uncommon;}
+	&--rare {background: $gradient-rare;}
+	&--epic {background: $gradient-epic;}
+	&--legendary {background: $gradient-legendary;}
+
+	&--img-box {
+		width: 100%;
+		height: 100%;
+
+		.img-box {
+			&--image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&--description {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.5);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.description {
+			&--name, &--price {
+				color: white;
+				font-family: 'Luckiest Guy', 'Roboto', Arial;
+			}
+
+			&--name {
+				font-size: 1.5em;
+			}
+
+			&--price {
+				font-size: 1.2em;
+			}
+		}
+	}
+}
