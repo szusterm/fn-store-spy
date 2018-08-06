@@ -13,10 +13,11 @@ class ItemsList extends Component {
 			<div>
 				{
 					items.map((item) => {
-						const {name, price, rarity, imgSrc} = item;
+						const {key, name, price, rarity, imgSrc} = item;
 
 						return (
 							<ItemCard
+								key={key}
 								name={name}
 								price={price}
 								rarity={rarity}
