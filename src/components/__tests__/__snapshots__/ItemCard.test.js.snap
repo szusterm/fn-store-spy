@@ -5,9 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ItemCard
-    imgSrc="https://example.com"
+    imageSrc="https://example.com"
     name="Super Axe"
-    price={2000}
+    price="2000"
     rarity="uncommon"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -114,11 +114,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": 2000,
+              "children": "2000",
               "className": "description--price",
             },
             "ref": null,
-            "rendered": 2000,
+            "rendered": "2000",
             "type": "div",
           },
         ],
@@ -225,11 +225,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": 2000,
+                "children": "2000",
                 "className": "description--price",
               },
               "ref": null,
-              "rendered": 2000,
+              "rendered": "2000",
               "type": "div",
             },
           ],
