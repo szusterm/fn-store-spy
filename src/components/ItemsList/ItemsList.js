@@ -14,7 +14,7 @@ class ItemsList extends Component {
 				<div className={'row no-gutter'}>
 					{
 						items.map((item) => {
-							const {key, name, price, rarity, imgSrc} = item;
+							const {key, name, price, rarity, imageSrc} = item;
 
 							return (
 								<div
@@ -25,7 +25,7 @@ class ItemsList extends Component {
 										name={name}
 										price={price}
 										rarity={rarity}
-										imgSrc={imgSrc}
+										imageSrc={imageSrc}
 									/>
 								</div>
 							);

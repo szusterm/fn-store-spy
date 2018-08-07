@@ -5,14 +5,14 @@ import './styles.scss';
 
 class ItemCard extends Component {
 	render() {
-		const {name, price, rarity, imgSrc} = this.props;
+		const {name, price, rarity, imageSrc} = this.props;
 
 		return (
 			<div className={`item-card item-card--raised item-card--${rarity}`}>
 				<div className={'item-card--img-box'}>
 					<img
 						className={'img-box--image'}
-						src={imgSrc}
+						src={imageSrc}
 					/>
 				</div>
 				<div className={'item-card--description'}>
@@ -28,7 +28,7 @@ ItemCard.propTypes = {
 	name: PropTypes.string.isRequired,
 	price: PropTypes.number.isRequired,
 	rarity: PropTypes.string.isRequired,
-	imgSrc: PropTypes.string.isRequired
+	imageSrc: PropTypes.string.isRequired
 };
 
 export default ItemCard;
