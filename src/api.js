@@ -1,4 +1,4 @@
-import * as axios from 'axios';
+import axios from 'axios';
 
 export const getItems = async (data) => {
 	const {name, type, page} = data;
