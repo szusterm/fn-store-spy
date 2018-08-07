@@ -19,7 +19,7 @@ class ItemsList extends Component {
 							return (
 								<div
 									key={key}
-									className={'col-3'}
+									className={'col-2'}
 								>
 									<ItemCard
 										name={name}
