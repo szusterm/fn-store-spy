@@ -1,14 +1,14 @@
 @import '../../scss/item-rarities-gradients';
 
 .item-card {
-	$border-radius: 13px;
-	$border-bottom-width: 6px;
+	$background-color: #ffffff;
 
 	max-width: 100%;
 	height: auto;
 	margin: 10px;
 
 	&--top-part, &--bot-part {
+		background-color: $background-color;
 		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	}
 
@@ -24,7 +24,7 @@
 			$strip-height: 8px;
 
 			width: 100%;
-			background: white;
+			background: $background-color;
 			height: $strip-height;
 			content: "";
 
@@ -73,9 +73,11 @@
 				align-items: center;
 
 				.description {
+					text-align: center;
+
 					&--name, &--price {
-						color: white;
-						font-family: 'Luckiest Guy', 'Roboto', Arial;
+						color: black;
+						font-family: 'Roboto', Arial;
 					}
 
 					&--name {
