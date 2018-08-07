@@ -42,4 +42,25 @@ describe('ItemCard Component', () => {
 
 		expect(displayedName).toBe(props.price);
 	});
+
+	it('adds class with background rarity color', () => {
+		const {wrapper, props} = setup({
+			rarity: 'uncommon'
+		});
+
+		const rarityColorClass = `.item-card--${props.rarity}`;
+		const displayedName = wrapper.find(rarityColorClass);
+
+		expect(displayedName.exists()).toBe(true);
+	});
+
+	it('shows item image from prop', () => {
+		const {wrapper, props} = setup({
+			imageSrc: 'https://example.com'
+		});
+
+		const displayedImgSrc = wrapper.find('.img-box--image').props().src;
+
+		expect(displayedImgSrc).toBe(props.imageSrc);
+	});
 });
