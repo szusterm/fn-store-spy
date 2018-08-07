@@ -26,7 +26,7 @@ class ItemCard extends Component {
 
 ItemCard.propTypes = {
 	name: PropTypes.string.isRequired,
-	price: PropTypes.number.isRequired,
+	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
 	imageSrc: PropTypes.string.isRequired
 };
