@@ -10,6 +10,9 @@
 		"dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
 		"test": "jest"
 	},
+	"jest": {
+		"setupTestFrameworkScriptFile": "./src/setupTests.js"
+	},
 	"dependencies": {
 		"axios": "^0.18.0",
 		"bootstrap": "^4.1.3",
