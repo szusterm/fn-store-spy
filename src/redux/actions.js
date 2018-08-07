@@ -1,13 +1,13 @@
 import {getItems} from '../api';
 
 export const replaceItems = (data) => async (dispatch) => {
-	const response = await getItems(data);
-	if (!response.err) {
+	const {data: responseData} = await getItems(data);
+	if (!responseData.err) {
 		dispatch({
 			type: 'REPLACE_ITEMS',
-			items: response.data
+			items: responseData.data
 		});
 	}
 
-	return !response.err;
+	return !responseData.err;
 };
