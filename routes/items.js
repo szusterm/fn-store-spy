@@ -15,4 +15,10 @@ router.get('/get', async (req, res) => {
 	res.json((err) ? {err} : {err, data});
 });
 
+router.get('/count', async (req, res) => {
+	const count = await item.count();
+
+	res.json({count});
+});
+
 module.exports = router;
