@@ -4,6 +4,8 @@
 	&--button {
 		$button-height: 50px;
 
+		cursor: pointer;
+
 		width: 100%;
 		height: $button-height;
 		padding: 10px;
