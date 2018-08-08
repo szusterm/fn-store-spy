@@ -59,30 +59,43 @@
 	}
 
 	&--bot-part {
-		height: 90px;
+		$padding: 15px;
+
+		height: 110px;
 		padding-top: $strip-height/2;
 
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
 
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
 		.bot-part {
+			color: rgba(0, 0, 0, 0.87);
+			text-align: center;
+			font-family: 'Roboto', Arial;
+
+			&--name {
+				font-size: 1.1em;
+				font-weight: 500;
+				text-align: center;
+				padding: 0 $padding;
+			}
+
 			&--description {
-				padding: 10px;
+				width: 100%;
+				padding: $padding;
 
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
+				flex-direction: row;
+				justify-content: space-around;
 				align-items: center;
 
 				.description {
-					&--name, &--price {
-						color: rgba(0, 0, 0, 0.87);
-						text-align: center;
-						font-family: 'Roboto', Arial;
-					}
-
-					&--name {
-						font-size: 1.1em;
+					&--type {
+						font-size: 0.8em;
 						font-weight: 400;
 					}
 
