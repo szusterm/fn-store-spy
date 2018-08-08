@@ -5,7 +5,13 @@ import ItemsList from '../ItemsList';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		items: [{}]
+		items: [{
+			name: 'Super Axe',
+			price: '2000',
+			rarity: 'uncommon',
+			type: 'axe',
+			imageSrc: 'https://example.com'
+		}]
 	}, propOverrides);
 
 	const wrapper = shallow(<ItemsList {...props}/>);
@@ -16,7 +22,13 @@ const setup = (propOverrides) => {
 describe('ItemsList Component', () => {
 	it('renders correctly', () => {
 		const {wrapper} = setup({
-			items: [{}, {}]
+			items: [{
+				name: 'Super Axe',
+				price: '2000',
+				rarity: 'uncommon',
+				type: 'axe',
+				imageSrc: 'https://example.com'
+			}]
 		});
 
 		expect(wrapper).toMatchSnapshot();
@@ -39,12 +51,14 @@ describe('ItemsList Component', () => {
 					name: 'Super Axe',
 					price: '2000',
 					rarity: 'uncommon',
+					type: 'axe',
 					imageSrc: 'https://example.com'
 				},
 				{
 					name: 'Something',
 					price: '800',
 					rarity: 'rare',
+					type: 'boots',
 					imageSrc: 'https://example.pl'
 				}
 			]
