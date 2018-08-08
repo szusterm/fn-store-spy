@@ -31,8 +31,11 @@ class Pagination extends Component {
 
 	previousPage() {
 		const {page} = this.state;
-		const newPage = page - 1;
-		this.updatePage(newPage);
+
+		if (page > 1) {
+			const newPage = page - 1;
+			this.updatePage(newPage);
+		}
 	}
 
 	render() {
@@ -42,6 +45,7 @@ class Pagination extends Component {
 					<div className={'col-6'}>
 						<button
 							className={'pagination--button pagination--button--previous'}
+							disabled={(this.state.page <= 1)}
 							onClick={this.previousPage}
 						>
 							Previous
