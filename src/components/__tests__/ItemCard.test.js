@@ -8,6 +8,7 @@ const setup = (propOverrides) => {
 		name: 'Super Axe',
 		price: '2000',
 		rarity: 'uncommon',
+		type: 'axe',
 		imageSrc: 'https://example.com'
 	}, propOverrides);
 
@@ -28,7 +29,7 @@ describe('ItemCard Component', () => {
 			name: 'Normal Weapon'
 		});
 
-		const displayedName = wrapper.find('.description--name').text();
+		const displayedName = wrapper.find('.bot-part--name').text();
 
 		expect(displayedName).toBe(props.name);
 	});
@@ -38,9 +39,19 @@ describe('ItemCard Component', () => {
 			price: '2000'
 		});
 
-		const displayedName = wrapper.find('.description--price').text();
+		const displayedPrice = wrapper.find('.description--price').text();
 
-		expect(displayedName).toBe(props.price);
+		expect(displayedPrice).toBe(props.price);
+	});
+
+	it('shows type from prop', () => {
+		const {wrapper, props} = setup({
+			type: 'axe'
+		});
+
+		const displayedType = wrapper.find('.description--type').text();
+
+		expect(displayedType).toBe(props.type);
 	});
 
 	it('adds class with background rarity color', () => {
@@ -48,10 +59,10 @@ describe('ItemCard Component', () => {
 			rarity: 'uncommon'
 		});
 
-		const rarityColorClass = `.item-card--${props.rarity}`;
-		const displayedName = wrapper.find(rarityColorClass);
+		const rarityColorClass = `.top-part--img-box--${props.rarity}`;
+		const displayedItem = wrapper.find(rarityColorClass);
 
-		expect(displayedName.exists()).toBe(true);
+		expect(displayedItem.exists()).toBe(true);
 	});
 
 	it('shows item image from prop', () => {
