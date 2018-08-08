@@ -13,12 +13,12 @@ class ItemsList extends Component {
 			<div className={'container'}>
 				<div className={'row no-gutter'}>
 					{
-						items.map((item, index) => {
-							const {name, price, rarity, type, imageSrc} = item;
+						items.map((item) => {
+							const {_id, name, price, rarity, type, imageSrc} = item;
 
 							return (
 								<div
-									key={index}
+									key={_id}
 									className={'col-2'}
 								>
 									<ItemCard
