@@ -1,7 +1,7 @@
+@import '../../scss/variables';
 @import '../../scss/item-rarities-gradients';
 
 .item-card {
-	$background-color: #ffffff;
 	$strip-height: 16px;
 
 	max-width: 100%;
@@ -9,7 +9,7 @@
 	margin: 10px;
 
 	&--top-part, &--bot-part {
-		background-color: $background-color;
+		background-color: $body-bg;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	}
 
@@ -23,7 +23,7 @@
 
 		&:after {
 			width: 100%;
-			background: $background-color;
+			background: $body-bg;
 			height: $strip-height;
 			content: "";
 
@@ -73,7 +73,7 @@
 		align-items: center;
 
 		.bot-part {
-			color: rgba(0, 0, 0, 0.87);
+			color: $body-color;
 			text-align: center;
 			font-family: 'Roboto', Arial;
 
