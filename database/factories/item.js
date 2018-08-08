@@ -75,6 +75,10 @@ class Item {
 
 		return this._getFilterFunctions();
 	}
+
+	async count() {
+		return await ItemModel.estimatedDocumentCount();
+	}
 }
 
 module.exports = new Item();
