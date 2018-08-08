@@ -6,7 +6,14 @@ import './styles.scss';
 class Pagination extends Component {
 	render() {
 		return (
-			<div/>
+			<div className={'pagination'}>
+				<button className={'pagination--button pagination--button--previous'}>
+					Previous
+				</button>
+				<button className={'pagination--button pagination--button--next'}>
+					Next
+				</button>
+			</div>
 		);
 	}
 }
