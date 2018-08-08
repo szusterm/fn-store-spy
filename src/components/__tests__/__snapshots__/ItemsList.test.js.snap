@@ -33,7 +33,7 @@ ShallowWrapper {
         className="row no-gutter"
       >
         <div
-          className="col-2"
+          className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
         >
           <ItemCard
             imageSrc="https://example.com"
@@ -44,7 +44,7 @@ ShallowWrapper {
           />
         </div>
       </div>,
-      "className": "container",
+      "className": "container-fluid",
     },
     "ref": null,
     "rendered": Object {
@@ -54,7 +54,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="col-2"
+            className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
             <ItemCard
               imageSrc="https://example.com"
@@ -71,7 +71,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "0",
+          "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": <ItemCard
@@ -81,7 +81,7 @@ ShallowWrapper {
               rarity="uncommon"
               type="axe"
             />,
-            "className": "col-2",
+            "className": "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3",
           },
           "ref": null,
           "rendered": Object {
@@ -116,7 +116,7 @@ ShallowWrapper {
           className="row no-gutter"
         >
           <div
-            className="col-2"
+            className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
             <ItemCard
               imageSrc="https://example.com"
@@ -127,7 +127,7 @@ ShallowWrapper {
             />
           </div>
         </div>,
-        "className": "container",
+        "className": "container-fluid",
       },
       "ref": null,
       "rendered": Object {
@@ -137,7 +137,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="col-2"
+              className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
             >
               <ItemCard
                 imageSrc="https://example.com"
@@ -154,7 +154,7 @@ ShallowWrapper {
         "rendered": Array [
           Object {
             "instance": null,
-            "key": "0",
+            "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": <ItemCard
@@ -164,7 +164,7 @@ ShallowWrapper {
                 rarity="uncommon"
                 type="axe"
               />,
-              "className": "col-2",
+              "className": "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3",
             },
             "ref": null,
             "rendered": Object {
