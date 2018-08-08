@@ -23,7 +23,7 @@
 
 		position: relative;
 
-		&:after {
+		&::after {
 			width: 100%;
 			background: $body-bg;
 			height: $strip-height;
