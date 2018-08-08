@@ -4,4 +4,13 @@
 		flex-direction: row;
 		justify-content: center;
 	}
+
+	&--items-list-box {
+		margin-top: 200px;
+	}
+
+	&--pagination-box {
+		margin-top: 60px;
+		margin-bottom: 300px;
+	}
 }
