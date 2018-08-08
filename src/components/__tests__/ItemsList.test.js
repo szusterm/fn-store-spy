@@ -21,15 +21,7 @@ const setup = (propOverrides) => {
 
 describe('ItemsList Component', () => {
 	it('renders correctly', () => {
-		const {wrapper} = setup({
-			items: [{
-				name: 'Super Axe',
-				price: '2000',
-				rarity: 'uncommon',
-				type: 'axe',
-				imageSrc: 'https://example.com'
-			}]
-		});
+		const {wrapper} = setup();
 
 		expect(wrapper).toMatchSnapshot();
 	});
