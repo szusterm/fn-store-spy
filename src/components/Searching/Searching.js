@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {replaceItems} from '../../redux/actions';
 
 import ItemsList from '../ItemsList';
+import Pagination from '../Pagination';
 
 import './styles.scss';
 
@@ -14,9 +15,16 @@ class Searching extends Component {
 
 	render() {
 		return (
-			<div className={'container'}>
-				<div className={'row'}>
-					<ItemsList items={this.props.items}/>
+			<div className={'container searching'}>
+				<div className={'row searching--items-list-box'}>
+					<div className={'col-10'}>
+						<ItemsList items={this.props.items}/>
+					</div>
+				</div>
+				<div className={'row searching--pagination-box'}>
+					<div className={'col-4'}>
+						<Pagination/>
+					</div>
 				</div>
 			</div>
 		);
