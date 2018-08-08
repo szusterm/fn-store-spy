@@ -6,7 +6,7 @@ export const getItems = async (data) => {
 	return await axios({
 		method: 'get',
 		url: '/items/get',
-		data: {
+		params: {
 			name,
 			type,
 			page
