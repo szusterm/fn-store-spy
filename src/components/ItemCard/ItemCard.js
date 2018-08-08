@@ -5,7 +5,7 @@ import './styles.scss';
 
 class ItemCard extends Component {
 	render() {
-		const {name, price, rarity, imageSrc} = this.props;
+		const {name, price, rarity, type, imageSrc} = this.props;
 
 		return (
 			<div className={'item-card item-card--raised'}>
@@ -18,8 +18,9 @@ class ItemCard extends Component {
 					</div>
 				</div>
 				<div className={'item-card--bot-part'}>
+					<div className={'bot-part--name'}>{name}</div>
 					<div className={'bot-part--description'}>
-						<div className={'description--name'}>{name}</div>
+						<div className={'description--type'}>{type}</div>
 						<div className={'description--price'}>{price}</div>
 					</div>
 				</div>
@@ -32,6 +33,7 @@ ItemCard.propTypes = {
 	name: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
+	type: PropTypes.string.isRequired,
 	imageSrc: PropTypes.string.isRequired
 };
 
