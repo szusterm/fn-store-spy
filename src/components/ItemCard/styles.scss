@@ -10,7 +10,7 @@
 
 	&--top-part, &--bot-part {
 		background-color: $background-color;
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	}
 
 	&--top-part {
@@ -76,7 +76,7 @@
 
 				.description {
 					&--name, &--price {
-						color: rgba(0,0,0,0.87);
+						color: rgba(0, 0, 0, 0.87);
 						text-align: center;
 						font-family: 'Roboto', Arial;
 					}
