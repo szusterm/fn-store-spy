@@ -2,6 +2,7 @@
 
 .item-card {
 	$background-color: #ffffff;
+	$strip-height: 16px;
 
 	max-width: 100%;
 	height: auto;
@@ -13,7 +14,7 @@
 	}
 
 	&--top-part {
-		padding: 8px;
+		padding: 12px;
 
 		border-top-left-radius: 50%;
 		border-top-right-radius: 50%;
@@ -21,8 +22,6 @@
 		position: relative;
 
 		&:after {
-			$strip-height: 16px;
-
 			width: 100%;
 			background: $background-color;
 			height: $strip-height;
@@ -61,6 +60,7 @@
 
 	&--bot-part {
 		height: 90px;
+		padding-top: $strip-height/2;
 
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
