@@ -1,7 +1,7 @@
-import {getItems} from '../api';
+import {fetchItems} from '../api';
 
 export const replaceItems = (data) => async (dispatch) => {
-	const {data: responseData} = await getItems(data);
+	const {data: responseData} = await fetchItems(data);
 	if (!responseData.err) {
 		dispatch({
 			type: 'REPLACE_ITEMS',

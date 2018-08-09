@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getItems = async (data) => {
+export const fetchItems = async (data) => {
 	const {name, type, page} = data;
 
 	return await axios({
