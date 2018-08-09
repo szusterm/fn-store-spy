@@ -5,7 +5,7 @@ export const replaceItems = (data) => async (dispatch) => {
 	if (!responseData.err) {
 		dispatch({
 			type: 'REPLACE_ITEMS',
-			items: responseData.data
+			items: responseData.data.items
 		});
 	}
 
