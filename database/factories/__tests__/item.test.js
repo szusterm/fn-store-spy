@@ -149,7 +149,7 @@ describe('Item Factory', () => {
 		it(returningFilters.description, () => returningFilters.test('_setPage'));
 	});
 
-	describe('_getMaxPage', () => {
+	describe('_getMaxPage()', () => {
 		let mockGetCount;
 		beforeEach(() => mockGetCount = jest.spyOn(item, '_getCount'));
 		afterEach(() => mockGetCount.mockRestore());
