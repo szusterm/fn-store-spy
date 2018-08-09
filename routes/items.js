@@ -9,7 +9,7 @@ router.get('/get', async (req, res) => {
 	const {err, data} = await item.find()
 		.name(name)
 		.type(type)
-		.page(Number(page))
+		.page(page)
 		.exec();
 
 	res.json((err) ? {err} : {err, data});
