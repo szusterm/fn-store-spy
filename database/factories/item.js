@@ -14,8 +14,10 @@ class Item {
 
 	async _execQuery() {
 		try {
-			const items = await this._findingQuery.exec();
+			const {maxItemsPerPage} = clientConfig;
 			let nextPageAvailable = false;
+
+			const items = await this._findingQuery.exec();
 
 			if (this._existsNextPage(items.length)) {
 				items.pop();
@@ -24,6 +26,7 @@ class Item {
 
 			const response = {
 				items,
+				maxItemsPerPage,
 				nextPageAvailable
 			};
 
