@@ -61,7 +61,6 @@ Searching.propTypes = {
 
 const mapStateToProps = (state) => {
 	const {items} = state;
-
 	return {items};
 };
 
