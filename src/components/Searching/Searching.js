@@ -38,7 +38,7 @@ class Searching extends Component {
 			<div className={'container searching'}>
 				<div className={'row searching--items-list-box'}>
 					<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
-						<ItemsList items={this.props.items}/>
+						<ItemsList items={this.props.items.list}/>
 					</div>
 				</div>
 				<div className={'row searching--pagination-box'}>
@@ -55,7 +55,7 @@ class Searching extends Component {
 
 Searching.propTypes = {
 	replaceItems: PropTypes.func, //redux
-	items: PropTypes.array //redux
+	items: PropTypes.object //redux
 };
 
 
