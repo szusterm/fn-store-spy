@@ -64,7 +64,7 @@ class Item {
 	}
 
 	_setPage(page = 1) {
-		const fixedPage = (Number.isInteger(page) && page >= 1) ? page : 1;
+		const fixedPage = (page >= 1) ? Number(page) : 1;
 
 		const {maxItemsPerPage} = clientConfig;
 		const firstItemOnPage = (maxItemsPerPage * fixedPage - maxItemsPerPage);
