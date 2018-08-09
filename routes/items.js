@@ -15,7 +15,7 @@ router.get('/get', async (req, res) => {
 	res.json((err) ? {err} : {err, data});
 });
 
-router.get('/count', async (req, res) => {
+router.get('/stats', async (req, res) => {
 	const stats = await item.getStats();
 
 	res.json(stats);
