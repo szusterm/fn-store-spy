@@ -5,7 +5,8 @@ const itemModel = {
 	equals: jest.fn(() => itemModel),
 	in: jest.fn(() => itemModel),
 	limit: jest.fn(() => itemModel),
-	skip: jest.fn(() => itemModel)
+	skip: jest.fn(() => itemModel),
+	estimatedDocumentCount: jest.fn()
 };
 
 module.exports = itemModel;
