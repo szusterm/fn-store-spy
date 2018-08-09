@@ -1,6 +1,6 @@
 import {fetchItems} from '../api';
 
-export const replaceItems = (data) => async (dispatch) => {
+export const updateItems = (data) => async (dispatch) => {
 	const {data: responseData} = await fetchItems(data);
 	if (!responseData.err) {
 		dispatch({

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {replaceItems} from '../../redux/actions';
+import {updateItems} from '../../redux/actions';
 
 import ItemsList from '../ItemsList';
 import Pagination from '../Pagination';
@@ -16,16 +16,16 @@ class Searching extends Component {
 			page: 1
 		};
 
-		this.updateItems = this.updateItems.bind(this);
+		this.updateList = this.updateList.bind(this);
 	}
 
 	componentDidMount() {
-		this.updateItems();
+		this.updateList();
 	}
 
-	updateItems(data = {}) {
+	updateList(data = {}) {
 		this.updateFilters(data);
-		this.props.replaceItems(this.state);
+		this.props.updateItems(this.state);
 	}
 
 	updateFilters(data = {}) {
@@ -44,7 +44,7 @@ class Searching extends Component {
 				<div className={'row searching--pagination-box'}>
 					<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>
 						<Pagination
-							onChange={(page) => this.updateItems({page})}
+							onChange={(page) => this.updateList({page})}
 						/>
 					</div>
 				</div>
@@ -54,7 +54,7 @@ class Searching extends Component {
 }
 
 Searching.propTypes = {
-	replaceItems: PropTypes.func, //redux
+	updateItems: PropTypes.func, //redux
 	items: PropTypes.object //redux
 };
 
@@ -65,6 +65,6 @@ const mapStateToProps = (state) => {
 	return {items};
 };
 
-const mapDispatchToProps = {replaceItems};
+const mapDispatchToProps = {updateItems};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Searching);
