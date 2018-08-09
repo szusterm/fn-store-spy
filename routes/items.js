@@ -16,9 +16,9 @@ router.get('/get', async (req, res) => {
 });
 
 router.get('/stats', async (req, res) => {
-	const stats = await item.getStats();
+	const {err, data} = await item.getStats();
 
-	res.json(stats);
+	res.json((err) ? {err} : {err, data});
 });
 
 module.exports = router;
