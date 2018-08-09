@@ -79,6 +79,13 @@ class Item {
 	async count() {
 		return await ItemModel.estimatedDocumentCount();
 	}
+
+	_getMaxPage() {
+		const {maxItemsPerPage} = clientConfig;
+		const itemsCount = this._getCount();
+
+		return Math.ceil(itemsCount/maxItemsPerPage);
+	}
 }
 
 module.exports = new Item();
