@@ -14,7 +14,18 @@ class Item {
 
 	async _execQuery() {
 		try {
-			const response = await this._findingQuery.exec();
+			const items = await this._findingQuery.exec();
+			let nextPageAvailable = false;
+
+			if (this._existsNextPage(items.length)) {
+				items.pop();
+				nextPageAvailable = true;
+			}
+
+			const response = {
+				items,
+				nextPageAvailable
+			};
 
 			return getObject(false, response);
 		}
@@ -70,10 +81,15 @@ class Item {
 		const firstItemOnPage = (maxItemsPerPage * fixedPage - maxItemsPerPage);
 
 		this._findingQuery
-			.limit(maxItemsPerPage)
+			.limit(maxItemsPerPage + 1)//Adding one to check, that exists next page
 			.skip(firstItemOnPage);
 
 		return this._getFilterFunctions();
+	}
+
+	_existsNextPage(itemsCount) {
+		const {maxItemsPerPage} = clientConfig;
+		return (itemsCount > maxItemsPerPage);
 	}
 }
 
