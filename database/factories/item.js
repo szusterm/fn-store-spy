@@ -77,10 +77,15 @@ class Item {
 	}
 
 	async getStats() {
-		const count = await this._getCount();
-		const pages = await this._getMaxPage();
+		try {
+			const count = await this._getCount();
+			const pages = await this._getMaxPage();
 
-		return {count, pages};
+			return getObject(false, {count, pages});
+		}
+		catch (error) {
+			return getObject(true, error);
+		}
 	}
 
 	async _getCount() {
