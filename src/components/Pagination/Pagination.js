@@ -73,7 +73,7 @@ Pagination.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const {nextPageAvailable} = state;
+	const {nextPageAvailable} = state.items;
 	return {nextPageAvailable};
 };
 
