@@ -75,29 +75,6 @@ class Item {
 
 		return this._getFilterFunctions();
 	}
-
-	async getStats() {
-		try {
-			const count = await this._getCount();
-			const pages = await this._getMaxPage();
-
-			return getObject(false, {count, pages});
-		}
-		catch (error) {
-			return getObject(true, error);
-		}
-	}
-
-	async _getCount() {
-		return await ItemModel.estimatedDocumentCount();
-	}
-
-	async _getMaxPage() {
-		const {maxItemsPerPage} = clientConfig;
-		const itemsCount = await this._getCount();
-
-		return Math.ceil(itemsCount/maxItemsPerPage);
-	}
 }
 
 module.exports = new Item();
