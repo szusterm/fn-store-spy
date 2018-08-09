@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 import './styles.scss';
 
@@ -54,6 +55,7 @@ class Pagination extends Component {
 					<div className={'col-6'}>
 						<button
 							className={'pagination--button pagination--button--next'}
+							disabled={!this.props.nextPageAvailable}
 							onClick={this.nextPage}
 						>
 							Next
@@ -66,7 +68,13 @@ class Pagination extends Component {
 }
 
 Pagination.propTypes = {
-	onChange: PropTypes.func
+	onChange: PropTypes.func,
+	nextPageAvailable: PropTypes.bool //redux
 };
 
-export default Pagination;
+const mapStateToProps = (state) => {
+	const {nextPageAvailable} = state;
+	return {nextPageAvailable};
+};
+
+export default connect(mapStateToProps, null)(Pagination);
