@@ -149,6 +149,34 @@ describe('Item Factory', () => {
 		it(returningFilters.description, () => returningFilters.test('_setPage'));
 	});
 
+	describe('getStats()', () => {
+		const count = 2137;
+		const pages = 29;
+
+		let mockGetCount;
+		let mockGetMaxPage;
+		beforeEach(() => {
+			mockGetCount = jest.spyOn(item, '_getCount');
+			mockGetMaxPage = jest.spyOn(item, '_getMaxPage');
+		});
+		afterEach(() => {
+			mockGetCount.mockRestore();
+			mockGetMaxPage.mockRestore();
+		});
+
+		it('returns object with items count', () => {
+			mockGetCount.mockReturnValueOnce(count);
+			const response = item.getStats();
+			expect(response.count).toBe(count);
+		});
+
+		it('returns object with maximum page', () => {
+			mockGetMaxPage.mockReturnValueOnce(pages);
+			const response = item.getStats();
+			expect(response.pages).toBe(pages);
+		});
+	});
+
 	describe('_getCount()', () => {
 		it('returns count of items in database', () => {
 			const items = 129;
