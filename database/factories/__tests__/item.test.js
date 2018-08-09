@@ -149,6 +149,18 @@ describe('Item Factory', () => {
 		it(returningFilters.description, () => returningFilters.test('_setPage'));
 	});
 
+	describe('_getCount()', () => {
+		it('returns count of items in database', () => {
+			const items = 129;
+
+			ItemModel.estimatedDocumentCount.mockReturnValueOnce(items);
+
+			const returnedCount = item._getCount();
+
+			expect(returnedCount).toBe(items);
+		});
+	});
+
 	describe('_getMaxPage()', () => {
 		let mockGetCount;
 		beforeEach(() => mockGetCount = jest.spyOn(item, '_getCount'));
