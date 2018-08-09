@@ -85,7 +85,7 @@ class Item {
 		const firstItemOnPage = (maxItemsPerPage * fixedPage - maxItemsPerPage);
 
 		this._findingQuery
-			.limit(maxItemsPerPage + 1)//Adding one to check, that exists next page
+			.limit(maxItemsPerPage + 1)//Adding one to check later, that exists next page
 			.skip(firstItemOnPage);
 
 		return this._getFilterFunctions();
