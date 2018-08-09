@@ -76,6 +76,13 @@ class Item {
 		return this._getFilterFunctions();
 	}
 
+	getStats() {
+		const count = this._getCount();
+		const pages = this._getMaxPage();
+
+		return {count, pages};
+	}
+
 	_getCount() {
 		return ItemModel.estimatedDocumentCount();
 	}
