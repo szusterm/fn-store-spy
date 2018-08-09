@@ -1,7 +1,13 @@
-const reducer = (state = [], action) => {
+const initialState = {
+	list: []
+};
+
+const reducer = (state = initialState, action) => {
 	switch(action.type) {
 		case 'REPLACE_ITEMS':
-			return [...action.items];
+			return Object.assign({}, state, {
+				list: action.items
+			});
 		default:
 			return state;
 	}
