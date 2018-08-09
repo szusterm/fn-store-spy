@@ -148,4 +148,20 @@ describe('Item Factory', () => {
 
 		it(returningFilters.description, () => returningFilters.test('_setPage'));
 	});
+
+	describe('_getMaxPage', () => {
+		let mockGetCount;
+		beforeEach(() => mockGetCount = jest.spyOn(item, '_getCount'));
+		afterEach(() => mockGetCount.mockRestore());
+
+		it('returns maximum page number', () => {
+			const {maxItemsPerPage} = clientConfig;
+			const maxPage = 100;
+			const itemsCount = maxItemsPerPage*(maxPage - 1) + 1;
+
+			mockGetCount.mockReturnValueOnce(itemsCount);
+			const returnedMaxPage = item._getMaxPage();
+			expect(returnedMaxPage).toBe(maxPage);
+		});
+	});
 });
