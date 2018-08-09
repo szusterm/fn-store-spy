@@ -76,20 +76,20 @@ class Item {
 		return this._getFilterFunctions();
 	}
 
-	getStats() {
-		const count = this._getCount();
-		const pages = this._getMaxPage();
+	async getStats() {
+		const count = await this._getCount();
+		const pages = await this._getMaxPage();
 
 		return {count, pages};
 	}
 
-	_getCount() {
-		return ItemModel.estimatedDocumentCount();
+	async _getCount() {
+		return await ItemModel.estimatedDocumentCount();
 	}
 
-	_getMaxPage() {
+	async _getMaxPage() {
 		const {maxItemsPerPage} = clientConfig;
-		const itemsCount = this._getCount();
+		const itemsCount = await this._getCount();
 
 		return Math.ceil(itemsCount/maxItemsPerPage);
 	}

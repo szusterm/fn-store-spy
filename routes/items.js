@@ -16,9 +16,9 @@ router.get('/get', async (req, res) => {
 });
 
 router.get('/count', async (req, res) => {
-	const count = await item.count();
+	const stats = await item.getStats();
 
-	res.json({count});
+	res.json(stats);
 });
 
 module.exports = router;
