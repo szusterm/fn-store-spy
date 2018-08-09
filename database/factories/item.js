@@ -76,8 +76,8 @@ class Item {
 		return this._getFilterFunctions();
 	}
 
-	async count() {
-		return await ItemModel.estimatedDocumentCount();
+	_getCount() {
+		return ItemModel.estimatedDocumentCount();
 	}
 
 	_getMaxPage() {
