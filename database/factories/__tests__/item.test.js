@@ -148,4 +148,24 @@ describe('Item Factory', () => {
 
 		it(returningFilters.description, () => returningFilters.test('_setPage'));
 	});
+
+	describe('_existsNextPage()', () => {
+		it('returns true if number of items is greater than max items per page', () => {
+			const {maxItemsPerPage} = clientConfig;
+
+			const existsForGreater = item._existsNextPage(maxItemsPerPage + 1);
+
+			expect(existsForGreater).toBe(true);
+		});
+
+		it('returns false if number of items is equal or lower than max items per page', () => {
+			const {maxItemsPerPage} = clientConfig;
+
+			const existsForEqual = item._existsNextPage(maxItemsPerPage);
+			const existsForLower = item._existsNextPage(maxItemsPerPage - 1);
+
+			expect(existsForEqual).toBe(false);
+			expect(existsForLower).toBe(false);
+		});
+	});
 });
