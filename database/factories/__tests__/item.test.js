@@ -126,12 +126,13 @@ describe('Item Factory', () => {
 	});
 
 	describe('_setPage()', () => {
-		it('limits getting items', () => {
+		it('limits getting items to one more than config value', () => {
+			//Adds this to check later, that exists next page
 			const {maxItemsPerPage} = clientConfig;
 
 			item._setPage();
 
-			expect(ItemModel.limit).toHaveBeenCalledWith(maxItemsPerPage);
+			expect(ItemModel.limit).toHaveBeenCalledWith(maxItemsPerPage + 1);
 		});
 
 		it('starts getting items from specific one', () => {
