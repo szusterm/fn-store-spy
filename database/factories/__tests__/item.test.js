@@ -39,22 +39,34 @@ describe('Item Factory', () => {
 	});
 
 	describe('_execQuery()', () => {
+		let mockExistsNextPage;
+		beforeEach(() => mockExistsNextPage = jest.spyOn(item, '_existsNextPage'));
+		afterEach(() => mockExistsNextPage.mockRestore());
+
 		it('execs a query to find matching items', async () => {
 			await item._execQuery();
 			expect(ItemModel.exec).toHaveBeenCalledTimes(1);
 		});
 
-		it('returns an object with occurrence of an error and response data', async () => {
-			const returnedText = 'me';
+		it('returns an object with occurrence of an error and items and stats or error details', async () => {
+			const {maxItemsPerPage} = clientConfig;
+
+			const returnedObject = {
+				items: ['items0', 'item1'],
+				nextPageAvailable: true,
+				maxItemsPerPage
+			};
 			const returnedError = 'error';
 
+			mockExistsNextPage.mockReturnValueOnce(returnedObject.nextPageAvailable);
+
 			ItemModel.exec
-				.mockReturnValueOnce(Promise.resolve(returnedText))
+				.mockReturnValueOnce(Promise.resolve(returnedObject.items))
 				.mockReturnValueOnce(Promise.reject(returnedError));
 
 
 			await item._execQuery();
-			expect(getResponseObject).toHaveBeenCalledWith(false, returnedText);
+			expect(getResponseObject).toHaveBeenCalledWith(false, returnedObject);
 
 			await item._execQuery();
 			expect(getResponseObject).toHaveBeenCalledWith(true, returnedError);
