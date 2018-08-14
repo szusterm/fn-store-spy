@@ -91,6 +91,14 @@ class Item {
 		return this._getFilterFunctions();
 	}
 
+	_getItemsWithoutExcess(items) {
+		if (this._existsNextPage(items.length)) {
+			items.pop();
+		}
+
+		return items;
+	}
+
 	_existsNextPage(itemsCount) {
 		const {maxItemsPerPage} = clientConfig;
 		return (itemsCount > maxItemsPerPage);
