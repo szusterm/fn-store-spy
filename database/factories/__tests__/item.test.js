@@ -42,8 +42,8 @@ describe('Item Factory', () => {
 		let mockExistsNextPage;
 		let mockGetItemsWithoutExcess;
 		beforeEach(() => {
-			mockExistsNextPage = jest.spyOn(item, '_existsNextPage')
-			mockGetItemsWithoutExcess = jest.spyOn(item, '_getItemsWithoutExcess')
+			mockExistsNextPage = jest.spyOn(item, '_existsNextPage');
+			mockGetItemsWithoutExcess = jest.spyOn(item, '_getItemsWithoutExcess');
 		});
 		afterEach(() => {
 			mockExistsNextPage.mockRestore();
