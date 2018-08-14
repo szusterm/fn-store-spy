@@ -55,7 +55,19 @@ describe('Item Factory', () => {
 			expect(ItemModel.exec).toHaveBeenCalledTimes(1);
 		});
 
-		it('returns an object with occurrence of an error and items and stats or error details', async () => {
+		it('returns occurrence of an error and if exists, returns error details', async () => {
+			const {maxItemsPerPage} = clientConfig;
+
+			const returnedError = 'error';
+
+			ItemModel.exec
+				.mockReturnValueOnce(Promise.reject(returnedError));
+
+			await item._execQuery();
+			expect(getResponseObject).toHaveBeenCalledWith(true, returnedError);
+		});
+
+		it('if error does not exist, returns items and stats', async () => {
 			const {maxItemsPerPage} = clientConfig;
 
 			const returnedObject = {
@@ -63,20 +75,16 @@ describe('Item Factory', () => {
 				nextPageAvailable: true,
 				maxItemsPerPage
 			};
-			const returnedError = 'error';
 
 			mockExistsNextPage.mockReturnValueOnce(returnedObject.nextPageAvailable);
+			mockGetItemsWithoutExcess.mockReturnValueOnce(returnedObject.items);
 
 			ItemModel.exec
-				.mockReturnValueOnce(Promise.resolve(returnedObject.items))
-				.mockReturnValueOnce(Promise.reject(returnedError));
+				.mockReturnValueOnce(Promise.resolve(returnedObject.items));
 
 
 			await item._execQuery();
 			expect(getResponseObject).toHaveBeenCalledWith(false, returnedObject);
-
-			await item._execQuery();
-			expect(getResponseObject).toHaveBeenCalledWith(true, returnedError);
 		});
 	});
 
