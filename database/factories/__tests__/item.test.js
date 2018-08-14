@@ -40,8 +40,15 @@ describe('Item Factory', () => {
 
 	describe('_execQuery()', () => {
 		let mockExistsNextPage;
-		beforeEach(() => mockExistsNextPage = jest.spyOn(item, '_existsNextPage'));
-		afterEach(() => mockExistsNextPage.mockRestore());
+		let mockGetItemsWithoutExcess;
+		beforeEach(() => {
+			mockExistsNextPage = jest.spyOn(item, '_existsNextPage')
+			mockGetItemsWithoutExcess = jest.spyOn(item, '_getItemsWithoutExcess')
+		});
+		afterEach(() => {
+			mockExistsNextPage.mockRestore();
+			mockGetItemsWithoutExcess.mockRestore();
+		});
 
 		it('execs a query to find matching items', async () => {
 			await item._execQuery();
