@@ -162,6 +162,27 @@ describe('Item Factory', () => {
 		it(returningFilters.description, () => returningFilters.test('_setPage'));
 	});
 
+	describe('_getItemsWithoutExcess()', () => {
+		let mockExistsNextPage;
+		beforeEach(() => mockExistsNextPage = jest.spyOn(item, '_existsNextPage'));
+		afterEach(() => mockExistsNextPage.mockRestore());
+
+		it('returns items array without excess, if exists', () => {
+			const inputItems = ['item1', 'item2', 'item3'];
+			const itemsWithoutExcess = ['item1', 'item2'];
+
+			mockExistsNextPage
+				.mockReturnValueOnce(true)
+				.mockReturnValueOnce(false);
+
+			const returnedItemsWithRemovedExcess = item._getItemsWithoutExcess(inputItems);
+			expect(returnedItemsWithRemovedExcess).toEqual(itemsWithoutExcess);
+
+			const returnedUnchangedItems = item._getItemsWithoutExcess(inputItems);
+			expect(returnedUnchangedItems).toEqual(inputItems);
+		});
+	});
+
 	describe('_existsNextPage()', () => {
 		it('returns true if number of items is greater than max items per page', () => {
 			const {maxItemsPerPage} = clientConfig;
