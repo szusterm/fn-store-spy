@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import './styles.scss';
 
-class Pagination extends Component {
+export class Pagination extends Component {
 	constructor() {
 		super();
 
