@@ -1,6 +1,5 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import configureStore from 'redux-mock-store';
 
 import Pagination from '../Pagination';
 
@@ -13,10 +12,7 @@ const setup = (propOverrides, stateOverrides) => {
 			nextPageAvailable: true
 		}, stateOverrides);
 
-		const mockStore = configureStore();
-		const store = mockStore(state);
-
-		const wrapper = shallow(<Pagination store={store} {...props}/>);
+		const wrapper = shallow(<Pagination {...state} {...props}/>);
 
 		return {props, state, wrapper};
 };
