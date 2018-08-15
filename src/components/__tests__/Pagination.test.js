@@ -1,16 +1,23 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import configureStore from 'redux-mock-store';
 
 import Pagination from '../Pagination';
 
-const setup = (propOverrides) => {
+const setup = (propOverrides, stateOverrides) => {
 		const props = Object.assign({
 			onChange: () => true
 		}, propOverrides);
 
-		const wrapper = shallow(<Pagination {...props}/>);
+		const state = Object.assign({
+			onChange: () => true
+		}, stateOverrides);
 
-		return {props, wrapper};
+		const store = configureStore(state);
+
+		const wrapper = shallow(<Pagination store={store} {...props}/>);
+
+		return {props, state, wrapper};
 };
 
 describe('Pagination Component', () => {
