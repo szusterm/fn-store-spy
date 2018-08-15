@@ -10,10 +10,11 @@ const setup = (propOverrides, stateOverrides) => {
 		}, propOverrides);
 
 		const state = Object.assign({
-			onChange: () => true
+			nextPageAvailable: true
 		}, stateOverrides);
 
-		const store = configureStore(state);
+		const mockStore = configureStore();
+		const store = mockStore(state);
 
 		const wrapper = shallow(<Pagination store={store} {...props}/>);
 
