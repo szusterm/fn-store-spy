@@ -24,3 +24,17 @@ export const updateItems = () => async (dispatch, getState) => {
 
 	return !responseData.err;
 };
+
+export const setPageFilter = (page) => {
+	return {
+		type: 'SET_PAGE',
+		page
+	};
+};
+
+export const setNameFilter = (name) => {
+	return {
+		type: 'SET_NAME',
+		name
+	};
+};
