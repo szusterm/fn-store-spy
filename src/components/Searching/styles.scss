@@ -1,16 +1,18 @@
 .searching {
-	&--items-list-box, &--pagination-box {
+	margin-top: 200px;
+	margin-bottom: 300px;
+
+	> * {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 	}
 
 	&--items-list-box {
-		margin-top: 200px;
+		margin-top: 70px;
 	}
 
 	&--pagination-box {
-		margin-top: 60px;
-		margin-bottom: 300px;
+		margin-top: 70px;
 	}
 }
