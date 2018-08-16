@@ -15,6 +15,24 @@ const reducer = (state = initialState, action) => {
 				items: action.items
 			});
 
+		case 'SET_PAGE':
+			return {
+				...state,
+				filters: {
+					...state.filters,
+					page: action.page
+				}
+			};
+
+		case 'SET_NAME':
+			return {
+				...state,
+				filters: {
+					...state.filters,
+					name: action.name
+				}
+			};
+
 		case 'SET_NEXT_PAGE_AVAILABILITY':
 			return Object.assign({}, state, {
 				nextPageAvailable: action.data
