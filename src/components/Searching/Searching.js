@@ -10,28 +10,8 @@ import Pagination from '../Pagination';
 import './styles.scss';
 
 export class Searching extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			page: 1
-		};
-
-		this.updateList = this.updateList.bind(this);
-	}
-
 	componentDidMount() {
-		this.updateList();
-	}
-
-	updateList(data = {}) {
-		this.updateFilters(data);
-		this.props.updateItems(this.state);
-	}
-
-	updateFilters(data = {}) {
-		const newState = Object.assign(this.state, data);
-		this.setState(newState);
+		this.props.updateItems();
 	}
 
 	render() {
@@ -50,7 +30,7 @@ export class Searching extends Component {
 				<div className={'row searching--pagination-box'}>
 					<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>
 						<Pagination
-							onChange={(page) => this.updateList({page})}
+							onChange={this.props.updateItems}
 						/>
 					</div>
 				</div>
