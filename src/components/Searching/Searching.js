@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {updateItems} from '../../redux/actions';
 
+import NameSearchBar from '../NameSearchBar';
 import ItemsList from '../ItemsList';
 import Pagination from '../Pagination';
 
@@ -36,6 +37,11 @@ export class Searching extends Component {
 	render() {
 		return (
 			<div className={'container searching'}>
+				<div className={'row searching--name-search-bar-box'}>
+					<div className={'col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8'}>
+						<NameSearchBar/>
+					</div>
+				</div>
 				<div className={'row searching--items-list-box'}>
 					<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
 						<ItemsList items={this.props.items.list}/>
