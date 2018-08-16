@@ -1,7 +1,10 @@
 import {fetchItems} from '../api';
 
-export const updateItems = (data) => async (dispatch) => {
-	const {data: responseData} = await fetchItems(data);
+export const updateItems = () => async (dispatch, getState) => {
+	const requestData = getState().searching.filters;
+
+	const {data: responseData} = await fetchItems(requestData);
+
 	if (!responseData.err) {
 		dispatch({
 			type: 'REPLACE_ITEMS',
