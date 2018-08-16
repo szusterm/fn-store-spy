@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Pagination
+    nextPageAvailable={true}
     onChange={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -38,6 +39,7 @@ ShallowWrapper {
         >
           <button
             className="pagination--button pagination--button--next"
+            disabled={false}
             onClick={[Function]}
           >
             Next
@@ -69,6 +71,7 @@ ShallowWrapper {
           >
             <button
               className="pagination--button pagination--button--next"
+              disabled={false}
               onClick={[Function]}
             >
               Next
@@ -117,6 +120,7 @@ ShallowWrapper {
           "props": Object {
             "children": <button
               className="pagination--button pagination--button--next"
+              disabled={false}
               onClick={[Function]}
             >
               Next
@@ -131,6 +135,7 @@ ShallowWrapper {
             "props": Object {
               "children": "Next",
               "className": "pagination--button pagination--button--next",
+              "disabled": false,
               "onClick": [Function],
             },
             "ref": null,
@@ -169,6 +174,7 @@ ShallowWrapper {
           >
             <button
               className="pagination--button pagination--button--next"
+              disabled={false}
               onClick={[Function]}
             >
               Next
@@ -200,6 +206,7 @@ ShallowWrapper {
             >
               <button
                 className="pagination--button pagination--button--next"
+                disabled={false}
                 onClick={[Function]}
               >
                 Next
@@ -248,6 +255,7 @@ ShallowWrapper {
             "props": Object {
               "children": <button
                 className="pagination--button pagination--button--next"
+                disabled={false}
                 onClick={[Function]}
               >
                 Next
@@ -262,6 +270,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "Next",
                 "className": "pagination--button pagination--button--next",
+                "disabled": false,
                 "onClick": [Function],
               },
               "ref": null,
