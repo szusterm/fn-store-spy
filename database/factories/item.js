@@ -17,8 +17,8 @@ class Item {
 			const {maxItemsPerPage} = clientConfig;
 
 			const items = await this._findingQuery.exec();
-			const nextPageAvailable = this._existsNextPage(items.length);
 			const itemsWithoutExcess = this._getItemsWithoutExcess(items);
+			const nextPageAvailable = this._existsNextPage(items.length);
 
 			const response = {
 				items: itemsWithoutExcess,
@@ -88,11 +88,13 @@ class Item {
 	}
 
 	_getItemsWithoutExcess(items) {
-		if (this._existsNextPage(items.length)) {
-			items.pop();
+		const fixedItems = [...items];
+
+		if (this._existsNextPage(fixedItems.length)) {
+			fixedItems.pop();
 		}
 
-		return items;
+		return fixedItems;
 	}
 
 	_existsNextPage(itemsCount) {
