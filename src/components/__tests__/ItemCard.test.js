@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import ItemCard from '../ItemCard';
+import {ItemCard} from '../ItemCard/ItemCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

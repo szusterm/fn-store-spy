@@ -8,7 +8,7 @@ import Pagination from '../Pagination';
 
 import './styles.scss';
 
-class Searching extends Component {
+export class Searching extends Component {
 	constructor() {
 		super();
 

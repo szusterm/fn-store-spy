@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-class ItemCard extends Component {
+export class ItemCard extends Component {
 	render() {
 		const {name, price, rarity, type, imageSrc} = this.props;
 

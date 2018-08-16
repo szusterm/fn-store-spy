@@ -5,7 +5,7 @@ import ItemCard from '../ItemCard';
 
 import './styles.scss';
 
-class ItemsList extends Component {
+export class ItemsList extends Component {
 	render() {
 		const {items} = this.props;
 
