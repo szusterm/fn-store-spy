@@ -10,12 +10,12 @@ export const updateItems = (data) => async (dispatch) => {
 
 		dispatch({
 			type: 'SET_NEXT_PAGE_AVAILABILITY',
-			data: responseData.data.nextPageAvailable
+			nextPageAvailable: responseData.data.nextPageAvailable
 		});
 
 		dispatch({
 			type: 'SET_MAX_ITEMS_PER_PAGE',
-			data: responseData.data.maxItemsPerPage
+			maxItemsPerPage: responseData.data.maxItemsPerPage
 		});
 	}
 

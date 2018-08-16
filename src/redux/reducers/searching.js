@@ -37,13 +37,13 @@ const reducer = (state = initialState, action) => {
 		case 'SET_NEXT_PAGE_AVAILABILITY':
 			return {
 				...state,
-				nextPageAvailable: action.data
+				nextPageAvailable: action.nextPageAvailable
 			};
 
 		case 'SET_MAX_ITEMS_PER_PAGE':
 			return {
 				...state,
-				maxItemsPerPage: action.data
+				maxItemsPerPage: action.maxItemsPerPage
 			};
 
 		default:
