@@ -1,5 +1,5 @@
 const initialState = {
-	list: [],
+	items: [],
 	nextPageAvailable: false,
 	maxItemsPerPage: 0
 };
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
 	switch(action.type) {
 		case 'REPLACE_ITEMS':
 			return Object.assign({}, state, {
-				list: action.items
+				items: action.items
 			});
 
 		case 'SET_NEXT_PAGE_AVAILABILITY':

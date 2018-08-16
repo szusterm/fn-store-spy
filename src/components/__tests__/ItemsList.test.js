@@ -26,7 +26,7 @@ describe('ItemsList Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('shows list of ItemCards from prop', () => {
+	it('shows items of ItemCards from prop', () => {
 		const {wrapper, props} = setup({
 			items: [{}, {}, {}]
 		});
