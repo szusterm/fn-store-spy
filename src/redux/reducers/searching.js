@@ -1,5 +1,9 @@
 const initialState = {
 	items: [],
+	filters: {
+		page: 1,
+		name: ''
+	},
 	nextPageAvailable: false,
 	maxItemsPerPage: 0
 };
