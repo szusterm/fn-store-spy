@@ -6,7 +6,12 @@ import './styles.scss';
 export class NameSearchBar extends Component {
 	render() {
 		return (
-			<input className={'name-search-bar'}/>
+			<div className={'name-search-bar'}>
+				<input
+					className={'name-search-bar--input'}
+					placeholder={'Search by name'}
+				/>
+			</div>
 		);
 	}
 }

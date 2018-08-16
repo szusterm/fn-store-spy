@@ -1,0 +1,22 @@
+.name-search-bar {
+	$inputHeight: 50px;
+	$normal-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	$hover-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	width: 100%;
+	padding: 0 15px;
+
+	&--input {
+		width: 100%;
+		height: $inputHeight;
+		padding: 0 $inputHeight/2;
+
+		border-width: 0;
+		border-radius: $inputHeight/2;
+		box-shadow: $normal-shadow;
+
+		&:hover, &:focus {
+			box-shadow: $hover-shadow;
+		}
+	}
+}
