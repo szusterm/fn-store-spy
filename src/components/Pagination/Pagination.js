@@ -2,40 +2,30 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {setPageFilter} from '../../redux/actions';
+
 import './styles.scss';
 
 export class Pagination extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			page: 1
-		};
-
 		this.previousPage = this.previousPage.bind(this);
 		this.nextPage = this.nextPage.bind(this);
 	}
 
-	updatePage(newPage = 1) {
-		const newState = this.state;
-		newState.page = newPage;
-		this.setState(newState);
-
-		this.props.onChange(newState.page);
-	}
-
 	nextPage() {
-		const {page} = this.state;
+		const {page} = this.props;
 		const newPage = page + 1;
-		this.updatePage(newPage);
+		this.props.setPageFilter(newPage);
 	}
 
 	previousPage() {
-		const {page} = this.state;
+		const {page} = this.props;
 
 		if (page > 1) {
 			const newPage = page - 1;
-			this.updatePage(newPage);
+			this.props.setPageFilter(newPage);
 		}
 	}
 
@@ -46,7 +36,7 @@ export class Pagination extends Component {
 					<div className={'col-6'}>
 						<button
 							className={'pagination--button pagination--button--previous'}
-							disabled={(this.state.page <= 1)}
+							disabled={(this.props.page <= 1)}
 							onClick={this.previousPage}
 						>
 							Previous
@@ -69,12 +59,18 @@ export class Pagination extends Component {
 
 Pagination.propTypes = {
 	onChange: PropTypes.func,
+	setPageFilter: PropTypes.func, //redux
+	page: PropTypes.number, //redux
 	nextPageAvailable: PropTypes.bool //redux
 };
 
 const mapStateToProps = (state) => {
 	const {nextPageAvailable} = state.searching;
-	return {nextPageAvailable};
+	const {page} = state.searching.filters;
+
+	return {nextPageAvailable, page};
 };
 
-export default connect(mapStateToProps, null)(Pagination);
+const mapDispatchToProps = {setPageFilter};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pagination);
