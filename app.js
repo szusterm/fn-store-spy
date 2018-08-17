@@ -7,6 +7,7 @@ require('./database/connect')();
 const spy = require('./controllers/spy');
 setTimeout(() => spy.run(), 3000);
 
+const indexRouter = require('./routes/index');
 const orderRouter = require('./routes/order');
 const itemsRouter = require('./routes/items');
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 
+app.use('/', indexRouter);
 app.use('/order', orderRouter);
 app.use('/items', itemsRouter);
 
