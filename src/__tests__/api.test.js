@@ -32,3 +32,15 @@ describe('fetchItems()', () => {
 		expect(axios).toHaveBeenCalledWith(dataCalledWithAxios);
 	});
 });
+
+describe('fetchConfig()', () => {
+	it('gets items from server', async () => {
+		const config = {length: 5, items: 10};
+
+		axios.mockReturnValueOnce(config);
+
+		const response = await api.fetchConfig();
+
+		expect(response).toEqual(config);
+	});
+});
