@@ -5,6 +5,10 @@ const clientConfig = require('../../../config/client');
 
 jest.mock('../../models/item.model');
 jest.mock('../../../helpers/getResponseObject');
+jest.mock('../../../config/client', () => ({
+	maxItemsPerPage: 12,
+	minNameFilterLength: 3
+}));
 
 let item;
 let getFilterFunctions;
