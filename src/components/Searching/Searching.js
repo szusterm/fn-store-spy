@@ -19,7 +19,9 @@ export class Searching extends Component {
 			<div className={'container searching'}>
 				<div className={'row searching--name-search-bar-box'}>
 					<div className={'col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8'}>
-						<NameSearchBar/>
+						<NameSearchBar
+							onChange={this.props.updateItems}
+						/>
 					</div>
 				</div>
 				<div className={'row searching--items-list-box'}>
