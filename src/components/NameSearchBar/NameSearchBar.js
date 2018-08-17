@@ -10,26 +10,11 @@ export class NameSearchBar extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			name: ''
-		};
-
 		this.updateStore = this.updateStore.bind(this);
-	}
-
-	updateLocalName(name) {
-		const newState = {
-			...this.state,
-			name
-		};
-
-		this.setState(newState);
 	}
 
 	updateStore(event) {
 		const {value: name} = event.target;
-
-		this.updateLocalName(name);
 
 		if (name.length >= 3) {
 			this.props.setNameFilter(name);
@@ -43,7 +28,6 @@ export class NameSearchBar extends Component {
 				<input
 					className={'name-search-bar--input'}
 					placeholder={'Search by name'}
-					value={this.state.name}
 					onChange={this.updateStore}
 				/>
 			</div>
