@@ -55,7 +55,7 @@ class Item {
 		const {minNameFilterLength} = clientConfig;
 
 		if (name && name.length >= minNameFilterLength) {
-			const nameContaining = new RegExp(`^.*${name}.*$`);
+			const nameContaining = this._getNameRegExp(name);
 			this._findingQuery.where('name').equals(nameContaining);
 		}
 		return this._getFilterFunctions();
@@ -102,6 +102,20 @@ class Item {
 	_existsNextPage(itemsCount) {
 		const {maxItemsPerPage} = clientConfig;
 		return (itemsCount > maxItemsPerPage);
+	}
+
+	_getNameRegExp(name = '') {
+		let nameLowerAndUpperCase = '';
+
+		for(let charId = 0; charId < name.length; charId++) {
+			const char = name.charAt(charId);
+			const charLowerCase = char.toLowerCase();
+			const charUpperCase = char.toUpperCase();
+
+			nameLowerAndUpperCase += `[${charLowerCase}${charUpperCase}]`;
+		}
+
+		return new RegExp(`^.*(${nameLowerAndUpperCase}).*$`);
 	}
 }
 
