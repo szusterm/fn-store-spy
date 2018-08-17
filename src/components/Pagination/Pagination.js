@@ -18,6 +18,8 @@ export class Pagination extends Component {
 		const {page} = this.props;
 		const newPage = page + 1;
 		this.props.setPageFilter(newPage);
+
+		this.props.onChange();
 	}
 
 	previousPage() {
@@ -27,6 +29,8 @@ export class Pagination extends Component {
 			const newPage = page - 1;
 			this.props.setPageFilter(newPage);
 		}
+
+		this.props.onChange();
 	}
 
 	render() {
