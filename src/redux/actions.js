@@ -1,4 +1,4 @@
-import {fetchItems} from '../api';
+import {fetchItems, fetchConfig} from '../api';
 
 export const updateItems = () => async (dispatch, getState) => {
 	const requestData = getState().searching.filters;
@@ -37,4 +37,13 @@ export const setNameFilter = (name) => {
 		type: 'SET_NAME',
 		name
 	};
+};
+
+export const setConfig = () => async (dispatch) => {
+	const config = await fetchConfig();
+
+	dispatch({
+		type: 'SET_CONFIG',
+		config
+	});
 };
