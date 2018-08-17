@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {updateItems} from '../../redux/actions';
+
+import {updateItems, setPageFilter} from '../../redux/actions';
 
 import NameSearchBar from '../NameSearchBar';
 import ItemsList from '../ItemsList';
@@ -10,8 +11,23 @@ import Pagination from '../Pagination';
 import './styles.scss';
 
 export class Searching extends Component {
+	constructor() {
+		super();
+
+		this.updateItemsWithPageReset = this.updateItemsWithPageReset.bind(this);
+	}
+
 	componentDidMount() {
+		this.updateItemsWithPageReset();
+	}
+
+	updateItemsWithPageReset() {
+		this.resetPage();
 		this.props.updateItems();
+	}
+
+	resetPage() {
+		this.props.setPageFilter(1);
 	}
 
 	render() {
@@ -20,7 +36,7 @@ export class Searching extends Component {
 				<div className={'row searching--name-search-bar-box'}>
 					<div className={'col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8'}>
 						<NameSearchBar
-							onChange={this.props.updateItems}
+							onChange={this.updateItemsWithPageReset}
 						/>
 					</div>
 				</div>
@@ -45,6 +61,7 @@ export class Searching extends Component {
 
 Searching.propTypes = {
 	updateItems: PropTypes.func, //redux
+	setPageFilter: PropTypes.func, //redux
 	searching: PropTypes.object //redux
 };
 
@@ -54,6 +71,6 @@ const mapStateToProps = (state) => {
 	return {searching};
 };
 
-const mapDispatchToProps = {updateItems};
+const mapDispatchToProps = {updateItems, setPageFilter};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Searching);
