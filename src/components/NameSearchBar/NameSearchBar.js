@@ -16,14 +16,9 @@ export class NameSearchBar extends Component {
 	updateStore(event) {
 		const {value: name} = event.target;
 
-		if (name.length >= 3) {
-			this.props.setNameFilter(name);
-			this.props.onChange(name);
-		}
-		else {
-			this.props.setNameFilter('');
-			this.props.onChange(name);
-		}
+		const nameToSave = (name.length >= 3) ? name : '';
+		this.props.setNameFilter(nameToSave);
+		this.props.onChange(nameToSave);
 	}
 
 	render() {
