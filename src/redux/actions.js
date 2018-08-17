@@ -15,11 +15,6 @@ export const updateItems = () => async (dispatch, getState) => {
 			type: 'SET_NEXT_PAGE_AVAILABILITY',
 			nextPageAvailable: responseData.data.nextPageAvailable
 		});
-
-		dispatch({
-			type: 'SET_MAX_ITEMS_PER_PAGE',
-			maxItemsPerPage: responseData.data.maxItemsPerPage
-		});
 	}
 
 	return !responseData.err;

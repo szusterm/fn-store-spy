@@ -4,8 +4,7 @@ const initialState = {
 		page: 1,
 		name: ''
 	},
-	nextPageAvailable: false,
-	maxItemsPerPage: 0
+	nextPageAvailable: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -38,12 +37,6 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				nextPageAvailable: action.nextPageAvailable
-			};
-
-		case 'SET_MAX_ITEMS_PER_PAGE':
-			return {
-				...state,
-				maxItemsPerPage: action.maxItemsPerPage
 			};
 
 		default:
