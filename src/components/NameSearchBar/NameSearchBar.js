@@ -15,8 +15,9 @@ export class NameSearchBar extends Component {
 
 	updateStore(event) {
 		const {value: name} = event.target;
+		const {minNameFilterLength} = this.props;
 
-		const nameToSave = (name.length >= 3) ? name : '';
+		const nameToSave = (name.length >= minNameFilterLength) ? name : '';
 		this.props.setNameFilter(nameToSave);
 		this.props.onChange(nameToSave);
 	}
@@ -36,13 +37,15 @@ export class NameSearchBar extends Component {
 
 NameSearchBar.propTypes = {
 	onChange: PropTypes.func,
+	minNameFilterLength: PropTypes.number, //redux
 	name: PropTypes.string, //redux
 	setNameFilter: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
 	const {name} = state.searching.filters;
-	return {name};
+	const {minNameFilterLength} = state.config;
+	return {name, minNameFilterLength};
 };
 
 const mapDispatchToProps = {setNameFilter};
