@@ -123,6 +123,27 @@ describe('Item Factory', () => {
 			expect(ItemModel.equals).toHaveBeenCalledWith(nameRegExp);
 		});
 
+		it('adds not a name filter if length is too short', () => {
+			const {minNameFilterLength} = clientConfig;
+
+			const shortName = 'An';
+			let normalName;
+			let longerName;
+
+			for (let i = 0; i <= minNameFilterLength; i++) {
+				normalName += 'a';
+			}
+			for (let i = 0; i <= minNameFilterLength + 2; i++) {
+				longerName += 'a';
+			}
+
+			item._filterByNameContainingText(shortName);
+			item._filterByNameContainingText(normalName);
+			item._filterByNameContainingText(longerName);
+
+			expect(ItemModel.where).toHaveBeenCalledTimes(2);
+		});
+
 		it(returningFilters.description, () => returningFilters.test('_filterByNameContainingText'));
 	});
 
