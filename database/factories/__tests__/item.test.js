@@ -240,4 +240,26 @@ describe('Item Factory', () => {
 			expect(existsForLower).toBe(false);
 		});
 	});
+
+	describe('_getNameRegExp()', () => {
+		it('returns regular expression to find name containing string', () => {
+			const name = 'Super Cans';
+
+			const inputs = [
+				{text: 'er Can', contains: true},
+				{text: 'UPER C', contains: true},
+				{text: 'suPe', contains: true},
+				{text: 'super cans', contains: true},
+				{text: 'Super    Cans', contains: false}
+			];
+
+			for (const input of inputs) {
+				const {text, contains} = input;
+
+				const regExp = item._getNameRegExp(text);
+
+				expect(regExp.test(name)).toBe(contains);
+			}
+		});
+	});
 });
