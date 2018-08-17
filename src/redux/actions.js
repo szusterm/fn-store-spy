@@ -40,7 +40,7 @@ export const setNameFilter = (name) => {
 };
 
 export const setConfig = () => async (dispatch) => {
-	const config = await fetchConfig();
+	const {data: config} = await fetchConfig();
 
 	dispatch({
 		type: 'SET_CONFIG',
