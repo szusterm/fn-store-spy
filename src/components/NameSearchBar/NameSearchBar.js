@@ -28,6 +28,7 @@ export class NameSearchBar extends Component {
 				<input
 					className={'name-search-bar--input'}
 					placeholder={'Search by name'}
+					maxLength={this.props.maxNameFilterLength}
 					onChange={this.updateStore}
 				/>
 			</div>
@@ -37,6 +38,7 @@ export class NameSearchBar extends Component {
 
 NameSearchBar.propTypes = {
 	onChange: PropTypes.func,
+	maxNameFilterLength: PropTypes.number, //redux
 	minNameFilterLength: PropTypes.number, //redux
 	name: PropTypes.string, //redux
 	setNameFilter: PropTypes.func //redux
@@ -44,8 +46,13 @@ NameSearchBar.propTypes = {
 
 const mapStateToProps = (state) => {
 	const {name} = state.searching.filters;
-	const {minNameFilterLength} = state.config;
-	return {name, minNameFilterLength};
+	const {minNameFilterLength, maxNameFilterLength} = state.config;
+
+	return {
+		name,
+		minNameFilterLength,
+		maxNameFilterLength
+	};
 };
 
 const mapDispatchToProps = {setNameFilter};

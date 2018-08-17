@@ -1,4 +1,5 @@
 {
 	"maxItemsPerPage": 12,
-	"minNameFilterLength": 3
+	"minNameFilterLength": 3,
+	"maxNameFilterLength": 26
 }

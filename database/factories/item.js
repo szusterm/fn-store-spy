@@ -49,12 +49,17 @@ class Item {
 	}
 
 	_filterByNameContainingText(name = null) {
-		const {minNameFilterLength} = clientConfig;
+		const {minNameFilterLength, maxNameFilterLength} = clientConfig;
 
-		if (name && name.length >= minNameFilterLength) {
+		if (
+			name &&
+			name.length >= minNameFilterLength &&
+			name.length <= maxNameFilterLength
+		) {
 			const nameContaining = this._getNameRegExp(name);
 			this._findingQuery.where('name').equals(nameContaining);
 		}
+
 		return this._getFilterFunctions();
 	}
 
@@ -104,7 +109,7 @@ class Item {
 	_getNameRegExp(name = '') {
 		let nameLowerAndUpperCase = '';
 
-		for(let charId = 0; charId < name.length; charId++) {
+		for (let charId = 0; charId < name.length; charId++) {
 			const char = name.charAt(charId);
 			const charLowerCase = char.toLowerCase();
 			const charUpperCase = char.toUpperCase();
