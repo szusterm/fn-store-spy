@@ -52,7 +52,9 @@ class Item {
 	}
 
 	_filterByNameContainingText(name = null) {
-		if (name) {
+		const {minNameFilterLength} = clientConfig;
+
+		if (name && name.length >= minNameFilterLength) {
 			const nameContaining = new RegExp(`^.*${name}.*$`);
 			this._findingQuery.where('name').equals(nameContaining);
 		}
