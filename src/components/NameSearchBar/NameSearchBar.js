@@ -20,6 +20,10 @@ export class NameSearchBar extends Component {
 			this.props.setNameFilter(name);
 			this.props.onChange(name);
 		}
+		else {
+			this.props.setNameFilter('');
+			this.props.onChange(name);
+		}
 	}
 
 	render() {
