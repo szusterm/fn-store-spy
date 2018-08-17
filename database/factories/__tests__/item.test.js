@@ -60,8 +60,6 @@ describe('Item Factory', () => {
 		});
 
 		it('returns occurrence of an error and if exists, returns error details', async () => {
-			const {maxItemsPerPage} = clientConfig;
-
 			const returnedError = 'error';
 
 			ItemModel.exec
