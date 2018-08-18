@@ -119,7 +119,9 @@ describe('Item Factory', () => {
 
 		it('adds a name filter with containing string', () => {
 			const name = 'Ann';
-			const nameRegExp = new RegExp(`^.*${name}.*$`);
+			const nameRegExp = 'example name regular expression';
+
+			mockGetNameRegExp.mockReturnValueOnce(nameRegExp);
 
 			item._filterByNameContainingText(name);
 
