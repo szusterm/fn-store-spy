@@ -70,12 +70,9 @@ describe('Item Factory', () => {
 		});
 
 		it('if error does not exist, returns items and stats', async () => {
-			const {maxItemsPerPage} = clientConfig;
-
 			const returnedObject = {
 				items: ['items0', 'item1'],
-				nextPageAvailable: true,
-				maxItemsPerPage
+				nextPageAvailable: true
 			};
 
 			mockExistsNextPage.mockReturnValueOnce(returnedObject.nextPageAvailable);
