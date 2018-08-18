@@ -113,6 +113,10 @@ describe('Item Factory', () => {
 	});
 
 	describe('_filterByNameContainingText()', () => {
+		let mockGetNameRegExp;
+		beforeEach(() => mockGetNameRegExp = jest.spyOn(item, '_getNameRegExp'));
+		afterEach(() => mockGetNameRegExp.mockRestore());
+
 		it('adds a name filter with containing string', () => {
 			const name = 'Ann';
 			const nameRegExp = new RegExp(`^.*${name}.*$`);
