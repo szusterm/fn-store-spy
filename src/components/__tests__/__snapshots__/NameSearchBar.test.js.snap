@@ -4,7 +4,13 @@ exports[`NameSearchBar Component renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <NameSearchBar />,
+  Symbol(enzyme.__unrendered__): <NameSearchBar
+    maxNameFilterLength={26}
+    minNameFilterLength={3}
+    name=""
+    onChange={[Function]}
+    setNameFilter={[Function]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -19,6 +25,7 @@ ShallowWrapper {
     "props": Object {
       "children": <input
         className="name-search-bar--input"
+        maxLength={26}
         onChange={[Function]}
         placeholder="Search by name"
       />,
@@ -31,7 +38,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "className": "name-search-bar--input",
-        "maxLength": undefined,
+        "maxLength": 26,
         "onChange": [Function],
         "placeholder": "Search by name",
       },
@@ -49,6 +56,7 @@ ShallowWrapper {
       "props": Object {
         "children": <input
           className="name-search-bar--input"
+          maxLength={26}
           onChange={[Function]}
           placeholder="Search by name"
         />,
@@ -61,7 +69,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "className": "name-search-bar--input",
-          "maxLength": undefined,
+          "maxLength": 26,
           "onChange": [Function],
           "placeholder": "Search by name",
         },
