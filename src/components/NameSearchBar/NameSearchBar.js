@@ -19,7 +19,7 @@ export class NameSearchBar extends Component {
 
 		const nameToSave = (name.length >= minNameFilterLength) ? name : '';
 		this.props.setNameFilter(nameToSave);
-		this.props.onChange(nameToSave);
+		this.props.onChange();
 	}
 
 	render() {
