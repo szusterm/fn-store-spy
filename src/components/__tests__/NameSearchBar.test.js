@@ -67,4 +67,14 @@ describe('NameSearchBar Component', () => {
 
 		expect(props.onChange).toHaveBeenCalledTimes(1);
 	});
+
+	it('adds maximum length from store to input', () => {
+		const {wrapper, props} = setup({
+			maxNameFilterLength: 23
+		});
+
+		const setMaxLength = wrapper.find('input').props().maxLength;
+
+		expect(setMaxLength).toBe(props.maxNameFilterLength);
+	});
 });
