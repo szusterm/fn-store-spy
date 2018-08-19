@@ -54,4 +54,19 @@ describe('NameSearchBar Component', () => {
 
 		expect(props.setNameFilter).toHaveBeenCalledWith(emptyName);
 	});
+
+	it('calls onChange() prop after every change' , () => {
+		const randomName = 'Super axe';
+
+		const {wrapper, props} = setup({
+			minNameFilterLength: 0,
+			onChange: jest.fn()
+		});
+
+		const input = wrapper.find('.name-search-bar--input');
+
+		input.simulate('change', {target: {value: randomName}});
+
+		expect(props.onChange).toHaveBeenCalledWith(randomName);
+	});
 });
