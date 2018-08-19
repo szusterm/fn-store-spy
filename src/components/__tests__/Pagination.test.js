@@ -23,20 +23,19 @@ describe('Pagination Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('calls onChange() with current page after click next or previous button', () => {
+	it('calls onChange() after click next or previous button', () => {
 		const startPage = 2;
 
 		const {wrapper, props} = setup({
-			onChange: jest.fn()
+			onChange: jest.fn(),
+			page: startPage,
+			nextPageAvailable: true
 		});
 
-		wrapper.setState({page: startPage});
 		wrapper.find('.pagination--button--previous').simulate('click');
-		expect(props.onChange).toHaveBeenCalledWith(startPage - 1);
-
-		wrapper.setState({page: startPage});
 		wrapper.find('.pagination--button--next').simulate('click');
-		expect(props.onChange).toHaveBeenCalledWith(startPage + 1);
+
+		expect(props.onChange).toHaveBeenCalledTimes(2);
 	});
 
 	it('makes previous button disabled, if page equals to 1', () => {
