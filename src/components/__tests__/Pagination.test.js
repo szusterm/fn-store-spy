@@ -38,6 +38,22 @@ describe('Pagination Component', () => {
 		expect(props.onChange).toHaveBeenCalledTimes(2);
 	});
 
+	it('calls redux action to change the page after click a button', () => {
+		const startPage = 2;
+
+		const {wrapper, props} = setup({
+			setPageFilter: jest.fn()
+		});
+
+		wrapper.setProps({page: startPage});
+		wrapper.find('.pagination--button--previous').simulate('click');
+		expect(props.setPageFilter).toHaveBeenCalledWith(startPage - 1);
+
+		wrapper.setProps({page: startPage});
+		wrapper.find('.pagination--button--next').simulate('click');
+		expect(props.setPageFilter).toHaveBeenCalledWith(startPage + 1);
+	});
+
 	it('makes previous button disabled, if page equals to 1', () => {
 		const {wrapper} = setup();
 
