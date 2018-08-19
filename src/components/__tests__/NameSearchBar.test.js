@@ -34,7 +34,7 @@ describe('NameSearchBar Component', () => {
 
 		const input = wrapper.find('.name-search-bar--input');
 
-		input.simulate('change', {target: {value: 'Super axe'}});
+		input.simulate('change', {target: {value: nameToInput}});
 
 		expect(props.setNameFilter).toHaveBeenCalledWith(nameToInput);
 	});
