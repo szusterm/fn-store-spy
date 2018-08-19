@@ -9,6 +9,7 @@ const setup = (propOverrides, stateOverrides) => {
 	}, propOverrides);
 
 	const state = Object.assign({
+		page: 1,
 		nextPageAvailable: true
 	}, stateOverrides);
 
