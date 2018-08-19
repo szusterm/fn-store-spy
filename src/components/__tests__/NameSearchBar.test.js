@@ -23,4 +23,19 @@ describe('NameSearchBar Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('calls redux action to change the name filter after every input change', () => {
+		const nameToInput = 'Super axe';
+
+		const {wrapper, props} = setup({
+			minNameFilterLength: 0,
+			setNameFilter: jest.fn()
+		});
+
+		const input = wrapper.find('.name-search-bar--input');
+
+		input.simulate('change', {target: {value: 'Super axe'}});
+
+		expect(props.setNameFilter).toHaveBeenCalledWith(nameToInput);
+	});
 });
