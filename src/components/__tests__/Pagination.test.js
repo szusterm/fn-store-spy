@@ -23,7 +23,7 @@ describe('Pagination Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('calls onChange() after click next or previous button', () => {
+	it('calls onChange() after click the next or the previous button', () => {
 		const startPage = 2;
 
 		const {wrapper, props} = setup({
@@ -38,7 +38,7 @@ describe('Pagination Component', () => {
 		expect(props.onChange).toHaveBeenCalledTimes(2);
 	});
 
-	it('calls redux action to change the page after click a button', () => {
+	it('calls a redux action to change the page after click a button', () => {
 		const startPage = 2;
 
 		const {wrapper, props} = setup({
@@ -54,7 +54,7 @@ describe('Pagination Component', () => {
 		expect(props.setPageFilter).toHaveBeenCalledWith(startPage + 1);
 	});
 
-	it('makes previous button disabled, if page equals to 1', () => {
+	it('makes the previous button disabled, if the page equals to 1', () => {
 		const {wrapper} = setup();
 
 		wrapper.setProps({page: 1});
@@ -66,7 +66,7 @@ describe('Pagination Component', () => {
 		expect(isDisabledWithHigher).toBe(false);
 	});
 
-	it('makes next button disabled, if next page does not exists', () => {
+	it('makes the next button disabled, if the next page does not exists', () => {
 		const {wrapper} = setup();
 
 		wrapper.setProps({nextPageAvailable: false});

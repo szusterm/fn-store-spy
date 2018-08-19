@@ -24,7 +24,7 @@ describe('ItemCard Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('shows name from prop', () => {
+	it('shows a name from prop', () => {
 		const {wrapper, props} = setup({
 			name: 'Normal Weapon'
 		});
@@ -34,7 +34,7 @@ describe('ItemCard Component', () => {
 		expect(displayedName).toBe(props.name);
 	});
 
-	it('shows price from prop', () => {
+	it('shows a price from prop', () => {
 		const {wrapper, props} = setup({
 			price: '2000'
 		});
@@ -44,7 +44,7 @@ describe('ItemCard Component', () => {
 		expect(displayedPrice).toBe(props.price);
 	});
 
-	it('shows type from prop', () => {
+	it('shows a type from prop', () => {
 		const {wrapper, props} = setup({
 			type: 'axe'
 		});
@@ -65,7 +65,7 @@ describe('ItemCard Component', () => {
 		expect(displayedItem.exists()).toBe(true);
 	});
 
-	it('shows item image from prop', () => {
+	it('shows an item image from prop', () => {
 		const {wrapper, props} = setup({
 			imageSrc: 'https://example.com'
 		});
