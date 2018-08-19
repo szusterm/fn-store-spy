@@ -43,11 +43,11 @@ describe('Pagination Component', () => {
 	it('makes previous button disabled, if page equals to 1', () => {
 		const {wrapper} = setup();
 
-		wrapper.setState({page: 1});
+		wrapper.setProps({page: 1});
 		const isDisabledWithLower = wrapper.find('.pagination--button--previous').props().disabled;
 		expect(isDisabledWithLower).toBe(true);
 
-		wrapper.setState({page: 2});
+		wrapper.setProps({page: 2});
 		const isDisabledWithHigher = wrapper.find('.pagination--button--previous').props().disabled;
 		expect(isDisabledWithHigher).toBe(false);
 	});
