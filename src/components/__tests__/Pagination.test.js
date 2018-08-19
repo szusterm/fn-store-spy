@@ -3,19 +3,16 @@ import {shallow} from 'enzyme';
 
 import {Pagination} from '../Pagination/Pagination';
 
-const setup = (propOverrides, stateOverrides) => {
+const setup = (propOverrides) => {
 	const props = Object.assign({
-		onChange: () => true
+		onChange: () => true,
+		page: 1, //redux
+		nextPageAvailable: true //redux
 	}, propOverrides);
 
-	const state = Object.assign({
-		page: 1,
-		nextPageAvailable: true
-	}, stateOverrides);
+	const wrapper = shallow(<Pagination {...props}/>);
 
-	const wrapper = shallow(<Pagination {...state} {...props}/>);
-
-	return {props, state, wrapper};
+	return {props, wrapper};
 };
 
 describe('Pagination Component', () => {
