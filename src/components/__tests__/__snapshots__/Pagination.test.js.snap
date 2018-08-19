@@ -7,6 +7,8 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Pagination
     nextPageAvailable={true}
     onChange={[Function]}
+    page={1}
+    setPageFilter={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
