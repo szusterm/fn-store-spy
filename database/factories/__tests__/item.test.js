@@ -129,25 +129,16 @@ describe('Item Factory', () => {
 			expect(ItemModel.equals).toHaveBeenCalledWith(nameRegExp);
 		});
 
-		it('adds not a name filter if length is too short', () => {
-			const {minNameFilterLength} = clientConfig;
+		it('adds not a name filter if length is too short or too long', () => {
+			const tooShortName = '2n';
+			const normalName = '4cha';
+			const tooLongName = '6chars';
 
-			const shortName = 'An';
-			let normalName;
-			let longerName;
-
-			for (let i = 0; i <= minNameFilterLength; i++) {
-				normalName += 'a';
-			}
-			for (let i = 0; i <= minNameFilterLength + 2; i++) {
-				longerName += 'a';
-			}
-
-			item._filterByNameContainingText(shortName);
+			item._filterByNameContainingText(tooShortName);
 			item._filterByNameContainingText(normalName);
-			item._filterByNameContainingText(longerName);
+			item._filterByNameContainingText(tooLongName);
 
-			expect(ItemModel.where).toHaveBeenCalledTimes(2);
+			expect(ItemModel.where).toHaveBeenCalledTimes(1);
 		});
 
 		it(returningFilters.description, () => returningFilters.test('_filterByNameContainingText'));
