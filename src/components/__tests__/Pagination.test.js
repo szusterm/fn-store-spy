@@ -6,6 +6,7 @@ import {Pagination} from '../Pagination/Pagination';
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		onChange: () => true,
+		setPageFilter: () => true, //redux
 		page: 1, //redux
 		nextPageAvailable: true //redux
 	}, propOverrides);
