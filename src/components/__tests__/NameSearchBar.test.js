@@ -38,4 +38,20 @@ describe('NameSearchBar Component', () => {
 
 		expect(props.setNameFilter).toHaveBeenCalledWith(nameToInput);
 	});
+
+	it('if name input value is too short, action is calling with empty name', () => {
+		const tooShortName = 'two';
+		const emptyName = '';
+
+		const {wrapper, props} = setup({
+			minNameFilterLength: 6,
+			setNameFilter: jest.fn()
+		});
+
+		const input = wrapper.find('.name-search-bar--input');
+
+		input.simulate('change', {target: {value: tooShortName}});
+
+		expect(props.setNameFilter).toHaveBeenCalledWith(emptyName);
+	});
 });
