@@ -35,7 +35,7 @@ describe('Pagination Component', () => {
 		expect(itemsInItemsList).toEqual(props.items);
 	});
 
-	it('updates items in store if pagination changes', () => {
+	it('updates items in store if Pagination changes', () => {
 		const {wrapper, props} = setup({
 			updateItems: jest.fn()
 		});
