@@ -3,6 +3,7 @@ import {shallow} from 'enzyme';
 
 import {Searching} from '../Searching/Searching';
 
+import NameSearchBar from '../NameSearchBar';
 import ItemsList from '../ItemsList';
 import Pagination from '../Pagination';
 
@@ -41,6 +42,16 @@ describe('Pagination Component', () => {
 		});
 
 		wrapper.find(Pagination).props().onChange();
+
+		expect(props.updateItems).toHaveBeenCalledTimes(2); //2, because first call is in componentDidMount()
+	});
+
+	it('updates items in store if name in NameSearchBar changes', () => {
+		const {wrapper, props} = setup({
+			updateItems: jest.fn()
+		});
+
+		wrapper.find(NameSearchBar).props().onChange();
 
 		expect(props.updateItems).toHaveBeenCalledTimes(2); //2, because first call is in componentDidMount()
 	});
