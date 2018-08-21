@@ -30,4 +30,22 @@ describe('Actions', () => {
 			expect(expectedChange).toEqual(returnedChange);
 		});
 	});
+
+	describe('setConfig()', () => {
+		it('updates config store with api response data', async () => {
+			const mockDispatch = jest.fn();
+			const expectedChange = {
+				type: types.SET_CONFIG,
+				payload: 'example config'
+			};
+
+			api.fetchConfig.mockReturnValueOnce(Promise.resolve({
+				data: expectedChange.payload
+			}));
+
+			await actions.setConfig()(mockDispatch);
+
+			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
+		});
+	});
 });
