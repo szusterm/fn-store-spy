@@ -3,7 +3,8 @@ import {shallow} from 'enzyme';
 
 import {Searching} from '../Searching/Searching';
 
-import Pagination from '../Pagination/Pagination';
+import ItemsList from '../ItemsList';
+import Pagination from '../Pagination';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
@@ -29,7 +30,7 @@ describe('Pagination Component', () => {
 			items: ['items0', 'item1']
 		});
 
-		const itemsInItemsList = wrapper.find('ItemsList').props().items;
+		const itemsInItemsList = wrapper.find(ItemsList).props().items;
 
 		expect(itemsInItemsList).toEqual(props.items);
 	});

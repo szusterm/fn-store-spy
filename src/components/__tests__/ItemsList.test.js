@@ -3,6 +3,8 @@ import {shallow} from 'enzyme';
 
 import {ItemsList} from '../ItemsList/ItemsList';
 
+import ItemCard from '../ItemCard';
+
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		items: [{
@@ -31,7 +33,7 @@ describe('ItemsList Component', () => {
 			items: [{}, {}, {}]
 		});
 
-		const items = wrapper.find('ItemCard');
+		const items = wrapper.find(ItemCard);
 
 		expect(items.length).toBe(props.items.length);
 	});
@@ -56,8 +58,8 @@ describe('ItemsList Component', () => {
 			]
 		});
 
-		const firstItemCard = wrapper.find('ItemCard').at(0);
-		const secondItemCard = wrapper.find('ItemCard').at(1);
+		const firstItemCard = wrapper.find(ItemCard).at(0);
+		const secondItemCard = wrapper.find(ItemCard).at(1);
 
 		expect(firstItemCard.props()).toEqual(props.items[0]);
 		expect(secondItemCard.props()).toEqual(props.items[1]);
