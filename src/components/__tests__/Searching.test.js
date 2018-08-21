@@ -21,4 +21,14 @@ describe('Pagination Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('puts items from store to ItemsList as prop', () => {
+		const {wrapper, props} = setup({
+			items: ['items0', 'item1']
+		});
+
+		const itemsInItemsList = wrapper.find('ItemsList').props().items;
+
+		expect(itemsInItemsList).toEqual(props.items);
+	});
 });
