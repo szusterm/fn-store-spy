@@ -8,11 +8,20 @@ ShallowWrapper {
     items={
       Array [
         Object {
+          "_id": "3h5i34uh53i4",
           "imageSrc": "https://example.com",
           "name": "Super Axe",
           "price": "2000",
           "rarity": "uncommon",
           "type": "axe",
+        },
+        Object {
+          "_id": "56b7h8678b",
+          "imageSrc": "https://example.pl",
+          "name": "Something",
+          "price": "800",
+          "rarity": "rare",
+          "type": "boots",
         },
       ]
     }
@@ -43,6 +52,17 @@ ShallowWrapper {
             type="axe"
           />
         </div>
+        <div
+          className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
+        >
+          <ItemCard
+            imageSrc="https://example.pl"
+            name="Something"
+            price="800"
+            rarity="rare"
+            type="boots"
+          />
+        </div>
       </div>,
       "className": "container-fluid",
     },
@@ -64,6 +84,17 @@ ShallowWrapper {
               type="axe"
             />
           </div>,
+          <div
+            className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
+          >
+            <ItemCard
+              imageSrc="https://example.pl"
+              name="Something"
+              price="800"
+              rarity="rare"
+              type="boots"
+            />
+          </div>,
         ],
         "className": "row no-gutter",
       },
@@ -71,7 +102,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "3h5i34uh53i4",
           "nodeType": "host",
           "props": Object {
             "children": <ItemCard
@@ -94,6 +125,38 @@ ShallowWrapper {
               "price": "2000",
               "rarity": "uncommon",
               "type": "axe",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "56b7h8678b",
+          "nodeType": "host",
+          "props": Object {
+            "children": <ItemCard
+              imageSrc="https://example.pl"
+              name="Something"
+              price="800"
+              rarity="rare"
+              type="boots"
+            />,
+            "className": "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "imageSrc": "https://example.pl",
+              "name": "Something",
+              "price": "800",
+              "rarity": "rare",
+              "type": "boots",
             },
             "ref": null,
             "rendered": null,
@@ -126,6 +189,17 @@ ShallowWrapper {
               type="axe"
             />
           </div>
+          <div
+            className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
+          >
+            <ItemCard
+              imageSrc="https://example.pl"
+              name="Something"
+              price="800"
+              rarity="rare"
+              type="boots"
+            />
+          </div>
         </div>,
         "className": "container-fluid",
       },
@@ -147,6 +221,17 @@ ShallowWrapper {
                 type="axe"
               />
             </div>,
+            <div
+              className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
+            >
+              <ItemCard
+                imageSrc="https://example.pl"
+                name="Something"
+                price="800"
+                rarity="rare"
+                type="boots"
+              />
+            </div>,
           ],
           "className": "row no-gutter",
         },
@@ -154,7 +239,7 @@ ShallowWrapper {
         "rendered": Array [
           Object {
             "instance": null,
-            "key": undefined,
+            "key": "3h5i34uh53i4",
             "nodeType": "host",
             "props": Object {
               "children": <ItemCard
@@ -177,6 +262,38 @@ ShallowWrapper {
                 "price": "2000",
                 "rarity": "uncommon",
                 "type": "axe",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "56b7h8678b",
+            "nodeType": "host",
+            "props": Object {
+              "children": <ItemCard
+                imageSrc="https://example.pl"
+                name="Something"
+                price="800"
+                rarity="rare"
+                type="boots"
+              />,
+              "className": "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "imageSrc": "https://example.pl",
+                "name": "Something",
+                "price": "800",
+                "rarity": "rare",
+                "type": "boots",
               },
               "ref": null,
               "rendered": null,
