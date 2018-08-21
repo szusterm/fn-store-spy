@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
 		case 'REPLACE_ITEMS':
 			return {
 				...state,
-				items: action.items
+				items: action.payload
 			};
 
 		case 'SET_PAGE':
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
 				...state,
 				filters: {
 					...state.filters,
-					page: action.page
+					page: action.payload
 				}
 			};
 
@@ -29,14 +29,14 @@ const reducer = (state = initialState, action) => {
 				...state,
 				filters: {
 					...state.filters,
-					name: action.name
+					name: action.payload
 				}
 			};
 
 		case 'SET_NEXT_PAGE_AVAILABILITY':
 			return {
 				...state,
-				nextPageAvailable: action.nextPageAvailable
+				nextPageAvailable: action.payload
 			};
 
 		default:

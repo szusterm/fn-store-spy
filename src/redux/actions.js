@@ -8,12 +8,12 @@ export const updateItems = () => async (dispatch, getState) => {
 	if (!responseData.err) {
 		dispatch({
 			type: 'REPLACE_ITEMS',
-			items: responseData.data.items
+			payload: responseData.data.items
 		});
 
 		dispatch({
 			type: 'SET_NEXT_PAGE_AVAILABILITY',
-			nextPageAvailable: responseData.data.nextPageAvailable
+			payload: responseData.data.nextPageAvailable
 		});
 	}
 
@@ -23,14 +23,14 @@ export const updateItems = () => async (dispatch, getState) => {
 export const setPageFilter = (page) => {
 	return {
 		type: 'SET_PAGE',
-		page
+		payload: page
 	};
 };
 
 export const setNameFilter = (name) => {
 	return {
 		type: 'SET_NAME',
-		name
+		payload: name
 	};
 };
 
@@ -39,6 +39,6 @@ export const setConfig = () => async (dispatch) => {
 
 	dispatch({
 		type: 'SET_CONFIG',
-		config
+		payload: config
 	});
 };
