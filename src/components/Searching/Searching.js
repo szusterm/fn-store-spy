@@ -43,7 +43,7 @@ export class Searching extends Component {
 				<div className={'row searching--items-list-box'}>
 					<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
 						<ItemsList
-							items={this.props.searching.items}
+							items={this.props.items}
 						/>
 					</div>
 				</div>
@@ -62,13 +62,13 @@ export class Searching extends Component {
 Searching.propTypes = {
 	updateItems: PropTypes.func, //redux
 	setPageFilter: PropTypes.func, //redux
-	searching: PropTypes.object //redux
+	items: PropTypes.object //redux
 };
 
 
 const mapStateToProps = (state) => {
-	const {searching} = state;
-	return {searching};
+	const {items} = state.searching;
+	return {items};
 };
 
 const mapDispatchToProps = {updateItems, setPageFilter};
