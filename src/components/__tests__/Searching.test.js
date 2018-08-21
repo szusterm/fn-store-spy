@@ -1,0 +1,24 @@
+import React from 'react';
+import {shallow} from 'enzyme';
+
+import {Searching} from '../Searching/Searching';
+
+const setup = (propOverrides) => {
+	const props = Object.assign({
+		updateItems: () => true, //redux
+		setPageFilter: () => true, //redux
+		items: [] //redux
+	}, propOverrides);
+
+	const wrapper = shallow(<Searching {...props}/>);
+
+	return {props, wrapper};
+};
+
+describe('Pagination Component', () => {
+	it('renders correctly', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper).toMatchSnapshot();
+	});
+});
