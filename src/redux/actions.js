@@ -1,3 +1,4 @@
+import * as types from './actionTypes';
 import {fetchItems, fetchConfig} from '../api';
 
 export const updateItems = () => async (dispatch, getState) => {
@@ -7,12 +8,12 @@ export const updateItems = () => async (dispatch, getState) => {
 
 	if (!responseData.err) {
 		dispatch({
-			type: 'REPLACE_ITEMS',
+			type: types.REPLACE_ITEMS,
 			payload: responseData.data.items
 		});
 
 		dispatch({
-			type: 'SET_NEXT_PAGE_AVAILABILITY',
+			type: types.SET_NEXT_PAGE_AVAILABILITY,
 			payload: responseData.data.nextPageAvailable
 		});
 	}
@@ -22,14 +23,14 @@ export const updateItems = () => async (dispatch, getState) => {
 
 export const setPageFilter = (page) => {
 	return {
-		type: 'SET_PAGE',
+		type: types.SET_PAGE,
 		payload: page
 	};
 };
 
 export const setNameFilter = (name) => {
 	return {
-		type: 'SET_NAME',
+		type: types.SET_NAME,
 		payload: name
 	};
 };
@@ -38,7 +39,7 @@ export const setConfig = () => async (dispatch) => {
 	const {data: config} = await fetchConfig();
 
 	dispatch({
-		type: 'SET_CONFIG',
+		type: types.SET_CONFIG,
 		payload: config
 	});
 };

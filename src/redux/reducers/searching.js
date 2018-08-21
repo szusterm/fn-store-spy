@@ -1,3 +1,5 @@
+import * as types from '../actionTypes';
+
 const initialState = {
 	items: [],
 	filters: {
@@ -9,13 +11,13 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 	switch(action.type) {
-		case 'REPLACE_ITEMS':
+		case types.REPLACE_ITEMS:
 			return {
 				...state,
 				items: action.payload
 			};
 
-		case 'SET_PAGE':
+		case types.SET_PAGE:
 			return {
 				...state,
 				filters: {
@@ -24,7 +26,7 @@ const reducer = (state = initialState, action) => {
 				}
 			};
 
-		case 'SET_NAME':
+		case types.SET_NAME:
 			return {
 				...state,
 				filters: {
@@ -33,7 +35,7 @@ const reducer = (state = initialState, action) => {
 				}
 			};
 
-		case 'SET_NEXT_PAGE_AVAILABILITY':
+		case types.SET_NEXT_PAGE_AVAILABILITY:
 			return {
 				...state,
 				nextPageAvailable: action.payload
