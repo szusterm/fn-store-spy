@@ -26,7 +26,7 @@ describe('Pagination Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('puts items from a store to ItemsList as a prop', () => {
+	it('puts items from a store to ItemsList as prop', () => {
 		const {wrapper, props} = setup({
 			items: ['items0', 'item1']
 		});
@@ -54,5 +54,17 @@ describe('Pagination Component', () => {
 		wrapper.find(NameSearchBar).props().onChange();
 
 		expect(props.updateItems).toHaveBeenCalledTimes(2); //2, because first call is in componentDidMount()
+	});
+
+	it('resets a page when name in NameSearchBar changes', () => {
+		const startPage = 1;
+
+		const {wrapper, props} = setup({
+			setPageFilter: jest.fn()
+		});
+
+		wrapper.find(NameSearchBar).props().onChange();
+
+		expect(props.setPageFilter).toHaveBeenCalledWith(startPage);
 	});
 });
