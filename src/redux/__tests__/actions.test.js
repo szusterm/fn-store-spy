@@ -5,6 +5,38 @@ import * as api from '../../api';
 jest.mock('../../api');
 
 describe('Actions', () => {
+	describe('updateItems()', () => {
+		it('replaces items in store with an api response data, if it is no error', async () => {
+			const exampleItems = ['item0', 'item1'];
+			const expectedChange = {
+				type: types.REPLACE_ITEMS,
+				payload: exampleItems
+			};
+			const apiResponse = {
+				data: {
+					err: false,
+					data: {
+						items: exampleItems,
+						nextPageAvailable: true
+					}
+				}
+			};
+
+			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
+
+			const mockDispatch = jest.fn();
+			const mockGetState = jest.fn().mockReturnValueOnce({
+				searching: {
+					filters: {}
+				}
+			});
+
+			await actions.updateItems()(mockDispatch, mockGetState);
+
+			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
+		});
+	});
+
 	describe('setPageFilter()', () => {
 		it('calls reducer to change a page filter', () => {
 			const expectedChange = {
