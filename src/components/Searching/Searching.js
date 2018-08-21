@@ -62,7 +62,7 @@ export class Searching extends Component {
 Searching.propTypes = {
 	updateItems: PropTypes.func, //redux
 	setPageFilter: PropTypes.func, //redux
-	items: PropTypes.object //redux
+	items: PropTypes.array //redux
 };
 
 
