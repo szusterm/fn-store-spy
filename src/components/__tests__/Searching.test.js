@@ -26,7 +26,7 @@ describe('Pagination Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('puts items from store to ItemsList as prop', () => {
+	it('puts items from a store to ItemsList as a prop', () => {
 		const {wrapper, props} = setup({
 			items: ['items0', 'item1']
 		});
@@ -36,7 +36,7 @@ describe('Pagination Component', () => {
 		expect(itemsInItemsList).toEqual(props.items);
 	});
 
-	it('updates items in store if Pagination changes', () => {
+	it('updates items in a store if Pagination changes', () => {
 		const {wrapper, props} = setup({
 			updateItems: jest.fn()
 		});
@@ -46,7 +46,7 @@ describe('Pagination Component', () => {
 		expect(props.updateItems).toHaveBeenCalledTimes(2); //2, because first call is in componentDidMount()
 	});
 
-	it('updates items in store if name in NameSearchBar changes', () => {
+	it('updates items in store if a name in NameSearchBar changes', () => {
 		const {wrapper, props} = setup({
 			updateItems: jest.fn()
 		});
