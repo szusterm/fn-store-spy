@@ -3,6 +3,8 @@ import {shallow} from 'enzyme';
 
 import {Searching} from '../Searching/Searching';
 
+import Pagination from '../Pagination/Pagination';
+
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		updateItems: () => true, //redux
@@ -30,5 +32,15 @@ describe('Pagination Component', () => {
 		const itemsInItemsList = wrapper.find('ItemsList').props().items;
 
 		expect(itemsInItemsList).toEqual(props.items);
+	});
+
+	it('updates items in store if pagination changes', () => {
+		const {wrapper, props} = setup({
+			updateItems: jest.fn()
+		});
+
+		wrapper.find(Pagination).props().onChange();
+
+		expect(props.updateItems).toHaveBeenCalledTimes(2); //2, because first call is in componentDidMount()
 	});
 });
