@@ -66,6 +66,22 @@ describe('Actions', () => {
 
 			expect(api.fetchItems).toHaveBeenCalledWith(exampleFilters);
 		});
+
+		it('returns bool, that everything is done', async () => {
+			const apiResponseWithError = {
+				data: {
+					err: true
+				}
+			};
+
+			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponseWithError));
+			const firstResponse = await actions.updateItems()(mockDispatch, mockGetState);
+			expect(firstResponse).toBe(!apiResponseWithError.data.err);
+
+			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
+			const secondResponse = await actions.updateItems()(mockDispatch, mockGetState);
+			expect(secondResponse).toBe(!apiResponse.data.err);
+		});
 	});
 
 	describe('setPageFilter()', () => {
