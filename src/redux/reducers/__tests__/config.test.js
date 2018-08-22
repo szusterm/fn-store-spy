@@ -16,9 +16,9 @@ describe('Config Reducer', () => {
 				}
 			};
 
-			const returnedChange = reducer(initialState, action);
+			const returnedState = reducer(initialState, action);
 
-			expect(returnedChange).toEqual(action.payload);
+			expect(returnedState).toEqual(action.payload);
 		});
 	});
 
@@ -32,9 +32,9 @@ describe('Config Reducer', () => {
 				type: ''
 			};
 
-			const returnedChange = reducer(initialState, action);
+			const returnedState = reducer(initialState, action);
 
-			expect(returnedChange).toEqual(initialState);
+			expect(returnedState).toEqual(initialState);
 		});
 	});
 });

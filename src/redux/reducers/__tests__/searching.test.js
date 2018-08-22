@@ -33,9 +33,9 @@ describe('Searching Reducer', () => {
 				type: ''
 			};
 
-			const returnedChange = reducer(initialState, action);
+			const returnedState = reducer(initialState, action);
 
-			expect(returnedChange).toEqual(initialState);
+			expect(returnedState).toEqual(initialState);
 		});
 	});
 });
