@@ -12,7 +12,7 @@ describe('Searching Reducer', () => {
 	};
 
 	describe(types.REPLACE_ITEMS, () => {
-		it('replaces all items in state', () => {
+		it('replaces all items in a state', () => {
 			const action = {
 				type: types.REPLACE_ITEMS,
 				payload: ['item0', 'item2']
