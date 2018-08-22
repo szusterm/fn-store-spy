@@ -44,7 +44,7 @@ describe('Searching Reducer', () => {
 	});
 
 	describe('default', () => {
-		it('replaces whole state', () => {
+		it('replaces a whole state', () => {
 			const action = {
 				type: ''
 			};

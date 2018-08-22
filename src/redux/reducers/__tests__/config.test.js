@@ -3,7 +3,7 @@ import * as types from '../../actionTypes';
 
 describe('Config Reducer', () => {
 	describe(types.SET_CONFIG, () => {
-		it('replaces whole config state', () => {
+		it('replaces a whole config state', () => {
 			const initialState = {
 				some: true
 			};
@@ -23,7 +23,7 @@ describe('Config Reducer', () => {
 	});
 
 	describe('default', () => {
-		it('replaces whole state', () => {
+		it('replaces a whole state', () => {
 			const initialState = {
 				some: true
 			};
