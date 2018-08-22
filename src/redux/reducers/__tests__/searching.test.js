@@ -27,6 +27,22 @@ describe('Searching Reducer', () => {
 		});
 	});
 
+	describe(types.SET_PAGE, () => {
+		it('changes a page filter in a state', () => {
+			const action = {
+				type: types.SET_PAGE,
+				payload: 7
+			};
+
+			const expectedState = {...initialState};
+			expectedState.filters.page = action.payload;
+
+			const returnedState = reducer(initialState, action);
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
 	describe('default', () => {
 		it('replaces whole state', () => {
 			const action = {
