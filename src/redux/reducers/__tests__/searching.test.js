@@ -43,6 +43,22 @@ describe('Searching Reducer', () => {
 		});
 	});
 
+	describe(types.SET_NAME, () => {
+		it('changes a name filter in a state', () => {
+			const action = {
+				type: types.SET_NAME,
+				payload: 'me'
+			};
+
+			const expectedState = {...initialState};
+			expectedState.filters.name = action.payload;
+
+			const returnedState = reducer(initialState, action);
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
 	describe('default', () => {
 		it('replaces a whole state', () => {
 			const action = {
