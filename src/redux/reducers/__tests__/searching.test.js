@@ -59,6 +59,22 @@ describe('Searching Reducer', () => {
 		});
 	});
 
+	describe(types.SET_NEXT_PAGE_AVAILABILITY, () => {
+		it('changes a prop, that next page is available in a state', () => {
+			const action = {
+				type: types.SET_NEXT_PAGE_AVAILABILITY,
+				payload: false
+			};
+
+			const expectedState = {...initialState};
+			expectedState.nextPageAvailable = action.payload;
+
+			const returnedState = reducer(initialState, action);
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
 	describe('default', () => {
 		it('replaces a whole state', () => {
 			const action = {
