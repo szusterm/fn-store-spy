@@ -58,6 +58,26 @@ describe('Actions', () => {
 
 			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
 		});
+
+		it('passes a store filters to an api function', async () => {
+			const exampleFilters = {
+				page: 3,
+				name: 'Hi man'
+			};
+
+			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
+
+			const mockDispatch = jest.fn();
+			const mockGetState = jest.fn().mockReturnValueOnce({
+				searching: {
+					filters: exampleFilters
+				}
+			});
+
+			await actions.updateItems()(mockDispatch, mockGetState);
+
+			expect(api.fetchItems).toHaveBeenCalledWith(exampleFilters);
+		});
 	});
 
 	describe('setPageFilter()', () => {
