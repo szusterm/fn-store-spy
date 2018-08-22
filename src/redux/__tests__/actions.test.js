@@ -6,20 +6,23 @@ jest.mock('../../api');
 
 describe('Actions', () => {
 	describe('updateItems()', () => {
+		const exampleItems = ['item0', 'item1'];
+		const exampleNextPageAvailable = true;
+
+		const apiResponse = {
+			data: {
+				err: false,
+				data: {
+					items: exampleItems,
+					nextPageAvailable: exampleNextPageAvailable
+				}
+			}
+		};
+
 		it('replaces items in store with an api response data, if it is no error', async () => {
-			const exampleItems = ['item0', 'item1'];
 			const expectedChange = {
 				type: types.REPLACE_ITEMS,
 				payload: exampleItems
-			};
-			const apiResponse = {
-				data: {
-					err: false,
-					data: {
-						items: exampleItems,
-						nextPageAvailable: true
-					}
-				}
 			};
 
 			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
