@@ -11,6 +11,22 @@ describe('Searching Reducer', () => {
 		nextPageAvailable: false
 	};
 
+	describe(types.REPLACE_ITEMS, () => {
+		it('replaces all items in state', () => {
+			const action = {
+				type: types.REPLACE_ITEMS,
+				payload: ['item0', 'item2']
+			};
+
+			const expectedState = {...initialState};
+			expectedState.items = action.payload;
+
+			const returnedState = reducer(initialState, action);
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
 	describe('default', () => {
 		it('replaces whole state', () => {
 			const action = {
