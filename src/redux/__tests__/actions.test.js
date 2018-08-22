@@ -5,6 +5,10 @@ import * as api from '../../api';
 jest.mock('../../api');
 
 describe('Actions', () => {
+	beforeEach(() => {
+		jest.clearAllMocks();
+	});
+
 	describe('updateItems()', () => {
 		const exampleItems = ['item0', 'item1'];
 		const exampleNextPageAvailable = true;
