@@ -38,6 +38,26 @@ describe('Actions', () => {
 
 			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
 		});
+
+		it('updates nextPageAvailable wit an api response data, if it is no error', async () => {
+			const expectedChange = {
+				type: types.SET_NEXT_PAGE_AVAILABILITY,
+				payload: exampleNextPageAvailable
+			};
+
+			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
+
+			const mockDispatch = jest.fn();
+			const mockGetState = jest.fn().mockReturnValueOnce({
+				searching: {
+					filters: {}
+				}
+			});
+
+			await actions.updateItems()(mockDispatch, mockGetState);
+
+			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
+		});
 	});
 
 	describe('setPageFilter()', () => {
