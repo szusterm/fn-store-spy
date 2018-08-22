@@ -12,7 +12,10 @@ describe('Actions', () => {
 	describe('updateItems()', () => {
 		const exampleItems = ['item0', 'item1'];
 		const exampleNextPageAvailable = true;
-
+		const exampleFilters = {
+			page: 3,
+			name: 'Hi man'
+		};
 		const apiResponse = {
 			data: {
 				err: false,
@@ -23,6 +26,13 @@ describe('Actions', () => {
 			}
 		};
 
+		const mockDispatch = jest.fn();
+		const mockGetState = jest.fn().mockReturnValue({
+			searching: {
+				filters: exampleFilters
+			}
+		});
+
 		it('replaces items in store with an api response data, if it is no error', async () => {
 			const expectedChange = {
 				type: types.REPLACE_ITEMS,
@@ -30,13 +40,6 @@ describe('Actions', () => {
 			};
 
 			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
-
-			const mockDispatch = jest.fn();
-			const mockGetState = jest.fn().mockReturnValueOnce({
-				searching: {
-					filters: {}
-				}
-			});
 
 			await actions.updateItems()(mockDispatch, mockGetState);
 
@@ -51,32 +54,13 @@ describe('Actions', () => {
 
 			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
 
-			const mockDispatch = jest.fn();
-			const mockGetState = jest.fn().mockReturnValueOnce({
-				searching: {
-					filters: {}
-				}
-			});
-
 			await actions.updateItems()(mockDispatch, mockGetState);
 
 			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
 		});
 
 		it('passes a store filters to an api function', async () => {
-			const exampleFilters = {
-				page: 3,
-				name: 'Hi man'
-			};
-
 			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
-
-			const mockDispatch = jest.fn();
-			const mockGetState = jest.fn().mockReturnValueOnce({
-				searching: {
-					filters: exampleFilters
-				}
-			});
 
 			await actions.updateItems()(mockDispatch, mockGetState);
 
