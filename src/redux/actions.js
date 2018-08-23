@@ -35,6 +35,22 @@ export const setNameFilter = (name) => {
 	};
 };
 
+
+export const addItemToOrder = (item) => {
+	return {
+		type: types.ADD_ITEM_TO_ORDER,
+		payload: item
+	};
+};
+
+export const removeItemFromOrderByIndex = (itemIndex) => {
+	return {
+		type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
+		payload: itemIndex
+	};
+};
+
+
 export const setConfig = () => async (dispatch) => {
 	const {data: config} = await fetchConfig();
 
