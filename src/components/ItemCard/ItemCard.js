@@ -8,10 +8,10 @@ export class ItemCard extends Component {
 	constructor() {
 		super();
 
-		this.isOrdered = this.isOrdered.bind(this);
+		this.checkThatIsOrdered = this.checkThatIsOrdered.bind(this);
 	}
 
-	isOrdered(orderedItem) {
+	checkThatIsOrdered(orderedItem) {
 		const {id} = this.props;
 
 		return (id === orderedItem.id);
@@ -33,7 +33,7 @@ export class ItemCard extends Component {
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.props.orderedItems.find(this.isOrdered)) &&
+						(this.props.orderedItems.find(this.checkThatIsOrdered)) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
