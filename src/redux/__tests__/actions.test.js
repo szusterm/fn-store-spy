@@ -110,6 +110,32 @@ describe('Actions', () => {
 		});
 	});
 
+	describe('addItemToOrder()', () => {
+		it('calls reducer to add an item', () => {
+			const expectedChange = {
+				type: types.ADD_ITEM_TO_ORDER,
+				payload: 'item7'
+			};
+
+			const returnedChange = actions.addItemToOrder(expectedChange.payload);
+
+			expect(returnedChange).toEqual(expectedChange);
+		});
+	});
+
+	describe('removeItemFromOrderByIndex()', () => {
+		it('calls reducer to add an item', () => {
+			const expectedChange = {
+				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
+				payload: 3
+			};
+
+			const returnedChange = actions.removeItemFromOrderByIndex(expectedChange.payload);
+
+			expect(returnedChange).toEqual(expectedChange);
+		});
+	});
+
 	describe('setConfig()', () => {
 		it('updates config store with api response data', async () => {
 			const mockDispatch = jest.fn();
