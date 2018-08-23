@@ -6,7 +6,7 @@ export const SET_NAME = 'SET_NAME';
 
 //Order
 export const ADD_ITEM_TO_ORDER = 'ADD_ITEM_TO_ORDER';
-export const REMOVE_ITEM_FROM_ORDER = 'REMOVE_ITEM_FROM_ORDER';
+export const REMOVE_ITEM_FROM_ORDER_BY_INDEX = 'REMOVE_ITEM_FROM_ORDER_BY_INDEX';
 
 //Config
 export const SET_CONFIG = 'SET_CONFIG';

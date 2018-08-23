@@ -22,10 +22,10 @@ describe('Order Reducer', () => {
 		});
 	});
 
-	describe(types.REMOVE_ITEM_FROM_ORDER, () => {
+	describe(types.REMOVE_ITEM_FROM_ORDER_BY_INDEX, () => {
 		it('returns a state without a removed item', () => {
 			const action = {
-				type: types.REMOVE_ITEM_FROM_ORDER,
+				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
 				payload: 1
 			};
 
