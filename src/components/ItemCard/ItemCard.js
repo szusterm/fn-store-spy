@@ -14,7 +14,26 @@ export class ItemCard extends Component {
 			indexInOrder: null
 		};
 
+		this.switchOrder = this.switchOrder.bind(this);
 		this.checkThatIsOrdered = this.checkThatIsOrdered.bind(this);
+	}
+
+	switchOrder() {
+		const {indexInOrder} = this.state;
+		const {_id, name, rarity} = this.props;
+
+		const item = {
+			_id,
+			name,
+			rarity
+		};
+
+		if (!indexInOrder) {
+			this.props.addItemToOrder(item);
+		}
+		else {
+			this.props.removeItemFromOrderByIndex(indexInOrder);
+		}
 	}
 
 	setIndexInOrder(index) {
@@ -41,7 +60,10 @@ export class ItemCard extends Component {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
 		return (
-			<div className={'item-card item-card--raised'}>
+			<div
+				className={'item-card item-card--raised'}
+				onClick={this.switchOrder}
+			>
 				<div className={'item-card--top-part'}>
 					<div className={`top-part--img-box top-part--img-box--${rarity}`}>
 						<img
