@@ -23,9 +23,9 @@ export class ItemCard extends Component {
 	}
 
 	checkThatIsOrdered(orderedItem, orderedItemIndex) {
-		const {id} = this.props;
+		const {_id} = this.props;
 
-		if (id === orderedItem.id) {
+		if (_id === orderedItem._id) {
 			this.setIndexInOrder(orderedItemIndex);
 			return true;
 		}
@@ -65,7 +65,7 @@ export class ItemCard extends Component {
 }
 
 ItemCard.propTypes = {
-	id: PropTypes.string.isRequired,
+	_id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,

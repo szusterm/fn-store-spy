@@ -11,9 +11,9 @@ export class Order extends Component {
 				<div className={'order--list'}>
 					{
 						this.props.items.map((item) => {
-							const {id, name} = item;
+							const {_id, name} = item;
 
-							return <div key={id}>{name}</div>;
+							return <div key={_id}>{name}</div>;
 						})
 					}
 				</div>
