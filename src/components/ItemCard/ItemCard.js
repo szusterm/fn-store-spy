@@ -8,13 +8,31 @@ export class ItemCard extends Component {
 	constructor() {
 		super();
 
+		this.state = {
+			indexInOrder: null
+		};
+
 		this.checkThatIsOrdered = this.checkThatIsOrdered.bind(this);
 	}
 
-	checkThatIsOrdered(orderedItem) {
+	setIndexInOrder(index) {
+		return {
+			...this.state,
+			indexInOrder: index
+		};
+	}
+
+	checkThatIsOrdered(orderedItem, orderedItemIndex) {
 		const {id} = this.props;
 
-		return (id === orderedItem.id);
+		if (id === orderedItem.id) {
+			this.setIndexInOrder(orderedItemIndex);
+			return true;
+		}
+		else {
+			this.setIndexInOrder(null);
+			return false;
+		}
 	}
 
 	render() {
