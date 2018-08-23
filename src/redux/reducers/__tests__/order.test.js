@@ -15,9 +15,10 @@ describe('Order Reducer', () => {
 
 			const returnedState = reducer(initialState, action);
 
-			const expectedItems = [...initialState.items, action.payload];
+			const expectedState = {...initialState};
+			expectedState.items.push(action.payload);
 
-			expect(returnedState).toEqual(expectedItems);
+			expect(returnedState).toEqual(expectedState);
 		});
 	});
 
@@ -25,14 +26,15 @@ describe('Order Reducer', () => {
 		it('returns a state without a removed item', () => {
 			const action = {
 				type: types.REMOVE_ITEM_FROM_ORDER,
-				payload: 'item6'
+				payload: 1
 			};
 
 			const returnedState = reducer(initialState, action);
 
-			const expectedItems = [initialState.items[0]];
+			const expectedState = {...initialState};
+			expectedState.items = [initialState.items[0]];
 
-			expect(returnedState).toEqual(expectedItems);
+			expect(returnedState).toEqual(expectedState);
 		});
 	});
 
