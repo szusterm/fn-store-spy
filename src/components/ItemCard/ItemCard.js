@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 import './styles.scss';
 
@@ -41,7 +42,13 @@ ItemCard.propTypes = {
 	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
 	type: PropTypes.string.isRequired,
-	imageSrc: PropTypes.string.isRequired
+	imageSrc: PropTypes.string.isRequired,
+	orderedItems: PropTypes.array //redux
 };
 
-export default ItemCard;
+const mapStateToProps = (state) => {
+	const {items: orderedItems} = state.order;
+	return {orderedItems};
+};
+
+export default connect(mapStateToProps, null)(ItemCard);
