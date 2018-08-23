@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {setConfig} from './redux/actions';
 
 import Searching from './components/Searching';
+import Order from './components/Order';
 
 import './scss/index.scss';
 
@@ -15,7 +16,10 @@ class App extends Component {
 
 	render() {
 		return (
-			<Searching/>
+			<div>
+				<Searching/>
+				<Order/>
+			</div>
 		);
 	}
 }
