@@ -26,6 +26,10 @@ export class ItemCard extends Component {
 				</div>
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
+					{
+						(this.props.orderedItems.find(this.isOrdered)) &&
+							<span>ORDERED</span>
+					}
 					<div className={'bot-part--description'}>
 						<div className={'description--type'}>{type}</div>
 						<div className={'description--price'}>{price}</div>
