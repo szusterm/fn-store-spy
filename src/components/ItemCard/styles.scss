@@ -1,5 +1,6 @@
 @import '../../scss/variables';
 @import '../../scss/item-rarities-gradients';
+@import '../../scss/shadows';
 
 .item-card {
 	$strip-height: 16px;
@@ -12,7 +13,13 @@
 
 	&--top-part, &--bot-part {
 		background-color: $body-bg;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		@include shadow(sm);
+	}
+
+	&:hover {
+		.item-card--top-part, .item-card--bot-part {
+			@include shadow(md);
+		}
 	}
 
 	&--top-part {

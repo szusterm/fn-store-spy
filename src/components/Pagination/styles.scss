@@ -1,10 +1,9 @@
 @import '../../scss/variables';
+@import '../../scss/shadows';
 
 .pagination {
 	&--button {
 		$button-height: 50px;
-		$normal-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-		$hover-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 		cursor: pointer;
 
@@ -20,16 +19,16 @@
 		align-items: center;
 
 		transition-duration: 100ms;
-		box-shadow: $normal-shadow;
+		@include shadow(sm);
 
 		&:hover {
-			box-shadow: $hover-shadow
+			@include shadow(md);
 		}
 
 		&:disabled {
 			cursor: default;
 			background-color: rgba(0, 0, 0, 0.1);
-			box-shadow: $normal-shadow;
+			@include shadow(sm);
 		}
 
 		&--previous {
