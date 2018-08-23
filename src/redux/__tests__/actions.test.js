@@ -93,7 +93,7 @@ describe('Actions', () => {
 
 			const returnedChange = actions.setPageFilter(expectedChange.payload);
 
-			expect(expectedChange).toEqual(returnedChange);
+			expect(returnedChange).toEqual(expectedChange);
 		});
 	});
 
@@ -106,7 +106,7 @@ describe('Actions', () => {
 
 			const returnedChange = actions.setNameFilter(expectedChange.payload);
 
-			expect(expectedChange).toEqual(returnedChange);
+			expect(returnedChange).toEqual(expectedChange);
 		});
 	});
 
