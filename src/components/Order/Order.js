@@ -9,7 +9,13 @@ export class Order extends Component {
 		return (
 			<div className={'order'}>
 				<div className={'order--list'}>
+					{
+						this.props.items.map((item) => {
+							const {id, name} = item;
 
+							return <div key={id}>{name}</div>;
+						})
+					}
 				</div>
 				<div className={'order--confirmation-box'}/>
 			</div>
