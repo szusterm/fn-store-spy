@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 export class ItemCard extends Component {
+	isOrdered(orderedItem) {
+		const {id} = this.props;
+
+		return (id === orderedItem.id);
+	}
+
 	render() {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
@@ -30,6 +36,7 @@ export class ItemCard extends Component {
 }
 
 ItemCard.propTypes = {
+	id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
