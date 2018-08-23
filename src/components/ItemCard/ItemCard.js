@@ -5,6 +5,12 @@ import {connect} from 'react-redux';
 import './styles.scss';
 
 export class ItemCard extends Component {
+	constructor() {
+		super();
+
+		this.isOrdered = this.isOrdered.bind(this);
+	}
+
 	isOrdered(orderedItem) {
 		const {id} = this.props;
 
