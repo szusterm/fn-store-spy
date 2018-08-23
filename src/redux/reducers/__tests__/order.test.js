@@ -23,7 +23,7 @@ describe('Order Reducer', () => {
 	});
 
 	describe(types.REMOVE_ITEM_FROM_ORDER_BY_INDEX, () => {
-		it('returns a state without a removed item', () => {
+		it('returns a state without an item removed by id', () => {
 			const action = {
 				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
 				payload: 1
