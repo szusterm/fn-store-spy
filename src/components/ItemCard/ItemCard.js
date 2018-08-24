@@ -11,7 +11,7 @@ export class ItemCard extends Component {
 		super();
 
 		this.state = {
-			isOrdered: false,
+			existsInOrder: false,
 			indexInOrder: null
 		};
 
@@ -36,12 +36,12 @@ export class ItemCard extends Component {
 
 		if (!indexInOrder) {
 			this.props.addItemToOrder(item);
-			this.setIsOrdered(true);
+			this.setExistsInOrder(true);
 		}
 		else {
 			this.props.removeItemFromOrderByIndex(indexInOrder);
 			this.setIndexInOrder(null);
-			this.setIsOrdered(false);
+			this.setExistsInOrder(false);
 		}
 	}
 
@@ -51,20 +51,20 @@ export class ItemCard extends Component {
 		this.props.orderedItems.find((orderedItem, orderedItemIndex) => {
 			if (_id === orderedItem._id) {
 				this.setIndexInOrder(orderedItemIndex);
-				this.setIsOrdered(true);
+				this.setExistsInOrder(true);
 				return true;
 			}
 			else {
-				this.setIsOrdered(false);
+				this.setExistsInOrder(false);
 				return false;
 			}
 		});
 	}
 
-	setIsOrdered(isOrdered) {
+	setExistsInOrder(existsInOrder) {
 		const newState = {
 			...this.state,
-			isOrdered
+			existsInOrder
 		};
 
 		this.setState(newState);
@@ -98,7 +98,7 @@ export class ItemCard extends Component {
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.state.isOrdered) &&
+						(this.state.existsInOrder) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
