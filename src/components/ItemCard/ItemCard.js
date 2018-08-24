@@ -19,6 +19,10 @@ export class ItemCard extends Component {
 		this.checkThatIsOrdered = this.checkThatIsOrdered.bind(this);
 	}
 
+	componentDidMount() {
+		this.props.orderedItems.find(this.checkThatIsOrdered);
+	}
+
 	switchOrder() {
 		const {indexInOrder} = this.state;
 		const {_id, name, rarity} = this.props;
@@ -32,11 +36,13 @@ export class ItemCard extends Component {
 		if (!indexInOrder) {
 			console.log('ADDED:', indexInOrder);
 			this.props.addItemToOrder(item);
+			this.setIsOrdered(true);
 		}
 		else {
 			console.log('NOT:', indexInOrder);
 			this.props.removeItemFromOrderByIndex(indexInOrder);
 			this.setIndexInOrder(null);
+			this.setIsOrdered(false);
 		}
 	}
 
@@ -64,9 +70,11 @@ export class ItemCard extends Component {
 		if (_id === orderedItem._id) {
 			console.log(orderedItemIndex);
 			this.setIndexInOrder(orderedItemIndex);
+			this.setIsOrdered(true);
 			return true;
 		}
 
+		this.setIsOrdered(false);
 		return false;
 	}
 
@@ -89,7 +97,7 @@ export class ItemCard extends Component {
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.props.orderedItems.find(this.checkThatIsOrdered)) &&
+						(this.state.isOrdered) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
