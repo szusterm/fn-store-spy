@@ -12,9 +12,10 @@ const reducer = (state = initialState, action) => {
 				items: [...state.items, action.payload]
 			};
 		case types.REMOVE_ITEM_FROM_ORDER_BY_INDEX:
+			state.items.splice(action.payload, 1);
 			return {
 				...state,
-				items: [...state.items].splice(action.payload - 1, 1)
+				items: [...state.items]
 			};
 		default:
 			return state;
