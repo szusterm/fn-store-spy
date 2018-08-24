@@ -30,7 +30,8 @@ export class ItemCard extends Component {
 		const item = {
 			_id,
 			name,
-			rarity
+			rarity,
+			active: true
 		};
 
 		if (!indexInOrder) {
