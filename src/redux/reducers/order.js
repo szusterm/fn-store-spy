@@ -11,6 +11,11 @@ const reducer = (state = initialState, action) => {
 				...state,
 				items: [...state.items, action.payload]
 			};
+		case types.SET_ORDERED_ITEM_ACTIVE:
+			state.items[action.payload.index].active = action.payload.active;
+			return {
+				...state
+			};
 		default:
 			return state;
 	}
