@@ -11,6 +11,7 @@ export class ItemCard extends Component {
 		super();
 
 		this.state = {
+			isOrdered: false,
 			indexInOrder: null
 		};
 
@@ -37,6 +38,15 @@ export class ItemCard extends Component {
 			this.props.removeItemFromOrderByIndex(indexInOrder);
 			this.setIndexInOrder(null);
 		}
+	}
+
+	setIsOrdered(isOrdered) {
+		const newState = {
+			...this.state,
+			isOrdered
+		};
+
+		this.setState(newState);
 	}
 
 	setIndexInOrder(index) {
