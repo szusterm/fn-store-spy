@@ -33,14 +33,17 @@ export class ItemCard extends Component {
 		}
 		else {
 			this.props.removeItemFromOrderByIndex(indexInOrder);
+			this.setIndexInOrder(null);
 		}
 	}
 
 	setIndexInOrder(index) {
-		return {
+		const newState = {
 			...this.state,
 			indexInOrder: index
 		};
+
+		this.setState(newState);
 	}
 
 	checkThatIsOrdered(orderedItem, orderedItemIndex) {
@@ -50,10 +53,8 @@ export class ItemCard extends Component {
 			this.setIndexInOrder(orderedItemIndex);
 			return true;
 		}
-		else {
-			this.setIndexInOrder(null);
-			return false;
-		}
+
+		return false;
 	}
 
 	render() {
