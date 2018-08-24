@@ -29,9 +29,11 @@ export class ItemCard extends Component {
 		};
 
 		if (!indexInOrder) {
+			console.log('ADDED:', indexInOrder);
 			this.props.addItemToOrder(item);
 		}
 		else {
+			console.log('NOT:', indexInOrder);
 			this.props.removeItemFromOrderByIndex(indexInOrder);
 			this.setIndexInOrder(null);
 		}
@@ -50,6 +52,7 @@ export class ItemCard extends Component {
 		const {_id} = this.props;
 
 		if (_id === orderedItem._id) {
+			console.log(orderedItemIndex);
 			this.setIndexInOrder(orderedItemIndex);
 			return true;
 		}
