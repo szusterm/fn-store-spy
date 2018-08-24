@@ -45,6 +45,22 @@ export class ItemCard extends Component {
 		}
 	}
 
+	checkThatExistsInOrder() {
+		const {_id} = this.props;
+
+		this.props.orderedItems.find((orderedItem, orderedItemIndex) => {
+			if (_id === orderedItem._id) {
+				this.setIndexInOrder(orderedItemIndex);
+				this.setIsOrdered(true);
+				return true;
+			}
+			else {
+				this.setIsOrdered(false);
+				return false;
+			}
+		});
+	}
+
 	setIsOrdered(isOrdered) {
 		const newState = {
 			...this.state,
@@ -61,22 +77,6 @@ export class ItemCard extends Component {
 		};
 
 		this.setState(newState);
-	}
-
-	checkThatExistsInOrder() {
-		const {_id} = this.props;
-
-		this.props.orderedItems.find((orderedItem, orderedItemIndex) => {
-			if (_id === orderedItem._id) {
-				this.setIndexInOrder(orderedItemIndex);
-				this.setIsOrdered(true);
-				return true;
-			}
-			else {
-				this.setIsOrdered(false);
-				return false;
-			}
-		});
 	}
 
 	render() {
