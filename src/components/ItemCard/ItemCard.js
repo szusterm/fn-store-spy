@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {addItemToOrder, removeItemFromOrderByIndex} from '../../redux/actions';
+import {addItemToOrder} from '../../redux/actions';
 
 import './styles.scss';
 
@@ -39,7 +39,6 @@ export class ItemCard extends Component {
 			this.setExistsInOrder(true);
 		}
 		else {
-			this.props.removeItemFromOrderByIndex(indexInOrder);
 			this.setIndexInOrder(null);
 			this.setExistsInOrder(false);
 		}
@@ -120,7 +119,6 @@ ItemCard.propTypes = {
 	imageSrc: PropTypes.string.isRequired,
 	orderedItems: PropTypes.array, //redux,
 	addItemToOrder: PropTypes.func, //redux
-	removeItemFromOrderByIndex: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
@@ -128,6 +126,6 @@ const mapStateToProps = (state) => {
 	return {orderedItems};
 };
 
-const mapDispatchToProps = {addItemToOrder, removeItemFromOrderByIndex};
+const mapDispatchToProps = {addItemToOrder};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemCard);
