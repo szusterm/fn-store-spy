@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {addItemToOrder} from '../../redux/actions';
+import {addItemToOrder, setActiveInOrderedItem} from '../../redux/actions';
 
 import './styles.scss';
 
@@ -119,6 +119,7 @@ ItemCard.propTypes = {
 	imageSrc: PropTypes.string.isRequired,
 	orderedItems: PropTypes.array, //redux,
 	addItemToOrder: PropTypes.func, //redux
+	setActiveInOrderedItem: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
@@ -126,6 +127,6 @@ const mapStateToProps = (state) => {
 	return {orderedItems};
 };
 
-const mapDispatchToProps = {addItemToOrder};
+const mapDispatchToProps = {addItemToOrder, setActiveInOrderedItem};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemCard);
