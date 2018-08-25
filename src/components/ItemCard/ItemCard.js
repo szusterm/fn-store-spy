@@ -16,7 +16,6 @@ export class ItemCard extends Component {
 		};
 
 		this.switchOrder = this.switchOrder.bind(this);
-		this.checkThatIsOrdered = this.checkThatIsOrdered.bind(this);
 	}
 
 	componentDidMount() {
