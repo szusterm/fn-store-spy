@@ -1,6 +1,7 @@
 @import '../../scss/variables';
 @import '../../scss/item-rarities-gradients';
 @import '../../scss/shadow';
+@import '../../scss/transition';
 
 .item-card {
 	$strip-height: 16px;
@@ -14,6 +15,9 @@
 	&--top-part, &--bot-part {
 		background-color: $body-bg;
 		@include shadow(sm);
+
+		@include transition(sh);
+		transition-property: box-shadow;
 	}
 
 	&:hover {

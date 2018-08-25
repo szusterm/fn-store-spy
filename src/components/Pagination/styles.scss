@@ -1,5 +1,6 @@
 @import '../../scss/variables';
 @import '../../scss/shadow';
+@import '../../scss/transition';
 
 .pagination {
 	&--button {
@@ -18,7 +19,7 @@
 		justify-content: center;
 		align-items: center;
 
-		transition-duration: 100ms;
+		@include transition(sh);
 		@include shadow(sm);
 
 		&:hover {

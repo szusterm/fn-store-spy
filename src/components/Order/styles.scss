@@ -3,6 +3,7 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 
 @import '../../scss/shadow';
+@import '../../scss/transition';
 
 .order {
 	$mobile-height: 70px;
@@ -21,8 +22,7 @@
 	@include shadow(md);
 
 	transition-property: transform;
-	transition-duration: 150ms;
-	transition-timing-function: ease-out;
+	@include transition(sh);
 
 	@include media-breakpoint-down(sm) {
 		top: auto;
