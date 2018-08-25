@@ -13,11 +13,9 @@ export class Order extends Component {
 				<div className={'order--list'}>
 					{
 						items.map((item) => {
-							const {_id, name, active} = item;
+							const {_id, name} = item;
 
-							if (active) {
-								return <div key={_id}>{name}</div>;
-							}
+							return <div key={_id}>{name}</div>;
 						})
 					}
 				</div>
