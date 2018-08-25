@@ -60,6 +60,18 @@ export class ItemCard extends Component {
 		});
 	}
 
+	checkThatIsActive() {
+		const {indexInOrder, existsInOrder} = this.state;
+
+		if (existsInOrder) {
+			const {active} = this.props.orderedItems[indexInOrder];
+
+			return active;
+		}
+
+		return false;
+	}
+
 	setExistsInOrder(existsInOrder) {
 		const newState = {
 			...this.state,
