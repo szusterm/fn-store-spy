@@ -44,6 +44,21 @@ export class ItemCard extends Component {
 		return (sameItemInOrder !== undefined);
 	}
 
+	getIndexInOrder() {
+		const {_id} = this.props;
+		const {orderedItems} = this.props;
+
+		let indexInOrder = null;
+
+		orderedItems.find((orderedItem, orderedItemIndex) => {
+			if (_id === orderedItem._id) {
+				indexInOrder = orderedItemIndex;
+			}
+		});
+
+		return indexInOrder;
+	}
+
 	render() {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
