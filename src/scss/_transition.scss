@@ -5,13 +5,13 @@
 
 	$trans-to-return: $trans-fast;
 
-	@if ($type == fast) {
+	@if ($type == sh) {
 		$trans-to-return: $trans-fast;
 	}
-	@else if ($type == medium) {
+	@else if ($type == md) {
 		$trans-to-return: $trans-medium;
 	}
-	@else if ($type == long) {
+	@else if ($type == lg) {
 		$trans-to-return: $trans-long;
 	}
 	@else {
