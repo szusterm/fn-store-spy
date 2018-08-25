@@ -44,6 +44,15 @@ export class ItemCard extends Component {
 		}
 	}
 
+	checkThatItemIsOrdered() {
+		const {_id} = this.props;
+		const {orderedItems} = this.props;
+
+		const sameItemInOrder = orderedItems.find((orderedItem) => (_id === orderedItem._id));
+
+		return (sameItemInOrder !== undefined);
+	}
+
 	checkThatExistsInOrder() {
 		const {_id} = this.props;
 
@@ -107,7 +116,7 @@ export class ItemCard extends Component {
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.checkThatIsActive()) &&
+						(this.checkThatItemIsOrdered()) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
