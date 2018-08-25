@@ -1,7 +1,7 @@
 @mixin transition($type: sm) {
-	$trans-fast: 100ms;
-	$trans-medium: 150ms;
-	$trans-long: 200ms;
+	$trans-fast: 70ms;
+	$trans-medium: 100ms;
+	$trans-long: 150ms;
 
 	$trans-to-return: $trans-fast;
 
