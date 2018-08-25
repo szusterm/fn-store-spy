@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 
 import {addItemToOrder, removeItemFromOrderByIndex} from '../../redux/actions';
 
+import ItemCoin from '../ItemCoin';
+
 import './styles.scss';
 
 export class ItemCard extends Component {
@@ -57,12 +59,11 @@ export class ItemCard extends Component {
 				onClick={this.switchOrder}
 			>
 				<div className={'item-card--top-part'}>
-					<div className={`top-part--img-box top-part--img-box--${rarity}`}>
-						<img
-							className={'img-box--image'}
-							src={imageSrc}
-						/>
-					</div>
+					<ItemCoin
+						_id={''}
+						imageSrc={imageSrc}
+						rarity={rarity}
+					/>
 				</div>
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>

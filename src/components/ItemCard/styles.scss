@@ -42,29 +42,6 @@
 			left: 0;
 			right: 0;
 		}
-
-		.top-part {
-			&--img-box {
-				width: 100%;
-				height: auto;
-
-				border-radius: 50%;
-
-				&--uncommon {background: $gradient-uncommon;}
-				&--rare {background: $gradient-rare;}
-				&--epic {background: $gradient-epic;}
-				&--legendary {background: $gradient-legendary;}
-
-				.img-box {
-					&--image {
-						width: 100%;
-						height: 100%;
-
-						border-radius: 50%;
-					}
-				}
-			}
-		}
 	}
 
 	&--bot-part {
