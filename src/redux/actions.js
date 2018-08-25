@@ -43,6 +43,15 @@ export const addItemToOrder = (item) => {
 	};
 };
 
+export const setActiveInOrderedItem = (index, active) => {
+	return {
+		type: types.SET_ORDERED_ITEM_ACTIVE,
+		payload: {
+			index,
+			active
+		}
+	};
+};
 
 export const setConfig = () => async (dispatch) => {
 	const {data: config} = await fetchConfig();
