@@ -10,16 +10,7 @@ export class ItemCard extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			existsInOrder: false,
-			indexInOrder: null
-		};
-
 		this.switchOrder = this.switchOrder.bind(this);
-	}
-
-	componentDidMount() {
-		this.checkThatExistsInOrder();
 	}
 
 	switchOrder() {
@@ -51,50 +42,6 @@ export class ItemCard extends Component {
 		const sameItemInOrder = orderedItems.find((orderedItem) => (_id === orderedItem._id));
 
 		return (sameItemInOrder !== undefined);
-	}
-
-	checkThatExistsInOrder() {
-		const {_id} = this.props;
-
-		this.props.orderedItems.find((orderedItem, orderedItemIndex) => {
-
-			const exists = (_id === orderedItem._id);
-
-			if (exists) {
-				this.setIndexInOrder(orderedItemIndex);
-				this.setExistsInOrder(exists);
-			}
-
-			return exists;
-		});
-	}
-
-	checkThatIsActive() {
-		const {indexInOrder, existsInOrder} = this.state;
-
-		if (existsInOrder) {
-			const {active} = this.props.orderedItems[indexInOrder];
-
-			return active;
-		}
-
-		return false;
-	}
-
-	setExistsInOrder(existsInOrder) {
-		const newState = Object.assign(this.state, {
-			existsInOrder
-		});
-
-		this.setState(newState);
-	}
-
-	setIndexInOrder(indexInOrder) {
-		const newState = Object.assign(this.state, {
-			indexInOrder
-		});
-
-		this.setState(newState);
 	}
 
 	render() {
