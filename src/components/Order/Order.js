@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import ItemCoin from '../ItemCoin';
+
 import './styles.scss';
 
 export class Order extends Component {
@@ -13,9 +15,16 @@ export class Order extends Component {
 				<div className={'order--list'}>
 					{
 						items.map((item) => {
-							const {_id, name} = item;
+							const {_id, imageSrc, rarity} = item;
 
-							return <div key={_id}>{name}</div>;
+							return (
+								<ItemCoin
+									key={_id}
+									_id={_id}
+									imageSrc={imageSrc}
+									rarity={rarity}
+								/>
+							);
 						})
 					}
 				</div>
