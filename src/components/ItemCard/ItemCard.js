@@ -14,24 +14,20 @@ export class ItemCard extends Component {
 	}
 
 	switchOrder() {
-		const {indexInOrder, existsInOrder} = this.state;
 		const {_id, name, rarity} = this.props;
 
-		const item = {
-			_id,
-			name,
-			rarity,
-			active: true
-		};
+		if (this.checkThatItemIsOrdered()) {
+			const item = {
+				_id,
+				name,
+				rarity
+			};
 
-		if (existsInOrder) {
-			const active = this.checkThatIsActive();
-			this.props.setActiveInOrderedItem(indexInOrder, !active);
+			this.props.addItemToOrder(item);
 		}
 		else {
-			this.props.addItemToOrder(item);
-			this.setIndexInOrder(this.props.orderedItems.length);
-			this.setExistsInOrder(true);
+			const indexInOrder = this.getIndexInOrder();
+			//method to remove item from order
 		}
 	}
 
