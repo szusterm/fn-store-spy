@@ -19,7 +19,6 @@ export class ItemCoin extends Component {
 }
 
 ItemCoin.propTypes = {
-	_id: PropTypes.string.isRequired,
 	imageSrc: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired
 };

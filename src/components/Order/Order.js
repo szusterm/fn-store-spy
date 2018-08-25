@@ -23,7 +23,6 @@ export class Order extends Component {
 									className={'list--item-box'}
 								>
 									<ItemCoin
-										_id={_id}
 										imageSrc={imageSrc}
 										rarity={rarity}
 									/>

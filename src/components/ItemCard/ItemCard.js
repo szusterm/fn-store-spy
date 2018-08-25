@@ -60,7 +60,6 @@ export class ItemCard extends Component {
 			>
 				<div className={'item-card--top-part'}>
 					<ItemCoin
-						_id={''}
 						imageSrc={imageSrc}
 						rarity={rarity}
 					/>
