@@ -1,15 +1,31 @@
 @import '../../scss/rarities-colors';
+@import '../../scss/shadow';
 
 .item-coin {
 	width: 100%;
 	height: auto;
 
 	border-radius: 50%;
+	border: 3px solid;
 
-	&--uncommon {background: $gradient-uncommon;}
-	&--rare {background: $gradient-rare;}
-	&--epic {background: $gradient-epic;}
-	&--legendary {background: $gradient-legendary;}
+	@include shadow(sm);
+
+	&--uncommon {
+		background: $gradient-uncommon;
+		border-color: $border-uncommon;
+	}
+	&--rare {
+		background: $gradient-rare;
+		border-color: $border-rare;
+	}
+	&--epic {
+		background: $gradient-epic;
+		border-color: $border-epic;
+	}
+	&--legendary {
+		background: $gradient-legendary;
+		border-color: $border-legendary;
+	}
 
 	.item-coin {
 		&--image {
