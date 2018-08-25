@@ -47,15 +47,15 @@ export class ItemCard extends Component {
 		const {_id} = this.props;
 
 		this.props.orderedItems.find((orderedItem, orderedItemIndex) => {
-			if (_id === orderedItem._id) {
+
+			const exists = (_id === orderedItem._id);
+
+			if (exists) {
 				this.setIndexInOrder(orderedItemIndex);
-				this.setExistsInOrder(true);
-				return true;
 			}
-			else {
-				this.setExistsInOrder(false);
-				return false;
-			}
+
+			this.setExistsInOrder(exists);
+			return exists;
 		});
 	}
 
