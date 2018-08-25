@@ -39,7 +39,8 @@ export class ItemCard extends Component {
 		}
 		else {
 			this.props.addItemToOrder(item);
-			this.checkThatExistsInOrder();
+			this.setIndexInOrder(this.props.orderedItems.length);
+			this.setExistsInOrder(true);
 		}
 	}
 
@@ -72,19 +73,17 @@ export class ItemCard extends Component {
 	}
 
 	setExistsInOrder(existsInOrder) {
-		const newState = {
-			...this.state,
+		const newState = Object.assign(this.state, {
 			existsInOrder
-		};
+		});
 
 		this.setState(newState);
 	}
 
-	setIndexInOrder(index) {
-		const newState = {
-			...this.state,
-			indexInOrder: index
-		};
+	setIndexInOrder(indexInOrder) {
+		const newState = Object.assign(this.state, {
+			indexInOrder
+		});
 
 		this.setState(newState);
 	}
