@@ -16,7 +16,7 @@ export class ItemCard extends Component {
 	switchOrder() {
 		const {_id, name, rarity} = this.props;
 
-		if (this.checkThatItemIsOrdered()) {
+		if (!this.checkThatItemIsOrdered()) {
 			const item = {
 				_id,
 				name,
