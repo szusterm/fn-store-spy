@@ -23,7 +23,7 @@ export class ItemCard extends Component {
 	}
 
 	switchOrder() {
-		const {indexInOrder} = this.state;
+		const {indexInOrder, existsInOrder} = this.state;
 		const {_id, name, rarity} = this.props;
 
 		const item = {
@@ -33,13 +33,13 @@ export class ItemCard extends Component {
 			active: true
 		};
 
-		if (!indexInOrder) {
-			this.props.addItemToOrder(item);
-			this.setExistsInOrder(true);
+		if (existsInOrder) {
+			const active = this.checkThatIsActive();
+			this.props.setActiveInOrderedItem(indexInOrder, !active);
 		}
 		else {
-			this.setIndexInOrder(null);
-			this.setExistsInOrder(false);
+			this.props.addItemToOrder(item);
+			this.checkThatExistsInOrder();
 		}
 	}
 
@@ -52,9 +52,9 @@ export class ItemCard extends Component {
 
 			if (exists) {
 				this.setIndexInOrder(orderedItemIndex);
+				this.setExistsInOrder(exists);
 			}
 
-			this.setExistsInOrder(exists);
 			return exists;
 		});
 	}
