@@ -14,7 +14,7 @@ export class ItemCard extends Component {
 	}
 
 	switchOrder() {
-		const {_id, name, rarity} = this.props;
+		const {_id, name, rarity, imageSrc} = this.props;
 
 		const indexInOrder = this.getIndexInOrder();
 
@@ -22,7 +22,8 @@ export class ItemCard extends Component {
 			const item = {
 				_id,
 				name,
-				rarity
+				rarity,
+				imageSrc
 			};
 
 			this.props.addItemToOrder(item);
