@@ -123,6 +123,24 @@ describe('Actions', () => {
 		});
 	});
 
+	describe('setActiveInOrderedItem()', () => {
+		it('calls reducer to change active prop in ordered item', () => {
+			const expectedChange = {
+				type: types.SET_ORDERED_ITEM_ACTIVE,
+				payload: {
+					index: 2,
+					active: false
+				}
+			};
+
+			const {index, active} = expectedChange.payload;
+
+			const returnedChange = actions.setActiveInOrderedItem(index, active);
+
+			expect(returnedChange).toEqual(expectedChange);
+		});
+	});
+
 	describe('setConfig()', () => {
 		it('updates config store with api response data', async () => {
 			const mockDispatch = jest.fn();
