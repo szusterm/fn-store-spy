@@ -1,12 +1,12 @@
 @mixin transition($type: sm) {
-	$trans-fast: 70ms;
+	$trans-short: 70ms;
 	$trans-medium: 100ms;
 	$trans-long: 150ms;
 
-	$trans-to-return: $trans-fast;
+	$trans-to-return: $trans-short;
 
 	@if ($type == sh) {
-		$trans-to-return: $trans-fast;
+		$trans-to-return: $trans-short;
 	}
 	@else if ($type == md) {
 		$trans-to-return: $trans-medium;
@@ -15,7 +15,7 @@
 		$trans-to-return: $trans-long;
 	}
 	@else {
-		$trans-to-return: $trans-fast;
+		$trans-to-return: $trans-short;
 	}
 
 	transition-duration: $trans-to-return;
