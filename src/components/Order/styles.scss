@@ -5,18 +5,24 @@
 @import '../../scss/shadows';
 
 .order {
-	position: fixed;
+	$mobile-height: 70px;
+	$desktop-width: 100px;
 
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: auto;
 	right: 0;
 
-	width: 100px;
+	width: $desktop-width;
 	height: 100%;
 
 	background-color: $body-bg;
 	@include shadow(md);
+
+	transition-property: transform;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
 
 	@include media-breakpoint-down(sm) {
 		top: auto;
@@ -25,7 +31,15 @@
 		right: 0;
 
 		width: 100%;
-		height: 70px;
+		height: $mobile-height;
+	}
+
+	&--closed {
+		transform: translate($desktop-width);
+
+		@include media-breakpoint-down(sm) {
+			transform: translate(0, $mobile-height);
+		}
 	}
 
 	.list {

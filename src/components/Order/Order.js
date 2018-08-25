@@ -7,11 +7,17 @@ import ItemCoin from '../ItemCoin';
 import './styles.scss';
 
 export class Order extends Component {
+
+	checkThatIsEmpty() {
+		const {items} = this.props;
+		return (items.length === 0);
+	}
+
 	render() {
 		const {items} = this.props;
 
 		return (
-			<div className={'order'}>
+			<div className={`order ${(this.checkThatIsEmpty()) && 'order--closed'}`}>
 				<div className={'order--list'}>
 					{
 						items.map((item) => {
