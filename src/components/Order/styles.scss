@@ -22,7 +22,7 @@
 	@include shadow(md);
 
 	transition-property: transform;
-	@include transition(sh);
+	@include transition(md);
 
 	@include media-breakpoint-down(sm) {
 		top: auto;
