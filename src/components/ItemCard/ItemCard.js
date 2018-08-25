@@ -90,6 +90,8 @@ export class ItemCard extends Component {
 
 	render() {
 		const {name, price, rarity, type, imageSrc} = this.props;
+		const {orderedItems} = this.props; //redux
+		const {indexInOrder} = this.state;
 
 		return (
 			<div
@@ -107,7 +109,7 @@ export class ItemCard extends Component {
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.state.existsInOrder) &&
+						(indexInOrder !== null && orderedItems[indexInOrder].active) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
