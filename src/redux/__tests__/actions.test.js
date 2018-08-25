@@ -123,19 +123,14 @@ describe('Actions', () => {
 		});
 	});
 
-	describe('setActiveInOrderedItem()', () => {
-		it('calls reducer to change active prop in ordered item', () => {
+	describe('removeItemFromOrderByIndex()', () => {
+		it('calls reducer to add an item', () => {
 			const expectedChange = {
-				type: types.SET_ORDERED_ITEM_ACTIVE,
-				payload: {
-					index: 2,
-					active: false
-				}
+				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
+				payload: 3
 			};
 
-			const {index, active} = expectedChange.payload;
-
-			const returnedChange = actions.setActiveInOrderedItem(index, active);
+			const returnedChange = actions.removeItemFromOrderByIndex(expectedChange.payload);
 
 			expect(returnedChange).toEqual(expectedChange);
 		});

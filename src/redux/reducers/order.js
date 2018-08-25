@@ -7,25 +7,20 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 	const {type, payload} = action;
 
-	if (type === types.ADD_ITEM_TO_ORDER) {
-		return {
-			...state,
-			items: [...state.items, payload]
-		};
-	}
-	else if (type === types.SET_ORDERED_ITEM_ACTIVE){
-		const {index, active} = payload;
-
-		const chnagedItems = [...state.items];
-		chnagedItems[index].active = active;
-
-		return {
-			...state,
-			items: chnagedItems
-		};
-	}
-	else {
-		return state;
+	switch (type) {
+		case types.ADD_ITEM_TO_ORDER:
+			return {
+				...state,
+				items: [...state.items, payload]
+			};
+		case types.REMOVE_ITEM_FROM_ORDER_BY_INDEX:
+			state.items.splice(payload, 1);
+			return {
+				...state,
+				items: [...state.items]
+			};
+		default:
+			return state;
 	}
 };
 

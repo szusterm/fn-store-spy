@@ -22,28 +22,17 @@ describe('Order Reducer', () => {
 		});
 	});
 
-	describe(types.SET_ORDERED_ITEM_ACTIVE, () => {
-		const initialStateForActive = {
-			items: [
-				{active: false},
-				{active: false}
-			]
-		};
-
-		it('returns a state with changed an active prop in an item', () => {
+	describe(types.REMOVE_ITEM_FROM_ORDER_BY_INDEX, () => {
+		it('returns a state without an item removed by id', () => {
 			const action = {
-				type: types.SET_ORDERED_ITEM_ACTIVE,
-				payload: {
-					index: 1,
-					active: true
-				}
+				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
+				payload: 1
 			};
-			const {index, active} = action.payload;
 
-			const expectedState = {...initialStateForActive};
-			expectedState.items[index].active = active;
+			const returnedState = reducer(initialState, action);
 
-			const returnedState = reducer(initialStateForActive, action);
+			const expectedState = {...initialState};
+			expectedState.items = [initialState.items[0]];
 
 			expect(returnedState).toEqual(expectedState);
 		});

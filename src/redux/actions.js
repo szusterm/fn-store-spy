@@ -43,13 +43,10 @@ export const addItemToOrder = (item) => {
 	};
 };
 
-export const setActiveInOrderedItem = (index, active) => {
+export const removeItemFromOrderByIndex = (itemIndex) => {
 	return {
-		type: types.SET_ORDERED_ITEM_ACTIVE,
-		payload: {
-			index,
-			active
-		}
+		type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
+		payload: itemIndex
 	};
 };
 
