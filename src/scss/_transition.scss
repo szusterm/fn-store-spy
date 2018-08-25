@@ -1,0 +1,23 @@
+@mixin transition($type: sm) {
+	$trans-fast: 100ms;
+	$trans-medium: 150ms;
+	$trans-long: 200ms;
+
+	$trans-to-return: $trans-fast;
+
+	@if ($type == fast) {
+		$trans-to-return: $trans-fast;
+	}
+	@else if ($type == medium) {
+		$trans-to-return: $trans-medium;
+	}
+	@else if ($type == long) {
+		$trans-to-return: $trans-long;
+	}
+	@else {
+		$trans-to-return: $trans-fast;
+	}
+
+	transition-duration: $trans-to-return;
+	transition-timing-function: ease-out;
+}
