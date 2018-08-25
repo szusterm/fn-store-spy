@@ -16,7 +16,9 @@ export class ItemCard extends Component {
 	switchOrder() {
 		const {_id, name, rarity} = this.props;
 
-		if (!this.checkThatItemIsOrdered()) {
+		const indexInOrder = this.getIndexInOrder();
+
+		if (indexInOrder === null) {
 			const item = {
 				_id,
 				name,
@@ -26,18 +28,8 @@ export class ItemCard extends Component {
 			this.props.addItemToOrder(item);
 		}
 		else {
-			const indexInOrder = this.getIndexInOrder();
 			this.props.removeItemFromOrderByIndex(indexInOrder);
 		}
-	}
-
-	checkThatItemIsOrdered() {
-		const {_id} = this.props;
-		const {orderedItems} = this.props;
-
-		const sameItemInOrder = orderedItems.find((orderedItem) => (_id === orderedItem._id));
-
-		return (sameItemInOrder !== undefined);
 	}
 
 	getIndexInOrder() {
@@ -74,7 +66,7 @@ export class ItemCard extends Component {
 				<div className={'item-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.checkThatItemIsOrdered()) &&
+						(this.getIndexInOrder() !== null) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
