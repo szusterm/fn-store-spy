@@ -18,12 +18,16 @@ export class Order extends Component {
 							const {_id, imageSrc, rarity} = item;
 
 							return (
-								<ItemCoin
+								<div
 									key={_id}
-									_id={_id}
-									imageSrc={imageSrc}
-									rarity={rarity}
-								/>
+									className={'list--item-box'}
+								>
+									<ItemCoin
+										_id={_id}
+										imageSrc={imageSrc}
+										rarity={rarity}
+									/>
+								</div>
 							);
 						})
 					}

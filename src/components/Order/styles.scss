@@ -4,8 +4,6 @@
 
 @import '../../scss/shadows';
 
-$order-width: 150px;
-
 .order {
 	position: fixed;
 
@@ -14,15 +12,13 @@ $order-width: 150px;
 	left: auto;
 	right: 0;
 
-	width: 150px;
+	width: 100px;
 	height: 100%;
 
 	background-color: $body-bg;
 	@include shadow(md);
-}
 
-@include media-breakpoint-down(sm) {
-	.order {
+	@include media-breakpoint-down(sm) {
 		top: auto;
 		bottom: 0;
 		left: 0;
@@ -30,5 +26,23 @@ $order-width: 150px;
 
 		width: 100%;
 		height: 70px;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+
+		@include media-breakpoint-down(sm) {
+			flex-direction: row;
+		}
+
+		&--item-box {
+			margin: 15px;
+
+			@include media-breakpoint-down(sm) {
+				max-height: 100%;
+				width: auto;
+			}
+		}
 	}
 }
