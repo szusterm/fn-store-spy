@@ -31,6 +31,8 @@ export class Searching extends Component {
 	}
 
 	render() {
+		const {items, updateItems} = this.props;
+
 		return (
 			<div className={'container searching'}>
 				<div className={'row searching--name-search-bar-box'}>
@@ -43,14 +45,14 @@ export class Searching extends Component {
 				<div className={'row searching--items-list-box'}>
 					<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
 						<ItemsList
-							items={this.props.items}
+							items={items}
 						/>
 					</div>
 				</div>
 				<div className={'row searching--pagination-box'}>
 					<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>
 						<Pagination
-							onChange={this.props.updateItems}
+							onChange={updateItems}
 						/>
 					</div>
 				</div>

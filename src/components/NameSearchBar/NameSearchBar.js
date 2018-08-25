@@ -23,12 +23,14 @@ export class NameSearchBar extends Component {
 	}
 
 	render() {
+		const {maxNameFilterLength} = this.props;
+
 		return (
 			<div className={'name-search-bar'}>
 				<input
 					className={'name-search-bar--input'}
 					placeholder={'Search by name'}
-					maxLength={this.props.maxNameFilterLength}
+					maxLength={maxNameFilterLength}
 					onChange={this.updateStore}
 				/>
 			</div>

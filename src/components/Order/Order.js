@@ -6,11 +6,13 @@ import './styles.scss';
 
 export class Order extends Component {
 	render() {
+		const {items} = this.props;
+
 		return (
 			<div className={'order'}>
 				<div className={'order--list'}>
 					{
-						this.props.items.map((item) => {
+						items.map((item) => {
 							const {_id, name, active} = item;
 
 							if (active) {

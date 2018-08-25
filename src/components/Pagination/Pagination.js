@@ -34,13 +34,15 @@ export class Pagination extends Component {
 	}
 
 	render() {
+		const {page, nextPageAvailable} = this.props;
+
 		return (
 			<div className={'container-fluid pagination'}>
 				<div className={'row'}>
 					<div className={'col-6'}>
 						<button
 							className={'pagination--button pagination--button--previous'}
-							disabled={(this.props.page <= 1)}
+							disabled={(page <= 1)}
 							onClick={this.previousPage}
 						>
 							Previous
@@ -49,7 +51,7 @@ export class Pagination extends Component {
 					<div className={'col-6'}>
 						<button
 							className={'pagination--button pagination--button--next'}
-							disabled={!this.props.nextPageAvailable}
+							disabled={!nextPageAvailable}
 							onClick={this.nextPage}
 						>
 							Next
