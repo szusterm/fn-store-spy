@@ -15,7 +15,10 @@ describe('Order Reducer', () => {
 
 			const returnedState = reducer(initialState, action);
 
-			const expectedState = {...initialState};
+			const expectedState = {
+				...initialState,
+				items: [...initialState.items]
+			};
 			expectedState.items.push(action.payload);
 
 			expect(returnedState).toEqual(expectedState);
