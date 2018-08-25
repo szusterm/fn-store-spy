@@ -5,13 +5,13 @@
 
 	$shadow-to-return: $shadow-small;
 
-	@if $type == sm {
+	@if ($type == sm) {
 		$shadow-to-return: $shadow-small;
 	}
-	@else if $type == md {
+	@else if ($type == md) {
 		$shadow-to-return: $shadow-medium;
 	}
-	@else if $type == lg {
+	@else if ($type == lg) {
 		$shadow-to-return: $shadow-large;
 	}
 	@else {
