@@ -44,7 +44,7 @@ ShallowWrapper {
         <div
           className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
         >
-          <ItemCard
+          <ItemSearchCard
             imageSrc="https://example.com"
             name="Super Axe"
             price="2000"
@@ -55,7 +55,7 @@ ShallowWrapper {
         <div
           className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
         >
-          <ItemCard
+          <ItemSearchCard
             imageSrc="https://example.pl"
             name="Something"
             price="800"
@@ -76,7 +76,7 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemCard
+            <ItemSearchCard
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -87,7 +87,7 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemCard
+            <ItemSearchCard
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -105,7 +105,7 @@ ShallowWrapper {
           "key": "3h5i34uh53i4",
           "nodeType": "host",
           "props": Object {
-            "children": <ItemCard
+            "children": <ItemSearchCard
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -137,7 +137,7 @@ ShallowWrapper {
           "key": "56b7h8678b",
           "nodeType": "host",
           "props": Object {
-            "children": <ItemCard
+            "children": <ItemSearchCard
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -181,7 +181,7 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemCard
+            <ItemSearchCard
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -192,7 +192,7 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemCard
+            <ItemSearchCard
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -213,7 +213,7 @@ ShallowWrapper {
             <div
               className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
             >
-              <ItemCard
+              <ItemSearchCard
                 imageSrc="https://example.com"
                 name="Super Axe"
                 price="2000"
@@ -224,7 +224,7 @@ ShallowWrapper {
             <div
               className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
             >
-              <ItemCard
+              <ItemSearchCard
                 imageSrc="https://example.pl"
                 name="Something"
                 price="800"
@@ -242,7 +242,7 @@ ShallowWrapper {
             "key": "3h5i34uh53i4",
             "nodeType": "host",
             "props": Object {
-              "children": <ItemCard
+              "children": <ItemSearchCard
                 imageSrc="https://example.com"
                 name="Super Axe"
                 price="2000"
@@ -274,7 +274,7 @@ ShallowWrapper {
             "key": "56b7h8678b",
             "nodeType": "host",
             "props": Object {
-              "children": <ItemCard
+              "children": <ItemSearchCard
                 imageSrc="https://example.pl"
                 name="Something"
                 price="800"

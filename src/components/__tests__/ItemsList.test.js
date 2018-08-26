@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import {ItemsList} from '../ItemsList/ItemsList';
 
-import ItemCard from '../ItemCard';
+import ItemCard from '../ItemSearchCard';
 
 const exampleItemsList = [
 	{
@@ -51,7 +51,7 @@ describe('ItemsList Component', () => {
 		expect(items.length).toBe(props.items.length);
 	});
 
-	it('passes props without id to every ItemCard', () => {
+	it('passes props without id to every ItemSearchCard', () => {
 		const {wrapper, props} = setup({
 			items: exampleItemsList
 		});

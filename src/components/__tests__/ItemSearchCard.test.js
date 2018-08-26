@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {ItemCard} from '../ItemCard/ItemCard';
+import {ItemSearchCard} from '../ItemSearchCard/ItemSearchCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
@@ -12,12 +12,12 @@ const setup = (propOverrides) => {
 		imageSrc: 'https://example.com'
 	}, propOverrides);
 
-	const wrapper = shallow(<ItemCard {...props}/>);
+	const wrapper = shallow(<ItemSearchCard {...props}/>);
 
 	return {props, wrapper};
 };
 
-describe('ItemCard Component', () => {
+describe('ItemSearchCard Component', () => {
 	it('renders correctly', () => {
 		const {wrapper} = setup();
 

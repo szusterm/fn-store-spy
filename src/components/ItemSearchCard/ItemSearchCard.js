@@ -8,7 +8,7 @@ import ItemCoin from '../ItemCoin';
 
 import './styles.scss';
 
-export class ItemCard extends Component {
+export class ItemSearchCard extends Component {
 	constructor() {
 		super();
 
@@ -55,16 +55,16 @@ export class ItemCard extends Component {
 
 		return (
 			<div
-				className={'item-card item-card--raised'}
+				className={'item-search-card item-search-card--raised'}
 				onClick={this.switchOrder}
 			>
-				<div className={'item-card--top-part'}>
+				<div className={'item-search-card--top-part'}>
 					<ItemCoin
 						imageSrc={imageSrc}
 						rarity={rarity}
 					/>
 				</div>
-				<div className={'item-card--bot-part'}>
+				<div className={'item-search-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
 						(this.getIndexInOrder() !== null) &&
@@ -80,7 +80,7 @@ export class ItemCard extends Component {
 	}
 }
 
-ItemCard.propTypes = {
+ItemSearchCard.propTypes = {
 	_id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
@@ -99,4 +99,4 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {addItemToOrder, removeItemFromOrderByIndex};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemSearchCard);

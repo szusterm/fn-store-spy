@@ -2,7 +2,7 @@
 @import '../../scss/transition';
 @import '../../scss/whiteBackground';
 
-.item-card {
+.item-search-card {
 
 	cursor: pointer;
 
@@ -18,7 +18,7 @@
 	}
 
 	&:hover, &:focus {
-		.item-card {
+		.item-search-card {
 			&--top-part, &--bot-part {
 				@include whiteBackground(1);
 			}
