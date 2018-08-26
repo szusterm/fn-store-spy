@@ -13,16 +13,9 @@
 
 	&--top-part, &--bot-part {
 		background-color: $body-bg;
-		@include shadow(sm);
 
 		@include transition(sh);
 		transition-property: box-shadow;
-	}
-
-	&:hover {
-		.item-card--top-part, .item-card--bot-part {
-			@include shadow(md);
-		}
 	}
 
 	&--top-part {
@@ -32,19 +25,6 @@
 		border-top-right-radius: 50%;
 
 		position: relative;
-
-		&::after {
-			width: 100%;
-			background: $body-bg;
-			height: $strip-height;
-			content: "";
-
-			display: block;
-			position: absolute;
-			top: calc(100% - #{$strip-height}/2);
-			left: 0;
-			right: 0;
-		}
 	}
 
 	&--bot-part {
