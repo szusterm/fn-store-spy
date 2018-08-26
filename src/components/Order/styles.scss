@@ -19,7 +19,7 @@
 	width: auto;
 	height: 100%;
 
-	@include whiteBackground(0.6);
+	@include whiteBackground(1);
 	@include shadow(md);
 
 	transition-property: transform;
