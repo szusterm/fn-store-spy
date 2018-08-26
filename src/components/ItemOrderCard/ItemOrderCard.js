@@ -32,6 +32,9 @@ export class ItemOrderCard extends Component {
 					imageSrc={imageSrc}
 					rarity={rarity}
 				/>
+				<div className={'item-order-card--remove-box'}>
+					<div className={'remove-box--button'}/>
+				</div>
 			</div>
 		);
 	}

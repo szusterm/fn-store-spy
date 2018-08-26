@@ -1,0 +1,47 @@
+@import '../../scss/transition';
+
+.item-order-card {
+	position: relative;
+	cursor: pointer;
+
+	&--remove-box {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border-radius: 50%;
+		background-color: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+
+		@include transition(sh);
+
+		&:hover {
+			opacity: 1;
+
+			.remove-box--button {
+				transform: scale(1);
+			}
+		}
+	}
+
+	.remove-box {
+		&--button {
+			$size: 40px;
+			width: $size;
+			height: $size;
+
+			border-radius: 50%;
+			background-color: #f44336;
+
+			transform: scale(0);
+
+			@include transition(md);
+		}
+	}
+}
