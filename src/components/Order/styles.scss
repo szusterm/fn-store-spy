@@ -6,8 +6,8 @@
 @import '../../scss/transition';
 
 .order {
-	$mobile-height: 70px;
-	$desktop-width: 100px;
+	$mobile-size: 70px;
+	$desktop-size: 100px;
 
 	position: fixed;
 	top: 0;
@@ -15,7 +15,7 @@
 	left: auto;
 	right: 0;
 
-	width: $desktop-width;
+	width: auto;
 	height: 100%;
 
 	background-color: $body-bg;
@@ -30,32 +30,36 @@
 		left: 0;
 		right: 0;
 
+		height: auto;
 		width: 100%;
-		height: $mobile-height;
 	}
 
 	&--closed {
-		transform: translate($desktop-width);
+		transform: translate($desktop-size);
 
 		@include media-breakpoint-down(sm) {
-			transform: translate(0, $mobile-height);
+			transform: translate(0, $mobile-size);
 		}
 	}
 
 	.list {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 
 		@include media-breakpoint-down(sm) {
 			flex-direction: row;
 		}
 
 		&--item-box {
-			margin: 15px;
+			width: $desktop-size;
+			height: $desktop-size;
+
+			padding: 15px;
 
 			@include media-breakpoint-down(sm) {
-				max-height: 100%;
-				width: auto;
+				width: $mobile-size;
+				height: $mobile-size;
 			}
 		}
 	}
