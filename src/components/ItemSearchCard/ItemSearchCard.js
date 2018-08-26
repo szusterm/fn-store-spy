@@ -13,6 +13,7 @@ export class ItemSearchCard extends Component {
 		super();
 
 		this.switchOrder = this.switchOrder.bind(this);
+		this.checkThatItemIsOrdered = this.checkThatItemIsOrdered.bind(this);
 	}
 
 	switchOrder() {
@@ -50,6 +51,10 @@ export class ItemSearchCard extends Component {
 		return indexInOrder;
 	}
 
+	checkThatItemIsOrdered() {
+		return (this.getIndexInOrder() !== null);
+	}
+
 	render() {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
@@ -67,7 +72,7 @@ export class ItemSearchCard extends Component {
 				<div className={'item-search-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
 					{
-						(this.getIndexInOrder() !== null) &&
+						(this.checkThatItemIsOrdered()) &&
 							<span>ORDERED</span>
 					}
 					<div className={'bot-part--description'}>
