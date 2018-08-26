@@ -1,5 +1,6 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
+@import '../../scss/whiteBackground';
 
 .name-search-bar {
 	$inputHeight: 50px;
@@ -15,11 +16,13 @@
 		border-width: 0;
 		border-radius: $inputHeight/2;
 
+		@include whiteBackground(0.6);
 		@include shadow(sm);
 
 		@include transition(sh);
 
 		&:hover, &:focus {
+			@include whiteBackground(0.9);
 			@include shadow(md);
 		}
 	}
