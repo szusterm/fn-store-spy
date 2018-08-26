@@ -3,7 +3,6 @@
 @import '../../scss/whiteBackground';
 
 .item-card {
-	$background-opacity: 0.8;
 
 	cursor: pointer;
 
@@ -12,7 +11,7 @@
 	margin: 10px;
 
 	&--top-part, &--bot-part {
-		@include whiteBackground($background-opacity);
+		@include whiteBackground(0.95);
 		@include transition(md);
 
 		transition-property: box-shadow;
