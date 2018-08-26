@@ -4,6 +4,7 @@
 
 @import '../../scss/shadow';
 @import '../../scss/transition';
+@import '../../scss/whiteBackground';
 
 .order {
 	$mobile-size: 70px;
@@ -18,7 +19,7 @@
 	width: auto;
 	height: 100%;
 
-	background-color: $body-bg;
+	@include whiteBackground(0.6);
 	@include shadow(md);
 
 	transition-property: transform;
