@@ -9,11 +9,25 @@ import ItemCoin from '../ItemCoin';
 import './styles.scss';
 
 export class ItemOrderCard extends Component {
+	constructor(props) {
+		super(props);
+
+		this.removeItemFromOrder = this.removeItemFromOrder.bind(this);
+	}
+
+	removeItemFromOrder() {
+		const {index} = this.props;
+		this.props.removeItemFromOrderByIndex(index);
+	}
+
 	render() {
 		const {imageSrc, rarity} = this.props;
 
 		return (
-			<div className={'item-order-card'}>
+			<div
+				className={'item-order-card'}
+				onClick={this.removeItemFromOrder}
+			>
 				<ItemCoin
 					imageSrc={imageSrc}
 					rarity={rarity}
