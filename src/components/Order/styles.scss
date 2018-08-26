@@ -42,15 +42,16 @@
 		}
 	}
 
-	.list {
+	&--list {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 
 		@include media-breakpoint-down(sm) {
 			flex-direction: row;
 		}
+	}
 
+	.list {
 		&--item-box {
 			width: $desktop-size;
 			height: $desktop-size;
