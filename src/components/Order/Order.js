@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import ItemCoin from '../ItemCoin';
+import ItemOrderCard from '../ItemOrderCard';
 
 import './styles.scss';
 
@@ -20,7 +20,7 @@ export class Order extends Component {
 			<div className={`order ${(this.checkThatIsEmpty()) && 'order--closed'}`}>
 				<div className={'order--list'}>
 					{
-						items.map((item) => {
+						items.map((item, index) => {
 							const {_id, imageSrc, rarity} = item;
 
 							return (
@@ -28,7 +28,8 @@ export class Order extends Component {
 									key={_id}
 									className={'list--item-box'}
 								>
-									<ItemCoin
+									<ItemOrderCard
+										index={index}
 										imageSrc={imageSrc}
 										rarity={rarity}
 									/>
