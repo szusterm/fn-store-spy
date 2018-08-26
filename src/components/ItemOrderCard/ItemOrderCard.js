@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+
+import {removeItemFromOrderByIndex} from '../../redux/actions';
 
 import ItemCoin from '../ItemCoin';
 
@@ -24,6 +27,9 @@ ItemOrderCard.propTypes = {
 	index: PropTypes.number.isRequired,
 	imageSrc: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
+	removeItemFromOrderByIndex: PropTypes.func //redux
 };
 
-export default ItemOrderCard;
+const mapDispatchToProps = {removeItemFromOrderByIndex};
+
+export default connect(null, mapDispatchToProps)(ItemOrderCard);
