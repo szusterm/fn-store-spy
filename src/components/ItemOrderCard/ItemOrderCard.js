@@ -33,7 +33,9 @@ export class ItemOrderCard extends Component {
 					rarity={rarity}
 				/>
 				<div className={'item-order-card--remove-box'}>
-					<div className={'remove-box--button'}/>
+					<div className={'material-icons remove-box--sign'}>
+						<span>clear</span>
+					</div>
 				</div>
 			</div>
 		);
