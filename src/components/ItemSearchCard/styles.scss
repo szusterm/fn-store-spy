@@ -21,6 +21,14 @@
 		.item-search-card {
 			&--top-part, &--bot-part {
 				@include whiteBackground(1);
+
+				.visual-box--action-box {
+					opacity: 1;
+
+					.action-box--sign {
+						transform: scale(1);
+					}
+				}
 			}
 		}
 	}
@@ -32,6 +40,41 @@
 		border-top-right-radius: 50%;
 
 		position: relative;
+
+		.top-part--visual-box {
+			.visual-box--action-box {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				margin: 15px;
+				border-radius: 50%;
+				background-color: rgba(0, 0, 0, 0.5);
+				opacity: 0;
+
+				@include transition(sh);
+			}
+		}
+
+		.action-box {
+			&--sign {
+				padding: 5px;
+
+				border-radius: 50%;
+				background-color: #f44336;
+				color: white;
+
+				transform: scale(0);
+
+				@include transition(md);
+			}
+		}
 	}
 
 	&--bot-part {
