@@ -32,8 +32,8 @@ export class ItemOrderCard extends Component {
 					imageSrc={imageSrc}
 					rarity={rarity}
 				/>
-				<div className={'item-order-card--remove-box'}>
-					<div className={'material-icons remove-box--sign'}>
+				<div className={'item-order-card--action-box'}>
+					<div className={'material-icons action-box--sign'}>
 						<span>clear</span>
 					</div>
 				</div>

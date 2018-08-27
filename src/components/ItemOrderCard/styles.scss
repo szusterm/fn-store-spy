@@ -4,7 +4,7 @@
 	position: relative;
 	cursor: pointer;
 
-	&--remove-box {
+	&--action-box {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -24,13 +24,13 @@
 		&:hover {
 			opacity: 1;
 
-			.remove-box--sign {
+			.action-box--sign {
 				transform: scale(1);
 			}
 		}
 	}
 
-	.remove-box {
+	.action-box {
 		&--sign {
 			padding: 5px;
 
