@@ -17,7 +17,6 @@
 
 	max-width: $list-width;
 	height: 100%;
-	padding: 20px;
 
 	@include whiteBackground(1);
 	@include shadow(md);
@@ -30,6 +29,10 @@
 	}
 
 	&--list {
+		padding: 20px !important;
+		max-height: 100%;
+		overflow: auto;
+
 		.list--item-box {
 			padding: 6px;
 		}
