@@ -46,7 +46,9 @@
 	}
 
 	&--top-part {
-		padding: 12px;
+		$padding: 12px;
+
+		padding: $padding;
 
 		border-top-left-radius: 50%;
 		border-top-right-radius: 50%;
@@ -78,7 +80,7 @@
 				justify-content: center;
 				align-items: center;
 
-				margin: 15px;
+				margin: $padding;
 				border-radius: 50%;
 				background-color: rgba(0, 0, 0, 0.7);
 				opacity: 0;
