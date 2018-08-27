@@ -2,6 +2,7 @@
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins/breakpoints';
 
+@import '../../scss/variables';
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/whiteBackground';
@@ -32,7 +33,7 @@
 					&--active {
 						.action-box--sign {
 							@include media-breakpoint-up(sm) {
-								background-color: #f44336;
+								background-color: $color-red;
 							}
 						}
 					}
@@ -62,10 +63,10 @@
 
 					.action-box--sign {
 						transform: scale(1);
-						background-color: #4CAF50;
+						background-color: $color-green;
 
 						&:hover {
-							background-color: #f44336
+							background-color: $color-red;
 						}
 					}
 				}
