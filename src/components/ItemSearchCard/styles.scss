@@ -43,6 +43,15 @@
 
 		.top-part--visual-box {
 			.visual-box--action-box {
+				&--active {
+					opacity: 1;
+
+					.action-box--sign {
+						background-color: red;
+						transform: scale(1);
+					}
+				}
+
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -65,15 +74,14 @@
 		.action-box {
 			&--sign {
 				padding: 10px;
-
 				border-radius: 50%;
+				background-color: black;
 				color: white;
 
 				transform: scale(0);
 
 				@include transition(md);
 
-				&--black {background-color: black}
 				&--green {background-color: #4CAF50}
 				&--red {background-color: #f44336}
 			}

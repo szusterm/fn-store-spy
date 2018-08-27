@@ -69,7 +69,9 @@ export class ItemSearchCard extends Component {
 							imageSrc={imageSrc}
 							rarity={rarity}
 						/>
-						<div className={'visual-box--action-box'}>
+						<div
+							className={`visual-box--action-box ${(this.checkThatItemIsOrdered()) && 'visual-box--action-box--active'}`}
+						>
 							<div className={'material-icons action-box--sign'}>
 								<span>clear</span>
 							</div>
