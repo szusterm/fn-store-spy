@@ -7,8 +7,7 @@
 @import '../../scss/whiteBackground';
 
 .order {
-	$mobile-size: 70px;
-	$desktop-size: 100px;
+	$list-width: 400px;
 
 	position: fixed;
 	top: 0;
@@ -16,7 +15,7 @@
 	left: auto;
 	right: 0;
 
-	width: auto;
+	max-width: $list-width;
 	height: 100%;
 
 	@include whiteBackground(1);
@@ -25,44 +24,15 @@
 	transition-property: transform;
 	@include transition(md);
 
-	@include media-breakpoint-down(sm) {
-		top: auto;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		height: auto;
-		width: 100%;
-	}
-
 	&--closed {
-		transform: translate($desktop-size);
-
-		@include media-breakpoint-down(sm) {
-			transform: translate(0, $mobile-size);
-		}
+		transform: translate($list-width);
 	}
 
 	&--list {
-		display: flex;
-		flex-direction: column;
+		padding: 20px !important;
 
-		@include media-breakpoint-down(sm) {
-			flex-direction: row;
-		}
-	}
-
-	.list {
-		&--item-box {
-			width: $desktop-size;
-			height: $desktop-size;
-
-			padding: 15px;
-
-			@include media-breakpoint-down(sm) {
-				width: $mobile-size;
-				height: $mobile-size;
-			}
+		.list--item-box {
+			padding: 6px;
 		}
 	}
 }

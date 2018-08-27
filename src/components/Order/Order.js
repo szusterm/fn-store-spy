@@ -18,25 +18,27 @@ export class Order extends Component {
 
 		return (
 			<div className={`order ${(this.checkThatIsEmpty()) && 'order--closed'}`}>
-				<div className={'order--list'}>
-					{
-						items.map((item, index) => {
-							const {_id, imageSrc, rarity} = item;
+				<div className={'container-fluid order--list'}>
+					<div className={'row'}>
+						{
+							items.map((item, index) => {
+								const {_id, imageSrc, rarity} = item;
 
-							return (
-								<div
-									key={_id}
-									className={'list--item-box'}
-								>
-									<ItemOrderCard
-										index={index}
-										imageSrc={imageSrc}
-										rarity={rarity}
-									/>
-								</div>
-							);
-						})
-					}
+								return (
+									<div
+										key={_id}
+										className={'col-3 list--item-box'}
+									>
+										<ItemOrderCard
+											index={index}
+											imageSrc={imageSrc}
+											rarity={rarity}
+										/>
+									</div>
+								);
+							})
+						}
+					</div>
 				</div>
 				<div className={'order--confirmation-box'}/>
 			</div>
