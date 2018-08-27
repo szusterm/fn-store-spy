@@ -25,6 +25,12 @@
 				.visual-box--action-box {
 					opacity: 1;
 
+					&--active {
+						.action-box--sign {
+							background-color: #f44336
+						}
+					}
+
 					.action-box--sign {
 						transform: scale(1);
 					}
@@ -47,8 +53,12 @@
 					opacity: 1;
 
 					.action-box--sign {
-						background-color: red;
 						transform: scale(1);
+						background-color: #4CAF50;
+
+						&:hover {
+							background-color: #f44336
+						}
 					}
 				}
 
