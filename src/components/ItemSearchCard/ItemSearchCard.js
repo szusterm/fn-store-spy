@@ -73,7 +73,7 @@ export class ItemSearchCard extends Component {
 							className={`visual-box--action-box ${(this.checkThatItemIsOrdered()) && 'visual-box--action-box--active'}`}
 						>
 							<div className={'material-icons action-box--sign'}>
-								<span>clear</span>
+								<span>{(this.checkThatItemIsOrdered()) ? 'done' : 'add'}</span>
 							</div>
 						</div>
 					</div>
