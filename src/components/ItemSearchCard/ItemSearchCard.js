@@ -80,10 +80,6 @@ export class ItemSearchCard extends Component {
 				</div>
 				<div className={'item-search-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
-					{
-						(this.checkThatItemIsOrdered()) &&
-							<span>ORDERED</span>
-					}
 					<div className={'bot-part--description'}>
 						<div className={'description--type'}>{type}</div>
 						<div className={'description--price'}>{price}</div>
