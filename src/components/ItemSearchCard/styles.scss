@@ -64,15 +64,18 @@
 
 		.action-box {
 			&--sign {
-				padding: 5px;
+				padding: 10px;
 
 				border-radius: 50%;
-				background-color: #f44336;
 				color: white;
 
 				transform: scale(0);
 
 				@include transition(md);
+
+				&--black {background-color: black}
+				&--green {background-color: #4CAF50}
+				&--red {background-color: #f44336}
 			}
 		}
 	}
