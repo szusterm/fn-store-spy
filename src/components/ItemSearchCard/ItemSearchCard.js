@@ -64,10 +64,17 @@ export class ItemSearchCard extends Component {
 				onClick={this.switchOrder}
 			>
 				<div className={'item-search-card--top-part'}>
-					<ItemCoin
-						imageSrc={imageSrc}
-						rarity={rarity}
-					/>
+					<div className={'top-part--visual-box'}>
+						<ItemCoin
+							imageSrc={imageSrc}
+							rarity={rarity}
+						/>
+						<div className={'visual-box--action-box'}>
+							<div className={'material-icons action-box--sign'}>
+								<span>clear</span>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div className={'item-search-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
