@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/whiteBackground';
@@ -21,17 +25,83 @@
 		.item-search-card {
 			&--top-part, &--bot-part {
 				@include whiteBackground(1);
+
+				.visual-box--action-box {
+					opacity: 1;
+
+					&--active {
+						.action-box--sign {
+							@include media-breakpoint-up(sm) {
+								background-color: #f44336;
+							}
+						}
+					}
+
+					.action-box--sign {
+						transform: scale(1);
+					}
+				}
 			}
 		}
 	}
 
 	&--top-part {
-		padding: 12px;
+		$padding: 12px;
+
+		padding: $padding;
 
 		border-top-left-radius: 50%;
 		border-top-right-radius: 50%;
 
 		position: relative;
+
+		.top-part--visual-box {
+			.visual-box--action-box {
+				&--active {
+					opacity: 1;
+
+					.action-box--sign {
+						transform: scale(1);
+						background-color: #4CAF50;
+
+						&:hover {
+							background-color: #f44336
+						}
+					}
+				}
+
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				margin: $padding;
+				border-radius: 50%;
+				background-color: rgba(0, 0, 0, 0.7);
+				opacity: 0;
+
+				@include transition(sh);
+			}
+		}
+
+		.action-box {
+			&--sign {
+				padding: 10px;
+				border-radius: 50%;
+				background-color: black;
+				color: white;
+				font-size: 3em;
+
+				transform: scale(0);
+
+				@include transition(md);
+			}
+		}
 	}
 
 	&--bot-part {

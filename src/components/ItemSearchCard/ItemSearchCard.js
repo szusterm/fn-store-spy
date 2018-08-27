@@ -13,6 +13,7 @@ export class ItemSearchCard extends Component {
 		super();
 
 		this.switchOrder = this.switchOrder.bind(this);
+		this.checkThatItemIsOrdered = this.checkThatItemIsOrdered.bind(this);
 	}
 
 	switchOrder() {
@@ -50,6 +51,10 @@ export class ItemSearchCard extends Component {
 		return indexInOrder;
 	}
 
+	checkThatItemIsOrdered() {
+		return (this.getIndexInOrder() !== null);
+	}
+
 	render() {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
@@ -59,17 +64,22 @@ export class ItemSearchCard extends Component {
 				onClick={this.switchOrder}
 			>
 				<div className={'item-search-card--top-part'}>
-					<ItemCoin
-						imageSrc={imageSrc}
-						rarity={rarity}
-					/>
+					<div className={'top-part--visual-box'}>
+						<ItemCoin
+							imageSrc={imageSrc}
+							rarity={rarity}
+						/>
+						<div
+							className={`visual-box--action-box ${(this.checkThatItemIsOrdered()) && 'visual-box--action-box--active'}`}
+						>
+							<div className={'material-icons action-box--sign'}>
+								<span>{(this.checkThatItemIsOrdered()) ? 'done' : 'add'}</span>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div className={'item-search-card--bot-part'}>
 					<div className={'bot-part--name'}>{name}</div>
-					{
-						(this.getIndexInOrder() !== null) &&
-							<span>ORDERED</span>
-					}
 					<div className={'bot-part--description'}>
 						<div className={'description--type'}>{type}</div>
 						<div className={'description--price'}>{price}</div>
