@@ -53,6 +53,7 @@
 					opacity: 1;
 
 					.action-box--sign {
+						font-size: 50px;
 						transform: scale(1);
 						background-color: #4CAF50;
 
@@ -74,7 +75,7 @@
 
 				margin: 15px;
 				border-radius: 50%;
-				background-color: rgba(0, 0, 0, 0.5);
+				background-color: rgba(0, 0, 0, 0.7);
 				opacity: 0;
 
 				@include transition(sh);
@@ -87,13 +88,11 @@
 				border-radius: 50%;
 				background-color: black;
 				color: white;
+				font-size: 3em;
 
 				transform: scale(0);
 
 				@include transition(md);
-
-				&--green {background-color: #4CAF50}
-				&--red {background-color: #f44336}
 			}
 		}
 	}
