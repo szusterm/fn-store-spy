@@ -13,6 +13,20 @@ export class Order extends Component {
 		return (items.length === 0);
 	}
 
+	getItemColsWidth() {
+		const {items} = this.props;
+
+		if (items.length <= 8) {
+			return 6;
+		}
+		else if (items.length > 8 && items.length <= 15) {
+			return 4;
+		}
+		else {
+			return 3;
+		}
+	}
+
 	render() {
 		const {items} = this.props;
 
@@ -27,7 +41,7 @@ export class Order extends Component {
 								return (
 									<div
 										key={_id}
-										className={'col-3 list--item-box'}
+										className={`col-${this.getItemColsWidth()} list--item-box`}
 									>
 										<ItemOrderCard
 											index={index}
