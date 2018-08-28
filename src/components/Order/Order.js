@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {closeOrderList} from '../../redux/actions';
+
 import ItemOrderCard from '../ItemOrderCard';
 
 import './styles.scss';
@@ -10,7 +12,14 @@ export class Order extends Component {
 
 	checkThatOrderIsEmpty() {
 		const {items} = this.props;
-		return (items.length === 0);
+
+		const isEmpty = (items.length === 0);
+
+		if (isEmpty) {
+			this.props.closeOrderList();
+		}
+
+		return isEmpty;
 	}
 
 	getItemColsWidth() {
@@ -53,7 +62,8 @@ export class Order extends Component {
 
 Order.propTypes = {
 	items: PropTypes.array, //redux
-	listOpened: PropTypes.bool //redux
+	listOpened: PropTypes.bool, //redux
+	closeOrderList: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
@@ -62,4 +72,6 @@ const mapStateToProps = (state) => {
 	return {items, listOpened};
 };
 
-export default connect(mapStateToProps, null)(Order);
+const mapDispatchToProps = {closeOrderList};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Order);
