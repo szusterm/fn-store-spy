@@ -15,7 +15,6 @@
 	left: auto;
 	right: 0;
 
-	max-width: $list-width;
 	height: 100%;
 
 	@include whiteBackground(1);
@@ -24,8 +23,14 @@
 	transition-property: transform;
 	@include transition(md);
 
+	max-width: 20%;
+	@include media-breakpoint-down(sm) {max-width: 100%;}
+	@include media-breakpoint-between(sm, md) {max-width: 70%;}
+	@include media-breakpoint-between(md, lg) {max-width: 40%;}
+	@include media-breakpoint-up(lg) {max-width: 30%;}
+
 	&--closed {
-		transform: translate($list-width);
+		transform: translate(100%);
 	}
 
 	&--list {
