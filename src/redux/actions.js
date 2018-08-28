@@ -50,6 +50,19 @@ export const removeItemFromOrderByIndex = (itemIndex) => {
 	};
 };
 
+export const openOrderList = () => {
+	return {
+		type: types.OPEN_ORDER_LIST
+	};
+};
+
+export const closeOrderList = () => {
+	return {
+		type: types.CLOSE_ORDER_LIST
+	};
+};
+
+
 export const setConfig = () => async (dispatch) => {
 	const {data: config} = await fetchConfig();
 
