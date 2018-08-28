@@ -7,10 +7,15 @@ import {openOrderList} from '../../redux/actions';
 import './styles.scss';
 
 export class OrderOpenButton extends Component {
+	checkThatOrderIsEmpty() {
+		const {orderedItems} = this.props;
+		return (orderedItems.length === 0);
+	}
+
 	render() {
 		return (
 			<div
-				className={'order-open-button'}
+				className={`order-open-button ${(this.checkThatOrderIsEmpty()) && 'order-open-button--closed'}`}
 				onClick={this.props.openOrderList}
 			>
 				<div className={'material-icons'}>
@@ -22,12 +27,17 @@ export class OrderOpenButton extends Component {
 }
 
 OrderOpenButton.propTypes = {
+	orderedItems: PropTypes.array, //redux
+	listOpened: PropTypes.bool, //redux
 	openOrderList: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
-	const {listOpened} = state.order;
-	return {listOpened};
+	const {listOpened, items} = state.order;
+	return {
+		orderedItems: items,
+		listOpened
+	};
 };
 
 const mapDispatchToProps = {openOrderList};

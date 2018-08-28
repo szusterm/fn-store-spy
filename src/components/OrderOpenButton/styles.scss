@@ -23,13 +23,17 @@
 	align-items: center;
 
 	@include shadow(sm);
-	@include transition(sh);
+	@include transition(md);
 
 	&:hover {
 		@include shadow(md);
 	}
 
-	transform: translate(50%, 50%);
+	transform: translate(50%, 50%) scale(1);
+
+	&--closed {
+		transform: translate(50%, 50%) scale(0);
+	}
 
 	&--icon {
 		font-size: $icon-size;
