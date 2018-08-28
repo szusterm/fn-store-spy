@@ -5,6 +5,7 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/whiteBackground';
+@import '../../scss/button-reset';
 
 .order {
 	$list-width: 400px;
@@ -42,7 +43,32 @@
 		}
 	}
 
-	&--close-button {
-		width: 100%;
+	&--button-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.button-box {
+			&--closing {
+				$height: 50px;
+
+				@include button-reset();
+				height: $height;
+				margin: 15px 0;
+				border-radius: $height/2;
+				font-size: 2em;
+				color: rgba(0, 0, 0, 0.6);
+
+				@include transition(md);
+
+				&:hover {
+					background-color: rgba(0, 0, 0, 0.05);
+				}
+
+				&:focus {
+					background-color: rgba(0, 0, 0, 0.1);
+				}
+			}
+		}
 	}
 }

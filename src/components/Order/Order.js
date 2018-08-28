@@ -33,13 +33,13 @@ export class Order extends Component {
 		return (
 			<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
 				<div className={'container-fluid'}>
-					<div className={'row'}>
-						<div className={'col-12'}>
+					<div className={'row order--button-box'}>
+						<div className={'col-8'}>
 							<button
-								className={'order--close-button'}
+								className={'material-icons button-box--closing'}
 								onClick={this.props.closeOrderList}
 							>
-								Close
+								<span>close</span>
 							</button>
 						</div>
 					</div>
