@@ -20,6 +20,16 @@ const reducer = (state = initialState, action) => {
 				...state,
 				items: [...state.items]
 			};
+		case types.OPEN_ORDER_LIST:
+			return {
+				...state,
+				listOpened: true
+			};
+		case types.CLOSE_ORDER_LIST:
+			return {
+				...state,
+				listOpened: false
+			};
 		default:
 			return state;
 	}
