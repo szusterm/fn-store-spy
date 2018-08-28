@@ -22,7 +22,7 @@ export class Order extends Component {
 		const {items, listOpened} = this.props;
 
 		return (
-			<div className={`order ${(!listOpened) && 'order--closed'}`}>
+			<div className={`order ${(!listOpened || this.checkThatIsEmpty()) && 'order--closed'}`}>
 				<div className={'container-fluid order--list'}>
 					<div className={'row'}>
 						{
