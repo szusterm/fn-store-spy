@@ -1,7 +1,8 @@
 import * as types from '../actionTypes';
 
 const initialState = {
-	items: []
+	items: [],
+	listOpened: false
 };
 
 const reducer = (state = initialState, action) => {
