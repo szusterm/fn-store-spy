@@ -14,7 +14,7 @@
 
 	max-width: 100%;
 	height: auto;
-	margin: 10px;
+	padding: 10px;
 
 	&--top-part, &--bot-part {
 		@include whiteBackground(0.95);
