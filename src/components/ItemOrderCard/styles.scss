@@ -1,7 +1,9 @@
 @import '../../scss/variables';
 @import '../../scss/transition';
+@import '../../scss/button-reset';
 
 .item-order-card {
+	@include button-reset();
 	position: relative;
 	cursor: pointer;
 
@@ -22,7 +24,7 @@
 
 		@include transition(sh);
 
-		&:hover {
+		&:hover, &:focus {
 			opacity: 1;
 
 			.action-box--sign {

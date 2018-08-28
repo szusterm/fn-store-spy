@@ -59,7 +59,7 @@ export class ItemSearchCard extends Component {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
 		return (
-			<div
+			<button
 				className={'item-search-card item-search-card--raised'}
 				onClick={this.switchOrder}
 			>
@@ -85,7 +85,7 @@ export class ItemSearchCard extends Component {
 						<div className={'description--price'}>{price}</div>
 					</div>
 				</div>
-			</div>
+			</button>
 		);
 	}
 }

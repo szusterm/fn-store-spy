@@ -24,7 +24,7 @@ export class ItemOrderCard extends Component {
 		const {imageSrc, rarity} = this.props;
 
 		return (
-			<div
+			<button
 				className={'item-order-card'}
 				onClick={this.removeItemFromOrder}
 			>
@@ -37,7 +37,7 @@ export class ItemOrderCard extends Component {
 						<span>clear</span>
 					</div>
 				</div>
-			</div>
+			</button>
 		);
 	}
 }

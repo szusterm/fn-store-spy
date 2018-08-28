@@ -6,9 +6,10 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/whiteBackground';
+@import '../../scss/button-reset';
 
 .item-search-card {
-
+	@include button-reset();
 	cursor: pointer;
 
 	max-width: 100%;
