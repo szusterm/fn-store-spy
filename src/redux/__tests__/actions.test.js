@@ -136,6 +136,30 @@ describe('Actions', () => {
 		});
 	});
 
+	describe('openOrderList()', () => {
+		it('calls reducer open the order list', () => {
+			const expectedChange = {
+				type: types.OPEN_ORDER_LIST
+			};
+
+			const returnedChange = actions.openOrderList(expectedChange.payload);
+
+			expect(returnedChange).toEqual(expectedChange);
+		});
+	});
+
+	describe('closeOrderList()', () => {
+		it('calls reducer close the order list', () => {
+			const expectedChange = {
+				type: types.CLOSE_ORDER_LIST
+			};
+
+			const returnedChange = actions.closeOrderList(expectedChange.payload);
+
+			expect(returnedChange).toEqual(expectedChange);
+		});
+	});
+
 	describe('setConfig()', () => {
 		it('updates config store with api response data', async () => {
 			const mockDispatch = jest.fn();
