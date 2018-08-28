@@ -32,8 +32,18 @@ export class Order extends Component {
 
 		return (
 			<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
-				<div className={'container-fluid order--list'}>
+				<div className={'container-fluid'}>
 					<div className={'row'}>
+						<div className={'col-12'}>
+							<button
+								className={'order--close-button'}
+								onClick={this.props.closeOrderList}
+							>
+								Close
+							</button>
+						</div>
+					</div>
+					<div className={'row order--list'}>
 						{
 							items.map((item, index) => {
 								const {_id, imageSrc, rarity} = item;
