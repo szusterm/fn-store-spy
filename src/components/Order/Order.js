@@ -8,7 +8,7 @@ import './styles.scss';
 
 export class Order extends Component {
 
-	checkThatIsEmpty() {
+	checkThatOrderIsEmpty() {
 		const {items} = this.props;
 		return (items.length === 0);
 	}
@@ -22,7 +22,7 @@ export class Order extends Component {
 		const {items, listOpened} = this.props;
 
 		return (
-			<div className={`order ${(!listOpened || this.checkThatIsEmpty()) && 'order--closed'}`}>
+			<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
 				<div className={'container-fluid order--list'}>
 					<div className={'row'}>
 						{
