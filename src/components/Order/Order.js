@@ -16,10 +16,7 @@ export class Order extends Component {
 	getItemColsWidth() {
 		const {items} = this.props;
 
-		if (items.length <= 8) {
-			return 6;
-		}
-		else if (items.length > 8 && items.length <= 15) {
+		if (items.length <= 9) {
 			return 4;
 		}
 		else {
