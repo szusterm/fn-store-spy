@@ -6,6 +6,7 @@ import {setConfig} from './redux/actions';
 
 import Searching from './components/Searching';
 import Order from './components/Order';
+import OrderOpenButton from './components/OrderOpenButton';
 
 import './scss/index.scss';
 
@@ -19,6 +20,7 @@ class App extends Component {
 			<div>
 				<Searching/>
 				<Order/>
+				<OrderOpenButton/>
 			</div>
 		);
 	}
