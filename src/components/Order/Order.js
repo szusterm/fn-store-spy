@@ -19,10 +19,10 @@ export class Order extends Component {
 	}
 
 	render() {
-		const {items} = this.props;
+		const {items, listOpened} = this.props;
 
 		return (
-			<div className={'order order--closed'}>
+			<div className={`order ${(!listOpened && !this.checkThatIsEmpty()) && 'order--closed'}`}>
 				<div className={'container-fluid order--list'}>
 					<div className={'row'}>
 						{
@@ -52,13 +52,14 @@ export class Order extends Component {
 }
 
 Order.propTypes = {
-	items: PropTypes.array //redux
+	items: PropTypes.array, //redux
+	listOpened: PropTypes.bool //redux
 };
 
 const mapStateToProps = (state) => {
-	const {items} = state.order;
+	const {items, listOpened} = state.order;
 
-	return {items};
+	return {items, listOpened};
 };
 
 export default connect(mapStateToProps, null)(Order);
