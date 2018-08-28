@@ -25,6 +25,11 @@ OrderOpenButton.propTypes = {
 	openOrderList: PropTypes.func //redux
 };
 
+const mapStateToProps = (state) => {
+	const {listOpened} = state.order;
+	return {listOpened};
+};
+
 const mapDispatchToProps = {openOrderList};
 
-export default connect(null, mapDispatchToProps)(OrderOpenButton);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderOpenButton);
