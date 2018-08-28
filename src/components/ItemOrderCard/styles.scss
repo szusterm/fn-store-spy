@@ -7,6 +7,16 @@
 	position: relative;
 	cursor: pointer;
 
+	&:hover, &:focus {
+		.item-order-card--action-box {
+			opacity: 1;
+
+			.action-box--sign {
+				transform: scale(1);
+			}
+		}
+	}
+
 	&--action-box {
 		position: absolute;
 		top: 0;
@@ -24,26 +34,18 @@
 
 		@include transition(sh);
 
-		&:hover, &:focus {
-			opacity: 1;
+		.action-box {
+			&--sign {
+				padding: 5px;
 
-			.action-box--sign {
-				transform: scale(1);
+				border-radius: 50%;
+				background-color: $color-red;
+				color: white;
+
+				transform: scale(0);
+
+				@include transition(md);
 			}
-		}
-	}
-
-	.action-box {
-		&--sign {
-			padding: 5px;
-
-			border-radius: 50%;
-			background-color: $color-red;
-			color: white;
-
-			transform: scale(0);
-
-			@include transition(md);
 		}
 	}
 }
