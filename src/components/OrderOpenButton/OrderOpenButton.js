@@ -8,7 +8,7 @@ export class OrderOpenButton extends Component {
 		return (
 			<div className={'order-open-button'}>
 				<div className={'material-icons'}>
-					<span>send</span>
+					<span className={'order-open-button--icon'}>shopping_basket</span>
 				</div>
 			</div>
 		);

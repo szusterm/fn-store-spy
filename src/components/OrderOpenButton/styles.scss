@@ -1,10 +1,37 @@
+@import '../../scss/shadow';
+@import '../../scss/transition';
+
 .order-open-button {
+	$size: 5.5em;
+	$icon-size: 1.8em;
+
+	cursor: pointer;
+
+	z-index: 3;
 	position: fixed;
-	left: 10%;
+	right: 50%;
 	bottom: 10%;
 
-	width: 100px;
-	height: 100%;
+	width: $size;
+	height: $size;
 	border-radius: 50%;
-	background-color: red;
+	background-color: white;
+	color: #43A047;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include shadow(sm);
+	@include transition(sh);
+
+	&:hover {
+		@include shadow(md);
+	}
+
+	transform: translate(50%, 50%);
+
+	&--icon {
+		font-size: $icon-size;
+	}
 }
