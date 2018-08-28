@@ -3,7 +3,8 @@ import * as types from '../../actionTypes';
 
 describe('Order Reducer', () => {
 	const initialState = {
-		items: ['item0', 'item6']
+		items: ['item0', 'item6'],
+		listOpened: false
 	};
 
 	describe(types.ADD_ITEM_TO_ORDER, () => {
@@ -36,6 +37,36 @@ describe('Order Reducer', () => {
 
 			const expectedState = {...initialState};
 			expectedState.items = [initialState.items[0]];
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
+	describe(types.OPEN_ORDER_LIST, () => {
+		it('returns a state with changed listOpened with true', () => {
+			const action = {
+				type: types.OPEN_ORDER_LIST
+			};
+
+			const returnedState = reducer(initialState, action);
+
+			const expectedState = {...initialState};
+			expectedState.listOpened = true;
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
+	describe(types.CLOSE_ORDER_LIST, () => {
+		it('returns a state with changed listOpened with false', () => {
+			const action = {
+				type: types.CLOSE_ORDER_LIST
+			};
+
+			const returnedState = reducer(initialState, action);
+
+			const expectedState = {...initialState};
+			expectedState.listOpened = false;
 
 			expect(returnedState).toEqual(expectedState);
 		});
