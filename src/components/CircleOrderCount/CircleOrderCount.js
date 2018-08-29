@@ -11,7 +11,7 @@ export class CircleOrderCount extends Component {
 		return (
 			<div className={'circle-order-count'}>
 				<span className={'circle-order-count--number'}>
-					{(items.length < 9) ? items.length : '9+'}
+					{(items.length < 10) ? items.length : '9+'}
 				</span>
 			</div>
 		);
