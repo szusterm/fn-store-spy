@@ -1,0 +1,15 @@
+@mixin white-background($opacity: 1) {
+	background-color: rgba(255, 255, 255, $opacity);
+}
+
+@mixin black-background($opacity: 1) {
+	background-color: rgba(0, 0, 0, $opacity);
+}
+
+@mixin white-color($opacity: 1) {
+	color: rgba(255, 255, 255, $opacity);
+}
+
+@mixin black-color($opacity: 1) {
+	color: rgba(0, 0, 0, $opacity);
+}
