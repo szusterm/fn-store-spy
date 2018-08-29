@@ -1,4 +1,5 @@
 @import '../../scss/transition';
+@import '../../scss/opacity-colors';
 
 .black-curtain {
 	cursor: pointer;
@@ -15,6 +16,6 @@
 
 	&--showed {
 		left: 0;
-		background-color: rgba(0, 0, 0, 0.8);
+		@include black-background(0.8);
 	}
 }

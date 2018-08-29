@@ -1,6 +1,6 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
-@import '../../scss/white-background';
+@import '../../scss/opacity-colors';
 
 .name-search-bar {
 	$inputHeight: 50px;
@@ -16,13 +16,13 @@
 		border-width: 0;
 		border-radius: $inputHeight/2;
 
-		@include whiteBackground(0.6);
+		@include white-background(0.7);
 		@include shadow(sm);
 
 		@include transition(sh);
 
 		&:hover, &:focus {
-			@include whiteBackground(0.9);
+			@include white-background(0.9);
 			@include shadow(md);
 		}
 	}

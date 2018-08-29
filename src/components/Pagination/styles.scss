@@ -1,7 +1,7 @@
 @import '../../scss/variables';
 @import '../../scss/shadow';
 @import '../../scss/transition';
-@import '../../scss/white-background';
+@import '../../scss/opacity-colors';
 
 .pagination {
 	&--button {
@@ -21,17 +21,17 @@
 
 		@include transition(sh);
 		@include shadow(sm);
-		@include whiteBackground(0.9);
+		@include white-background(0.9);
 
 		&:hover {
 			@include shadow(md);
-			@include whiteBackground(1);
+			@include white-background(1);
 		}
 
 		&:disabled {
 			cursor: default;
 			@include shadow(sm);
-			@include whiteBackground(0.2);
+			@include white-background(0.3);
 		}
 
 		&--previous {

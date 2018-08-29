@@ -4,7 +4,7 @@
 
 @import '../../scss/shadow';
 @import '../../scss/transition';
-@import '../../scss/white-background';
+@import '../../scss/opacity-colors';
 @import '../../scss/button-reset';
 
 .order {
@@ -19,7 +19,7 @@
 
 	height: 100%;
 
-	@include whiteBackground(1);
+	@include white-background(1);
 	@include shadow(md);
 
 	transition-property: transform;
@@ -58,16 +58,16 @@
 				margin: 15px 0;
 				border-radius: $height/2;
 				font-size: 2em;
-				color: rgba(0, 0, 0, 0.6);
 
+				@include black-color(0.6);
 				@include transition(md);
 
 				&:hover {
-					background-color: rgba(0, 0, 0, 0.05);
+					@include black-background(0.05);
 				}
 
 				&:focus {
-					background-color: rgba(0, 0, 0, 0.1);
+					@include black-background(0.1);
 				}
 			}
 		}

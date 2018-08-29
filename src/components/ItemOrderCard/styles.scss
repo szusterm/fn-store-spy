@@ -1,6 +1,7 @@
 @import '../../scss/variables';
 @import '../../scss/transition';
 @import '../../scss/button-reset';
+@import '../../scss/opacity-colors';
 
 .item-order-card {
 	@include button-reset();
@@ -29,9 +30,9 @@
 		align-items: center;
 
 		border-radius: 50%;
-		background-color: rgba(0, 0, 0, 0.5);
 		opacity: 0;
 
+		@include black-background(0.6);
 		@include transition(sh);
 
 		.action-box {
