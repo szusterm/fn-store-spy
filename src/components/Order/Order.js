@@ -31,40 +31,42 @@ export class Order extends Component {
 		const {items, listOpened} = this.props;
 
 		return (
-			<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
-				<div className={'container-fluid'}>
-					<div className={'row order--button-box'}>
-						<div className={'col-8'}>
-							<button
-								className={'material-icons button-box--closing'}
-								onClick={this.props.closeOrderList}
-							>
-								<span>close</span>
-							</button>
+			<div>
+				<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
+					<div className={'container-fluid'}>
+						<div className={'row order--button-box'}>
+							<div className={'col-8'}>
+								<button
+									className={'material-icons button-box--closing'}
+									onClick={this.props.closeOrderList}
+								>
+									<span>close</span>
+								</button>
+							</div>
+						</div>
+						<div className={'row order--list'}>
+							{
+								items.map((item, index) => {
+									const {_id, imageSrc, rarity} = item;
+
+									return (
+										<div
+											key={_id}
+											className={`col-${this.getItemColsWidth()} list--item-box`}
+										>
+											<ItemOrderCard
+												index={index}
+												imageSrc={imageSrc}
+												rarity={rarity}
+											/>
+										</div>
+									);
+								})
+							}
 						</div>
 					</div>
-					<div className={'row order--list'}>
-						{
-							items.map((item, index) => {
-								const {_id, imageSrc, rarity} = item;
-
-								return (
-									<div
-										key={_id}
-										className={`col-${this.getItemColsWidth()} list--item-box`}
-									>
-										<ItemOrderCard
-											index={index}
-											imageSrc={imageSrc}
-											rarity={rarity}
-										/>
-									</div>
-								);
-							})
-						}
-					</div>
+					<div className={'order--confirmation-box'}/>
 				</div>
-				<div className={'order--confirmation-box'}/>
 			</div>
 		);
 	}
