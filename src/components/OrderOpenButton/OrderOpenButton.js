@@ -14,14 +14,14 @@ export class OrderOpenButton extends Component {
 
 	render() {
 		return (
-			<div
+			<button
 				className={`order-open-button ${(this.checkThatOrderIsEmpty()) && 'order-open-button--closed'}`}
 				onClick={this.props.openOrderList}
 			>
 				<div className={'material-icons'}>
 					<span className={'order-open-button--icon'}>shopping_basket</span>
 				</div>
-			</div>
+			</button>
 		);
 	}
 }
