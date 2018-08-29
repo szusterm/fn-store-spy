@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
 @import '../../scss/shadow';
 @import '../../scss/transition';
 
@@ -9,8 +13,8 @@
 
 	z-index: 3;
 	position: fixed;
-	right: 50%;
-	bottom: 10%;
+	right: 20vh;
+	bottom: 20vh;
 
 	width: $size;
 	height: $size;
@@ -24,6 +28,12 @@
 
 	@include shadow(sm);
 	@include transition(md);
+	transition-property: box-shadow;
+
+	@include media-breakpoint-down(md) {
+		right: 50%;
+		bottom: 10vh;
+	}
 
 	&:hover {
 		@include shadow(md);
