@@ -44,7 +44,8 @@ ShallowWrapper {
         <div
           className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
         >
-          <ItemSearchCard
+          <Connect(ItemSearchCard)
+            _id="3h5i34uh53i4"
             imageSrc="https://example.com"
             name="Super Axe"
             price="2000"
@@ -55,7 +56,8 @@ ShallowWrapper {
         <div
           className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
         >
-          <ItemSearchCard
+          <Connect(ItemSearchCard)
+            _id="56b7h8678b"
             imageSrc="https://example.pl"
             name="Something"
             price="800"
@@ -76,7 +78,8 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemSearchCard
+            <Connect(ItemSearchCard)
+              _id="3h5i34uh53i4"
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -87,7 +90,8 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemSearchCard
+            <Connect(ItemSearchCard)
+              _id="56b7h8678b"
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -105,7 +109,8 @@ ShallowWrapper {
           "key": "3h5i34uh53i4",
           "nodeType": "host",
           "props": Object {
-            "children": <ItemSearchCard
+            "children": <Connect(ItemSearchCard)
+              _id="3h5i34uh53i4"
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -120,6 +125,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "_id": "3h5i34uh53i4",
               "imageSrc": "https://example.com",
               "name": "Super Axe",
               "price": "2000",
@@ -137,7 +143,8 @@ ShallowWrapper {
           "key": "56b7h8678b",
           "nodeType": "host",
           "props": Object {
-            "children": <ItemSearchCard
+            "children": <Connect(ItemSearchCard)
+              _id="56b7h8678b"
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -152,6 +159,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "_id": "56b7h8678b",
               "imageSrc": "https://example.pl",
               "name": "Something",
               "price": "800",
@@ -181,7 +189,8 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemSearchCard
+            <Connect(ItemSearchCard)
+              _id="3h5i34uh53i4"
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -192,7 +201,8 @@ ShallowWrapper {
           <div
             className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
           >
-            <ItemSearchCard
+            <Connect(ItemSearchCard)
+              _id="56b7h8678b"
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -213,7 +223,8 @@ ShallowWrapper {
             <div
               className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
             >
-              <ItemSearchCard
+              <Connect(ItemSearchCard)
+                _id="3h5i34uh53i4"
                 imageSrc="https://example.com"
                 name="Super Axe"
                 price="2000"
@@ -224,7 +235,8 @@ ShallowWrapper {
             <div
               className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
             >
-              <ItemSearchCard
+              <Connect(ItemSearchCard)
+                _id="56b7h8678b"
                 imageSrc="https://example.pl"
                 name="Something"
                 price="800"
@@ -242,7 +254,8 @@ ShallowWrapper {
             "key": "3h5i34uh53i4",
             "nodeType": "host",
             "props": Object {
-              "children": <ItemSearchCard
+              "children": <Connect(ItemSearchCard)
+                _id="3h5i34uh53i4"
                 imageSrc="https://example.com"
                 name="Super Axe"
                 price="2000"
@@ -257,6 +270,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "_id": "3h5i34uh53i4",
                 "imageSrc": "https://example.com",
                 "name": "Super Axe",
                 "price": "2000",
@@ -274,7 +288,8 @@ ShallowWrapper {
             "key": "56b7h8678b",
             "nodeType": "host",
             "props": Object {
-              "children": <ItemSearchCard
+              "children": <Connect(ItemSearchCard)
+                _id="56b7h8678b"
                 imageSrc="https://example.pl"
                 name="Something"
                 price="800"
@@ -289,6 +304,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "_id": "56b7h8678b",
                 "imageSrc": "https://example.pl",
                 "name": "Something",
                 "price": "800",
