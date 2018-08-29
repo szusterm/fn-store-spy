@@ -1,0 +1,19 @@
+@import '../../scss/transition';
+
+.black-curtain {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 100%;
+
+	z-index: 15;
+
+	@include transition(md);
+	transition-property: background-color;
+
+	&--showed {
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+}
