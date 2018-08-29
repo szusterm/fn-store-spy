@@ -9,25 +9,26 @@
 @import '../../scss/button-reset';
 
 .item-search-card {
+	$padding: 10px;
+
 	@include button-reset();
 	cursor: pointer;
 
 	max-width: 100%;
 	height: auto;
-	padding: 10px;
+	padding: $padding;
 
 	&--top-part, &--bot-part {
-		@include whiteBackground(0.95);
+		border: 2px solid transparent;
+		@include whiteBackground(1);
 		@include transition(md);
 
-		transition-property: box-shadow;
+		transition-property: box-shadow, border;
 	}
 
-	&:hover, &:focus {
+	&:hover {
 		.item-search-card {
 			&--top-part, &--bot-part {
-				@include whiteBackground(1);
-
 				.visual-box--action-box {
 					opacity: 1;
 
@@ -47,6 +48,14 @@
 		}
 	}
 
+	&:focus {
+		.item-search-card {
+			&--top-part, &--bot-part {
+				border-color: rgba(0, 0, 0, 0.3);
+			}
+		}
+	}
+
 	&--top-part {
 		$padding: 12px;
 
@@ -54,6 +63,7 @@
 
 		border-top-left-radius: 50%;
 		border-top-right-radius: 50%;
+		border-bottom: 0;
 
 		position: relative;
 
@@ -113,6 +123,7 @@
 
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
+		border-top: 0;
 
 		display: flex;
 		flex-direction: column;
