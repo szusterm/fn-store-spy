@@ -1,7 +1,8 @@
 @import '../../scss/transition';
 
 .black-curtain {
-	position: absolute;
+	cursor: pointer;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	right: 0;
