@@ -28,7 +28,7 @@
 
 	@include shadow(sm);
 	@include transition(md);
-	transition-property: box-shadow;
+	transition-property: box-shadow, transform;
 
 	@include media-breakpoint-down(md) {
 		right: 50%;
