@@ -1,10 +1,10 @@
 @import '../../scss/variables';
 @import '../../scss/transition';
-@import '../../scss/button-reset';
+@import '../../scss/input-reset';
 @import '../../scss/opacity-colors';
 
 .item-order-card {
-	@include button-reset();
+	@include input-reset();
 	position: relative;
 	cursor: pointer;
 

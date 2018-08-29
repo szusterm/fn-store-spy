@@ -5,7 +5,7 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
-@import '../../scss/button-reset';
+@import '../../scss/input-reset';
 
 .order {
 	$list-width: 400px;
@@ -53,7 +53,7 @@
 			&--closing {
 				$height: 50px;
 
-				@include button-reset();
+				@include input-reset();
 				height: $height;
 				margin: 15px 0;
 				border-radius: $height/2;

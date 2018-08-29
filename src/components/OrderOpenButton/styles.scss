@@ -5,13 +5,13 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
-@import '../../scss/button-reset';
+@import '../../scss/input-reset';
 
 .order-open-button {
 	$size: 5.5em;
 	$icon-size: 1.8em;
 
-	@include button-reset();
+	@include input-reset();
 
 	cursor: pointer;
 

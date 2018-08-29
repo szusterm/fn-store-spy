@@ -6,12 +6,12 @@
 @import '../../scss/shadow';
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
-@import '../../scss/button-reset';
+@import '../../scss/input-reset';
 
 .item-search-card {
 	$padding: 10px;
 
-	@include button-reset();
+	@include input-reset();
 	cursor: pointer;
 
 	max-width: 100%;
