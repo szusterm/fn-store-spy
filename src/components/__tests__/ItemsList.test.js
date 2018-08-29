@@ -51,21 +51,14 @@ describe('ItemsList Component', () => {
 		expect(items.length).toBe(props.items.length);
 	});
 
-	it('passes props without id to every ItemSearchCard', () => {
+	it('passes props to every ItemSearchCard', () => {
 		const {wrapper, props} = setup({
 			items: exampleItemsList
 		});
 
-		const firstItemProps = {...props.items[0]};
-		const secondItemProps = {...props.items[1]};
-
-		delete firstItemProps._id;
-		delete secondItemProps._id;
-
-		const firstItemCard = wrapper.find(ItemCard).at(0);
-		const secondItemCard = wrapper.find(ItemCard).at(1);
-
-		expect(firstItemCard.props()).toEqual(firstItemProps);
-		expect(secondItemCard.props()).toEqual(secondItemProps);
+		for (const [index, itemProps] of props.items.entries()) {
+			const itemCardIns = wrapper.find(ItemCard).at(index);
+			expect(itemCardIns.props()).toEqual({...itemProps});
+		}
 	});
 });
