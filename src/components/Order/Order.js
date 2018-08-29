@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import {closeOrderList} from '../../redux/actions';
 
+import BlackCurtain from '../BlackCurtain';
 import ItemOrderCard from '../ItemOrderCard';
 
 import './styles.scss';
@@ -28,17 +29,21 @@ export class Order extends Component {
 	}
 
 	render() {
-		const {items, listOpened} = this.props;
+		const {items, listOpened, closeOrderList} = this.props;
 
 		return (
 			<div>
+				<BlackCurtain
+					show={listOpened}
+					onClick={closeOrderList}
+				/>
 				<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
 					<div className={'container-fluid'}>
 						<div className={'row order--button-box'}>
 							<div className={'col-8'}>
 								<button
 									className={'material-icons button-box--closing'}
-									onClick={this.props.closeOrderList}
+									onClick={closeOrderList}
 								>
 									<span>close</span>
 								</button>
