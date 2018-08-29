@@ -1,0 +1,19 @@
+@import '../../scss/opacity-colors';
+@import '../../scss/variables';
+
+.circle-order-count {
+	$size: 40px;
+	width: $size;
+	height: $size;
+
+	border-radius: 50%;
+	background-color: $color-red;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&--number {
+		@include white-color(1);
+	}
+}
