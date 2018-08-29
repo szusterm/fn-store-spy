@@ -6,4 +6,9 @@ export class CircleOrderCount extends Component {
 
 }
 
-export default connect()(CircleOrderCount);
+const mapStateToProps = (state) => {
+	const {items} = state.order;
+	return {items};
+};
+
+export default connect(mapStateToProps, null)(CircleOrderCount);
