@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 
 import {openOrderList} from '../../redux/actions';
 
+import CircleOrderCount from '../CircleOrderCount';
+
 import './styles.scss';
 
 export class OrderOpenButton extends Component {
@@ -20,6 +22,9 @@ export class OrderOpenButton extends Component {
 			>
 				<div className={'material-icons'}>
 					<span className={'order-open-button--icon'}>shopping_basket</span>
+				</div>
+				<div className={'order-open-button--items-count'}>
+					<CircleOrderCount/>
 				</div>
 			</button>
 		);

@@ -52,4 +52,10 @@
 	&--icon {
 		font-size: $icon-size;
 	}
+
+	&--items-count {
+		position: absolute;
+		top: 10%;
+		right: 10%;
+	}
 }
