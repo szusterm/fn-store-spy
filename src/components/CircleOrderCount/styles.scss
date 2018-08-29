@@ -1,8 +1,9 @@
 @import '../../scss/opacity-colors';
 @import '../../scss/variables';
+@import '../../scss/shadow';
 
 .circle-order-count {
-	$size: 30px;
+	$size: 35px;
 	width: $size;
 	height: $size;
 
@@ -12,6 +13,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include shadow(sm);
 
 	&--number {
 		@include white-color(1);
