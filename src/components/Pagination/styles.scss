@@ -3,6 +3,7 @@
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
 @import '../../scss/input-reset';
+@import '../../scss/center-items';
 
 .pagination {
 	&--button {
@@ -17,10 +18,7 @@
 		border-width: 0;
 		color: $body-color;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
+		@include center-items();
 		@include transition(sh);
 		@include shadow(sm);
 		@include white-background(0.9);

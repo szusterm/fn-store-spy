@@ -6,6 +6,7 @@
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
 @import '../../scss/input-reset';
+@import '../../scss/center-items';
 
 .order {
 	$list-width: 400px;
@@ -45,9 +46,7 @@
 	}
 
 	&--button-box {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include center-items();
 
 		.button-box {
 			&--closing {

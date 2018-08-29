@@ -2,6 +2,7 @@
 @import '../../scss/transition';
 @import '../../scss/input-reset';
 @import '../../scss/opacity-colors';
+@import '../../scss/center-items';
 
 .item-order-card {
 	@include input-reset();
@@ -25,15 +26,12 @@
 		left: 0;
 		right: 0;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
 		border-radius: 50%;
 		opacity: 0;
 
 		@include black-background(0.6);
 		@include transition(sh);
+		@include center-items();
 
 		.action-box {
 			&--sign {

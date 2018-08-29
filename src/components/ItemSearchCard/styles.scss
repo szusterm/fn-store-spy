@@ -7,6 +7,7 @@
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
 @import '../../scss/input-reset';
+@import '../../scss/center-items';
 
 .item-search-card {
 	$padding: 10px;
@@ -88,16 +89,13 @@
 				left: 0;
 				right: 0;
 
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
 				margin: $padding;
 				border-radius: 50%;
 				opacity: 0;
 
 				@include black-background(0.7);
 				@include transition(sh);
+				@include center-items();
 			}
 		}
 

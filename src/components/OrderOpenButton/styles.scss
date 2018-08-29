@@ -6,6 +6,7 @@
 @import '../../scss/transition';
 @import '../../scss/opacity-colors';
 @import '../../scss/input-reset';
+@import '../../scss/center-items';
 
 .order-open-button {
 	$size: 5.5em;
@@ -25,10 +26,7 @@
 	border-radius: 50%;
 	color: #43A047;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
+	@include center-items();
 	@include white-background(1);
 	@include shadow(sm);
 	@include transition(md);
