@@ -13,9 +13,9 @@ const setup = (propOverrides) => {
 		rarity: 'uncommon',
 		type: 'axe',
 		imageSrc: 'https://example.com',
-		orderedItems: [],
-		addItemToOrder: () => true,
-		removeItemFromOrderByIndex: () => true
+		orderedItems: [], //redux
+		addItemToOrder: () => true, //redux
+		removeItemFromOrderByIndex: () => true //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<ItemSearchCard {...props}/>);
