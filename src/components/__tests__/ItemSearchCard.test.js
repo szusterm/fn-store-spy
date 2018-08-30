@@ -1,15 +1,21 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import ItemCoin from '../ItemCoin';
+
 import {ItemSearchCard} from '../ItemSearchCard/ItemSearchCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
+		_id: 'eg8er3478e',
 		name: 'Super Axe',
 		price: '2000',
 		rarity: 'uncommon',
 		type: 'axe',
-		imageSrc: 'https://example.com'
+		imageSrc: 'https://example.com',
+		orderedItems: [],
+		addItemToOrder: () => true,
+		removeItemFromOrderByIndex: () => true
 	}, propOverrides);
 
 	const wrapper = shallow(<ItemSearchCard {...props}/>);
@@ -54,24 +60,23 @@ describe('ItemSearchCard Component', () => {
 		expect(displayedType).toBe(props.type);
 	});
 
-	it('adds class with background rarity color', () => {
+	it('puts rarity prop to ItemCoin', () => {
 		const {wrapper, props} = setup({
 			rarity: 'uncommon'
 		});
 
-		const rarityColorClass = `.top-part--img-box--${props.rarity}`;
-		const displayedItem = wrapper.find(rarityColorClass);
+		const rarityInItemCoin = wrapper.find(ItemCoin).props().rarity;
 
-		expect(displayedItem.exists()).toBe(true);
+		expect(rarityInItemCoin).toBe(props.rarity);
 	});
 
-	it('shows an item image from prop', () => {
+	it('puts imageSrc to ItemCoin', () => {
 		const {wrapper, props} = setup({
 			imageSrc: 'https://example.com'
 		});
 
-		const displayedImgSrc = wrapper.find('.img-box--image').props().src;
+		const imageSrcInItemCoin = wrapper.find(ItemCoin).props().imageSrc;
 
-		expect(displayedImgSrc).toBe(props.imageSrc);
+		expect(imageSrcInItemCoin).toBe(props.imageSrc);
 	});
 });

@@ -1,0 +1,565 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemSearchCard Component renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItemSearchCard
+    _id="eg8er3478e"
+    addItemToOrder={[Function]}
+    imageSrc="https://example.com"
+    name="Super Axe"
+    orderedItems={Array []}
+    price="2000"
+    rarity="uncommon"
+    removeItemFromOrderByIndex={[Function]}
+    type="axe"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="item-search-card--top-part"
+        >
+          <div
+            className="top-part--visual-box"
+          >
+            <ItemCoin
+              imageSrc="https://example.com"
+              rarity="uncommon"
+            />
+            <div
+              className="visual-box--action-box false"
+            >
+              <div
+                className="material-icons action-box--sign"
+              >
+                <span>
+                  add
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>,
+        <div
+          className="item-search-card--bot-part"
+        >
+          <div
+            className="bot-part--name"
+          >
+            Super Axe
+          </div>
+          <div
+            className="bot-part--description"
+          >
+            <div
+              className="description--type"
+            >
+              axe
+            </div>
+            <div
+              className="description--price"
+            >
+              2000
+            </div>
+          </div>
+        </div>,
+      ],
+      "className": "item-search-card item-search-card--raised",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="top-part--visual-box"
+          >
+            <ItemCoin
+              imageSrc="https://example.com"
+              rarity="uncommon"
+            />
+            <div
+              className="visual-box--action-box false"
+            >
+              <div
+                className="material-icons action-box--sign"
+              >
+                <span>
+                  add
+                </span>
+              </div>
+            </div>
+          </div>,
+          "className": "item-search-card--top-part",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <ItemCoin
+                imageSrc="https://example.com"
+                rarity="uncommon"
+              />,
+              <div
+                className="visual-box--action-box false"
+              >
+                <div
+                  className="material-icons action-box--sign"
+                >
+                  <span>
+                    add
+                  </span>
+                </div>
+              </div>,
+            ],
+            "className": "top-part--visual-box",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "imageSrc": "https://example.com",
+                "rarity": "uncommon",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="material-icons action-box--sign"
+                >
+                  <span>
+                    add
+                  </span>
+                </div>,
+                "className": "visual-box--action-box false",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    add
+                  </span>,
+                  "className": "material-icons action-box--sign",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "add",
+                  },
+                  "ref": null,
+                  "rendered": "add",
+                  "type": "span",
+                },
+                "type": "div",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="bot-part--name"
+            >
+              Super Axe
+            </div>,
+            <div
+              className="bot-part--description"
+            >
+              <div
+                className="description--type"
+              >
+                axe
+              </div>
+              <div
+                className="description--price"
+              >
+                2000
+              </div>
+            </div>,
+          ],
+          "className": "item-search-card--bot-part",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Super Axe",
+              "className": "bot-part--name",
+            },
+            "ref": null,
+            "rendered": "Super Axe",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="description--type"
+                >
+                  axe
+                </div>,
+                <div
+                  className="description--price"
+                >
+                  2000
+                </div>,
+              ],
+              "className": "bot-part--description",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "axe",
+                  "className": "description--type",
+                },
+                "ref": null,
+                "rendered": "axe",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "2000",
+                  "className": "description--price",
+                },
+                "ref": null,
+                "rendered": "2000",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="item-search-card--top-part"
+          >
+            <div
+              className="top-part--visual-box"
+            >
+              <ItemCoin
+                imageSrc="https://example.com"
+                rarity="uncommon"
+              />
+              <div
+                className="visual-box--action-box false"
+              >
+                <div
+                  className="material-icons action-box--sign"
+                >
+                  <span>
+                    add
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>,
+          <div
+            className="item-search-card--bot-part"
+          >
+            <div
+              className="bot-part--name"
+            >
+              Super Axe
+            </div>
+            <div
+              className="bot-part--description"
+            >
+              <div
+                className="description--type"
+              >
+                axe
+              </div>
+              <div
+                className="description--price"
+              >
+                2000
+              </div>
+            </div>
+          </div>,
+        ],
+        "className": "item-search-card item-search-card--raised",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="top-part--visual-box"
+            >
+              <ItemCoin
+                imageSrc="https://example.com"
+                rarity="uncommon"
+              />
+              <div
+                className="visual-box--action-box false"
+              >
+                <div
+                  className="material-icons action-box--sign"
+                >
+                  <span>
+                    add
+                  </span>
+                </div>
+              </div>
+            </div>,
+            "className": "item-search-card--top-part",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <ItemCoin
+                  imageSrc="https://example.com"
+                  rarity="uncommon"
+                />,
+                <div
+                  className="visual-box--action-box false"
+                >
+                  <div
+                    className="material-icons action-box--sign"
+                  >
+                    <span>
+                      add
+                    </span>
+                  </div>
+                </div>,
+              ],
+              "className": "top-part--visual-box",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "imageSrc": "https://example.com",
+                  "rarity": "uncommon",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="material-icons action-box--sign"
+                  >
+                    <span>
+                      add
+                    </span>
+                  </div>,
+                  "className": "visual-box--action-box false",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      add
+                    </span>,
+                    "className": "material-icons action-box--sign",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "add",
+                    },
+                    "ref": null,
+                    "rendered": "add",
+                    "type": "span",
+                  },
+                  "type": "div",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="bot-part--name"
+              >
+                Super Axe
+              </div>,
+              <div
+                className="bot-part--description"
+              >
+                <div
+                  className="description--type"
+                >
+                  axe
+                </div>
+                <div
+                  className="description--price"
+                >
+                  2000
+                </div>
+              </div>,
+            ],
+            "className": "item-search-card--bot-part",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Super Axe",
+                "className": "bot-part--name",
+              },
+              "ref": null,
+              "rendered": "Super Axe",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="description--type"
+                  >
+                    axe
+                  </div>,
+                  <div
+                    className="description--price"
+                  >
+                    2000
+                  </div>,
+                ],
+                "className": "bot-part--description",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "axe",
+                    "className": "description--type",
+                  },
+                  "ref": null,
+                  "rendered": "axe",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "2000",
+                    "className": "description--price",
+                  },
+                  "ref": null,
+                  "rendered": "2000",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
