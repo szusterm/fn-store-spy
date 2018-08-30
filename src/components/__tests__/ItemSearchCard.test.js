@@ -79,4 +79,31 @@ describe('ItemSearchCard Component', () => {
 
 		expect(imageSrcInItemCoin).toBe(props.imageSrc);
 	});
+
+	it('after click the component, adds the item to an order, if it is not ordered', () => {
+		const {wrapper, props} = setup({
+			_id: 'abc45g',
+			addItemToOrder: jest.fn(),
+			orderedItems: []
+		});
+
+		wrapper.simulate('click');
+
+		expect(props.addItemToOrder).toHaveBeenCalledTimes(1);
+	});
+
+	it('after click the component, removes the item from an order, if it is ordered', () => {
+		const {wrapper, props} = setup({
+			_id: 'superid',
+			removeItemFromOrderByIndex: jest.fn(),
+			orderedItems: [
+				{_id: 'xddd'},
+				{_id: 'superid'}
+			]
+		});
+
+		wrapper.simulate('click');
+
+		expect(props.removeItemFromOrderByIndex).toHaveBeenCalledWith(1);
+	});
 });
