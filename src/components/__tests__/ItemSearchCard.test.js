@@ -106,4 +106,32 @@ describe('ItemSearchCard Component', () => {
 
 		expect(props.removeItemFromOrderByIndex).toHaveBeenCalledWith(1);
 	});
+
+	it('shows confirmation, if the item is ordered', () => {
+		const {wrapper, props} = setup({
+			_id: 'superid',
+			orderedItems: []
+		});
+
+		const confirmationClass = '.visual-box--action-box--active';
+		const iconElement = '.action-box--sign span';
+		const confirmationIcon = 'done';
+
+
+		const confirmationWithoutOrder = wrapper.find(confirmationClass);
+		const iconWithoutOrder = wrapper.find(iconElement).text();
+
+		expect(confirmationWithoutOrder.exists()).toEqual(false);
+		expect(iconWithoutOrder).not.toBe(confirmationIcon);
+
+		wrapper.setProps({
+			orderedItems: [{_id: props._id}]
+		});
+
+		const confirmationWithOrder = wrapper.find(confirmationClass);
+		const iconWithOrder = wrapper.find(iconElement).text();
+
+		expect(confirmationWithOrder.exists()).toEqual(true);
+		expect(iconWithOrder).toBe(confirmationIcon);
+	});
 });
