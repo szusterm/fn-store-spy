@@ -20,7 +20,7 @@ export class CircleOrderCount extends Component {
 
 CircleOrderCount.propTypes = {
 	items: PropTypes.array //redux
-}
+};
 
 const mapStateToProps = (state) => {
 	const {items} = state.order;
