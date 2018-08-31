@@ -1,10 +1,10 @@
 import * as actions from '../actions';
 import * as types from '../actionTypes';
-import * as api from '../../api';
+import * as api from '../../../api';
 
-jest.mock('../../api');
+jest.mock('../../../api');
 
-describe('Actions', () => {
+describe('Searching Actions', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 	});
@@ -107,74 +107,6 @@ describe('Actions', () => {
 			const returnedChange = actions.setNameFilter(expectedChange.payload);
 
 			expect(returnedChange).toEqual(expectedChange);
-		});
-	});
-
-	describe('addItemToOrder()', () => {
-		it('calls reducer to add an item', () => {
-			const expectedChange = {
-				type: types.ADD_ITEM_TO_ORDER,
-				payload: 'item7'
-			};
-
-			const returnedChange = actions.addItemToOrder(expectedChange.payload);
-
-			expect(returnedChange).toEqual(expectedChange);
-		});
-	});
-
-	describe('removeItemFromOrderByIndex()', () => {
-		it('calls reducer to add an item', () => {
-			const expectedChange = {
-				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
-				payload: 3
-			};
-
-			const returnedChange = actions.removeItemFromOrderByIndex(expectedChange.payload);
-
-			expect(returnedChange).toEqual(expectedChange);
-		});
-	});
-
-	describe('openOrderList()', () => {
-		it('calls reducer open the order list', () => {
-			const expectedChange = {
-				type: types.OPEN_ORDER_LIST
-			};
-
-			const returnedChange = actions.openOrderList(expectedChange.payload);
-
-			expect(returnedChange).toEqual(expectedChange);
-		});
-	});
-
-	describe('closeOrderList()', () => {
-		it('calls reducer close the order list', () => {
-			const expectedChange = {
-				type: types.CLOSE_ORDER_LIST
-			};
-
-			const returnedChange = actions.closeOrderList(expectedChange.payload);
-
-			expect(returnedChange).toEqual(expectedChange);
-		});
-	});
-
-	describe('setConfig()', () => {
-		it('updates config store with api response data', async () => {
-			const mockDispatch = jest.fn();
-			const expectedChange = {
-				type: types.SET_CONFIG,
-				payload: 'example config'
-			};
-
-			api.fetchConfig.mockReturnValueOnce(Promise.resolve({
-				data: expectedChange.payload
-			}));
-
-			await actions.setConfig()(mockDispatch);
-
-			expect(mockDispatch).toHaveBeenCalledWith(expectedChange);
 		});
 	});
 });
