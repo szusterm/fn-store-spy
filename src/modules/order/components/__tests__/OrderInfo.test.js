@@ -5,7 +5,9 @@ import {OrderInfo} from '../OrderInfo/OrderInfo';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-
+		items: [], //redux
+		listOpened: true, //redux
+		closeOrderList: () => true //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<OrderInfo {...props}/>);
