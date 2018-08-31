@@ -1,6 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import BlackCurtain from '../../../../components/BlackCurtain';
+
 import {OrderInfo} from '../OrderInfo/OrderInfo';
 
 const setup = (propOverrides) => {
@@ -50,4 +52,14 @@ describe('Order Component', () => {
 		expect(wrapper.find(hiddenOrderClass).exists()).toBe(false);
 	});
 
+	it('hides if BlackCurtain calls ocClick callback', () => {
+		const {wrapper, props} = setup({
+			items: ['item3'],
+			closeOrderList: jest.fn()
+		});
+
+		wrapper.find(BlackCurtain).props().onClick();
+
+		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
+	});
 });
