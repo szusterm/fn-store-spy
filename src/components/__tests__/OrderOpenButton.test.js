@@ -32,4 +32,14 @@ describe('CircleOrderCount Component', () => {
 		wrapper.setProps({orderedItems: []});
 		expect(wrapper.find(hiddenButtonClass).exists()).toBe(true);
 	});
+
+	it('calls redux action to open Order after click', () => {
+		const {wrapper, props} = setup({
+			openOrderList: jest.fn()
+		});
+
+		wrapper.simulate('click');
+
+		expect(props.openOrderList).toHaveBeenCalledTimes(1);
+	});
 });
