@@ -24,7 +24,7 @@ describe('CircleOrderCount Component', () => {
 	it('hides a button, if order is empty', () => {
 		const {wrapper} = setup();
 
-		const hiddenButtonClass = '.order-open-button--closed';
+		const hiddenButtonClass = '.order-open-button--hidden';
 
 		wrapper.setProps({orderedItems: ['item0']});
 		expect(wrapper.find(hiddenButtonClass).exists()).toBe(false);

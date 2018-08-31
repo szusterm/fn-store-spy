@@ -36,7 +36,7 @@ ShallowWrapper {
           <Connect(CircleOrderCount) />
         </div>,
       ],
-      "className": "order-open-button order-open-button--closed",
+      "className": "order-open-button order-open-button--hidden",
       "onClick": [Function],
     },
     "ref": null,
@@ -113,7 +113,7 @@ ShallowWrapper {
             <Connect(CircleOrderCount) />
           </div>,
         ],
-        "className": "order-open-button order-open-button--closed",
+        "className": "order-open-button order-open-button--hidden",
         "onClick": [Function],
       },
       "ref": null,

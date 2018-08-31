@@ -17,7 +17,7 @@ export class OrderOpenButton extends Component {
 	render() {
 		return (
 			<button
-				className={`order-open-button ${(this.checkThatOrderIsEmpty()) && 'order-open-button--closed'}`}
+				className={`order-open-button ${(this.checkThatOrderIsEmpty()) && 'order-open-button--hidden'}`}
 				onClick={this.props.openOrderList}
 			>
 				<div className={'material-icons'}>
