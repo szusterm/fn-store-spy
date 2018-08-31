@@ -14,5 +14,9 @@ const setup = (propOverrides) => {
 };
 
 describe('Order Component', () => {
+	it('renders correctly', () => {
+		const {wrapper} = setup();
 
+		expect(wrapper).toMatchSnapshot();
+	});
 });
