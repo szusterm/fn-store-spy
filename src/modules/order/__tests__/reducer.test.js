@@ -1,5 +1,5 @@
 import reducer from '../reducer';
-import * as types from '../../../redux/actionTypes';
+import * as types from '../actionTypes';
 
 describe('Order Reducer', () => {
 	const initialState = {
@@ -7,10 +7,10 @@ describe('Order Reducer', () => {
 		listOpened: false
 	};
 
-	describe(types.ADD_ITEM_TO_ORDER, () => {
+	describe(types.ADD_ITEM, () => {
 		it('returns a state with a new item', () => {
 			const action = {
-				type: types.ADD_ITEM_TO_ORDER,
+				type: types.ADD_ITEM,
 				payload: 'item3'
 			};
 
@@ -26,10 +26,10 @@ describe('Order Reducer', () => {
 		});
 	});
 
-	describe(types.REMOVE_ITEM_FROM_ORDER_BY_INDEX, () => {
+	describe(types.REMOVE_ITEM_BY_INDEX, () => {
 		it('returns a state without an item removed by id', () => {
 			const action = {
-				type: types.REMOVE_ITEM_FROM_ORDER_BY_INDEX,
+				type: types.REMOVE_ITEM_BY_INDEX,
 				payload: 1
 			};
 

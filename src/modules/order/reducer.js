@@ -1,4 +1,4 @@
-import * as types from '../../redux/actionTypes';
+import * as types from './actionTypes';
 
 const initialState = {
 	items: [],
@@ -9,12 +9,12 @@ const reducer = (state = initialState, action) => {
 	const {type, payload} = action;
 
 	switch (type) {
-		case types.ADD_ITEM_TO_ORDER:
+		case types.ADD_ITEM:
 			return {
 				...state,
 				items: [...state.items, payload]
 			};
-		case types.REMOVE_ITEM_FROM_ORDER_BY_INDEX:
+		case types.REMOVE_ITEM_BY_INDEX:
 			state.items.splice(payload, 1);
 			return {
 				...state,

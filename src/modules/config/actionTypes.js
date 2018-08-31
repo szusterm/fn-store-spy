@@ -1,0 +1,1 @@
+export const SET_CONFIG = 'config/SET_CONFIG';

@@ -1,4 +1,4 @@
-import * as types from '../../redux/actionTypes';
+import * as types from './actionTypes';
 
 const initialState = {
 	items: [],

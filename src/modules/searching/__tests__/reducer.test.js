@@ -1,5 +1,5 @@
 import reducer from '../reducer';
-import * as types from '../../../redux/actionTypes';
+import * as types from '../actionTypes';
 
 describe('Searching Reducer', () => {
 	const initialState = {
