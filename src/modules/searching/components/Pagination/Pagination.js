@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {setPageFilter} from '../../redux/actions';
+import {setPageFilter} from '../../../../redux/actions';
 
 import './styles.scss';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {CircleOrderCount} from '../CircleOrderCount/CircleOrderCount';
+import {CircleOrderCount} from '../../modules/order/components/CircleOrderCount/CircleOrderCount';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

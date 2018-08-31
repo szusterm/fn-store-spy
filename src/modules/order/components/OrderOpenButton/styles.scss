@@ -1,12 +1,12 @@
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins/breakpoints';
+@import '../../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../../node_modules/bootstrap/scss/variables';
+@import '../../../../../node_modules/bootstrap/scss/mixins/breakpoints';
 
-@import '../../scss/shadow';
-@import '../../scss/transition';
-@import '../../scss/opacity-colors';
-@import '../../scss/input-reset';
-@import '../../scss/center-items';
+@import '../../../../scss/shadow';
+@import '../../../../scss/transition';
+@import '../../../../scss/opacity-colors';
+@import '../../../../scss/input-reset';
+@import '../../../../scss/center-items';
 
 .order-open-button {
 	$size: 5.5em;

@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import ItemCoin from '../ItemCoin';
 
-import {ItemSearchCard} from '../ItemSearchCard/ItemSearchCard';
+import {ItemSearchCard} from '../../modules/searching/components/ItemSearchCard/ItemSearchCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

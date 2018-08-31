@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {addItemToOrder, removeItemFromOrderByIndex} from '../../redux/actions';
+import {addItemToOrder, removeItemFromOrderByIndex} from '../../../../redux/actions';
 
-import ItemCoin from '../ItemCoin';
+import ItemCoin from '../../../../components/ItemCoin/index';
 
 import './styles.scss';
 

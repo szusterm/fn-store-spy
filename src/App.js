@@ -4,9 +4,9 @@ import {connect} from 'react-redux';
 
 import {setConfig} from './redux/actions';
 
-import Searching from './components/Searching';
-import Order from './components/Order';
-import OrderOpenButton from './components/OrderOpenButton';
+import Searching from './modules/searching/components/Searching';
+import Order from './modules/order/components/Order';
+import OrderOpenButton from './modules/order/components/OrderOpenButton';
 
 import './scss/index.scss';
 

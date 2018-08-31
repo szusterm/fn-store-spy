@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import ItemCoin from '../ItemCoin';
 
-import {ItemOrderCard} from '../ItemOrderCard/ItemOrderCard';
+import {ItemOrderCard} from '../../modules/order/components/ItemOrderCard/ItemOrderCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

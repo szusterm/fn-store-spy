@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {NameSearchBar} from '../NameSearchBar/NameSearchBar';
+import {NameSearchBar} from '../../modules/searching/components/NameSearchBar/NameSearchBar';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

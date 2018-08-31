@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Pagination} from '../Pagination/Pagination';
+import {Pagination} from '../../modules/searching/components/Pagination/Pagination';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
