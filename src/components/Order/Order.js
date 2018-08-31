@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {closeOrderList} from '../../redux/actions';
 
 import BlackCurtain from '../BlackCurtain';
+import HideOrderButton from '../HideOrderButton';
 import ItemOrderCard from '../ItemOrderCard';
 
 import './styles.scss';
@@ -41,12 +42,7 @@ export class Order extends Component {
 					<div className={'container-fluid'}>
 						<div className={'row order--button-box'}>
 							<div className={'col-8'}>
-								<button
-									className={'material-icons button-box--hiding'}
-									onClick={closeOrderList}
-								>
-									<span>close</span>
-								</button>
+								<HideOrderButton/>
 							</div>
 						</div>
 						<div className={'row order--list'}>

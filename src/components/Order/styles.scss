@@ -47,28 +47,5 @@
 
 	&--button-box {
 		@include center-items();
-
-		.button-box {
-			&--hiding {
-				$height: 50px;
-
-				@include input-reset();
-				height: $height;
-				margin: 15px 0;
-				border-radius: $height/2;
-				font-size: 2em;
-
-				@include black-color(0.6);
-				@include transition(md);
-
-				&:hover {
-					@include black-background(0.05);
-				}
-
-				&:focus {
-					@include black-background(0.1);
-				}
-			}
-		}
 	}
 }
