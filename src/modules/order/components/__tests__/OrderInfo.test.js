@@ -21,4 +21,18 @@ describe('Order Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('hides if listOpened in a redux state is false', () => {
+		const {wrapper} = setup({
+			items: ['item0']
+		});
+
+		const hiddenOrderClass = '.order-info--hidden';
+
+		wrapper.setProps({listOpened: false});
+		expect(wrapper.find(hiddenOrderClass).exists()).toBe(true);
+
+		wrapper.setProps({listOpened: true});
+		expect(wrapper.find(hiddenOrderClass).exists()).toBe(false);
+	});
 });
