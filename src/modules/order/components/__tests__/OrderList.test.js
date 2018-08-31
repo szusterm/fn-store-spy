@@ -1,6 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import ItemOrderCard from '../ItemOrderCard';
+
 import {OrderList} from '../OrderList/OrderList';
 
 const generateExampleItems = (length) => {
@@ -31,5 +33,15 @@ describe('Order Component', () => {
 		const {wrapper} = setup();
 
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('shows an ordered items list from a redux state', () => {
+		const {wrapper, props} = setup({
+			items: generateExampleItems(11)
+		});
+
+		const orderedItemsLength = wrapper.find(ItemOrderCard).length;
+
+		expect(orderedItemsLength).toBe(props.items.length);
 	});
 });
