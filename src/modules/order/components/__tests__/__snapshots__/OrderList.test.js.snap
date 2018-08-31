@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order Component renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <OrderList
+    items={
+      Array [
+        Object {
+          "_id": "item0",
+          "imageSrc": "https://example.com",
+          "rarity": "legendary",
+        },
+        Object {
+          "_id": "item1",
+          "imageSrc": "https://example.com",
+          "rarity": "legendary",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row"
+      >
+        <div
+          className="col-4 order-list--item-box"
+        >
+          <Connect(ItemOrderCard)
+            imageSrc="https://example.com"
+            index={0}
+            rarity="legendary"
+          />
+        </div>
+        <div
+          className="col-4 order-list--item-box"
+        >
+          <Connect(ItemOrderCard)
+            imageSrc="https://example.com"
+            index={1}
+            rarity="legendary"
+          />
+        </div>
+      </div>,
+      "className": "container-fluid order-list",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col-4 order-list--item-box"
+          >
+            <Connect(ItemOrderCard)
+              imageSrc="https://example.com"
+              index={0}
+              rarity="legendary"
+            />
+          </div>,
+          <div
+            className="col-4 order-list--item-box"
+          >
+            <Connect(ItemOrderCard)
+              imageSrc="https://example.com"
+              index={1}
+              rarity="legendary"
+            />
+          </div>,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "item0",
+          "nodeType": "host",
+          "props": Object {
+            "children": <Connect(ItemOrderCard)
+              imageSrc="https://example.com"
+              index={0}
+              rarity="legendary"
+            />,
+            "className": "col-4 order-list--item-box",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "imageSrc": "https://example.com",
+              "index": 0,
+              "rarity": "legendary",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "item1",
+          "nodeType": "host",
+          "props": Object {
+            "children": <Connect(ItemOrderCard)
+              imageSrc="https://example.com"
+              index={1}
+              rarity="legendary"
+            />,
+            "className": "col-4 order-list--item-box",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "imageSrc": "https://example.com",
+              "index": 1,
+              "rarity": "legendary",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <div
+            className="col-4 order-list--item-box"
+          >
+            <Connect(ItemOrderCard)
+              imageSrc="https://example.com"
+              index={0}
+              rarity="legendary"
+            />
+          </div>
+          <div
+            className="col-4 order-list--item-box"
+          >
+            <Connect(ItemOrderCard)
+              imageSrc="https://example.com"
+              index={1}
+              rarity="legendary"
+            />
+          </div>
+        </div>,
+        "className": "container-fluid order-list",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-4 order-list--item-box"
+            >
+              <Connect(ItemOrderCard)
+                imageSrc="https://example.com"
+                index={0}
+                rarity="legendary"
+              />
+            </div>,
+            <div
+              className="col-4 order-list--item-box"
+            >
+              <Connect(ItemOrderCard)
+                imageSrc="https://example.com"
+                index={1}
+                rarity="legendary"
+              />
+            </div>,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "item0",
+            "nodeType": "host",
+            "props": Object {
+              "children": <Connect(ItemOrderCard)
+                imageSrc="https://example.com"
+                index={0}
+                rarity="legendary"
+              />,
+              "className": "col-4 order-list--item-box",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "imageSrc": "https://example.com",
+                "index": 0,
+                "rarity": "legendary",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "item1",
+            "nodeType": "host",
+            "props": Object {
+              "children": <Connect(ItemOrderCard)
+                imageSrc="https://example.com"
+                index={1}
+                rarity="legendary"
+              />,
+              "className": "col-4 order-list--item-box",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "imageSrc": "https://example.com",
+                "index": 1,
+                "rarity": "legendary",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
