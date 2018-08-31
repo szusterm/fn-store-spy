@@ -10,7 +10,7 @@ import ItemOrderCard from '../ItemOrderCard';
 
 import './styles.scss';
 
-export class OrderInformation extends Component {
+export class OrderInfo extends Component {
 
 	checkThatOrderIsEmpty() {
 		const {items} = this.props;
@@ -38,14 +38,14 @@ export class OrderInformation extends Component {
 					show={listOpened}
 					onClick={closeOrderList}
 				/>
-				<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--hidden'}`}>
+				<div className={`order-info ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order-info--hidden'}`}>
 					<div className={'container-fluid'}>
-						<div className={'row order--button-box'}>
+						<div className={'row order-info--button-box'}>
 							<div className={'col-8'}>
 								<HideOrderButton/>
 							</div>
 						</div>
-						<div className={'row order--list'}>
+						<div className={'row order-info--list'}>
 							{
 								items.map((item, index) => {
 									const {_id, imageSrc, rarity} = item;
@@ -66,14 +66,14 @@ export class OrderInformation extends Component {
 							}
 						</div>
 					</div>
-					<div className={'order--confirmation-box'}/>
+					<div className={'order-info--confirmation-box'}/>
 				</div>
 			</div>
 		);
 	}
 }
 
-OrderInformation.propTypes = {
+OrderInfo.propTypes = {
 	items: PropTypes.array, //redux
 	listOpened: PropTypes.bool, //redux
 	closeOrderList: PropTypes.func //redux
@@ -87,4 +87,4 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {closeOrderList};
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderInformation);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderInfo);

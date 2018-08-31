@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {setConfig} from './modules/config/actions';
 
 import Searching from './modules/searching/components/Searching';
-import OrderInformation from './modules/order/components/OrderInformation';
+import OrderInformation from './modules/order/components/OrderInfo';
 import OrderOpenButton from './modules/order/components/OrderOpenButton';
 
 import './scss/index.scss';
