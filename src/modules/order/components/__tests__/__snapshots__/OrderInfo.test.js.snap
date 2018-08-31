@@ -6,7 +6,11 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <OrderInfo
     closeOrderList={[Function]}
-    items={Array []}
+    items={
+      Array [
+        "item2",
+      ]
+    }
     listOpened={true}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -27,7 +31,7 @@ ShallowWrapper {
           show={true}
         />,
         <div
-          className="order-info order-info--hidden"
+          className="order-info false"
         >
           <div
             className="container-fluid"
@@ -103,7 +107,7 @@ ShallowWrapper {
               className="order-info--confirmation-box"
             />,
           ],
-          "className": "order-info order-info--hidden",
+          "className": "order-info false",
         },
         "ref": null,
         "rendered": Array [
@@ -238,7 +242,7 @@ ShallowWrapper {
             show={true}
           />,
           <div
-            className="order-info order-info--hidden"
+            className="order-info false"
           >
             <div
               className="container-fluid"
@@ -314,7 +318,7 @@ ShallowWrapper {
                 className="order-info--confirmation-box"
               />,
             ],
-            "className": "order-info order-info--hidden",
+            "className": "order-info false",
           },
           "ref": null,
           "rendered": Array [

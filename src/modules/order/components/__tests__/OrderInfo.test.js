@@ -2,12 +2,15 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import BlackCurtain from '../../../../components/BlackCurtain';
+import HideOrderButton from '../HideOrderButton';
+import OrderList from '../OrderList';
+
 
 import {OrderInfo} from '../OrderInfo/OrderInfo';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		items: [], //redux
+		items: ['item2'], //redux
 		listOpened: true, //redux
 		closeOrderList: () => true //redux
 	}, propOverrides);
@@ -61,5 +64,27 @@ describe('Order Component', () => {
 		wrapper.find(BlackCurtain).props().onClick();
 
 		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
+	});
+
+	it('puts listOpened from a redux state as a prop to BlackCurtain', () => {
+		const {wrapper, props} = setup({
+			listOpened: false
+		});
+
+		const showProp = wrapper.find(BlackCurtain).props().show;
+
+		expect(showProp).toBe(props.listOpened);
+	});
+
+	it('renders HideOrderButton', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(HideOrderButton).exists()).toBe(true);
+	});
+
+	it('renders OrderList', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(OrderList).exists()).toBe(true);
 	});
 });
