@@ -11,6 +11,7 @@
 
 	&--input {
 		@include input-reset();
+		cursor: auto;
 		width: 100%;
 		height: $inputHeight;
 		padding: 0 $inputHeight/2;
