@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {openOrderList} from '../../../../redux/actions';
+import {openOrderList} from '../../actions';
 
-import CircleOrderCount from '../CircleOrderCount/index';
+import CircleOrderCount from '../CircleOrderCount';
 
 import './styles.scss';
 

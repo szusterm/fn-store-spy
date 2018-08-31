@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {closeOrderList} from '../../../../redux/actions';
+import {closeOrderList} from '../../actions';
 
 import './styles.scss';
 

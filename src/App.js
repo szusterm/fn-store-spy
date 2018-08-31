@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {setConfig} from './redux/actions';
+import {setConfig} from './modules/config/actions';
 
 import Searching from './modules/searching/components/Searching';
 import Order from './modules/order/components/Order';

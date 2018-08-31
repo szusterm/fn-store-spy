@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import ItemCoin from '../../../../components/ItemCoin/index';
+import ItemCoin from '../../../../components/ItemCoin';
 
 import {ItemOrderCard} from '../ItemOrderCard/ItemOrderCard';
 

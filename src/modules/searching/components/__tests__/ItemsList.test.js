@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import {ItemsList} from '../ItemsList/ItemsList';
 
-import ItemCard from '../ItemSearchCard/index';
+import ItemCard from '../ItemSearchCard';
 
 const exampleItemsList = [
 	{

@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {updateItems, setPageFilter} from '../../../../redux/actions';
+import {updateItems, setPageFilter} from '../../actions';
 
-import NameSearchBar from '../NameSearchBar/index';
-import ItemsList from '../ItemsList/index';
-import Pagination from '../Pagination/index';
+import NameSearchBar from '../NameSearchBar';
+import ItemsList from '../ItemsList';
+import Pagination from '../Pagination';
 
 import './styles.scss';
 

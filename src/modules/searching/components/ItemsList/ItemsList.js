@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import ItemCard from '../ItemSearchCard/index';
+import ItemCard from '../ItemSearchCard';
 
 import './styles.scss';
 
