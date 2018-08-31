@@ -35,4 +35,19 @@ describe('Order Component', () => {
 		wrapper.setProps({listOpened: true});
 		expect(wrapper.find(hiddenOrderClass).exists()).toBe(false);
 	});
+
+	it('hides if an order is empty', () => {
+		const {wrapper} = setup({
+			listOpened: true
+		});
+
+		const hiddenOrderClass = '.order-info--hidden';
+
+		wrapper.setProps({items: []});
+		expect(wrapper.find(hiddenOrderClass).exists()).toBe(true);
+
+		wrapper.setProps({items: ['item8']});
+		expect(wrapper.find(hiddenOrderClass).exists()).toBe(false);
+	});
+
 });
