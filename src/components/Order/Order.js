@@ -37,12 +37,12 @@ export class Order extends Component {
 					show={listOpened}
 					onClick={closeOrderList}
 				/>
-				<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--closed'}`}>
+				<div className={`order ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order--hidden'}`}>
 					<div className={'container-fluid'}>
 						<div className={'row order--button-box'}>
 							<div className={'col-8'}>
 								<button
-									className={'material-icons button-box--closing'}
+									className={'material-icons button-box--hiding'}
 									onClick={closeOrderList}
 								>
 									<span>close</span>

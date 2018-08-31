@@ -31,7 +31,7 @@
 	@include media-breakpoint-between(md, lg) {width: 40%;}
 	@include media-breakpoint-up(lg) {width: 30%;}
 
-	&--closed {
+	&--hidden {
 		transform: translate(100%);
 	}
 
@@ -49,7 +49,7 @@
 		@include center-items();
 
 		.button-box {
-			&--closing {
+			&--hiding {
 				$height: 50px;
 
 				@include input-reset();
