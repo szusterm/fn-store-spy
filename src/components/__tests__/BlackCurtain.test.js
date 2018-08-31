@@ -32,4 +32,15 @@ describe('CircleOrderCount Component', () => {
 		wrapper.setProps({show: true});
 		expect(wrapper.find(visibleLayerClass).exists()).toBe(true);
 	});
+
+	it('calls onCLick() prop, after click on element', () => {
+		const {wrapper, props} = setup({
+			onClick: jest.fn()
+		});
+
+		const curtainElement = wrapper.find('.black-curtain');
+		curtainElement.simulate('click');
+
+		expect(props.onClick).toHaveBeenCalledTimes(1);
+	});
 });
