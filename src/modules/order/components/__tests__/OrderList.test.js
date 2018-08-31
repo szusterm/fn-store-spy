@@ -44,4 +44,18 @@ describe('Order Component', () => {
 
 		expect(orderedItemsLength).toBe(props.items.length);
 	});
+
+	it('shows items with a size depending on an items count', () => {
+		const {wrapper} = setup();
+
+		const itemBoxClass = '.order-list--item-box';
+
+		wrapper.setProps({items: generateExampleItems(3)});
+		const classesWithLessItems = wrapper.find(itemBoxClass).at(0).props().className;
+
+		wrapper.setProps({items: generateExampleItems(20)});
+		const classesWithMoreItems = wrapper.find(itemBoxClass).at(0).props().className;
+
+		expect(classesWithLessItems).not.toBe(classesWithMoreItems);
+	});
 });
