@@ -1,11 +1,11 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Searching} from '../../modules/searching/components/Searching/Searching';
+import {Searching} from '../Searching/Searching';
 
-import NameSearchBar from '../../modules/searching/components/NameSearchBar';
-import ItemsList from '../../modules/searching/components/ItemsList';
-import Pagination from '../../modules/searching/components/Pagination';
+import NameSearchBar from '../NameSearchBar/index';
+import ItemsList from '../ItemsList/index';
+import Pagination from '../Pagination/index';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import ItemCoin from '../ItemCoin';
+import ItemCoin from '../../../../components/ItemCoin/index';
 
-import {ItemOrderCard} from '../../modules/order/components/ItemOrderCard/ItemOrderCard';
+import {ItemOrderCard} from '../ItemOrderCard/ItemOrderCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

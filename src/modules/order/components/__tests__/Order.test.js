@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Order} from '../../modules/order/components/Order/Order';
+import {Order} from '../Order/Order';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

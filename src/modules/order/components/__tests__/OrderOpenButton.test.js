@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import CircleOrderCount from '../../modules/order/components/CircleOrderCount';
+import CircleOrderCount from '../CircleOrderCount/index';
 
-import {OrderOpenButton} from '../../modules/order/components/OrderOpenButton/OrderOpenButton';
+import {OrderOpenButton} from '../OrderOpenButton/OrderOpenButton';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({

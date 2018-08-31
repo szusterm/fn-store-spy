@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {ItemsList} from '../../modules/searching/components/ItemsList/ItemsList';
+import {ItemsList} from '../ItemsList/ItemsList';
 
-import ItemCard from '../../modules/searching/components/ItemSearchCard';
+import ItemCard from '../ItemSearchCard/index';
 
 const exampleItemsList = [
 	{
