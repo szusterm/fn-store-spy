@@ -1,4 +1,4 @@
-import {SET_CONFIG} from '../actionTypes';
+import {SET_CONFIG} from '../../redux/actionTypes';
 
 const initialState = {};
 

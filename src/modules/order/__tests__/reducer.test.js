@@ -1,5 +1,5 @@
-import reducer from '../order';
-import * as types from '../../actionTypes';
+import reducer from '../reducer';
+import * as types from '../../../redux/actionTypes';
 
 describe('Order Reducer', () => {
 	const initialState = {

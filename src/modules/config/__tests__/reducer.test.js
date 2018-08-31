@@ -1,5 +1,5 @@
-import reducer from '../config';
-import * as types from '../../actionTypes';
+import reducer from '../reducer';
+import * as types from '../../../redux/actionTypes';
 
 describe('Config Reducer', () => {
 	describe(types.SET_CONFIG, () => {
