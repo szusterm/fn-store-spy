@@ -5,7 +5,7 @@ import {CircleOrderCount} from '../CircleOrderCount/CircleOrderCount';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		items: []
+		items: [] //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<CircleOrderCount {...props}/>);
