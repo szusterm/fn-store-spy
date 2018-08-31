@@ -40,7 +40,9 @@ export class OrderInfo extends Component {
 							</div>
 						</div>
 						<div className={'row order-info--list'}>
-							<OrderList/>
+							<div className={'col-12'}>
+								<OrderList/>
+							</div>
 						</div>
 					</div>
 					<div className={'order-info--confirmation-box'}/>

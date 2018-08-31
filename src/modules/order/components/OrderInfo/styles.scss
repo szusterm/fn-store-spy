@@ -35,16 +35,6 @@
 		transform: translate(100%);
 	}
 
-	&--list {
-		padding: 20px !important;
-		max-height: 100%;
-		overflow: auto;
-
-		.list--item-box {
-			padding: 6px;
-		}
-	}
-
 	&--button-box {
 		@include center-items();
 	}

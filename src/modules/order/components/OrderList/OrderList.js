@@ -16,25 +16,27 @@ export class OrderList extends Component {
 		const {items} = this.props;
 
 		return (
-			<div>
-				{
-					items.map((item, index) => {
-						const {_id, imageSrc, rarity} = item;
+			<div className={'container-fluid order-list'}>
+				<div className={'row'}>
+					{
+						items.map((item, index) => {
+							const {_id, imageSrc, rarity} = item;
 
-						return (
-							<div
-								key={_id}
-								className={`col-${this.getItemColsWidth()} list--item-box`}
-							>
-								<ItemOrderCard
-									index={index}
-									imageSrc={imageSrc}
-									rarity={rarity}
-								/>
-							</div>
-						);
-					})
-				}
+							return (
+								<div
+									key={_id}
+									className={`col-${this.getItemColsWidth()} order-list--item-box`}
+								>
+									<ItemOrderCard
+										index={index}
+										imageSrc={imageSrc}
+										rarity={rarity}
+									/>
+								</div>
+							);
+						})
+					}
+				</div>
 			</div>
 		);
 	}

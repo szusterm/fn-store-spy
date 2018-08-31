@@ -1,0 +1,9 @@
+.order-list {
+	padding: 20px !important;
+	max-height: 100%;
+	overflow: auto;
+
+	&--item-box {
+		padding: 6px !important;
+	}
+}
