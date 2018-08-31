@@ -20,4 +20,16 @@ describe('CircleOrderCount Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('shows black layer if show prop is true', () => {
+		const {wrapper} = setup();
+
+		const visibleLayerClass = '.black-curtain--showed';
+
+		wrapper.setProps({show: false});
+		expect(wrapper.find(visibleLayerClass).exists()).toBe(false);
+
+		wrapper.setProps({show: true});
+		expect(wrapper.find(visibleLayerClass).exists()).toBe(true);
+	});
 });
