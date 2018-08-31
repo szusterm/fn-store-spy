@@ -24,4 +24,20 @@ describe('CircleOrderCount Component', () => {
 
 		expect(showedNumber).toBe(itemsCountAsString);
 	});
+
+	it('if order length is higher than 9, shows "9+"', () => {
+		let itemsInOrder = [];
+		for (let index = 0; index < 10; index++) {
+			itemsInOrder.push(`item${index}`);
+		}
+
+		const {wrapper} = setup({
+			items: itemsInOrder
+		});
+
+		const showedText = wrapper.find('.circle-order-count--number').text();
+		const expectedText = '9+';
+
+		expect(showedText).toBe(expectedText);
+	});
 });
