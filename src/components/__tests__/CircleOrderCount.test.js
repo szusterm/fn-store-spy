@@ -14,5 +14,14 @@ const setup = (propOverrides) => {
 };
 
 describe('CircleOrderCount Component', () => {
+	it('shows a count of items in order', () => {
+		const {wrapper, props} = setup({
+			items: ['item0', 'item4', 'item2']
+		});
 
+		const showedNumber = wrapper.find('.circle-order-count--number').text();
+		const itemsCountAsString = String(props.items.length);
+
+		expect(showedNumber).toBe(itemsCountAsString);
+	});
 });
