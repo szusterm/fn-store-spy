@@ -10,7 +10,7 @@ import ItemOrderCard from '../ItemOrderCard';
 
 import './styles.scss';
 
-export class Order extends Component {
+export class OrderInformation extends Component {
 
 	checkThatOrderIsEmpty() {
 		const {items} = this.props;
@@ -73,7 +73,7 @@ export class Order extends Component {
 	}
 }
 
-Order.propTypes = {
+OrderInformation.propTypes = {
 	items: PropTypes.array, //redux
 	listOpened: PropTypes.bool, //redux
 	closeOrderList: PropTypes.func //redux
@@ -87,4 +87,4 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {closeOrderList};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Order);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderInformation);

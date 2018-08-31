@@ -1,14 +1,14 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Order} from '../Order/Order';
+import {OrderInformation} from '../OrderInformation/OrderInformation';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
 
 	}, propOverrides);
 
-	const wrapper = shallow(<Order {...props}/>);
+	const wrapper = shallow(<OrderInformation {...props}/>);
 
 	return {props, wrapper};
 };

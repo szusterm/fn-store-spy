@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {setConfig} from './modules/config/actions';
 
 import Searching from './modules/searching/components/Searching';
-import Order from './modules/order/components/Order';
+import OrderInformation from './modules/order/components/OrderInformation';
 import OrderOpenButton from './modules/order/components/OrderOpenButton';
 
 import './scss/index.scss';
@@ -19,7 +19,7 @@ class App extends Component {
 		return (
 			<div>
 				<Searching/>
-				<Order/>
+				<OrderInformation/>
 				<OrderOpenButton/>
 			</div>
 		);
