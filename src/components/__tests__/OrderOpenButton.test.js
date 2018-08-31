@@ -1,6 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import CircleOrderCount from '../CircleOrderCount';
+
 import {OrderOpenButton} from '../OrderOpenButton/OrderOpenButton';
 
 const setup = (propOverrides) => {
@@ -41,5 +43,11 @@ describe('CircleOrderCount Component', () => {
 		wrapper.simulate('click');
 
 		expect(props.openOrderList).toHaveBeenCalledTimes(1);
+	});
+
+	it('shows CircleOrderCount', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(CircleOrderCount).exists()).toBe(true);
 	});
 });
