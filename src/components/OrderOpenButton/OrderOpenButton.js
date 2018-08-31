@@ -33,15 +33,13 @@ export class OrderOpenButton extends Component {
 
 OrderOpenButton.propTypes = {
 	orderedItems: PropTypes.array, //redux
-	listOpened: PropTypes.bool, //redux
 	openOrderList: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
-	const {listOpened, items} = state.order;
+	const {items} = state.order;
 	return {
 		orderedItems: items,
-		listOpened
 	};
 };
 
