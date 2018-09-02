@@ -24,4 +24,14 @@
 	&:active {
 		background-color: $md-blue-700;
 	}
+
+	&:disabled {
+		cursor: default;
+		@include black-background(0.1);
+		@include black-color(0.5);
+
+		&:hover, &:focus {
+			@include shadow(sm);
+		}
+	}
 }
