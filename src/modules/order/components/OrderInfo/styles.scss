@@ -35,7 +35,25 @@
 		transform: translate(100%);
 	}
 
-	&--button-box {
-		@include center-items();
+	&--components {
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+
+		.components {
+			&--button-box {
+				@include center-items();
+				flex: 1;
+			}
+
+			&--list {
+				flex: 8;
+			}
+
+			&--confirmation-box {
+				flex: 1;
+			}
+		}
 	}
 }
