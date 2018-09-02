@@ -1,5 +1,6 @@
+@import '~material-colors/dist/colors';
+
 @import '~scss/_opacity-colors';
-@import '~scss/_variables';
 @import '~scss/_shadow';
 @import '~scss/_center-items';
 
@@ -9,7 +10,7 @@
 	height: $size;
 
 	border-radius: 50%;
-	background-color: $color-red;
+	background-color: $md-red-500;
 
 	@include center-items();
 	@include shadow(sm);

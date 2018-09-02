@@ -1,4 +1,5 @@
-@import '~scss/_variables';
+@import '~material-colors/dist/colors';
+
 @import '~scss/_transition';
 @import '~scss/_input-reset';
 @import '~scss/_opacity-colors';
@@ -38,7 +39,7 @@
 				padding: 5px;
 
 				border-radius: 50%;
-				background-color: $color-red;
+				background-color: $md-red-500;
 				color: white;
 
 				transform: scale(0);

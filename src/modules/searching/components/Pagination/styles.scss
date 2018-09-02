@@ -1,4 +1,5 @@
-@import '~scss/_variables';
+@import '~material-colors/dist/colors';
+
 @import '~scss/_shadow';
 @import '~scss/_transition';
 @import '~scss/_opacity-colors';
@@ -16,7 +17,7 @@
 		height: $button-height;
 		padding: 10px;
 		border-width: 0;
-		color: $body-color;
+		color: $md-grey-900;
 
 		@include center-items();
 		@include transition(sh);

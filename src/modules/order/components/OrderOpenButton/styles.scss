@@ -1,3 +1,5 @@
+@import '~material-colors/dist/colors';
+
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins/breakpoints';
@@ -24,7 +26,7 @@
 	width: $size;
 	height: $size;
 	border-radius: 50%;
-	color: #43A047;
+	color: $md-green-500;
 
 	@include center-items();
 	@include white-background(1);
@@ -39,6 +41,7 @@
 
 	&:hover {
 		@include shadow(md);
+		color: $md-green-600;
 	}
 
 	transform: translate(50%, 50%) scale(1);
