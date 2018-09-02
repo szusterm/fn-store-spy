@@ -1,0 +1,18 @@
+@mixin input-reset() {
+	cursor: pointer;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	outline: none !important;
+}
+
+@mixin default-input() {
+	$input-height: 50px;
+	@include input-reset();
+
+	height: $input-height;
+	margin: 15px 0;
+	border-radius: $input-height/2;
+	font-size: 1.5em;
+}
