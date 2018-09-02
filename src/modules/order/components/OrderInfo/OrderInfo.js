@@ -7,6 +7,7 @@ import {closeOrderList} from '../../actions';
 import OrderList from '../OrderList';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import HideOrderButton from '../HideOrderButton';
+import ConfirmOrderButton from '../ConfirmOrderButton';
 
 import './styles.scss';
 
@@ -33,19 +34,23 @@ export class OrderInfo extends Component {
 					onClick={closeOrderList}
 				/>
 				<div className={`order-info ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order-info--hidden'}`}>
-					<div className={'container-fluid'}>
-						<div className={'row order-info--button-box'}>
+					<div className={'container-fluid order-info--components'}>
+						<div className={'row components--button-box'}>
 							<div className={'col-8'}>
 								<HideOrderButton/>
 							</div>
 						</div>
-						<div className={'row order-info--list'}>
+						<div className={'row components--list'}>
 							<div className={'col-12'}>
 								<OrderList/>
 							</div>
 						</div>
+						<div className={'row components--confirmation-box'}>
+							<div className={'col-12'}>
+								<ConfirmOrderButton/>
+							</div>
+						</div>
 					</div>
-					<div className={'order-info--confirmation-box'}/>
 				</div>
 			</div>
 		);
