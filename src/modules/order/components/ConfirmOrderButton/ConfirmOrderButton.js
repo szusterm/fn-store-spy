@@ -7,7 +7,7 @@ export class ConfirmOrderButton extends Component {
 	render() {
 		return (
 			<button className={'confirm-order-button'}>
-				Create order
+				Send order
 			</button>
 		);
 	}

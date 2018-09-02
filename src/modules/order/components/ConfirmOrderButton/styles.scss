@@ -9,17 +9,19 @@
 .confirm-order-button {
 	@include default-input();
 
-	background-color: $md-green-500;
-	font-size: 1.5em;
+	background-color: $md-blue-500;
+	font-size: 1.3em;
 
 	@include white-color(0.9);
 	@include shadow(sm);
+	@include transition(sh);
 
 	&:hover, &:focus {
-		background-color: $md-green-600;
+		background-color: $md-blue-600;
+		@include shadow(md);
 	}
 
 	&:active {
-		background-color: $md-green-700;
+		background-color: $md-blue-700;
 	}
 }
