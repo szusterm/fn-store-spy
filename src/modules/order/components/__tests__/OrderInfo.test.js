@@ -4,6 +4,8 @@ import {shallow} from 'enzyme';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import HideOrderButton from '../HideOrderButton';
 import OrderList from '../OrderList';
+import FullOrderCount from '../FullOrderCount';
+import ConfirmOrderButton from '../ConfirmOrderButton';
 
 
 import {OrderInfo} from '../OrderInfo/OrderInfo';
@@ -86,5 +88,17 @@ describe('Order Component', () => {
 		const {wrapper} = setup();
 
 		expect(wrapper.find(OrderList).exists()).toBe(true);
+	});
+
+	it('renders FullOrderCount', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(FullOrderCount).exists()).toBe(true);
+	});
+
+	it('renders ConfirmOrderButton', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(ConfirmOrderButton).exists()).toBe(true);
 	});
 });
