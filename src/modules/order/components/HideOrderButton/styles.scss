@@ -1,11 +1,11 @@
-@import '~scss/_input-reset';
+@import '~scss/_input';
 @import '~scss/_opacity-colors';
 @import '~scss/_transition';
 
 .hide-order-button {
 	$height: 50px;
 
-	@include input-reset();
+	@include default-input();
 	height: $height;
 	margin: 15px 0;
 	border-radius: $height/2;

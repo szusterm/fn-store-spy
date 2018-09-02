@@ -1,7 +1,7 @@
 @import '~scss/_shadow';
 @import '~scss/_transition';
 @import '~scss/_opacity-colors';
-@import '~scss/_input-reset';
+@import '~scss/_input';
 
 .name-search-bar {
 	$inputHeight: 50px;
@@ -10,7 +10,7 @@
 	padding: 0 15px;
 
 	&--input {
-		@include input-reset();
+		@include default-input();
 		cursor: auto;
 		width: 100%;
 		height: $inputHeight;

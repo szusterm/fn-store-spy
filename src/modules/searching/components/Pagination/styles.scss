@@ -3,12 +3,12 @@
 @import '~scss/_shadow';
 @import '~scss/_transition';
 @import '~scss/_opacity-colors';
-@import '~scss/_input-reset';
+@import '~scss/_input';
 @import '~scss/_center-items';
 
 .pagination {
 	&--button {
-		@include input-reset();
+		@include default-input();
 		$button-height: 50px;
 
 		cursor: pointer;
@@ -36,13 +36,13 @@
 		}
 
 		&--previous {
-			border-top-left-radius: $button-height/2;
-			border-bottom-left-radius: $button-height/2;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
 		}
 
 		&--next {
-			border-top-right-radius: $button-height/2;
-			border-bottom-right-radius: $button-height/2;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
 		}
 	}
 }
