@@ -5,9 +5,18 @@ import {connect} from 'react-redux';
 import './styles.scss';
 
 export class ConfirmOrderButton extends Component {
+	checkThatOrderIsEmpty() {
+		const {orderedItems} = this.props;
+
+		return (orderedItems.length === 0);
+	}
+
 	render() {
 		return (
-			<button className={'confirm-order-button'}>
+			<button
+				className={'confirm-order-button'}
+				disabled={(this.checkThatOrderIsEmpty())}
+			>
 				Send order
 			</button>
 		);
