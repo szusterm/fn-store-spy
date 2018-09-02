@@ -1,0 +1,18 @@
+@import '~scss/_center-items';
+@import '~scss/_opacity-colors';
+
+.full-order-count {
+	text-align: center;
+	align-items: flex-end;
+	font-weight: 400;
+
+	&--ordered {
+		@include black-color(0.7);
+		font-size: 3em;
+	}
+
+	&--slash, &--maximum {
+		@include black-color(0.4);
+		font-size: 1.5em;
+	}
+}

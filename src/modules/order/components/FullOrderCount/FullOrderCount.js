@@ -21,7 +21,7 @@ export class FullOrderCount extends Component {
 				>
 					{orderedItems.length}
 				</span>
-				<span>/</span>
+				<span className={'full-order-count--slash'}>/</span>
 				<span className={'full-order-count--maximum'}>
 					{maxItemsInOrder}
 				</span>
