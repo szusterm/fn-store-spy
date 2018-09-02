@@ -1,8 +1,8 @@
-@import '../../../../scss/variables';
-@import '../../../../scss/transition';
-@import '../../../../scss/input-reset';
-@import '../../../../scss/opacity-colors';
-@import '../../../../scss/center-items';
+@import '~scss/_variables';
+@import '~scss/_transition';
+@import '~scss/_input-reset';
+@import '~scss/_opacity-colors';
+@import '~scss/_center-items';
 
 .item-order-card {
 	@include input-reset();

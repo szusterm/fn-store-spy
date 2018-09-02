@@ -2,11 +2,11 @@
 @import '../../../../../node_modules/bootstrap/scss/variables';
 @import '../../../../../node_modules/bootstrap/scss/mixins/breakpoints';
 
-@import '../../../../scss/shadow';
-@import '../../../../scss/transition';
-@import '../../../../scss/opacity-colors';
-@import '../../../../scss/input-reset';
-@import '../../../../scss/center-items';
+@import '~scss/_shadow';
+@import '~scss/_transition';
+@import '~scss/_opacity-colors';
+@import '~scss/_input-reset';
+@import '~scss/_center-items';
 
 .order-open-button {
 	$size: 5.5em;

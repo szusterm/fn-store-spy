@@ -1,7 +1,7 @@
-@import '../../../../scss/shadow';
-@import '../../../../scss/transition';
-@import '../../../../scss/opacity-colors';
-@import '../../../../scss/input-reset';
+@import '~scss/_shadow';
+@import '~scss/_transition';
+@import '~scss/_opacity-colors';
+@import '~scss/_input-reset';
 
 .name-search-bar {
 	$inputHeight: 50px;
