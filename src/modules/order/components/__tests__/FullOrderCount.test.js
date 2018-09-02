@@ -28,7 +28,7 @@ describe('FullOrderCount Component', () => {
 
 		const showedCount = wrapper.find('.full-order-count--ordered').text();
 
-		expect(showedCount).toBe(props.orderedItems.length);
+		expect(showedCount).toBe(String(props.orderedItems.length));
 	});
 
 	it('shows a maximum count of items in the order', () => {
@@ -38,7 +38,7 @@ describe('FullOrderCount Component', () => {
 
 		const showedCount = wrapper.find('.full-order-count--maximum').text();
 
-		expect(showedCount).toBe(props.maxItemsInOrder);
+		expect(showedCount).toBe(String(props.maxItemsInOrder));
 	});
 
 	it('changes count styles if the order is too big', () => {
@@ -48,13 +48,13 @@ describe('FullOrderCount Component', () => {
 
 		const countClass = '.full-order-count--ordered';
 
-		const classToAdd = '.ordered--exceeded';
+		const classToAdd = 'full-order-count--ordered--exceeded';
 
 		wrapper.setProps({orderedItems: ['item2']});
 		const hasClassWithLower = wrapper.find(countClass).hasClass(classToAdd);
-		expect(hasClassWithLower).toBe(true);
+		expect(hasClassWithLower).toBe(false);
 
-		wrapper.setProps({orderedItems: ['item2']});
+		wrapper.setProps({orderedItems: ['item2', 'item3', 'item5']});
 		const hasClassWithHigher = wrapper.find(countClass).hasClass(classToAdd);
 		expect(hasClassWithHigher).toBe(true);
 	});
