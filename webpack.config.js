@@ -27,6 +27,11 @@ module.exports = {
 			}
 		]
 	},
+	resolve: {
+		alias: {
+			'scss': path.resolve(__dirname, './src/scss')
+		}
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Fn Store Spy',
