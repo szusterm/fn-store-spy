@@ -1,11 +1,11 @@
 @import '../../../../scss/shadow';
 @import '../../../../scss/transition';
-@import '../../../../scss/get-input-styles';
+@import '../../../../scss/input';
 @import '../../../../scss/opacity-colors';
 @import '../../../../scss/variables';
 
 .confirm-order-button {
-	@include get-input-styles();
+	@include default-input();
 
 	background-color: $color-green;
 	font-size: 1.5em;
