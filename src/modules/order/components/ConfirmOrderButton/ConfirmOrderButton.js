@@ -11,11 +11,17 @@ export class ConfirmOrderButton extends Component {
 		return (orderedItems.length === 0);
 	}
 
+	checkThatOrderIsTooBig() {
+		const {orderedItems, maxItemsInOrder} = this.props;
+
+		return (orderedItems.length > maxItemsInOrder);
+	}
+
 	render() {
 		return (
 			<button
 				className={'confirm-order-button'}
-				disabled={(this.checkThatOrderIsEmpty())}
+				disabled={(this.checkThatOrderIsEmpty() || this.checkThatOrderIsTooBig())}
 			>
 				Send order
 			</button>
