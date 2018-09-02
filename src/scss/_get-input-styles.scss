@@ -1,0 +1,15 @@
+@mixin get-input-styles() {
+	$input-height: 50px;
+
+	cursor: pointer;
+	width: 100%;
+	height: $input-height;
+
+	padding: 0;
+	margin: 15px 0;
+	border: 0;
+	border-radius: $input-height/2;
+	background-color: transparent;
+	font-size: 2em;
+	outline: none !important;
+}
