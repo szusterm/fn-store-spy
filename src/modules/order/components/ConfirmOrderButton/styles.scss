@@ -1,0 +1,10 @@
+@import '../../../../scss/shadow';
+@import '../../../../scss/transition';
+@import '../../../../scss/input-reset';
+
+.confirm-order-button {
+	@include input-reset();
+
+	height: 60px;
+	border-radius: 50%;
+}
