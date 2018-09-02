@@ -21,9 +21,41 @@ describe('CircleOrderCount Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('shows a count of items in the order', () => {});
+	it('shows a count of items in the order', () => {
+		const {wrapper, props} = setup({
+			orderedItems: ['item7', 'item1']
+		});
 
-	it('shows a maximum count of items in the order', () => {});
+		const showedCount = wrapper.find('.full-order-count--ordered').text();
 
-	it('changes count styles if the order is too big', () => {});
+		expect(showedCount).toBe(props.orderedItems.length);
+	});
+
+	it('shows a maximum count of items in the order', () => {
+		const {wrapper, props} = setup({
+			maxItemsInOrder: 11
+		});
+
+		const showedCount = wrapper.find('.full-order-count--maximum').text();
+
+		expect(showedCount).toBe(props.maxItemsInOrder);
+	});
+
+	it('changes count styles if the order is too big', () => {
+		const {wrapper} = setup({
+			maxItemsInOrder: 2
+		});
+
+		const countClass = '.full-order-count--ordered';
+
+		const classToAdd = '.ordered--exceeded';
+
+		wrapper.setProps({orderedItems: ['item2']});
+		const hasClassWithLower = wrapper.find(countClass).hasClass(classToAdd);
+		expect(hasClassWithLower).toBe(true);
+
+		wrapper.setProps({orderedItems: ['item2']});
+		const hasClassWithHigher = wrapper.find(countClass).hasClass(classToAdd);
+		expect(hasClassWithHigher).toBe(true);
+	});
 });
