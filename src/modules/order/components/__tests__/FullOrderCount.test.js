@@ -14,7 +14,7 @@ const setup = (propOverrides) => {
 	return {props, wrapper};
 };
 
-describe('CircleOrderCount Component', () => {
+describe('FullOrderCount Component', () => {
 	it('renders correctly', () => {
 		const {wrapper} = setup();
 
