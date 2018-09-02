@@ -7,6 +7,7 @@ import {closeOrderList} from '../../actions';
 import OrderList from '../OrderList';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import HideOrderButton from '../HideOrderButton';
+import FullOrderCount from '../FullOrderCount';
 import ConfirmOrderButton from '../ConfirmOrderButton';
 
 import './styles.scss';
@@ -43,6 +44,11 @@ export class OrderInfo extends Component {
 						<div className={'row components--list'}>
 							<div className={'col-12'}>
 								<OrderList/>
+							</div>
+						</div>
+						<div className={'row components--confirmation-box'}>
+							<div className={'col-12'}>
+								<FullOrderCount/>
 							</div>
 						</div>
 						<div className={'row components--confirmation-box'}>
