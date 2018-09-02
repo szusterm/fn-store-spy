@@ -5,7 +5,7 @@ import {ConfirmOrderButton} from '../ConfirmOrderButton/ConfirmOrderButton';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		orderedItems: [], //redux
+		orderedItems: ['item1'], //redux
 		maxItemsInOrder: 3 //redux
 	}, propOverrides);
 
