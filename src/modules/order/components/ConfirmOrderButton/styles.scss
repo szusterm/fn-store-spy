@@ -1,13 +1,14 @@
 @import '../../../../scss/shadow';
 @import '../../../../scss/transition';
-@import '../../../../scss/input-reset';
+@import '../../../../scss/get-input-styles';
+@import '../../../../scss/opacity-colors';
 @import '../../../../scss/variables';
 
 .confirm-order-button {
-	$button-height: 60px;
-	@include input-reset();
+	@include get-input-styles();
 
-	height: $button-height;
-	border-radius: $button-height/2;
 	background-color: $color-green;
+
+	@include white-color(0.9);
+	@include shadow(sm);
 }
