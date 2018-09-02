@@ -1,3 +1,5 @@
+@import '~material-colors/dist/colors';
+
 @import '~scss/_shadow';
 @import '~scss/_transition';
 @import '~scss/_input';
@@ -7,9 +9,17 @@
 .confirm-order-button {
 	@include default-input();
 
-	background-color: $color-green;
+	background-color: $md-green-500;
 	font-size: 1.5em;
 
 	@include white-color(0.9);
 	@include shadow(sm);
+
+	&:hover, &:focus {
+		background-color: $md-green-600;
+	}
+
+	&:active {
+		background-color: $md-green-700;
+	}
 }
