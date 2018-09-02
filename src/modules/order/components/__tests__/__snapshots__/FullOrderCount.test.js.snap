@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FullOrderCount Component renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FullOrderCount
+    maxItemsInOrder={3}
+    orderedItems={
+      Array [
+        "item1",
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <span
+          className="full-order-count--ordered false"
+        >
+          1
+        </span>,
+        <span>
+          /
+        </span>,
+        <span
+          className="full-order-count--maximum"
+        >
+          3
+        </span>,
+      ],
+      "className": "full-order-count",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": 1,
+          "className": "full-order-count--ordered false",
+        },
+        "ref": null,
+        "rendered": 1,
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "/",
+        },
+        "ref": null,
+        "rendered": "/",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": 3,
+          "className": "full-order-count--maximum",
+        },
+        "ref": null,
+        "rendered": 3,
+        "type": "span",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <span
+            className="full-order-count--ordered false"
+          >
+            1
+          </span>,
+          <span>
+            /
+          </span>,
+          <span
+            className="full-order-count--maximum"
+          >
+            3
+          </span>,
+        ],
+        "className": "full-order-count",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": 1,
+            "className": "full-order-count--ordered false",
+          },
+          "ref": null,
+          "rendered": 1,
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "/",
+          },
+          "ref": null,
+          "rendered": "/",
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": 3,
+            "className": "full-order-count--maximum",
+          },
+          "ref": null,
+          "rendered": 3,
+          "type": "span",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
