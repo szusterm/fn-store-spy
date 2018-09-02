@@ -8,6 +8,7 @@
 	@include get-input-styles();
 
 	background-color: $color-green;
+	font-size: 1.5em;
 
 	@include white-color(0.9);
 	@include shadow(sm);

@@ -48,11 +48,12 @@
 			}
 
 			&--list {
-				flex: 8;
+				flex: 7;
 			}
 
 			&--confirmation-box {
-				flex: 1;
+				@include center-items();
+				flex: 2;
 			}
 		}
 	}
