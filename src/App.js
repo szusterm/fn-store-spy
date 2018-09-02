@@ -8,7 +8,7 @@ import Searching from './modules/searching/components/Searching';
 import OrderInformation from './modules/order/components/OrderInfo';
 import OrderOpenButton from './modules/order/components/OrderOpenButton';
 
-import './scss/index.scss';
+import './scss/app.scss';
 
 class App extends Component {
 	componentDidMount() {
