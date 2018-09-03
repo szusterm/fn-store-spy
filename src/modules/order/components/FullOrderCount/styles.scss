@@ -1,3 +1,5 @@
+@import '~material-colors/dist/colors';
+
 @import '~scss/_center-items';
 @import '~scss/_opacity-colors';
 
@@ -9,6 +11,10 @@
 	&--ordered {
 		@include black-color(0.7);
 		font-size: 3em;
+
+		&--exceeded {
+			color: $md-red-600;
+		}
 	}
 
 	&--slash, &--maximum {
