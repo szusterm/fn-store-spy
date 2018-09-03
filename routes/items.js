@@ -15,10 +15,4 @@ router.get('/get', async (req, res) => {
 	res.json((err) ? {err} : {err, data});
 });
 
-router.get('/stats', async (req, res) => {
-	const {err, data} = await item.getStats();
-
-	res.json((err) ? {err} : {err, data});
-});
-
 module.exports = router;
