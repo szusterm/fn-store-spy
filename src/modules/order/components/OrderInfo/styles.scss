@@ -43,16 +43,17 @@
 		.components {
 			&--button-box {
 				@include center-items();
-				flex: 1;
+				padding-top: 5px;
 			}
 
 			&--list {
-				flex: 7;
+				height: 100%;
 			}
 
 			&--confirmation-box {
 				@include center-items();
-				flex: 2;
+				justify-content: space-around;
+				padding-bottom: 60px;
 			}
 		}
 	}
