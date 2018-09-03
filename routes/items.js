@@ -12,7 +12,12 @@ router.get('/get', async (req, res) => {
 		.page(page)
 		.exec();
 
-	res.json((err) ? {err} : {err, data});
+	if (!err) {
+		res.json(data);
+	}
+	else {
+		res.status(500).send(false);
+	}
 });
 
 module.exports = router;
