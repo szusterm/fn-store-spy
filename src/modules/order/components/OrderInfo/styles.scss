@@ -53,6 +53,7 @@
 			&--confirmation-box {
 				@include center-items();
 				justify-content: space-around;
+				padding-top: 5px;
 				padding-bottom: 60px;
 			}
 		}
