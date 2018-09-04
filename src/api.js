@@ -32,8 +32,15 @@ export const fetchItems = async (data) => {
 };
 
 export const fetchConfig = async () => {
-	return await axios({
-		method: 'get',
-		url: '/config'
-	});
+	try {
+		const {data} = await axios({
+			method: 'get',
+			url: '/config'
+		});
+
+		return getResponseObject(false, data);
+	}
+	catch (error) {
+		return getResponseObject(true, error);
+	}
 };
