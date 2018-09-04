@@ -1,9 +1,28 @@
 import * as actions from '../actions';
 import * as types from '../actionTypes';
+import api from '../../../api';
+
+jest.mock('../../../api');
 
 describe('Order Actions', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
+	});
+
+	describe('sendOrder()', () => {
+		const itemsIds = ['34rc3', '567uh'];
+		const exampleApiResponse = {
+			err: false,
+			data: 'some data'
+		};
+
+		it('calls api function to send ordered items', async () => {
+			api.addOrder.mockReturnValueOnce(Promise.resolve(exampleApiResponse));
+
+			await actions.sendOrder(itemsIds)();
+
+			expect(api.addOrder).toHaveBeenCalledWith(itemsIds);
+		});
 	});
 
 	describe('addItemToOrder()', () => {
