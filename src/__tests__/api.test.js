@@ -8,6 +8,20 @@ jest.mock('../../helpers/getResponseObject');
 jest.mock('../../helpers/isRequestSuccessful');
 
 describe('API', () => {
+	describe('callApiRequest()', () => {
+		const exampleRequestData = {
+			method: 'get',
+			url: '/',
+			params: 'some params'
+		};
+
+		it('calls request with a passed data', async () => {
+			await api.callApiRequest(exampleRequestData);
+
+			expect(axios).toHaveBeenCalledWith(exampleRequestData);
+		});
+	});
+
 	xdescribe('fetchItems()', () => {
 		const params = {
 			name: 'Scout',
