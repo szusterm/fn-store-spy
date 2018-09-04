@@ -42,6 +42,21 @@ describe('Order Reducer', () => {
 		});
 	});
 
+	describe(types.CLEAR_ITEMS, () => {
+		it('returns a state with empty items array', () => {
+			const action = {
+				type: types.CLEAR_ITEMS
+			};
+
+			const returnedState = reducer(initialState, action);
+
+			const expectedState = {...initialState};
+			expectedState.items = [];
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
 	describe(types.OPEN_ORDER_LIST, () => {
 		it('returns a state with changed listOpened with true', () => {
 			const action = {
