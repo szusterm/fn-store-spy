@@ -118,4 +118,30 @@ describe('API', () => {
 			expect(returnedResponse).toBe(exampleResponse);
 		});
 	});
+
+	describe('fetchConfig()', () => {
+		const requestData = {
+			method: 'get',
+			url: '/config'
+		};
+
+		let mockCallApiRequest;
+		beforeEach(() => mockCallApiRequest = jest.spyOn(api, 'callApiRequest'));
+		afterEach(() => mockCallApiRequest.mockRestore());
+
+		it('sends request through callApiRequest()', async () => {
+			await api.fetchConfig();
+
+			expect(mockCallApiRequest).toHaveBeenCalledWith(requestData);
+		});
+
+		it('returns callApiRequest() response', async () => {
+			const exampleResponse = 'resp';
+
+			mockCallApiRequest.mockReturnValueOnce(Promise.resolve(exampleResponse));
+			const returnedResponse = await api.fetchConfig();
+
+			expect(returnedResponse).toBe(exampleResponse);
+		});
+	});
 });
