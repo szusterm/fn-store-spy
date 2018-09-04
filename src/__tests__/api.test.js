@@ -89,4 +89,33 @@ describe('API', () => {
 			expect(returnedResponse).toBe(exampleResponse);
 		});
 	});
+
+	describe('addOrder()', () => {
+		const requestData = {
+			method: 'post',
+			url: '/order/add',
+			params: {
+				itemsIds: ['45y5y', '7i7k7k']
+			}
+		};
+
+		let mockCallApiRequest;
+		beforeEach(() => mockCallApiRequest = jest.spyOn(api, 'callApiRequest'));
+		afterEach(() => mockCallApiRequest.mockRestore());
+
+		it('sends request through callApiRequest() with items ids', async () => {
+			await api.addOrder(requestData.params.itemsIds);
+
+			expect(mockCallApiRequest).toHaveBeenCalledWith(requestData);
+		});
+
+		it('returns callApiRequest() response', async () => {
+			const exampleResponse = 'resp';
+
+			mockCallApiRequest.mockReturnValueOnce(Promise.resolve(exampleResponse));
+			const returnedResponse = await api.addOrder(requestData.params);
+
+			expect(returnedResponse).toBe(exampleResponse);
+		});
+	});
 });
