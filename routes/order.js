@@ -4,8 +4,8 @@ const router = express.Router();
 const order = require('../database/factories/order');
 
 router.post('/add', async (req, res) => {
-	const {items} = req.body;
-	const {err, data} = await order.add(items, 'code');
+	const {itemsIds} = req.body;
+	const {err, data} = await order.add(itemsIds, 'code');
 
 	if (!err) {
 		res.json(data);
