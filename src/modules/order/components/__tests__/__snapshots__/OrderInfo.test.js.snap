@@ -62,10 +62,6 @@ ShallowWrapper {
               >
                 <Connect(FullOrderCount) />
               </div>
-            </div>
-            <div
-              className="row components--confirmation-box"
-            >
               <div
                 className="col-9"
               >
@@ -124,10 +120,6 @@ ShallowWrapper {
               >
                 <Connect(FullOrderCount) />
               </div>
-            </div>
-            <div
-              className="row components--confirmation-box"
-            >
               <div
                 className="col-9"
               >
@@ -170,10 +162,6 @@ ShallowWrapper {
                 >
                   <Connect(FullOrderCount) />
                 </div>
-              </div>,
-              <div
-                className="row components--confirmation-box"
-              >
                 <div
                   className="col-9"
                 >
@@ -260,69 +248,63 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <div
-                  className="col-12"
-                >
-                  <Connect(FullOrderCount) />
-                </div>,
+                "children": Array [
+                  <div
+                    className="col-12"
+                  >
+                    <Connect(FullOrderCount) />
+                  </div>,
+                  <div
+                    className="col-9"
+                  >
+                    <Connect(ConfirmOrderButton) />
+                  </div>,
+                ],
                 "className": "row components--confirmation-box",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <Connect(FullOrderCount) />,
-                  "className": "col-12",
-                },
-                "ref": null,
-                "rendered": Object {
+              "rendered": Array [
+                Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {},
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Connect(FullOrderCount) />,
+                    "className": "col-12",
+                  },
                   "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
-                "type": "div",
-              },
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col-9"
-                >
-                  <Connect(ConfirmOrderButton) />
-                </div>,
-                "className": "row components--confirmation-box",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <Connect(ConfirmOrderButton) />,
-                  "className": "col-9",
-                },
-                "ref": null,
-                "rendered": Object {
+                Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {},
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Connect(ConfirmOrderButton) />,
+                    "className": "col-9",
+                  },
                   "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
-                "type": "div",
-              },
+              ],
               "type": "div",
             },
           ],
@@ -376,10 +358,6 @@ ShallowWrapper {
                 >
                   <Connect(FullOrderCount) />
                 </div>
-              </div>
-              <div
-                className="row components--confirmation-box"
-              >
                 <div
                   className="col-9"
                 >
@@ -438,10 +416,6 @@ ShallowWrapper {
                 >
                   <Connect(FullOrderCount) />
                 </div>
-              </div>
-              <div
-                className="row components--confirmation-box"
-              >
                 <div
                   className="col-9"
                 >
@@ -484,10 +458,6 @@ ShallowWrapper {
                   >
                     <Connect(FullOrderCount) />
                   </div>
-                </div>,
-                <div
-                  className="row components--confirmation-box"
-                >
                   <div
                     className="col-9"
                   >
@@ -574,69 +544,63 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <div
-                    className="col-12"
-                  >
-                    <Connect(FullOrderCount) />
-                  </div>,
+                  "children": Array [
+                    <div
+                      className="col-12"
+                    >
+                      <Connect(FullOrderCount) />
+                    </div>,
+                    <div
+                      className="col-9"
+                    >
+                      <Connect(ConfirmOrderButton) />
+                    </div>,
+                  ],
                   "className": "row components--confirmation-box",
                 },
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Connect(FullOrderCount) />,
-                    "className": "col-12",
-                  },
-                  "ref": null,
-                  "rendered": Object {
+                "rendered": Array [
+                  Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {},
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Connect(FullOrderCount) />,
+                      "className": "col-12",
+                    },
                     "ref": null,
-                    "rendered": null,
-                    "type": [Function],
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "div",
                   },
-                  "type": "div",
-                },
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <div
-                    className="col-9"
-                  >
-                    <Connect(ConfirmOrderButton) />
-                  </div>,
-                  "className": "row components--confirmation-box",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Connect(ConfirmOrderButton) />,
-                    "className": "col-9",
-                  },
-                  "ref": null,
-                  "rendered": Object {
+                  Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {},
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Connect(ConfirmOrderButton) />,
+                      "className": "col-9",
+                    },
                     "ref": null,
-                    "rendered": null,
-                    "type": [Function],
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "div",
                   },
-                  "type": "div",
-                },
+                ],
                 "type": "div",
               },
             ],

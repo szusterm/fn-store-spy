@@ -30,7 +30,9 @@ ShallowWrapper {
         >
           1
         </span>,
-        <span>
+        <span
+          className="full-order-count--slash"
+        >
           /
         </span>,
         <span
@@ -61,6 +63,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "/",
+          "className": "full-order-count--slash",
         },
         "ref": null,
         "rendered": "/",
@@ -93,7 +96,9 @@ ShallowWrapper {
           >
             1
           </span>,
-          <span>
+          <span
+            className="full-order-count--slash"
+          >
             /
           </span>,
           <span
@@ -124,6 +129,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "/",
+            "className": "full-order-count--slash",
           },
           "ref": null,
           "rendered": "/",
