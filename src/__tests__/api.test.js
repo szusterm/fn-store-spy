@@ -1,4 +1,4 @@
-import * as api from '../api';
+import api from '../api';
 import axios from 'axios';
 import getResponseObject from '../../helpers/getResponseObject';
 import isRequestSuccessful from '../../helpers/isRequestSuccessful';
@@ -56,6 +56,37 @@ describe('API', () => {
 			await api.callApiRequest(exampleRequestData);
 
 			expect(getResponseObject).toHaveBeenCalledWith(true, exampleErrorResponse.data);
+		});
+	});
+
+	describe('fetchItems()', () => {
+		const requestData = {
+			method: 'get',
+			url: '/items/get',
+			params: {
+				name: 'Item',
+				type: 'outfit',
+				page: 5
+			}
+		};
+
+		let mockCallApiRequest;
+		beforeEach(() => mockCallApiRequest = jest.spyOn(api, 'callApiRequest'));
+		afterEach(() => mockCallApiRequest.mockRestore());
+
+		it('sends request through callApiRequest() with filters', async () => {
+			await api.fetchItems(requestData.params);
+
+			expect(mockCallApiRequest).toHaveBeenCalledWith(requestData);
+		});
+
+		it('returns callApiRequest() response', async () => {
+			const exampleResponse = 'resp';
+
+			mockCallApiRequest.mockReturnValueOnce(Promise.resolve(exampleResponse));
+			const returnedResponse = await api.fetchItems(requestData.params);
+
+			expect(returnedResponse).toBe(exampleResponse);
 		});
 	});
 
