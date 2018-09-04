@@ -3,6 +3,24 @@ import axios from 'axios';
 import getResponseObject from '../helpers/getResponseObject';
 import isRequestSuccessful from '../helpers/isRequestSuccessful';
 
+const callRequest = async (data) => {
+	try {
+		const response = await axios(data);
+
+		const requestSuccessful = isRequestSuccessful(response.status);
+
+		if (requestSuccessful) {
+			return getResponseObject(false, response.data);
+		}
+		else {
+			throw new Error();
+		}
+	}
+	catch (error) {
+		return getResponseObject(true, error);
+	}
+};
+
 export const fetchItems = async (data) => {
 	const {name, type, page} = data;
 
