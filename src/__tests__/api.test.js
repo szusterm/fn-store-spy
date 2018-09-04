@@ -8,7 +8,7 @@ jest.mock('../../helpers/getResponseObject');
 jest.mock('../../helpers/isRequestSuccessful');
 
 describe('API', () => {
-	describe('fetchItems()', () => {
+	xdescribe('fetchItems()', () => {
 		const params = {
 			name: 'Scout',
 			type: 'outfit',
@@ -42,7 +42,7 @@ describe('API', () => {
 		});
 	});
 
-	describe('addOrder()', () => {
+	xdescribe('addOrder()', () => {
 		const params = {
 			itemsIds: ['458y7h45', '45hg8r']
 		};
@@ -74,7 +74,7 @@ describe('API', () => {
 		});
 	});
 
-	describe('fetchConfig()', () => {
+	xdescribe('fetchConfig()', () => {
 		it('gets items from server', async () => {
 			const exampleResponse = {
 				status: 200,
