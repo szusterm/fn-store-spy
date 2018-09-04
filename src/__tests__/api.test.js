@@ -38,6 +38,25 @@ describe('API', () => {
 
 			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 		});
+
+		it('returns an object with err true and error data, if it is error', async () => {
+			const exampleErrorResponse = {
+				status: 500,
+				data: 'example error'
+			};
+
+			axios.mockReturnValueOnce(Promise.resolve(exampleErrorResponse));
+			isRequestSuccessful.mockReturnValueOnce(false);
+			await api.callApiRequest(exampleRequestData);
+
+			expect(getResponseObject).toHaveBeenCalledWith(true, exampleErrorResponse.data);
+
+			axios.mockReturnValueOnce(Promise.reject(exampleErrorResponse));
+			isRequestSuccessful.mockReturnValueOnce(false);
+			await api.callApiRequest(exampleRequestData);
+
+			expect(getResponseObject).toHaveBeenCalledWith(true, exampleErrorResponse.data);
+		});
 	});
 
 	xdescribe('fetchItems()', () => {
