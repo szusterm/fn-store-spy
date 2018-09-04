@@ -42,6 +42,38 @@ describe('API', () => {
 		});
 	});
 
+	describe('addOrder()', () => {
+		const params = {
+			itemsIds: ['458y7h45', '45hg8r']
+		};
+
+		it('sends an order to save in a database', async () => {
+			const exampleResponse = {
+				status: 200,
+				data: 'example data'
+			};
+
+			axios.mockReturnValueOnce(Promise.resolve(exampleResponse));
+			isRequestSuccessful.mockReturnValueOnce(true);
+
+			await api.addOrder(params.itemsIds);
+
+			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
+		});
+
+		it('call request with data', async () => {
+			const dataCalledWithAxios = {
+				method: 'post',
+				url: '/order/add',
+				params
+			};
+
+			await api.addOrder(params.itemsIds);
+
+			expect(axios).toHaveBeenCalledWith(dataCalledWithAxios);
+		});
+	});
+
 	describe('fetchConfig()', () => {
 		it('gets items from server', async () => {
 			const exampleResponse = {
