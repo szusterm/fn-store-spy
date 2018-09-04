@@ -113,7 +113,7 @@ describe('API', () => {
 			const exampleResponse = 'resp';
 
 			mockCallApiRequest.mockReturnValueOnce(Promise.resolve(exampleResponse));
-			const returnedResponse = await api.addOrder(requestData.params);
+			const returnedResponse = await api.addOrder(requestData.params.itemsIds);
 
 			expect(returnedResponse).toBe(exampleResponse);
 		});
