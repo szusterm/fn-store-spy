@@ -3,7 +3,7 @@ import axios from 'axios';
 import getResponseObject from '../helpers/getResponseObject';
 import isRequestSuccessful from '../helpers/isRequestSuccessful';
 
-const callRequest = async (data) => {
+export const callRequest = async (data) => {
 	try {
 		const response = await axios(data);
 
@@ -24,72 +24,36 @@ const callRequest = async (data) => {
 export const fetchItems = async (data) => {
 	const {name, type, page} = data;
 
-	try {
-		const response = await axios({
-			method: 'get',
-			url: '/items/get',
-			params: {
-				name,
-				type,
-				page
-			}
-		});
-
-		const requestSuccessful = isRequestSuccessful(response.status);
-
-		if (requestSuccessful) {
-			return getResponseObject(false, response.data);
+	const requestData = {
+		method: 'get',
+		url: '/items/get',
+		params: {
+			name,
+			type,
+			page
 		}
-		else {
-			throw new Error();
-		}
-	}
-	catch (error) {
-		return getResponseObject(true, error);
-	}
+	};
+
+	return await callRequest(requestData);
 };
 
 export const addOrder = async (itemsIds) => {
-	try {
-		const response = await axios({
-			method: 'post',
-			url: '/order/add',
-			params: {
-				itemsIds
-			}
-		});
-
-		const requestSuccessful = isRequestSuccessful(response.status);
-
-		if (requestSuccessful) {
-			return getResponseObject(false, response.data);
+	const requestData = {
+		method: 'post',
+		url: '/order/add',
+		params: {
+			itemsIds
 		}
-		else {
-			throw new Error();
-		}
-	}
-	catch (error) {
-		return getResponseObject(true, error);
-	}
+	};
+
+	return await callRequest(requestData);
 };
 
 export const fetchConfig = async () => {
-	try {
-		const response = await axios({
-			method: 'get',
-			url: '/config'
-		});
+	const requestData = {
+		method: 'get',
+		url: '/config'
+	};
 
-		const requestSuccessful = isRequestSuccessful(response.status);
-
-		if (requestSuccessful) {
-			return getResponseObject(false, response.data);
-		}
-		else {
-			throw new Error();
-		}
-	}
-	catch (error) {
-		return getResponseObject(true, error);
-	}
+	return await callRequest(requestData);
 };
