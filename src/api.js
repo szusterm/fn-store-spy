@@ -3,7 +3,7 @@ import axios from 'axios';
 import getResponseObject from '../helpers/getResponseObject';
 import isRequestSuccessful from '../helpers/isRequestSuccessful';
 
-export const callRequest = async (data) => {
+export const callApiRequest = async (data) => {
 	try {
 		const response = await axios(data);
 
@@ -34,7 +34,7 @@ export const fetchItems = async (data) => {
 		}
 	};
 
-	return await callRequest(requestData);
+	return await callApiRequest(requestData);
 };
 
 export const addOrder = async (itemsIds) => {
@@ -46,7 +46,7 @@ export const addOrder = async (itemsIds) => {
 		}
 	};
 
-	return await callRequest(requestData);
+	return await callApiRequest(requestData);
 };
 
 export const fetchConfig = async () => {
@@ -55,5 +55,5 @@ export const fetchConfig = async () => {
 		url: '/config'
 	};
 
-	return await callRequest(requestData);
+	return await callApiRequest(requestData);
 };
