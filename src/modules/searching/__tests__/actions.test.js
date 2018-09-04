@@ -17,12 +17,10 @@ describe('Searching Actions', () => {
 			name: 'Hi man'
 		};
 		const apiResponse = {
+			err: false,
 			data: {
-				err: false,
-				data: {
-					items: exampleItems,
-					nextPageAvailable: exampleNextPageAvailable
-				}
+				items: exampleItems,
+				nextPageAvailable: exampleNextPageAvailable
 			}
 		};
 
@@ -69,18 +67,16 @@ describe('Searching Actions', () => {
 
 		it('returns bool, that everything is done', async () => {
 			const apiResponseWithError = {
-				data: {
-					err: true
-				}
+				err: true
 			};
 
 			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponseWithError));
 			const firstResponse = await actions.updateItems()(mockDispatch, mockGetState);
-			expect(firstResponse).toBe(!apiResponseWithError.data.err);
+			expect(firstResponse).toBe(!apiResponseWithError.err);
 
 			api.fetchItems.mockReturnValueOnce(Promise.resolve(apiResponse));
 			const secondResponse = await actions.updateItems()(mockDispatch, mockGetState);
-			expect(secondResponse).toBe(!apiResponse.data.err);
+			expect(secondResponse).toBe(!apiResponse.err);
 		});
 	});
 
