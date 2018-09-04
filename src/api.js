@@ -57,12 +57,19 @@ export const addOrder = async (itemsIds) => {
 
 export const fetchConfig = async () => {
 	try {
-		const {data} = await axios({
+		const response = await axios({
 			method: 'get',
 			url: '/config'
 		});
 
-		return getResponseObject(false, data);
+		const requestSuccessful = isRequestSuccessful(response.status);
+
+		if (requestSuccessful) {
+			return getResponseObject(false, response.data);
+		}
+		else {
+			throw new Error();
+		}
 	}
 	catch (error) {
 		return getResponseObject(true, error);
