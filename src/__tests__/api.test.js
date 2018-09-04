@@ -8,6 +8,10 @@ jest.mock('../../helpers/getResponseObject');
 jest.mock('../../helpers/isRequestSuccessful');
 
 describe('API', () => {
+	beforeEach(() => {
+		jest.clearAllMocks();
+	});
+
 	describe('callApiRequest()', () => {
 		const exampleRequestData = {
 			method: 'get',
@@ -19,6 +23,20 @@ describe('API', () => {
 			await api.callApiRequest(exampleRequestData);
 
 			expect(axios).toHaveBeenCalledWith(exampleRequestData);
+		});
+
+		it('returns an object with err false and response data, if it is no error', async () => {
+			const exampleResponse = {
+				status: 200,
+				data: 'example data'
+			};
+
+			axios.mockReturnValueOnce(Promise.resolve(exampleResponse));
+			isRequestSuccessful.mockReturnValueOnce(true);
+
+			await api.callApiRequest(exampleRequestData);
+
+			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 		});
 	});
 
