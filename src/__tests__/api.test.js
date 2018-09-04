@@ -1,7 +1,11 @@
 import * as api from '../api';
 import axios from 'axios';
+import getResponseObject from '../../helpers/getResponseObject';
+import isRequestSuccessful from '../../helpers/isRequestSuccessful';
 
 jest.mock('axios');
+jest.mock('../../helpers/getResponseObject');
+jest.mock('../../helpers/isRequestSuccessful');
 
 describe('API', () => {
 	describe('fetchItems()', () => {
@@ -12,13 +16,17 @@ describe('API', () => {
 		};
 
 		it('gets items from server', async () => {
-			const items = ['item0', 'item1'];
+			const exampleResponse = {
+				status: 200,
+				data: ['item0', 'item1']
+			};
 
-			axios.mockReturnValueOnce(items);
+			axios.mockReturnValueOnce(Promise.resolve(exampleResponse));
+			isRequestSuccessful.mockReturnValueOnce(true);
 
-			const response = await api.fetchItems(params);
+			await api.fetchItems(params);
 
-			expect(response).toEqual(items);
+			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 		});
 
 		it('call request with data', async () => {
