@@ -1,4 +1,13 @@
 import * as types from './actionTypes';
+import api from '../../api';
+
+export const sendOrder = (itemsIds) => async (dispatch) => {
+	const {err, data} = await api.addOrder(itemsIds);
+
+	if (!err) {
+		//clear order
+	}
+};
 
 export const addItemToOrder = (item) => {
 	return {
