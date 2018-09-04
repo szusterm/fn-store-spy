@@ -13,7 +13,7 @@ export const callApiRequest = async (data) => {
 			return getResponseObject(false, response.data);
 		}
 		else {
-			throw new Error();
+			throw new Error(response.data);
 		}
 	}
 	catch (error) {
