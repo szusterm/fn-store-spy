@@ -1,4 +1,4 @@
-const isRequestSuccessful = require('../isRequestSuccesful');
+const isRequestSuccessful = require('../isRequestSuccessful');
 
 describe('isRequestSuccessful()', () => {
 	it('returns true if request was successful', () => {
