@@ -44,13 +44,17 @@ describe('API', () => {
 
 	describe('fetchConfig()', () => {
 		it('gets items from server', async () => {
-			const config = {length: 5, items: 10};
+			const exampleResponse = {
+				status: 200,
+				data: {length: 5, items: 10}
+			};
 
-			axios.mockReturnValueOnce(config);
+			axios.mockReturnValueOnce(exampleResponse);
+			isRequestSuccessful.mockReturnValueOnce(true);
 
-			const response = await api.fetchConfig();
+			await api.fetchConfig();
 
-			expect(response).toEqual(config);
+			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 		});
 	});
 });
