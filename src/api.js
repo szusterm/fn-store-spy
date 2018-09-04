@@ -17,7 +17,7 @@ export const callApiRequest = async (data) => {
 		}
 	}
 	catch (error) {
-		return getResponseObject(true, error);
+		return getResponseObject(true, error.message);
 	}
 };
 
