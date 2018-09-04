@@ -1,10 +1,10 @@
 import * as types from './actionTypes';
-import {fetchItems} from '../../api';
+import api from '../../api';
 
 export const updateItems = () => async (dispatch, getState) => {
 	const requestData = getState().searching.filters;
 
-	const response = await fetchItems(requestData);
+	const response = await api.fetchItems(requestData);
 
 	if (!response.err) {
 		dispatch({

@@ -1,8 +1,8 @@
 import * as types from './actionTypes';
-import {fetchConfig} from '../../api';
+import api from '../../api';
 
 export const setConfig = () => async (dispatch) => {
-	const {err, data} = await fetchConfig();
+	const {err, data} = await api.fetchConfig();
 
 	if (!err) {
 		dispatch({
