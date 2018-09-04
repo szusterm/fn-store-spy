@@ -1,24 +1,28 @@
+import isRequestSuccessful from '../../../helpers/isRequestSuccessful';
+
 import * as types from './actionTypes';
 import {fetchItems} from '../../api';
 
 export const updateItems = () => async (dispatch, getState) => {
 	const requestData = getState().searching.filters;
 
-	const {data: responseData} = await fetchItems(requestData);
+	const response = await fetchItems(requestData);
 
-	if (!responseData.err) {
+	const isSuccess = isRequestSuccessful(response.status);
+
+	if (isSuccess) {
 		dispatch({
 			type: types.REPLACE_ITEMS,
-			payload: responseData.data.items
+			payload: response.data.items
 		});
 
 		dispatch({
 			type: types.SET_NEXT_PAGE_AVAILABILITY,
-			payload: responseData.data.nextPageAvailable
+			payload: response.data.nextPageAvailable
 		});
 	}
 
-	return !responseData.err;
+	return isSuccess;
 };
 
 export const setPageFilter = (page) => {
