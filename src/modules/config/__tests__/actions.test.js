@@ -10,7 +10,7 @@ describe('Config Actions', () => {
 	});
 
 	describe('setConfig()', () => {
-		it('updates config store with api response data', async () => {
+		it('updates config store with api response data, if it is no error', async () => {
 			const mockDispatch = jest.fn();
 			const expectedChange = {
 				type: types.SET_CONFIG,
@@ -18,6 +18,7 @@ describe('Config Actions', () => {
 			};
 
 			api.fetchConfig.mockReturnValueOnce(Promise.resolve({
+				err: false,
 				data: expectedChange.payload
 			}));
 
