@@ -1,5 +1,3 @@
-import isRequestSuccessful from '../../../helpers/isRequestSuccessful';
-
 import * as types from './actionTypes';
 import {fetchItems} from '../../api';
 
@@ -8,9 +6,7 @@ export const updateItems = () => async (dispatch, getState) => {
 
 	const response = await fetchItems(requestData);
 
-	const isSuccess = isRequestSuccessful(response.status);
-
-	if (isSuccess) {
+	if (!response.err) {
 		dispatch({
 			type: types.REPLACE_ITEMS,
 			payload: response.data.items
@@ -22,7 +18,7 @@ export const updateItems = () => async (dispatch, getState) => {
 		});
 	}
 
-	return isSuccess;
+	return !response.err;
 };
 
 export const setPageFilter = (page) => {
