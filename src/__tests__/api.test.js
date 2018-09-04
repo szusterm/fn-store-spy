@@ -29,7 +29,7 @@ describe('API', () => {
 			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 		});
 
-		it('call request with data', async () => {
+		it('calls request with data', async () => {
 			const dataCalledWithAxios = {
 				method: 'get',
 				url: '/items/get',
@@ -61,7 +61,7 @@ describe('API', () => {
 			expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 		});
 
-		it('call request with data', async () => {
+		it('calls request with ordered items ids', async () => {
 			const dataCalledWithAxios = {
 				method: 'post',
 				url: '/order/add',
