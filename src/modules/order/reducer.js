@@ -20,6 +20,11 @@ const reducer = (state = initialState, action) => {
 				...state,
 				items: [...state.items]
 			};
+		case types.CLEAR_ITEMS:
+			return {
+				...state,
+				items: []
+			};
 		case types.OPEN_ORDER_LIST:
 			return {
 				...state,
