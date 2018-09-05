@@ -6,10 +6,6 @@ export const sendOrder = (itemsIds) => async (dispatch) => {
 
 	if (!err) {
 		dispatch({
-			type: types.CLEAR_ITEMS
-		});
-
-		dispatch({
 			type: types.SHOW_ORDER_CONFIRMATION
 		});
 	}

@@ -29,22 +29,6 @@ describe('Order Actions', () => {
 			expect(api.addOrder).toHaveBeenCalledWith(itemsIds);
 		});
 
-		it('clears order, if it is no error after getting response', async () => {
-			api.addOrder
-				.mockReturnValueOnce(Promise.resolve(apiResponseWithoutError))
-				.mockReturnValueOnce(Promise.resolve(apiResponseWithError));
-
-			await actions.sendOrder(itemsIds)(mockDispatch);
-			expect(mockDispatch).toHaveBeenCalledWith({
-				type: types.CLEAR_ITEMS
-			});
-
-			jest.clearAllMocks();
-
-			await actions.sendOrder(itemsIds)(mockDispatch);
-			expect(mockDispatch).toHaveBeenCalledTimes(0);
-		});
-
 		it('open the order confirmation, if it is no error after getting response', async () => {
 			api.addOrder
 				.mockReturnValueOnce(Promise.resolve(apiResponseWithoutError))
@@ -54,8 +38,6 @@ describe('Order Actions', () => {
 			expect(mockDispatch).toHaveBeenCalledWith({
 				type: types.SHOW_ORDER_CONFIRMATION
 			});
-
-			jest.clearAllMocks();
 
 			await actions.sendOrder(itemsIds)(mockDispatch);
 			expect(mockDispatch).toHaveBeenCalledTimes(0);
