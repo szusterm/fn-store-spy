@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {sendOrder} from '../../actions';
+
 import './styles.scss';
 
 export class ConfirmOrderButton extends Component {
@@ -31,7 +33,8 @@ export class ConfirmOrderButton extends Component {
 
 ConfirmOrderButton.propTypes = {
 	orderedItems: PropTypes.array, //redux
-	maxItemsInOrder: PropTypes.number //redux
+	maxItemsInOrder: PropTypes.number, //redux
+	sendOrder: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
@@ -44,4 +47,6 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, null)(ConfirmOrderButton);
+const mapDispatchToProps = {sendOrder};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConfirmOrderButton);
