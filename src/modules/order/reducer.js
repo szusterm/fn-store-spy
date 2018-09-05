@@ -42,6 +42,18 @@ const reducer = (state = initialState, action) => {
 				listOpened: false
 			};
 
+		case types.SHOW_ORDER_CONFIRMATION:
+			return {
+				...state,
+				confirmationOpened: true
+			};
+
+		case types.HIDE_ORDER_CONFIRMATION:
+			return {
+				...state,
+				confirmationOpened: false
+			};
+
 		case types.SET_CODE:
 			return {
 				...state,
