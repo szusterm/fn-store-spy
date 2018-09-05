@@ -13,9 +13,9 @@ export class ConfirmOrderButton extends Component {
 		this.sendOrder = this.sendOrder.bind(this);
 	}
 
-	sendOrder() {
+	async sendOrder() {
 		const itemsIds = this.getItemsIds();
-		this.props.sendOrder(itemsIds);
+		await this.props.sendOrder(itemsIds);
 	}
 
 	getItemsIds() {
