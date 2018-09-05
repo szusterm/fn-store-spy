@@ -5,7 +5,9 @@ export const sendOrder = (itemsIds) => async (dispatch) => {
 	const {err, data} = await api.addOrder(itemsIds);
 
 	if (!err) {
-		//clear order
+		dispatch({
+			type: types.CLEAR_ITEMS
+		});
 	}
 };
 
