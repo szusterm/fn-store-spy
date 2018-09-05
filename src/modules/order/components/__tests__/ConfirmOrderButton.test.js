@@ -46,6 +46,18 @@ describe('ConfirmOrderButton Component', () => {
 		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsIds);
 	});
 
+	it('makes disabled, during sending the order', async () => {
+		const {wrapper} = setup({
+			sendOrder: jest.fn(() => Promise.resolve(true))
+		});
+
+		expect(wrapper.find('button').props().disabled).toBe(false);
+
+		wrapper.simulate('click');
+
+		expect(wrapper.find('button').props().disabled).toBe(true);
+	});
+
 	it('makes disabled if the order is empty', () => {
 		const {wrapper} = setup();
 
