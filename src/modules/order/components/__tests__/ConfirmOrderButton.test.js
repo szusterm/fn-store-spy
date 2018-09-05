@@ -3,9 +3,22 @@ import {shallow} from 'enzyme';
 
 import {ConfirmOrderButton} from '../ConfirmOrderButton/ConfirmOrderButton';
 
+const orderedItemsIds = ['45y5tnr5', '56ug657i'];
+
+const orderedItems = [
+	{
+		_id: orderedItemsIds[0],
+		name: 'Something'
+	},
+	{
+		_id: orderedItemsIds[1],
+		name: 'Axe'
+	}
+];
+
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		orderedItems: ['item1'], //redux
+		orderedItems, //redux
 		maxItemsInOrder: 3, //redux
 		sendOrder: () => true //redux
 	}, propOverrides);

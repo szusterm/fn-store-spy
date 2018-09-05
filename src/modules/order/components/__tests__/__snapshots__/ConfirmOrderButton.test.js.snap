@@ -8,7 +8,14 @@ ShallowWrapper {
     maxItemsInOrder={3}
     orderedItems={
       Array [
-        "item1",
+        Object {
+          "_id": "45y5tnr5",
+          "name": "Something",
+        },
+        Object {
+          "_id": "56ug657i",
+          "name": "Axe",
+        },
       ]
     }
     sendOrder={[Function]}
