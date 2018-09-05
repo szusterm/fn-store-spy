@@ -7,6 +7,17 @@ import {sendOrder} from '../../actions';
 import './styles.scss';
 
 export class ConfirmOrderButton extends Component {
+	getItemsIds() {
+		const {orderedItems} = this.props;
+
+		const itemsIds = [];
+		for (const {id: orderedItemId} of orderedItems) {
+			itemsIds.push(orderedItemId);
+		}
+
+		return itemsIds;
+	}
+
 	checkThatOrderIsEmpty() {
 		const {orderedItems} = this.props;
 
