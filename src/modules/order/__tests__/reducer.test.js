@@ -4,7 +4,9 @@ import * as types from '../actionTypes';
 describe('Order Reducer', () => {
 	const initialState = {
 		items: ['item0', 'item6'],
-		listOpened: false
+		listOpened: false,
+		confirmationOpened: false,
+		code: ''
 	};
 
 	describe(types.ADD_ITEM, () => {
@@ -82,6 +84,22 @@ describe('Order Reducer', () => {
 
 			const expectedState = {...initialState};
 			expectedState.listOpened = false;
+
+			expect(returnedState).toEqual(expectedState);
+		});
+	});
+
+	describe(types.SET_CODE, () => {
+		it('returns a state with changed the order code', () => {
+			const action = {
+				type: types.SET_CODE,
+				payload: '5h6y596'
+			};
+
+			const returnedState = reducer(initialState, action);
+
+			const expectedState = {...initialState};
+			expectedState.code = action.payload;
 
 			expect(returnedState).toEqual(expectedState);
 		});
