@@ -42,6 +42,12 @@ const reducer = (state = initialState, action) => {
 				listOpened: false
 			};
 
+		case types.SET_CODE:
+			return {
+				...state,
+				code: payload
+			};
+
 		default:
 			return state;
 	}
