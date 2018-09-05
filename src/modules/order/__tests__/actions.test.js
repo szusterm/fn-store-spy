@@ -39,6 +39,8 @@ describe('Order Actions', () => {
 				type: types.SHOW_ORDER_CONFIRMATION
 			});
 
+			jest.clearAllMocks();
+
 			await actions.sendOrder(itemsIds)(mockDispatch);
 			expect(mockDispatch).toHaveBeenCalledTimes(0);
 		});
