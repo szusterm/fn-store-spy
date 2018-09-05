@@ -7,11 +7,22 @@ import {sendOrder} from '../../actions';
 import './styles.scss';
 
 export class ConfirmOrderButton extends Component {
+	constructor(props) {
+		super(props);
+
+		this.sendOrder = this.sendOrder.bind(this);
+	}
+
+	sendOrder() {
+		const itemsIds = this.getItemsIds();
+		this.props.sendOrder(itemsIds);
+	}
+
 	getItemsIds() {
 		const {orderedItems} = this.props;
 
 		const itemsIds = [];
-		for (const {id: orderedItemId} of orderedItems) {
+		for (const {_id: orderedItemId} of orderedItems) {
 			itemsIds.push(orderedItemId);
 		}
 
@@ -35,6 +46,7 @@ export class ConfirmOrderButton extends Component {
 			<button
 				className={'confirm-order-button'}
 				disabled={(this.checkThatOrderIsEmpty() || this.checkThatOrderIsTooBig())}
+				onClick={this.sendOrder}
 			>
 				Send order
 			</button>
