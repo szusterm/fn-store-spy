@@ -94,7 +94,7 @@ describe('API', () => {
 		const requestData = {
 			method: 'post',
 			url: '/order/add',
-			params: {
+			data: {
 				itemsIds: ['45y5y', '7i7k7k']
 			}
 		};
@@ -104,7 +104,7 @@ describe('API', () => {
 		afterEach(() => mockCallApiRequest.mockRestore());
 
 		it('sends request through callApiRequest() with items ids', async () => {
-			await api.addOrder(requestData.params.itemsIds);
+			await api.addOrder(requestData.data.itemsIds);
 
 			expect(mockCallApiRequest).toHaveBeenCalledWith(requestData);
 		});
@@ -113,7 +113,7 @@ describe('API', () => {
 			const exampleResponse = 'resp';
 
 			mockCallApiRequest.mockReturnValueOnce(Promise.resolve(exampleResponse));
-			const returnedResponse = await api.addOrder(requestData.params.itemsIds);
+			const returnedResponse = await api.addOrder(requestData.data.itemsIds);
 
 			expect(returnedResponse).toBe(exampleResponse);
 		});
