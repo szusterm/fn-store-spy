@@ -6,7 +6,8 @@ import {ConfirmOrderButton} from '../ConfirmOrderButton/ConfirmOrderButton';
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		orderedItems: ['item1'], //redux
-		maxItemsInOrder: 3 //redux
+		maxItemsInOrder: 3, //redux
+		sendOrder: () => true //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<ConfirmOrderButton {...props}/>);
