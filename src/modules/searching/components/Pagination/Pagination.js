@@ -10,11 +10,11 @@ export class Pagination extends Component {
 	constructor() {
 		super();
 
-		this.previousPage = this.previousPage.bind(this);
-		this.nextPage = this.nextPage.bind(this);
+		this.setPreviousPage = this.setPreviousPage.bind(this);
+		this.setNextPage = this.setNextPage.bind(this);
 	}
 
-	nextPage() {
+	setNextPage() {
 		const {page} = this.props;
 		const newPage = page + 1;
 		this.props.setPageFilter(newPage);
@@ -22,7 +22,7 @@ export class Pagination extends Component {
 		this.props.onChange();
 	}
 
-	previousPage() {
+	setPreviousPage() {
 		const {page} = this.props;
 
 		if (page > 1) {
@@ -43,7 +43,7 @@ export class Pagination extends Component {
 						<button
 							className={'pagination--button pagination--button--previous'}
 							disabled={(page <= 1)}
-							onClick={this.previousPage}
+							onClick={this.setPreviousPage}
 						>
 							Previous
 						</button>
@@ -52,7 +52,7 @@ export class Pagination extends Component {
 						<button
 							className={'pagination--button pagination--button--next'}
 							disabled={!nextPageAvailable}
-							onClick={this.nextPage}
+							onClick={this.setNextPage}
 						>
 							Next
 						</button>
