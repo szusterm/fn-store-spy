@@ -42,7 +42,7 @@ class Api {
 		const requestData = {
 			method: 'post',
 			url: '/order/add',
-			params: {
+			data: {
 				itemsIds
 			}
 		};
