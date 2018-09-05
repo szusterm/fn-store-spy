@@ -2,7 +2,9 @@ import * as types from './actionTypes';
 
 const initialState = {
 	items: [],
-	listOpened: false
+	listOpened: false,
+	confirmationOpened: false,
+	code: ''
 };
 
 const reducer = (state = initialState, action) => {
