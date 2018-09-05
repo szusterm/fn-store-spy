@@ -48,13 +48,13 @@ export class ConfirmOrderButton extends Component {
 		this.setState(newState);
 	}
 
-	checkThatOrderIsEmpty() {
+	isOrderEmpty() {
 		const {orderedItems} = this.props;
 
 		return (orderedItems.length === 0);
 	}
 
-	checkThatOrderIsTooBig() {
+	isOrderTooBig() {
 		const {orderedItems, maxItemsInOrder} = this.props;
 
 		return (orderedItems.length > maxItemsInOrder);
@@ -66,7 +66,7 @@ export class ConfirmOrderButton extends Component {
 		return (
 			<button
 				className={'confirm-order-button'}
-				disabled={(this.checkThatOrderIsEmpty() || this.checkThatOrderIsTooBig() || sendingOrder)}
+				disabled={(this.isOrderEmpty() || this.isOrderTooBig() || sendingOrder)}
 				onClick={this.sendOrder}
 			>
 				Send order
