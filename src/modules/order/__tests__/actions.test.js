@@ -11,17 +11,41 @@ describe('Order Actions', () => {
 
 	describe('sendOrder()', () => {
 		const itemsIds = ['34rc3', '567uh'];
-		const exampleApiResponse = {
+
+		const apiResponseWithError = {
+			err: true,
+			data: 'error message'
+		};
+
+		const apiResponseWithoutError = {
 			err: false,
-			data: 'some data'
+			data: 'code'
 		};
 
 		it('calls api function to send ordered items', async () => {
-			api.addOrder.mockReturnValueOnce(Promise.resolve(exampleApiResponse));
+			api.addOrder.mockReturnValueOnce(Promise.resolve(apiResponseWithoutError));
 
 			await actions.sendOrder(itemsIds)();
 
 			expect(api.addOrder).toHaveBeenCalledWith(itemsIds);
+		});
+
+		it('clears order, if it is no error after getting response', async () => {
+			const mockDispatch = jest.fn();
+
+			api.addOrder
+				.mockReturnValueOnce(Promise.resolve(apiResponseWithoutError))
+				.mockReturnValueOnce(Promise.resolve(apiResponseWithError));
+
+			await actions.sendOrder(itemsIds)(mockDispatch);
+			expect(mockDispatch).toHaveBeenCalledWith({
+				type: types.CLEAR_ITEMS
+			});
+
+			jest.clearAllMocks();
+
+			await actions.sendOrder(itemsIds)(mockDispatch);
+			expect(mockDispatch).toHaveBeenCalledTimes(0);
 		});
 	});
 
