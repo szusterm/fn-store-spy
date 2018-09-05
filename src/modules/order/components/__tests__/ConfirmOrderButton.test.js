@@ -35,6 +35,17 @@ describe('ConfirmOrderButton Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it('calls redux action to send the order with only items ids array after click', () => {
+		const {wrapper, props} = setup({
+			orderedItems,
+			sendOrder: jest.fn()
+		});
+
+		wrapper.simulate('click');
+
+		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsIds);
+	});
+
 	it('makes disabled if the order is empty', () => {
 		const {wrapper} = setup();
 
