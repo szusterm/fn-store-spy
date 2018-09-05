@@ -9,7 +9,7 @@ import CircleOrderCount from '../CircleOrderCount';
 import './styles.scss';
 
 export class OrderOpenButton extends Component {
-	checkThatOrderIsEmpty() {
+	isOrderEmpty() {
 		const {orderedItems} = this.props;
 		return (orderedItems.length === 0);
 	}
@@ -17,7 +17,7 @@ export class OrderOpenButton extends Component {
 	render() {
 		return (
 			<button
-				className={`order-open-button ${(this.checkThatOrderIsEmpty()) && 'order-open-button--hidden'}`}
+				className={`order-open-button ${(this.isOrderEmpty()) && 'order-open-button--hidden'}`}
 				onClick={this.props.openOrderList}
 			>
 				<div className={'material-icons'}>

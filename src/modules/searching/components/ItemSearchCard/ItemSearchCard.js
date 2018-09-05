@@ -13,7 +13,7 @@ export class ItemSearchCard extends Component {
 		super();
 
 		this.switchOrder = this.switchOrder.bind(this);
-		this.checkThatItemIsOrdered = this.checkThatItemIsOrdered.bind(this);
+		this.isItemOrdered = this.isItemOrdered.bind(this);
 	}
 
 	switchOrder() {
@@ -51,7 +51,7 @@ export class ItemSearchCard extends Component {
 		return indexInOrder;
 	}
 
-	checkThatItemIsOrdered() {
+	isItemOrdered() {
 		return (this.getIndexInOrder() !== null);
 	}
 
@@ -70,10 +70,10 @@ export class ItemSearchCard extends Component {
 							rarity={rarity}
 						/>
 						<div
-							className={`visual-box--action-box ${(this.checkThatItemIsOrdered()) && 'visual-box--action-box--active'}`}
+							className={`visual-box--action-box ${(this.isItemOrdered()) && 'visual-box--action-box--active'}`}
 						>
 							<div className={'material-icons action-box--sign'}>
-								<span>{(this.checkThatItemIsOrdered()) ? 'done' : 'add'}</span>
+								<span>{(this.isItemOrdered()) ? 'done' : 'add'}</span>
 							</div>
 						</div>
 					</div>

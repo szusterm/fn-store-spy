@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import './styles.scss';
 
 export class FullOrderCount extends Component {
-	checkThatOrderIsTooBig() {
+	isOrderTooBig() {
 		const {orderedItems, maxItemsInOrder} = this.props;
 
 		return (orderedItems.length > maxItemsInOrder);
@@ -17,7 +17,7 @@ export class FullOrderCount extends Component {
 		return (
 			<div className={'full-order-count'}>
 				<span
-					className={`full-order-count--ordered ${(this.checkThatOrderIsTooBig()) && 'full-order-count--ordered--exceeded'}`}
+					className={`full-order-count--ordered ${(this.isOrderTooBig()) && 'full-order-count--ordered--exceeded'}`}
 				>
 					{orderedItems.length}
 				</span>

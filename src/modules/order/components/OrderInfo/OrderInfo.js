@@ -13,7 +13,7 @@ import ConfirmOrderButton from '../ConfirmOrderButton';
 import './styles.scss';
 
 export class OrderInfo extends Component {
-	checkThatOrderIsEmpty() {
+	isOrderEmpty() {
 		const {items} = this.props;
 
 		const isEmpty = (items.length === 0);
@@ -34,7 +34,7 @@ export class OrderInfo extends Component {
 					show={listOpened}
 					onClick={closeOrderList}
 				/>
-				<div className={`order-info ${(!listOpened || this.checkThatOrderIsEmpty()) && 'order-info--hidden'}`}>
+				<div className={`order-info ${(!listOpened || this.isOrderEmpty()) && 'order-info--hidden'}`}>
 					<div className={'container-fluid order-info--components'}>
 						<div className={'row components--button-box'}>
 							<div className={'col-8'}>
