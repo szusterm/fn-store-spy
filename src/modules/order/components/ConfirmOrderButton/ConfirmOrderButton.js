@@ -10,12 +10,20 @@ export class ConfirmOrderButton extends Component {
 	constructor(props) {
 		super(props);
 
+		this.state = {
+			sendingOrder: false
+		};
+
 		this.sendOrder = this.sendOrder.bind(this);
 	}
 
 	async sendOrder() {
+		this.setSendingOrderState(true);
+
 		const itemsIds = this.getItemsIds();
 		await this.props.sendOrder(itemsIds);
+
+		this.setSendingOrderState(false);
 	}
 
 	getItemsIds() {
@@ -27,6 +35,17 @@ export class ConfirmOrderButton extends Component {
 		}
 
 		return itemsIds;
+	}
+
+	setSendingOrderState(sendingOrder) {
+		const newState = Object.assign(
+			this.state,
+			{
+				sendingOrder
+			}
+		);
+
+		this.setState(newState);
 	}
 
 	checkThatOrderIsEmpty() {
@@ -42,10 +61,12 @@ export class ConfirmOrderButton extends Component {
 	}
 
 	render() {
+		const {sendingOrder} = this.state;
+
 		return (
 			<button
 				className={'confirm-order-button'}
-				disabled={(this.checkThatOrderIsEmpty() || this.checkThatOrderIsTooBig())}
+				disabled={(this.checkThatOrderIsEmpty() || this.checkThatOrderIsTooBig() || sendingOrder)}
 				onClick={this.sendOrder}
 			>
 				Send order
