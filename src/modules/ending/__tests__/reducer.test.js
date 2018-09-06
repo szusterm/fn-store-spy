@@ -1,7 +1,7 @@
 import reducer from '../reducer';
 import * as types from '../actionTypes';
 
-describe('Order Reducer', () => {
+describe('Ending Reducer', () => {
 	const initialState = {
 		confirmationOpened: false,
 		code: ''
