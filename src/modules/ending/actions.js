@@ -1,11 +1,12 @@
 import * as types from './actionTypes';
+import api from '../../api';
 
-const initialState = {
+export const sendOrder = (itemsIds) => async (dispatch) => {
+	const {err, data} = await api.addOrder(itemsIds);
 
+	if (!err) {
+		dispatch({
+			type: types.SHOW_ORDER_CONFIRMATION
+		});
+	}
 };
-
-const reducer = (state = initialState, aciton) => {
-	const {type, payload} = action;
-};
-
-export default reducer;
