@@ -4,9 +4,7 @@ import * as types from '../actionTypes';
 describe('Order Reducer', () => {
 	const initialState = {
 		items: ['item0', 'item6'],
-		listOpened: false,
-		confirmationOpened: false,
-		code: ''
+		listOpened: false
 	};
 
 	describe(types.ADD_ITEM, () => {
@@ -84,52 +82,6 @@ describe('Order Reducer', () => {
 
 			const expectedState = {...initialState};
 			expectedState.listOpened = false;
-
-			expect(returnedState).toEqual(expectedState);
-		});
-	});
-
-	describe(types.SHOW_ORDER_CONFIRMATION, () => {
-		it('returns a state with changed confirmationOpened with true', () => {
-			const action = {
-				type: types.SHOW_ORDER_CONFIRMATION
-			};
-
-			const returnedState = reducer(initialState, action);
-
-			const expectedState = {...initialState};
-			expectedState.confirmationOpened = true;
-
-			expect(returnedState).toEqual(expectedState);
-		});
-	});
-
-	describe(types.HIDE_ORDER_CONFIRMATION, () => {
-		it('returns a state with changed confirmationOpened with false', () => {
-			const action = {
-				type: types.HIDE_ORDER_CONFIRMATION
-			};
-
-			const returnedState = reducer(initialState, action);
-
-			const expectedState = {...initialState};
-			expectedState.confirmationOpened = false;
-
-			expect(returnedState).toEqual(expectedState);
-		});
-	});
-
-	describe(types.SET_CODE, () => {
-		it('returns a state with changed the order code', () => {
-			const action = {
-				type: types.SET_CODE,
-				payload: '5h6y596'
-			};
-
-			const returnedState = reducer(initialState, action);
-
-			const expectedState = {...initialState};
-			expectedState.code = action.payload;
 
 			expect(returnedState).toEqual(expectedState);
 		});
