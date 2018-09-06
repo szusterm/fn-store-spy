@@ -6,7 +6,7 @@ import {sendOrder} from '../../../order/actions';
 
 import './styles.scss';
 
-export class ConfirmOrderButton extends Component {
+export class SendOrderButton extends Component {
 	constructor(props) {
 		super(props);
 
@@ -75,7 +75,7 @@ export class ConfirmOrderButton extends Component {
 	}
 }
 
-ConfirmOrderButton.propTypes = {
+SendOrderButton.propTypes = {
 	orderedItems: PropTypes.array, //redux
 	maxItemsInOrder: PropTypes.number, //redux
 	sendOrder: PropTypes.func //redux
@@ -93,4 +93,4 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {sendOrder};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ConfirmOrderButton);
+export default connect(mapStateToProps, mapDispatchToProps)(SendOrderButton);

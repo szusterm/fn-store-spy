@@ -8,7 +8,7 @@ import OrderList from '../OrderList';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import HideOrderButton from '../HideOrderButton';
 import FullOrderCount from '../FullOrderCount';
-import ConfirmOrderButton from '../../../ending/components/ConfirmOrderButton';
+import SendOrderButton from '../../../ending/components/SendOrderButton';
 
 import './styles.scss';
 
@@ -51,7 +51,7 @@ export class OrderInfo extends Component {
 								<FullOrderCount/>
 							</div>
 							<div className={'col-9'}>
-								<ConfirmOrderButton/>
+								<SendOrderButton/>
 							</div>
 						</div>
 					</div>

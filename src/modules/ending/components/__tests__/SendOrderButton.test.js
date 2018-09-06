@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {ConfirmOrderButton} from '../ConfirmOrderButton/ConfirmOrderButton';
+import {SendOrderButton} from '../SendOrderButton/SendOrderButton';
 
 const orderedItemsIds = ['45y5tnr5', '56ug657i'];
 
@@ -23,12 +23,12 @@ const setup = (propOverrides) => {
 		sendOrder: () => true //redux
 	}, propOverrides);
 
-	const wrapper = shallow(<ConfirmOrderButton {...props}/>);
+	const wrapper = shallow(<SendOrderButton {...props}/>);
 
 	return {props, wrapper};
 };
 
-describe('ConfirmOrderButton Component', () => {
+describe('SendOrderButton Component', () => {
 	it('renders correctly', () => {
 		const {wrapper} = setup();
 
