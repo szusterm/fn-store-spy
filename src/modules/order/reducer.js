@@ -2,9 +2,7 @@ import * as types from './actionTypes';
 
 const initialState = {
 	items: [],
-	listOpened: false,
-	confirmationOpened: false,
-	code: ''
+	listOpened: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -40,24 +38,6 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				listOpened: false
-			};
-
-		case types.SHOW_ORDER_CONFIRMATION:
-			return {
-				...state,
-				confirmationOpened: true
-			};
-
-		case types.HIDE_ORDER_CONFIRMATION:
-			return {
-				...state,
-				confirmationOpened: false
-			};
-
-		case types.SET_CODE:
-			return {
-				...state,
-				code: payload
 			};
 
 		default:
