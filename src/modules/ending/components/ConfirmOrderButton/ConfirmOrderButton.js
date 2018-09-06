@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {sendOrder} from '../../actions';
+import {sendOrder} from '../../../order/actions';
 
 import './styles.scss';
 

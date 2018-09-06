@@ -1,10 +1,10 @@
-@import '~material-colors/dist/colors';
+@import '../../../../../node_modules/material-colors/dist/colors';
 
-@import '~scss/_shadow';
-@import '~scss/_transition';
-@import '~scss/_input';
-@import '~scss/_opacity-colors';
-@import '~scss/_variables';
+@import '../../../../scss/shadow';
+@import '../../../../scss/transition';
+@import '../../../../scss/input';
+@import '../../../../scss/opacity-colors';
+@import '../../../../scss/variables';
 
 .confirm-order-button {
 	@include default-input();
