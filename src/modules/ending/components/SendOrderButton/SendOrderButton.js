@@ -65,7 +65,7 @@ export class SendOrderButton extends Component {
 
 		return (
 			<button
-				className={'confirm-order-button'}
+				className={'send-order-button'}
 				disabled={(this.isOrderEmpty() || this.isOrderTooBig() || sendingOrder)}
 				onClick={this.sendOrder}
 			>

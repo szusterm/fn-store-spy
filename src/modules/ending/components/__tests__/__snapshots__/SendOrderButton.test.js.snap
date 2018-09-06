@@ -33,7 +33,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": "Send order",
-      "className": "confirm-order-button",
+      "className": "send-order-button",
       "disabled": false,
       "onClick": [Function],
     },
@@ -48,7 +48,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "Send order",
-        "className": "confirm-order-button",
+        "className": "send-order-button",
         "disabled": false,
         "onClick": [Function],
       },
