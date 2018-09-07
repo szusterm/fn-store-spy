@@ -5,7 +5,13 @@ import {connect} from 'react-redux';
 import './styles.scss';
 
 export class EndingScreen extends Component {
+	render() {
+		return (
+			<div className={'ending-screen'}>
 
+			</div>
+		);
+	}
 }
 
 EndingScreen.propTypes = {
