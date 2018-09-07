@@ -14,4 +14,14 @@ export class CodeCopier extends Component {
 	}
 }
 
-export default connect()(CodeCopier);
+CodeCopier.propTypes = {
+	code: PropTypes.string //redux
+};
+
+const mapStateToProps = (state) => {
+	const {code} = state.orderConfirming;
+
+	return {code};
+};
+
+export default connect(mapStateToProps, null)(CodeCopier);
