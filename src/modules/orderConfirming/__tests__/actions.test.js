@@ -31,7 +31,7 @@ describe('Order Confirming Actions', () => {
 			expect(api.addOrder).toHaveBeenCalledWith(itemsIds);
 		});
 
-		it('open the order confirmation, if it is no error after getting response', async () => {
+		it('opens the order confirmation, if it is no error after getting response', async () => {
 			api.addOrder
 				.mockReturnValueOnce(Promise.resolve(apiResponseWithoutError))
 				.mockReturnValueOnce(Promise.resolve(apiResponseWithError));
