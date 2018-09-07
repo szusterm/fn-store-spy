@@ -1,3 +1,5 @@
-.code-copier {
+@import '~scss/_input';
 
+.code-copier {
+	@include input-reset();
 }
