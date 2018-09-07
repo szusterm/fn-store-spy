@@ -1,7 +1,10 @@
 @import '~scss/_opacity-colors';
 @import '~scss/_transition';
+@import '~scss/_center-items';
 
 .ending-screen {
+	@include center-items();
+
 	position: fixed;
 	top: 0;
 	bottom: 0;
