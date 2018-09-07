@@ -9,6 +9,7 @@ export class CodeCopier extends Component {
 		return (
 			<input
 				className={'code-copier'}
+				readOnly={true}
 			/>
 		);
 	}

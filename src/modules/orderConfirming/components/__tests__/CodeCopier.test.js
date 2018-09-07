@@ -33,7 +33,7 @@ describe('CodeCopier Component', () => {
 	it('the code input is read only', () => {
 		const {wrapper} = setup();
 
-		const readOnly = wrapper.find('input').props().readonly;
+		const readOnly = wrapper.find('input').props().readOnly;
 
 		expect(readOnly).toBe(true);
 	});
