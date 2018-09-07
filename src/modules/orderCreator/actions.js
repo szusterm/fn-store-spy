@@ -1,5 +1,4 @@
 import * as types from './actionTypes';
-import api from '../../api';
 
 export const addItemToOrder = (item) => {
 	return {
