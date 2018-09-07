@@ -26,7 +26,7 @@ describe('Items Searching Actions', () => {
 
 		const mockDispatch = jest.fn();
 		const mockGetState = jest.fn().mockReturnValue({
-			searching: {
+			itemsSearching: {
 				filters: exampleFilters
 			}
 		});
