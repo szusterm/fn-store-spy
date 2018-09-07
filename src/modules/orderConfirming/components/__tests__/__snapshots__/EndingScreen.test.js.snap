@@ -18,7 +18,9 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "host",
-    "props": Object {},
+    "props": Object {
+      "className": "ending-screen",
+    },
     "ref": null,
     "rendered": null,
     "type": "div",
@@ -28,7 +30,9 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
-      "props": Object {},
+      "props": Object {
+        "className": "ending-screen",
+      },
       "ref": null,
       "rendered": null,
       "type": "div",
