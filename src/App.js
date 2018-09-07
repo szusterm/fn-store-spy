@@ -7,6 +7,7 @@ import {setConfig} from './modules/config/actions';
 import Searching from './modules/itemsSearching/components/Searching';
 import OrderInformation from './modules/orderCreator/components/OrderInfo';
 import OrderOpenButton from './modules/orderCreator/components/OrderOpenButton';
+import EndingScreen from './modules/orderConfirming/components/EndingScreen';
 
 import './scss/app.scss';
 
@@ -21,6 +22,7 @@ class App extends Component {
 				<Searching/>
 				<OrderInformation/>
 				<OrderOpenButton/>
+				<EndingScreen/>
 			</div>
 		);
 	}
