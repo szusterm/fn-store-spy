@@ -38,8 +38,8 @@ export class CodeCopier extends Component {
 					<div className={`code-copier--code ${(copied) ? 'code-copier--code--copied' : ''}`}>{code}</div>
 				</CopyToClipboard>
 				<div className={'code-copier--info'}>
-					{(!copied) && <span className={'code-copier--info--how-to'}>click to copy</span>}
-					{(copied) && <span className={'code-copier--info--copied'}>copied to clipboard!</span>}
+					{(!copied) && <span className={'info--how-to'}>click to copy</span>}
+					{(copied) && <span className={'info--copied'}>copied to clipboard!</span>}
 				</div>
 			</div>
 		);

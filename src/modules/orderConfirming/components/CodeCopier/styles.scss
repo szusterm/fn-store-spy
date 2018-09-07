@@ -51,12 +51,14 @@
 		text-transform: uppercase;
 		font-weight: 700;
 
-		&--how-to {
-			@include black-color(0.3);
-		}
+		.info {
+			&--how-to {
+				@include black-color(0.3);
+			}
 
-		&--copied {
-			color: $md-green-300;
+			&--copied {
+				color: $md-green-300;
+			}
 		}
 	}
 }

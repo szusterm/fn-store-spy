@@ -44,8 +44,8 @@ describe('CodeCopier Component', () => {
 	it('changes information text after copy', () => {
 		const {wrapper} = setup();
 
-		const howToTextClass = '.code-copier--info--how-to';
-		const copiedTextClass = '.code-copier--info--copied';
+		const howToTextClass = '.info--how-to';
+		const copiedTextClass = '.info--copied';
 
 		expect(wrapper.find(howToTextClass).exists()).toBe(true);
 		expect(wrapper.find(copiedTextClass).exists()).toBe(false);
