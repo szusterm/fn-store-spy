@@ -6,10 +6,13 @@ import './styles.scss';
 
 export class CodeCopier extends Component {
 	render() {
+		const {code} = this.props;
+
 		return (
 			<input
 				className={'code-copier'}
 				readOnly={true}
+				value={code}
 			/>
 		);
 	}
