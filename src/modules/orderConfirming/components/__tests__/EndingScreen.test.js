@@ -19,4 +19,16 @@ describe('EndingScreen Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('hides, if endingScreenOpened is false', () => {
+		const {wrapper} = setup();
+
+		const hiddenEndingScreenClass = '.ending-screen--hidden';
+
+		wrapper.setProps({endingScreenOpened: false});
+		expect(wrapper.find(hiddenEndingScreenClass).exists()).toBe(true);
+
+		wrapper.setProps({endingScreenOpened: true});
+		expect(wrapper.find(hiddenEndingScreenClass).exists()).toBe(false);
+	});
 });
