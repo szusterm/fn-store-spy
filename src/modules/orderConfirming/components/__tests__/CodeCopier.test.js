@@ -55,4 +55,16 @@ describe('CodeCopier Component', () => {
 		expect(wrapper.find(howToTextClass).exists()).toBe(false);
 		expect(wrapper.find(copiedTextClass).exists()).toBe(true);
 	});
+
+	it('changes information text after copy', () => {
+		const {wrapper} = setup();
+
+		const codeCopiedClass = '.code-copier--code--copied';
+
+		expect(wrapper.find(codeCopiedClass).exists()).toBe(false);
+
+		wrapper.setState({copied: true});
+
+		expect(wrapper.find(codeCopiedClass).exists()).toBe(true);
+	});
 });
