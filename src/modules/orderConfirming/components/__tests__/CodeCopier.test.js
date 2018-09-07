@@ -30,4 +30,14 @@ describe('CodeCopier Component', () => {
 
 		expect(inputValue).toBe(props.code);
 	});
+
+	it('copies the code after click through CopyToClipboard', () => {
+		const {wrapper, props} = setup({
+			code: 'fn5g6u'
+		});
+
+		const textToCopy = wrapper.find(CopyToClipboard).props().text;
+
+		expect(textToCopy).toBe(props.code);
+	});
 });
