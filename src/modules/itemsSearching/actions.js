@@ -2,7 +2,7 @@ import * as types from './actionTypes';
 import api from '../../api';
 
 export const updateItems = () => async (dispatch, getState) => {
-	const requestData = getState().searching.filters;
+	const requestData = getState().itemsSearching.filters;
 
 	const response = await api.fetchItems(requestData);
 
