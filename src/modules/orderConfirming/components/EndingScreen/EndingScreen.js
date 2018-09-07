@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import CodeCopier from '../CodeCopier';
+
 import './styles.scss';
 
 export class EndingScreen extends Component {
@@ -10,7 +12,7 @@ export class EndingScreen extends Component {
 
 		return (
 			<div className={`ending-screen ${(!endingScreenOpened) && 'ending-screen--hidden'}`}>
-
+				<CodeCopier/>
 			</div>
 		);
 	}
