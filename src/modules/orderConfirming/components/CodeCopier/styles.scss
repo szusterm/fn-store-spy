@@ -1,13 +1,10 @@
 @import '~material-colors/dist/colors';
 
-@import '~scss/_input';
 @import '~scss/_opacity-colors';
 @import '~scss/_transition';
 
 .code-copier {
-	@include input-reset();
-
-	cursor: text;
+	cursor: pointer;
 
 	padding: 8px;
 	font-size: 3.5em;
