@@ -1,6 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import CodeCopier from '../CodeCopier';
+
 import {EndingScreen} from '../EndingScreen/EndingScreen';
 
 const setup = (propOverrides) => {
@@ -30,5 +32,11 @@ describe('EndingScreen Component', () => {
 
 		wrapper.setProps({endingScreenOpened: true});
 		expect(wrapper.find(hiddenEndingScreenClass).exists()).toBe(false);
+	});
+
+	it('renders CodeCopier', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(CodeCopier).exists()).toBe(true);
 	});
 });
