@@ -1,4 +1,5 @@
 @import '~scss/_opacity-colors';
+@import '~scss/_transition';
 
 .ending-screen {
 	position: fixed;
@@ -8,9 +9,12 @@
 	right: 0;
 	z-index: 100;
 
+	@include white-background(1);
+	@include transition(sh);
+	transition-property: opacity;
+
 	&--hidden {
 		transform: translate(100%, 0);
+		opacity: 0;
 	}
-
-	@include white-background(1);
 }
