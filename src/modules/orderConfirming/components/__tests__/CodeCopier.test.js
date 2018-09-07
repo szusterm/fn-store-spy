@@ -19,4 +19,22 @@ describe('CodeCopier Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('shows the code in an input', () => {
+		const {wrapper, props} = setup({
+			code: 'fn5g6u'
+		});
+
+		const inputValue = wrapper.find('input').props().value;
+
+		expect(inputValue).toBe(props.code);
+	});
+
+	it('the code input is read only', () => {
+		const {wrapper} = setup();
+
+		const readOnly = wrapper.find('input').props().readonly;
+
+		expect(readOnly).toBe(true);
+	});
 });
