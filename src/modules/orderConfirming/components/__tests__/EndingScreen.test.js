@@ -4,7 +4,9 @@ import {shallow} from 'enzyme';
 import {EndingScreen} from '../EndingScreen/EndingScreen';
 
 const setup = (propOverrides) => {
-	const props = Object.assign({}, propOverrides);
+	const props = Object.assign({
+		endingScreenOpened: true //redux
+	}, propOverrides);
 
 	const wrapper = shallow(<EndingScreen {...props}/>);
 
