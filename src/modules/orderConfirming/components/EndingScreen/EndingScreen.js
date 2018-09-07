@@ -8,6 +8,10 @@ export class EndingScreen extends Component {
 
 }
 
+EndingScreen.propTypes = {
+	endingScreenOpened: PropTypes.bool //redux
+};
+
 const mapStateToProps = (state) => {
 	const {endingScreenOpened} = state.orderConfirming;
 
