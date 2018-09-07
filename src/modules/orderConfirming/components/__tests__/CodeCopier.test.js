@@ -1,5 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import {CodeCopier} from '../CodeCopier/CodeCopier';
 
@@ -20,21 +21,13 @@ describe('CodeCopier Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('shows the code in an input', () => {
+	it('shows the code from a store', () => {
 		const {wrapper, props} = setup({
 			code: 'fn5g6u'
 		});
 
-		const inputValue = wrapper.find('input').props().value;
+		const inputValue = wrapper.find('.code-copier').text();
 
 		expect(inputValue).toBe(props.code);
-	});
-
-	it('the code input is read only', () => {
-		const {wrapper} = setup();
-
-		const readOnly = wrapper.find('input').props().readOnly;
-
-		expect(readOnly).toBe(true);
 	});
 });
