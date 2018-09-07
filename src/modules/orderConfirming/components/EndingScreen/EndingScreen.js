@@ -8,4 +8,10 @@ export class EndingScreen extends Component {
 
 }
 
-export default connect()(EndingScreen);
+const mapStateToProps = (state) => {
+	const {confirmationOpened} = state.orderConfirming;
+
+	return {confirmationOpened};
+};
+
+export default connect(mapStateToProps, null)(EndingScreen);
