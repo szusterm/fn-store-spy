@@ -30,14 +30,17 @@ export class CodeCopier extends Component {
 		const {copied} = this.state;
 
 		return (
-			<div>
+			<div className={'code-copier'}>
 				<CopyToClipboard
 					text={code}
 					onCopy={this.setCopiedTrue}
 				>
-					<div className={'code-copier'}>{code}</div>
+					<div className={`code-copier--code ${(copied) ? 'code-copier--code--copied' : ''}`}>{code}</div>
 				</CopyToClipboard>
-				<div>{(!copied) ? 'click to copy' : 'copied to clipboard'}</div>
+				<div className={'code-copier--info'}>
+					{(!copied) && <span className={'code-copier--info--how-to'}>click to copy</span>}
+					{(copied) && <span className={'code-copier--info--copied'}>copied to clipboard!</span>}
+				</div>
 			</div>
 		);
 	}

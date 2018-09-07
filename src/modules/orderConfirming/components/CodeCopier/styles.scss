@@ -1,32 +1,61 @@
 @import '~material-colors/dist/colors';
-
 @import '~scss/_opacity-colors';
 @import '~scss/_transition';
 
 .code-copier {
-	cursor: pointer;
 
-	padding: 8px;
-	font-size: 3.5em;
-	font-weight: 700;
-	letter-spacing: 0.1em;
-	text-align: center;
-	text-transform: uppercase;
+	&--code {
+		cursor: pointer;
 
-	background-color: $md-blue-500;
-	border-radius: 15px;
+		padding: 8px;
+		font-size: 3.5em;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-align: center;
+		text-transform: uppercase;
 
-	@include white-color(0.95);
-	@include transition(sh);
+		background-color: $md-blue-500;
+		border-radius: 15px;
 
-	&:hover, &:focus {
-		background-color: $md-blue-600;
+		@include white-color(0.95);
+		@include transition(sh);
 
-		@include white-color(1);
+		&:hover, &:focus {
+			background-color: $md-blue-600;
+
+			@include white-color(1);
+		}
+
+		&::selection {
+			@include white-background(0.9);
+			color: $md-blue-400;
+		}
+
+		&--copied {
+			background-color: $md-green-500;
+
+			&::selection {
+				color: $md-green-400;
+			}
+
+			&:hover, &:focus {
+				background-color: $md-green-600;
+			}
+		}
 	}
 
-	&::selection {
-		@include white-background(0.9);
-		color: $md-blue-400;
+	&--info {
+		padding: 8px;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+
+		&--how-to {
+			@include black-color(0.3);
+		}
+
+		&--copied {
+			color: $md-green-300;
+		}
 	}
 }
