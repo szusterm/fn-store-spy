@@ -1,6 +1,6 @@
 const item = require('../../database/factories/item');
 
-export const getItems = async (req, res) => {
+exports.getItems = async (req, res) => {
 	const {name, type, page} = req.query;
 
 	const {err, data} = await item.find()

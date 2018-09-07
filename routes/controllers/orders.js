@@ -1,6 +1,6 @@
 const order = require('../../database/factories/order');
 
-export const saveOrder = async (req, res) => {
+exports.saveOrder = async (req, res) => {
 	const {itemsIds} = req.body;
 	const {err, data} = await order.add(itemsIds, 'fn4rt7');
 
