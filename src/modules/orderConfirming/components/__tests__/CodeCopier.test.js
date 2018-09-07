@@ -26,7 +26,7 @@ describe('CodeCopier Component', () => {
 			code: 'fn5g6u'
 		});
 
-		const inputValue = wrapper.find('.code-copier').text();
+		const inputValue = wrapper.find('.code-copier--code').text();
 
 		expect(inputValue).toBe(props.code);
 	});
