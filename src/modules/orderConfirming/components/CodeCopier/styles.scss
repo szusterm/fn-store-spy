@@ -27,4 +27,9 @@
 
 		@include white-color(1);
 	}
+
+	&::selection {
+		@include white-background(0.9);
+		color: $md-blue-400;
+	}
 }

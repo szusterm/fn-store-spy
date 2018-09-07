@@ -6,6 +6,10 @@ import './styles.scss';
 
 export class CodeCopier extends Component {
 
+	copyToClipboard() {
+		document.execCommand('copy');
+	}
+
 	selectAll(event) {
 		event.target.select();
 	}
@@ -18,6 +22,7 @@ export class CodeCopier extends Component {
 				className={'code-copier'}
 				readOnly={true}
 				onFocus={this.selectAll}
+				onClick={this.copyToClipboard}
 				value={code}
 			/>
 		);
