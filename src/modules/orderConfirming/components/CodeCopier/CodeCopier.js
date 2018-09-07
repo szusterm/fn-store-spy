@@ -6,15 +6,6 @@ import {CopyToClipBoard} from 'react-copy-to-clipboard';
 import './styles.scss';
 
 export class CodeCopier extends Component {
-
-	copyToClipboard() {
-		document.execCommand('copy');
-	}
-
-	selectAll(event) {
-		event.target.select();
-	}
-
 	render() {
 		const {code} = this.props;
 
@@ -22,8 +13,6 @@ export class CodeCopier extends Component {
 			<input
 				className={'code-copier'}
 				readOnly={true}
-				onFocus={this.selectAll}
-				onClick={this.copyToClipboard}
 				value={code}
 			/>
 		);
