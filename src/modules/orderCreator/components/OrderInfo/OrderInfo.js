@@ -68,7 +68,7 @@ OrderInfo.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const {items, listOpened} = state.order;
+	const {items, listOpened} = state.orderCreator;
 	return {items, listOpened};
 };
 

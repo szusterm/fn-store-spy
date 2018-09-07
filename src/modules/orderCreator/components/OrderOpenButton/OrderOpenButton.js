@@ -37,9 +37,9 @@ OrderOpenButton.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const {items} = state.order;
+	const {items} = state.orderCreator;
 	return {
-		orderedItems: items,
+		orderedItems: items
 	};
 };
 

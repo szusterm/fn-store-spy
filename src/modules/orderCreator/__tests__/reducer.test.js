@@ -1,7 +1,7 @@
 import reducer from '../reducer';
 import * as types from '../actionTypes';
 
-describe('Order Reducer', () => {
+describe('Order Creator Reducer', () => {
 	const initialState = {
 		items: ['item0', 'item6'],
 		listOpened: false

@@ -47,7 +47,7 @@ NameSearchBar.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const {name} = state.searching.filters;
+	const {name} = state.itemsSearching.filters;
 	const {minNameFilterLength, maxNameFilterLength} = state.config;
 
 	return {

@@ -82,7 +82,7 @@ SendOrderButton.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const {items} = state.order;
+	const {items} = state.orderCreator;
 	const {maxItemsInOrder} = state.config;
 
 	return {

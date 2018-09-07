@@ -4,7 +4,7 @@ import api from '../../../api';
 
 jest.mock('../../../api');
 
-describe('Order Actions', () => {
+describe('Order Creator Actions', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 	});

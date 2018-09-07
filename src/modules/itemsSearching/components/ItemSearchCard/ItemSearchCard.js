@@ -7,6 +7,7 @@ import {addItemToOrder, removeItemFromOrderByIndex} from '../../../orderCreator/
 import ItemCoin from '../../../../components/ItemCoin';
 
 import './styles.scss';
+import orderCreator from "../../../orderCreator/reducer";
 
 export class ItemSearchCard extends Component {
 	constructor() {
@@ -103,7 +104,7 @@ ItemSearchCard.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const {items: orderedItems} = state.order;
+	const {items: orderedItems} = state.orderCreator;
 	return {orderedItems};
 };
 

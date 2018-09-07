@@ -1,7 +1,7 @@
 import reducer from '../reducer';
 import * as types from '../actionTypes';
 
-describe('Searching Reducer', () => {
+describe('Items Searching Reducer', () => {
 	const initialState = {
 		items: [],
 		filters: {

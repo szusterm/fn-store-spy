@@ -4,7 +4,7 @@ import api from '../../../api';
 
 jest.mock('../../../api');
 
-describe('Searching Actions', () => {
+describe('Items Searching Actions', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 	});
