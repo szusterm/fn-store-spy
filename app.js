@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 require('./database/connect')();
-const spy = require('./controllers/spy');
+const spy = require('./core/spy');
 setTimeout(() => spy.run(), 3000);
 
 const router = require('./routes/routes');
