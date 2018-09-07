@@ -5,6 +5,11 @@ import {connect} from 'react-redux';
 import './styles.scss';
 
 export class CodeCopier extends Component {
+
+	selectAll(event) {
+		event.target.select();
+	}
+
 	render() {
 		const {code} = this.props;
 
@@ -12,6 +17,7 @@ export class CodeCopier extends Component {
 			<input
 				className={'code-copier'}
 				readOnly={true}
+				onFocus={this.selectAll}
 				value={code}
 			/>
 		);
