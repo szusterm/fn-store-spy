@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 
 const initialState = {
-	confirmationOpened: false,
+	endingScreenOpened: false,
 	code: ''
 };
 
@@ -12,13 +12,13 @@ const reducer = (state = initialState, action) => {
 		case types.SHOW_ORDER_CONFIRMATION:
 			return {
 				...state,
-				confirmationOpened: true
+				endingScreenOpened: true
 			};
 
 		case types.HIDE_ORDER_CONFIRMATION:
 			return {
 				...state,
-				confirmationOpened: false
+				endingScreenOpened: false
 			};
 
 		case types.SET_CODE:
