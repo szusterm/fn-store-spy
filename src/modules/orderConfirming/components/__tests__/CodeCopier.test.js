@@ -40,4 +40,19 @@ describe('CodeCopier Component', () => {
 
 		expect(textToCopy).toBe(props.code);
 	});
+
+	it('changes information text after copy', () => {
+		const {wrapper} = setup();
+
+		const howToTextClass = '.code-copier--info--how-to';
+		const copiedTextClass = '.code-copier--info--copied';
+
+		expect(wrapper.find(howToTextClass).exists()).toBe(true);
+		expect(wrapper.find(copiedTextClass).exists()).toBe(false);
+
+		wrapper.setState({copied: true});
+
+		expect(wrapper.find(howToTextClass).exists()).toBe(false);
+		expect(wrapper.find(copiedTextClass).exists()).toBe(true);
+	});
 });
