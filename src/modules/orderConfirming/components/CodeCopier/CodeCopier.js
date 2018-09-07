@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {CopyToClipBoard} from 'react-copy-to-clipboard';
 
 import './styles.scss';
 
