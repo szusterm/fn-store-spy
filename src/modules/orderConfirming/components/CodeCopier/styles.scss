@@ -1,5 +1,30 @@
+@import '~material-colors/dist/colors';
+
 @import '~scss/_input';
+@import '~scss/_opacity-colors';
+@import '~scss/_transition';
 
 .code-copier {
 	@include input-reset();
+
+	cursor: text;
+
+	padding: 8px;
+	font-size: 3.5em;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-align: center;
+	text-transform: uppercase;
+
+	background-color: $md-blue-500;
+	border-radius: 15px;
+
+	@include white-color(0.95);
+	@include transition(sh);
+
+	&:hover, &:focus {
+		background-color: $md-blue-600;
+
+		@include white-color(1);
+	}
 }

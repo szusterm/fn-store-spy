@@ -12,8 +12,8 @@ export class EndingScreen extends Component {
 
 		return (
 			<div className={`container-fluid ending-screen ${(!endingScreenOpened) && 'ending-screen--hidden'}`}>
-				<div className={'row'}>
-					<div className={'col-4'}>
+				<div className={'row ending-screen--code-copier-box'}>
+					<div className={'col-6'}>
 						<CodeCopier/>
 					</div>
 				</div>
