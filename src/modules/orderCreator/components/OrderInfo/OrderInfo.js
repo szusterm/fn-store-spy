@@ -8,7 +8,7 @@ import OrderList from '../OrderList';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import HideOrderButton from '../HideOrderButton';
 import FullOrderCount from '../FullOrderCount';
-import SendOrderButton from '../../../ending/components/SendOrderButton';
+import SendOrderButton from '../../../orderConfirming/components/SendOrderButton';
 
 import './styles.scss';
 

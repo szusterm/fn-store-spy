@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {addItemToOrder, removeItemFromOrderByIndex} from '../../../order/actions';
+import {addItemToOrder, removeItemFromOrderByIndex} from '../../../orderCreator/actions';
 
 import ItemCoin from '../../../../components/ItemCoin';
 
