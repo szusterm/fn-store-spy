@@ -6,8 +6,10 @@ import './styles.scss';
 
 export class EndingScreen extends Component {
 	render() {
+		const {endingScreenOpened} = this.props;
+
 		return (
-			<div className={'ending-screen'}>
+			<div className={`ending-screen ${(!endingScreenOpened) && 'ending-screen--hidden'}`}>
 
 			</div>
 		);
