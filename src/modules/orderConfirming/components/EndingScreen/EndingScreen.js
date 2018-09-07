@@ -11,7 +11,7 @@ export class EndingScreen extends Component {
 		const {endingScreenOpened} = this.props;
 
 		return (
-			<div className={`container-fluid ending-screen ${(!endingScreenOpened) && 'ending-screen--hidden'}`}>
+			<div className={`container-fluid ending-screen ${(!endingScreenOpened) ? 'ending-screen--hidden' : ''}`}>
 				<div className={'row ending-screen--code-copier-box'}>
 					<div className={'col-6'}>
 						<CodeCopier/>
