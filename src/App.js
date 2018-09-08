@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import {setConfig} from './modules/config/actions';
 
+import StartInfo from './components/StartInfo';
 import Searching from './modules/itemsSearching/components/Searching';
 import OrderInformation from './modules/orderCreator/components/OrderInfo';
 import OrderOpenButton from './modules/orderCreator/components/OrderOpenButton';
@@ -19,6 +20,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<StartInfo/>
 				<Searching/>
 				<OrderInformation/>
 				<OrderOpenButton/>
