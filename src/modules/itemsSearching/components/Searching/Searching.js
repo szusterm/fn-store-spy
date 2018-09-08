@@ -42,9 +42,7 @@ export class Searching extends Component {
 					<ItemsList items={items}/>
 				</div>
 				<div className={'row searching--pagination-box'}>
-					<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>
-						<Pagination onChange={updateItems}/>
-					</div>
+					<Pagination onChange={updateItems}/>
 				</div>
 			</div>
 		);
