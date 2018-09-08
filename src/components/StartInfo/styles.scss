@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
 @import '~scss/_opacity-colors';
 @import '~scss/_center-items';
 
@@ -6,6 +10,10 @@
 
 	margin-top: 170px;
 	margin-bottom: 170px;
+
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+	}
 
 	&--logo-box {
 		$size: 190px;
@@ -22,6 +30,11 @@
 		margin-left: 20px;
 
 		@include white-color(0.9);
+
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+			margin-left: 0;
+		}
 
 		&--bold {
 			font-weight: 400;
