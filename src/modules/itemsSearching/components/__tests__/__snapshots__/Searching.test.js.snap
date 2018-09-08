@@ -25,13 +25,9 @@ ShallowWrapper {
         <div
           className="row searching--name-search-bar-box"
         >
-          <div
-            className="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8"
-          >
-            <Connect(NameSearchBar)
-              onChange={[Function]}
-            />
-          </div>
+          <Connect(NameSearchBar)
+            onChange={[Function]}
+          />
         </div>,
         <div
           className="row searching--items-list-box"
@@ -65,39 +61,22 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8"
-          >
-            <Connect(NameSearchBar)
-              onChange={[Function]}
-            />
-          </div>,
+          "children": <Connect(NameSearchBar)
+            onChange={[Function]}
+          />,
           "className": "row searching--name-search-bar-box",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": <Connect(NameSearchBar)
-              onChange={[Function]}
-            />,
-            "className": "col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8",
+            "onChange": [Function],
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "onChange": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
         "type": "div",
       },
@@ -196,13 +175,9 @@ ShallowWrapper {
           <div
             className="row searching--name-search-bar-box"
           >
-            <div
-              className="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8"
-            >
-              <Connect(NameSearchBar)
-                onChange={[Function]}
-              />
-            </div>
+            <Connect(NameSearchBar)
+              onChange={[Function]}
+            />
           </div>,
           <div
             className="row searching--items-list-box"
@@ -236,39 +211,22 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <div
-              className="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8"
-            >
-              <Connect(NameSearchBar)
-                onChange={[Function]}
-              />
-            </div>,
+            "children": <Connect(NameSearchBar)
+              onChange={[Function]}
+            />,
             "className": "row searching--name-search-bar-box",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
-              "children": <Connect(NameSearchBar)
-                onChange={[Function]}
-              />,
-              "className": "col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8",
+              "onChange": [Function],
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "onChange": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
           "type": "div",
         },

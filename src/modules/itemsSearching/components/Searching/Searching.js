@@ -36,11 +36,9 @@ export class Searching extends Component {
 		return (
 			<div className={'container searching'}>
 				<div className={'row searching--name-search-bar-box'}>
-					<div className={'col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8'}>
-						<NameSearchBar
-							onChange={this.updateItemsWithPageReset}
-						/>
-					</div>
+					<NameSearchBar
+						onChange={this.updateItemsWithPageReset}
+					/>
 				</div>
 				<div className={'row searching--items-list-box'}>
 					<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
