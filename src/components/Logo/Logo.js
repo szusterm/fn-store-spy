@@ -12,7 +12,10 @@ export class Logo extends Component {
 
 		return (
 			<div className={'start-info'}>
-				<img src={(color === 'white') ? whiteLogoUrl : blackLogoUrl}/>
+				<img
+					className={'start-info--image'}
+					src={(color === 'white') ? whiteLogoUrl : blackLogoUrl}
+				/>
 			</div>
 		);
 	}
