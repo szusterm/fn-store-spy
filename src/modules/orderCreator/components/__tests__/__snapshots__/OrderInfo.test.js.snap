@@ -48,11 +48,7 @@ ShallowWrapper {
             <div
               className="row components--list"
             >
-              <div
-                className="col-12"
-              >
-                <Connect(OrderList) />
-              </div>
+              <Connect(OrderList) />
             </div>
             <div
               className="row components--confirmation-box"
@@ -98,11 +94,7 @@ ShallowWrapper {
             <div
               className="row components--list"
             >
-              <div
-                className="col-12"
-              >
-                <Connect(OrderList) />
-              </div>
+              <Connect(OrderList) />
             </div>
             <div
               className="row components--confirmation-box"
@@ -132,11 +124,7 @@ ShallowWrapper {
               <div
                 className="row components--list"
               >
-                <div
-                  className="col-12"
-                >
-                  <Connect(OrderList) />
-                </div>
+                <Connect(OrderList) />
               </div>,
               <div
                 className="row components--confirmation-box"
@@ -189,33 +177,18 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <div
-                  className="col-12"
-                >
-                  <Connect(OrderList) />
-                </div>,
+                "children": <Connect(OrderList) />,
                 "className": "row components--list",
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <Connect(OrderList) />,
-                  "className": "col-12",
-                },
+                "nodeType": "class",
+                "props": Object {},
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {},
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               "type": "div",
             },
@@ -290,11 +263,7 @@ ShallowWrapper {
               <div
                 className="row components--list"
               >
-                <div
-                  className="col-12"
-                >
-                  <Connect(OrderList) />
-                </div>
+                <Connect(OrderList) />
               </div>
               <div
                 className="row components--confirmation-box"
@@ -340,11 +309,7 @@ ShallowWrapper {
               <div
                 className="row components--list"
               >
-                <div
-                  className="col-12"
-                >
-                  <Connect(OrderList) />
-                </div>
+                <Connect(OrderList) />
               </div>
               <div
                 className="row components--confirmation-box"
@@ -374,11 +339,7 @@ ShallowWrapper {
                 <div
                   className="row components--list"
                 >
-                  <div
-                    className="col-12"
-                  >
-                    <Connect(OrderList) />
-                  </div>
+                  <Connect(OrderList) />
                 </div>,
                 <div
                   className="row components--confirmation-box"
@@ -431,33 +392,18 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <div
-                    className="col-12"
-                  >
-                    <Connect(OrderList) />
-                  </div>,
+                  "children": <Connect(OrderList) />,
                   "className": "row components--list",
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Connect(OrderList) />,
-                    "className": "col-12",
-                  },
+                  "nodeType": "class",
+                  "props": Object {},
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": "div",
+                  "rendered": null,
+                  "type": [Function],
                 },
                 "type": "div",
               },
