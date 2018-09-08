@@ -60,33 +60,35 @@ export class ItemSearchCard extends Component {
 		const {name, price, rarity, type, imageSrc} = this.props;
 
 		return (
-			<button
-				className={'item-search-card item-search-card--raised'}
-				onClick={this.switchOrder}
-			>
-				<div className={'item-search-card--top-part'}>
-					<div className={'top-part--visual-box'}>
-						<ItemCoin
-							imageSrc={imageSrc}
-							rarity={rarity}
-						/>
-						<div
-							className={`visual-box--action-box ${(this.isItemOrdered()) && 'visual-box--action-box--active'}`}
-						>
-							<div className={'material-icons action-box--sign'}>
-								<span>{(this.isItemOrdered()) ? 'done' : 'add'}</span>
+			<div className={'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3'}>
+				<button
+					className={'item-search-card item-search-card--raised'}
+					onClick={this.switchOrder}
+				>
+					<div className={'item-search-card--top-part'}>
+						<div className={'top-part--visual-box'}>
+							<ItemCoin
+								imageSrc={imageSrc}
+								rarity={rarity}
+							/>
+							<div
+								className={`visual-box--action-box ${(this.isItemOrdered()) && 'visual-box--action-box--active'}`}
+							>
+								<div className={'material-icons action-box--sign'}>
+									<span>{(this.isItemOrdered()) ? 'done' : 'add'}</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className={'item-search-card--bot-part'}>
-					<div className={'bot-part--name'}>{name}</div>
-					<div className={'bot-part--description'}>
-						<div className={'description--type'}>{type}</div>
-						<div className={'description--price'}>{price}</div>
+					<div className={'item-search-card--bot-part'}>
+						<div className={'bot-part--name'}>{name}</div>
+						<div className={'bot-part--description'}>
+							<div className={'description--type'}>{type}</div>
+							<div className={'description--price'}>{price}</div>
+						</div>
 					</div>
-				</div>
-			</button>
+				</button>
+			</div>
 		);
 	}
 }

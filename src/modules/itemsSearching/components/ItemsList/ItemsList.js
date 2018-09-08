@@ -17,19 +17,15 @@ export class ItemsList extends Component {
 							const {_id, name, price, rarity, type, imageSrc} = item;
 
 							return (
-								<div
+								<ItemCard
 									key={_id}
-									className={'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3'}
-								>
-									<ItemCard
-										_id={_id}
-										name={name}
-										price={price}
-										rarity={rarity}
-										type={type}
-										imageSrc={imageSrc}
-									/>
-								</div>
+									_id={_id}
+									name={name}
+									price={price}
+									rarity={rarity}
+									type={type}
+									imageSrc={imageSrc}
+								/>
 							);
 						})
 					}

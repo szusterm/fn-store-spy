@@ -87,7 +87,7 @@ describe('ItemSearchCard Component', () => {
 			orderedItems: []
 		});
 
-		wrapper.simulate('click');
+		wrapper.find('button').simulate('click');
 
 		expect(props.addItemToOrder).toHaveBeenCalledTimes(1);
 	});
@@ -102,7 +102,7 @@ describe('ItemSearchCard Component', () => {
 			]
 		});
 
-		wrapper.simulate('click');
+		wrapper.find('button').simulate('click');
 
 		expect(props.removeItemFromOrderByIndex).toHaveBeenCalledWith(1);
 	});
