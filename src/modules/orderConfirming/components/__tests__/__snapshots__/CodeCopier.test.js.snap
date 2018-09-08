@@ -19,7 +19,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        className="code-copier"
+      >
         <CopyToClipboard
           onCopy={[Function]}
           text="fnh4y"
@@ -29,7 +31,7 @@ ShallowWrapper {
           >
             fnh4y
           </div>
-        </CopyToClipboard>,
+        </CopyToClipboard>
         <div
           className="code-copier--info"
         >
@@ -38,79 +40,12 @@ ShallowWrapper {
           >
             click to copy
           </span>
-        </div>,
-      ],
-      "className": "code-copier",
+        </div>
+      </div>,
+      "className": "col-12 col-sm-6 col-md-4 col-lg-3	",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <div
-            className="code-copier--code "
-          >
-            fnh4y
-          </div>,
-          "onCopy": [Function],
-          "options": undefined,
-          "text": "fnh4y",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "fnh4y",
-            "className": "code-copier--code ",
-          },
-          "ref": null,
-          "rendered": "fnh4y",
-          "type": "div",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <span
-              className="info--how-to"
-            >
-              click to copy
-            </span>,
-            false,
-          ],
-          "className": "code-copier--info",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "click to copy",
-              "className": "info--how-to",
-            },
-            "ref": null,
-            "rendered": "click to copy",
-            "type": "span",
-          },
-          false,
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -203,6 +138,137 @@ ShallowWrapper {
           "type": "div",
         },
       ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="code-copier"
+        >
+          <CopyToClipboard
+            onCopy={[Function]}
+            text="fnh4y"
+          >
+            <div
+              className="code-copier--code "
+            >
+              fnh4y
+            </div>
+          </CopyToClipboard>
+          <div
+            className="code-copier--info"
+          >
+            <span
+              className="info--how-to"
+            >
+              click to copy
+            </span>
+          </div>
+        </div>,
+        "className": "col-12 col-sm-6 col-md-4 col-lg-3	",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <CopyToClipboard
+              onCopy={[Function]}
+              text="fnh4y"
+            >
+              <div
+                className="code-copier--code "
+              >
+                fnh4y
+              </div>
+            </CopyToClipboard>,
+            <div
+              className="code-copier--info"
+            >
+              <span
+                className="info--how-to"
+              >
+                click to copy
+              </span>
+            </div>,
+          ],
+          "className": "code-copier",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <div
+                className="code-copier--code "
+              >
+                fnh4y
+              </div>,
+              "onCopy": [Function],
+              "options": undefined,
+              "text": "fnh4y",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "fnh4y",
+                "className": "code-copier--code ",
+              },
+              "ref": null,
+              "rendered": "fnh4y",
+              "type": "div",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="info--how-to"
+                >
+                  click to copy
+                </span>,
+                false,
+              ],
+              "className": "code-copier--info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "click to copy",
+                  "className": "info--how-to",
+                },
+                "ref": null,
+                "rendered": "click to copy",
+                "type": "span",
+              },
+              false,
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],
