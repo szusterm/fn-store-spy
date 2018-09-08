@@ -36,18 +36,14 @@ export class Searching extends Component {
 		return (
 			<div className={'container searching'}>
 				<div className={'row searching--name-search-bar-box'}>
-					<NameSearchBar
-						onChange={this.updateItemsWithPageReset}
-					/>
+					<NameSearchBar onChange={this.updateItemsWithPageReset}/>
 				</div>
 				<div className={'row searching--items-list-box'}>
 					<ItemsList items={items}/>
 				</div>
 				<div className={'row searching--pagination-box'}>
 					<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>
-						<Pagination
-							onChange={updateItems}
-						/>
+						<Pagination onChange={updateItems}/>
 					</div>
 				</div>
 			</div>
