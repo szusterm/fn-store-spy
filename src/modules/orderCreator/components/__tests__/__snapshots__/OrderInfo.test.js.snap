@@ -39,11 +39,7 @@ ShallowWrapper {
             <div
               className="row components--button-box"
             >
-              <div
-                className="col-8"
-              >
-                <Connect(HideOrderButton) />
-              </div>
+              <Connect(HideOrderButton) />
             </div>
             <div
               className="row components--list"
@@ -85,11 +81,7 @@ ShallowWrapper {
             <div
               className="row components--button-box"
             >
-              <div
-                className="col-8"
-              >
-                <Connect(HideOrderButton) />
-              </div>
+              <Connect(HideOrderButton) />
             </div>
             <div
               className="row components--list"
@@ -115,11 +107,7 @@ ShallowWrapper {
               <div
                 className="row components--button-box"
               >
-                <div
-                  className="col-8"
-                >
-                  <Connect(HideOrderButton) />
-                </div>
+                <Connect(HideOrderButton) />
               </div>,
               <div
                 className="row components--list"
@@ -142,33 +130,18 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <div
-                  className="col-8"
-                >
-                  <Connect(HideOrderButton) />
-                </div>,
+                "children": <Connect(HideOrderButton) />,
                 "className": "row components--button-box",
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <Connect(HideOrderButton) />,
-                  "className": "col-8",
-                },
+                "nodeType": "class",
+                "props": Object {},
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {},
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               "type": "div",
             },
@@ -254,11 +227,7 @@ ShallowWrapper {
               <div
                 className="row components--button-box"
               >
-                <div
-                  className="col-8"
-                >
-                  <Connect(HideOrderButton) />
-                </div>
+                <Connect(HideOrderButton) />
               </div>
               <div
                 className="row components--list"
@@ -300,11 +269,7 @@ ShallowWrapper {
               <div
                 className="row components--button-box"
               >
-                <div
-                  className="col-8"
-                >
-                  <Connect(HideOrderButton) />
-                </div>
+                <Connect(HideOrderButton) />
               </div>
               <div
                 className="row components--list"
@@ -330,11 +295,7 @@ ShallowWrapper {
                 <div
                   className="row components--button-box"
                 >
-                  <div
-                    className="col-8"
-                  >
-                    <Connect(HideOrderButton) />
-                  </div>
+                  <Connect(HideOrderButton) />
                 </div>,
                 <div
                   className="row components--list"
@@ -357,33 +318,18 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <div
-                    className="col-8"
-                  >
-                    <Connect(HideOrderButton) />
-                  </div>,
+                  "children": <Connect(HideOrderButton) />,
                   "className": "row components--button-box",
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Connect(HideOrderButton) />,
-                    "className": "col-8",
-                  },
+                  "nodeType": "class",
+                  "props": Object {},
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": "div",
+                  "rendered": null,
+                  "type": [Function],
                 },
                 "type": "div",
               },

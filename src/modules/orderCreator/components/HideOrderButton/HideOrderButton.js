@@ -11,12 +11,14 @@ export class HideOrderButton extends Component {
 		const {closeOrderList} = this.props;
 
 		return (
-			<button
-				className={'material-icons hide-order-button'}
-				onClick={closeOrderList}
-			>
-				<span>close</span>
-			</button>
+			<div className={'col-8'}>
+				<button
+					className={'material-icons hide-order-button'}
+					onClick={closeOrderList}
+				>
+					<span>close</span>
+				</button>
+			</div>
 		);
 	}
 }

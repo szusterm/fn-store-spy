@@ -25,7 +25,7 @@ describe('CircleOrderCount Component', () => {
 			closeOrderList: jest.fn()
 		});
 
-		wrapper.simulate('click');
+		wrapper.find('button').simulate('click');
 
 		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
 	});
