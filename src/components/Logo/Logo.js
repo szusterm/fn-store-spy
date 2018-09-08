@@ -11,9 +11,9 @@ export class Logo extends Component {
 		const {color} = this.props;
 
 		return (
-			<div className={'start-info'}>
+			<div className={'logo'}>
 				<img
-					className={'start-info--image'}
+					className={'logo--image'}
 					src={(color === 'white') ? whiteLogoUrl : blackLogoUrl}
 				/>
 			</div>
