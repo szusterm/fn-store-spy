@@ -15,16 +15,18 @@ export class FullOrderCount extends Component {
 		const {orderedItems, maxItemsInOrder} = this.props;
 
 		return (
-			<div className={'full-order-count'}>
+			<div className={'col-12'}>
+				<div className={'full-order-count'}>
 				<span
 					className={`full-order-count--ordered ${(this.isOrderTooBig()) && 'full-order-count--ordered--exceeded'}`}
 				>
 					{orderedItems.length}
 				</span>
-				<span className={'full-order-count--slash'}>/</span>
-				<span className={'full-order-count--maximum'}>
+					<span className={'full-order-count--slash'}>/</span>
+					<span className={'full-order-count--maximum'}>
 					{maxItemsInOrder}
 				</span>
+				</div>
 			</div>
 		);
 	}

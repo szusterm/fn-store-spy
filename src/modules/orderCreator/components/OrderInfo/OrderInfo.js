@@ -47,9 +47,7 @@ export class OrderInfo extends Component {
 							</div>
 						</div>
 						<div className={'row components--confirmation-box'}>
-							<div className={'col-12'}>
-								<FullOrderCount/>
-							</div>
+							<FullOrderCount/>
 							<SendOrderButton/>
 						</div>
 					</div>
