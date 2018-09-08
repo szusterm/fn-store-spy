@@ -41,7 +41,7 @@ describe('SendOrderButton Component', () => {
 			sendOrder: jest.fn()
 		});
 
-		wrapper.simulate('click');
+		wrapper.find('button').simulate('click');
 
 		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsIds);
 	});
@@ -53,7 +53,7 @@ describe('SendOrderButton Component', () => {
 
 		expect(wrapper.find('button').props().disabled).toBe(false);
 
-		wrapper.simulate('click');
+		wrapper.find('button').simulate('click');
 
 		expect(wrapper.find('button').props().disabled).toBe(true);
 	});

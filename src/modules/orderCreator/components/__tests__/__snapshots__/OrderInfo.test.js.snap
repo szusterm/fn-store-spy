@@ -62,11 +62,7 @@ ShallowWrapper {
               >
                 <Connect(FullOrderCount) />
               </div>
-              <div
-                className="col-9"
-              >
-                <Connect(SendOrderButton) />
-              </div>
+              <Connect(SendOrderButton) />
             </div>
           </div>
         </div>,
@@ -120,11 +116,7 @@ ShallowWrapper {
               >
                 <Connect(FullOrderCount) />
               </div>
-              <div
-                className="col-9"
-              >
-                <Connect(SendOrderButton) />
-              </div>
+              <Connect(SendOrderButton) />
             </div>
           </div>,
           "className": "order-info false",
@@ -162,11 +154,7 @@ ShallowWrapper {
                 >
                   <Connect(FullOrderCount) />
                 </div>
-                <div
-                  className="col-9"
-                >
-                  <Connect(SendOrderButton) />
-                </div>
+                <Connect(SendOrderButton) />
               </div>,
             ],
             "className": "container-fluid order-info--components",
@@ -254,11 +242,7 @@ ShallowWrapper {
                   >
                     <Connect(FullOrderCount) />
                   </div>,
-                  <div
-                    className="col-9"
-                  >
-                    <Connect(SendOrderButton) />
-                  </div>,
+                  <Connect(SendOrderButton) />,
                 ],
                 "className": "row components--confirmation-box",
               },
@@ -287,22 +271,11 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Connect(SendOrderButton) />,
-                    "className": "col-9",
-                  },
+                  "nodeType": "class",
+                  "props": Object {},
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": "div",
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "div",
@@ -358,11 +331,7 @@ ShallowWrapper {
                 >
                   <Connect(FullOrderCount) />
                 </div>
-                <div
-                  className="col-9"
-                >
-                  <Connect(SendOrderButton) />
-                </div>
+                <Connect(SendOrderButton) />
               </div>
             </div>
           </div>,
@@ -416,11 +385,7 @@ ShallowWrapper {
                 >
                   <Connect(FullOrderCount) />
                 </div>
-                <div
-                  className="col-9"
-                >
-                  <Connect(SendOrderButton) />
-                </div>
+                <Connect(SendOrderButton) />
               </div>
             </div>,
             "className": "order-info false",
@@ -458,11 +423,7 @@ ShallowWrapper {
                   >
                     <Connect(FullOrderCount) />
                   </div>
-                  <div
-                    className="col-9"
-                  >
-                    <Connect(SendOrderButton) />
-                  </div>
+                  <Connect(SendOrderButton) />
                 </div>,
               ],
               "className": "container-fluid order-info--components",
@@ -550,11 +511,7 @@ ShallowWrapper {
                     >
                       <Connect(FullOrderCount) />
                     </div>,
-                    <div
-                      className="col-9"
-                    >
-                      <Connect(SendOrderButton) />
-                    </div>,
+                    <Connect(SendOrderButton) />,
                   ],
                   "className": "row components--confirmation-box",
                 },
@@ -583,22 +540,11 @@ ShallowWrapper {
                   Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": <Connect(SendOrderButton) />,
-                      "className": "col-9",
-                    },
+                    "nodeType": "class",
+                    "props": Object {},
                     "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    "type": "div",
+                    "rendered": null,
+                    "type": [Function],
                   },
                 ],
                 "type": "div",

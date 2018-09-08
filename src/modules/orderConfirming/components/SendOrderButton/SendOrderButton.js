@@ -64,13 +64,15 @@ export class SendOrderButton extends Component {
 		const {sendingOrder} = this.state;
 
 		return (
-			<button
-				className={'send-order-button'}
-				disabled={(this.isOrderEmpty() || this.isOrderTooBig() || sendingOrder)}
-				onClick={this.sendOrder}
-			>
-				Send order
-			</button>
+			<div className={'col-9'}>
+				<button
+					className={'send-order-button'}
+					disabled={(this.isOrderEmpty() || this.isOrderTooBig() || sendingOrder)}
+					onClick={this.sendOrder}
+				>
+					Send order
+				</button>
+			</div>
 		);
 	}
 }

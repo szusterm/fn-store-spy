@@ -50,9 +50,7 @@ export class OrderInfo extends Component {
 							<div className={'col-12'}>
 								<FullOrderCount/>
 							</div>
-							<div className={'col-9'}>
-								<SendOrderButton/>
-							</div>
+							<SendOrderButton/>
 						</div>
 					</div>
 				</div>
