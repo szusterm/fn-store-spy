@@ -10,25 +10,27 @@ export class ItemsList extends Component {
 		const {items} = this.props;
 
 		return (
-			<div className={'container-fluid'}>
-				<div className={'row no-gutter'}>
-					{
-						items.map((item) => {
-							const {_id, name, price, rarity, type, imageSrc} = item;
+			<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
+				<div className={'container-fluid'}>
+					<div className={'row no-gutter'}>
+						{
+							items.map((item) => {
+								const {_id, name, price, rarity, type, imageSrc} = item;
 
-							return (
-								<ItemCard
-									key={_id}
-									_id={_id}
-									name={name}
-									price={price}
-									rarity={rarity}
-									type={type}
-									imageSrc={imageSrc}
-								/>
-							);
-						})
-					}
+								return (
+									<ItemCard
+										key={_id}
+										_id={_id}
+										name={name}
+										price={price}
+										rarity={rarity}
+										type={type}
+										imageSrc={imageSrc}
+									/>
+								);
+							})
+						}
+					</div>
 				</div>
 			</div>
 		);

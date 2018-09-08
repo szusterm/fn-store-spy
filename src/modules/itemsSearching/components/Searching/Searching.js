@@ -41,11 +41,7 @@ export class Searching extends Component {
 					/>
 				</div>
 				<div className={'row searching--items-list-box'}>
-					<div className={'col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8'}>
-						<ItemsList
-							items={items}
-						/>
-					</div>
+					<ItemsList items={items}/>
 				</div>
 				<div className={'row searching--pagination-box'}>
 					<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>

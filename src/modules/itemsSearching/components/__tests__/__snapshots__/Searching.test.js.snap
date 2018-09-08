@@ -32,13 +32,9 @@ ShallowWrapper {
         <div
           className="row searching--items-list-box"
         >
-          <div
-            className="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8"
-          >
-            <ItemsList
-              items={Array []}
-            />
-          </div>
+          <ItemsList
+            items={Array []}
+          />
         </div>,
         <div
           className="row searching--pagination-box"
@@ -85,39 +81,22 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8"
-          >
-            <ItemsList
-              items={Array []}
-            />
-          </div>,
+          "children": <ItemsList
+            items={Array []}
+          />,
           "className": "row searching--items-list-box",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": <ItemsList
-              items={Array []}
-            />,
-            "className": "col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8",
+            "items": Array [],
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "items": Array [],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
         "type": "div",
       },
@@ -182,13 +161,9 @@ ShallowWrapper {
           <div
             className="row searching--items-list-box"
           >
-            <div
-              className="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8"
-            >
-              <ItemsList
-                items={Array []}
-              />
-            </div>
+            <ItemsList
+              items={Array []}
+            />
           </div>,
           <div
             className="row searching--pagination-box"
@@ -235,39 +210,22 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <div
-              className="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8"
-            >
-              <ItemsList
-                items={Array []}
-              />
-            </div>,
+            "children": <ItemsList
+              items={Array []}
+            />,
             "className": "row searching--items-list-box",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
-              "children": <ItemsList
-                items={Array []}
-              />,
-              "className": "col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8",
+              "items": Array [],
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "items": Array [],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
           "type": "div",
         },
