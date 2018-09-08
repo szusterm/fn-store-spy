@@ -1,0 +1,23 @@
+@import '~scss/_opacity-colors';
+@import '~scss/_center-items';
+
+.start-info {
+	text-align: center;
+
+	&--description {
+		@include center-items();
+
+		.description {
+			&--text {
+				font-size: 2em;
+				font-weight: 100;
+
+				@include white-color(0.95);
+
+				&--bold {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
