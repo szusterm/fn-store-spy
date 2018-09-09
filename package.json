@@ -8,7 +8,8 @@
 		"client-dev": "webpack --mode development --watch --hot",
 		"server-dev": "nodemon ./bin/www",
 		"dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
-		"test": "jest"
+		"test": "jest",
+		"heroku-postbuild": "npm run build"
 	},
 	"jest": {
 		"moduleNameMapper": {
