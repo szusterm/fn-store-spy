@@ -1,0 +1,10 @@
+{
+	"searching": {
+		"maxItemsPerPage": 12,
+		"minNameFilterLength": 3,
+		"maxNameFilterLength": 26
+	},
+	"ordering": {
+		"maxItemsInOrder": 24
+	}
+}
