@@ -1,14 +1,16 @@
 const itemInstance = require('../item');
 const ItemModel = require('../../models/item.model');
 const getResponseObject = require('../../../helpers/getResponseObject');
-const clientConfig = require('../../../config/client');
+const config = require('../../../config');
 
 jest.mock('../../models/item.model');
 jest.mock('../../../helpers/getResponseObject');
-jest.mock('../../../config/client', () => ({
-	maxItemsPerPage: 12,
-	minNameFilterLength: 3,
-	maxNameFilterLength: 5
+jest.mock('../../../config', () => ({
+	searching: {
+		maxItemsPerPage: 12,
+		minNameFilterLength: 3,
+		maxNameFilterLength: 5
+	}
 }));
 
 let item;
@@ -173,7 +175,7 @@ describe('Item Factory', () => {
 	describe('_setPage()', () => {
 		it('limits getting items to one more than config value', () => {
 			//Adds this to check later, that exists next page
-			const {maxItemsPerPage} = clientConfig;
+			const {maxItemsPerPage} = config.searching;
 
 			item._setPage();
 
@@ -181,7 +183,7 @@ describe('Item Factory', () => {
 		});
 
 		it('starts getting items from specific one', () => {
-			const {maxItemsPerPage} = clientConfig;
+			const {maxItemsPerPage} = config.searching;
 			const pages = [1, 5, 7, 10];
 
 			for (const page of pages) {
@@ -218,7 +220,7 @@ describe('Item Factory', () => {
 
 	describe('_existsNextPage()', () => {
 		it('returns true if number of items is greater than max items per page', () => {
-			const {maxItemsPerPage} = clientConfig;
+			const {maxItemsPerPage} = config.searching;
 
 			const existsForGreater = item._existsNextPage(maxItemsPerPage + 1);
 
@@ -226,7 +228,7 @@ describe('Item Factory', () => {
 		});
 
 		it('returns false if number of items is equal or lower than max items per page', () => {
-			const {maxItemsPerPage} = clientConfig;
+			const {maxItemsPerPage} = config.searching;
 
 			const existsForEqual = item._existsNextPage(maxItemsPerPage);
 			const existsForLower = item._existsNextPage(maxItemsPerPage - 1);

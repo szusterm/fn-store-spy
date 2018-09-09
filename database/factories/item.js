@@ -1,6 +1,6 @@
 const ItemModel = require('../models/item.model');
 const getObject = require('../../helpers/getResponseObject');
-const clientConfig = require('../../config/client');
+const config = require('../../config');
 
 class Item {
 	constructor() {
@@ -49,7 +49,7 @@ class Item {
 	}
 
 	_filterByNameContainingText(name = null) {
-		const {minNameFilterLength, maxNameFilterLength} = clientConfig;
+		const {minNameFilterLength, maxNameFilterLength} = config.searching;
 
 		if (
 			name &&
@@ -81,7 +81,7 @@ class Item {
 		let fixedPage = Number(page);
 		fixedPage = (fixedPage >= 1) ? fixedPage : 1;
 
-		const {maxItemsPerPage} = clientConfig;
+		const {maxItemsPerPage} = config.searching;
 		const firstItemOnPage = (maxItemsPerPage * fixedPage - maxItemsPerPage);
 
 		this._findingQuery
@@ -102,7 +102,7 @@ class Item {
 	}
 
 	_existsNextPage(itemsCount) {
-		const {maxItemsPerPage} = clientConfig;
+		const {maxItemsPerPage} = config.searching;
 		return (itemsCount > maxItemsPerPage);
 	}
 
