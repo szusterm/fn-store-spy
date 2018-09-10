@@ -18,6 +18,19 @@
 		margin: $margin-mobile 0;
 	}
 
+	&::before {
+		background: url('https://cdn.thetrackernetwork.com/cdn/fm/AFDAllama.jpg');
+
+		width: 100%;
+		height: 100%;
+
+		z-index: -1;
+		display: block;
+		position: absolute;
+		content: ' ';
+
+	}
+
 	&--logo-box {
 		$size-normal: 190px;
 		$size-mobile: 120px;
