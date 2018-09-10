@@ -1,0 +1,7 @@
+@import '~scss/_input';
+
+.messenger-link {
+	@include default-input();
+
+	border: 5px solid black;
+}
