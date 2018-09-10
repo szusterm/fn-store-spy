@@ -19,13 +19,12 @@
 		border-width: 0;
 		border-radius: $inputHeight/2;
 
-		@include white-background(0.95);
+		@include white-background(1);
 		@include shadow(sm);
 
 		@include transition(sh);
 
 		&:hover, &:focus {
-			@include white-background(1);
 			@include shadow(md);
 		}
 	}
