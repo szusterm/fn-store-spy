@@ -12,9 +12,16 @@ export class EndingScreen extends Component {
 
 		return (
 			<div className={`ending-screen ${(!endingScreenOpened) ? 'ending-screen--hidden' : ''}`}>
-				<div className={'container-fluid'}>
-					<div className={'row ending-screen--code-copier-box'}>
+				<div className={'container-fluid ending-screen--container'}>
+					<div className={'row container--prompt'}>
+						<div className={'col-6'}>
+							<h2 className={'prompt--text'}>Just send this code to the Messenger Bot</h2>
+						</div>
+					</div>
+					<div className={'row container--code-copier-box'}>
 						<CodeCopier/>
+					</div>
+					<div className={'row container--buttons'}>
 					</div>
 				</div>
 			</div>

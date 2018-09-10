@@ -11,6 +11,7 @@
 	left: 0;
 	right: 0;
 	z-index: 100;
+	height: 100%;
 
 	@include white-background(1);
 	@include transition(sh);
@@ -21,7 +22,32 @@
 		opacity: 0;
 	}
 
-	&--code-copier-box {
-		@include center-items();
+	&--container {
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.container {
+			&--prompt {
+				@include center-items();
+				margin-top: 100px;
+
+				.prompt--text {
+					text-align: center;
+					font-weight: 100;
+					font-size: 2em;
+				}
+			}
+
+			&--code-copier-box {
+				@include center-items();
+			}
+
+			&--buttons {
+				padding-top: 200px;
+			}
+		}
 	}
 }
