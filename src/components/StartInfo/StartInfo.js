@@ -10,7 +10,7 @@ export class StartInfo extends Component {
 			<header>
 				<div className={'start-info'}>
 					<div className={'start-info--logo-box'}>
-						<Logo color={'white'}/>
+						<Logo/>
 					</div>
 					<h1 className={'start-info--text'}>
 						<span className={'start-info--text--bold'}>Hello. </span>

@@ -8,13 +8,13 @@ import './styles.scss';
 
 export class Logo extends Component {
 	render() {
-		const {color} = this.props;
+		const {dark} = this.props;
 
 		return (
 			<div className={'logo'}>
 				<img
 					className={'logo--image'}
-					src={(color === 'white') ? whiteLogoUrl : blackLogoUrl}
+					src={(!dark) ? whiteLogoUrl : blackLogoUrl}
 				/>
 			</div>
 		);
@@ -22,7 +22,11 @@ export class Logo extends Component {
 }
 
 Logo.propTypes = {
-	color: PropTypes.string.isRequired
+	dark: PropTypes.bool
+};
+
+Logo.defaultProps = {
+	dark: false
 };
 
 export default Logo;
