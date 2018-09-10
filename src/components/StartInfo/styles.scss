@@ -6,20 +6,29 @@
 @import '~scss/_center-items';
 
 .start-info {
+	$margin-normal: 170px;
+	$margin-mobile: 80px;
+
 	@include center-items();
 
-	margin-top: 170px;
-	margin-bottom: 170px;
+	margin: $margin-normal 0;
 
 	@include media-breakpoint-down(sm) {
 		flex-direction: column;
+		margin: $margin-mobile 0;
 	}
 
 	&--logo-box {
-		$size: 190px;
+		$size-normal: 190px;
+		$size-mobile: 120px;
 
-		width: $size;
-		height: $size;
+		width: $size-normal;
+		height: $size-normal;
+
+		@include media-breakpoint-down(sm) {
+			width: $size-mobile;
+			height: $size-mobile;
+		}
 	}
 
 	&--text {
@@ -34,6 +43,8 @@
 		@include media-breakpoint-down(sm) {
 			text-align: center;
 			margin-left: 0;
+			font-size: 2.1em;
+			padding: 10px;
 		}
 
 		&--bold {
