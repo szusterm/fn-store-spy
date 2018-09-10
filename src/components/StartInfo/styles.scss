@@ -11,6 +11,7 @@
 
 	@include center-items();
 
+	overflow: hidden;
 	position: relative;
 	padding: $padding-normal 0;
 
@@ -24,14 +25,17 @@
 		background-size: cover;
 
 		display: block;
-		content: ' ';
+		content: '';
 		z-index: -1;
 
 		position: absolute;
-		width: 100%;
+		min-width: 100%;
 		top: 0;
 		bottom: 0;
 
+		transform: scale(1.1);
+
+		overflow: hidden;
 		filter: blur(5px);
 	}
 
