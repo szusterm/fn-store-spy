@@ -6,14 +6,14 @@
 @import '~scss/_center-items';
 
 .header {
-	$padding-normal: 170px;
+	$padding-normal: 140px;
 	$padding-mobile: 80px;
 
 	@include center-items();
 
 	overflow: hidden;
 	position: relative;
-	padding: $padding-normal 0;
+	padding: $padding-normal 0 (12/10*$padding-normal);
 
 	@include media-breakpoint-down(sm) {
 		flex-direction: column;
@@ -40,7 +40,7 @@
 	}
 
 	&--logo-box {
-		$size-normal: 190px;
+		$size-normal: 140px;
 		$size-mobile: 120px;
 
 		width: $size-normal;
@@ -53,10 +53,10 @@
 	}
 
 	&--text {
-		font-size: 2.5em;
+		font-size: 2em;
 		font-weight: 100;
 		margin-bottom: 0;
-		margin-top: 30px;
+		margin-top: 20px;
 		margin-left: 20px;
 
 		@include white-color(0.9);
@@ -64,8 +64,8 @@
 		@include media-breakpoint-down(sm) {
 			text-align: center;
 			margin-left: 0;
-			font-size: 2.1em;
-			padding: 10px;
+			font-size: 1.8em;
+			padding: 5px;
 		}
 
 		&--bold {
