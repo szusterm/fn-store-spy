@@ -6,29 +6,33 @@
 @import '~scss/_center-items';
 
 .start-info {
-	$margin-normal: 170px;
-	$margin-mobile: 80px;
+	$padding-normal: 170px;
+	$padding-mobile: 80px;
 
 	@include center-items();
 
-	margin: $margin-normal 0;
+	position: relative;
+	padding: $padding-normal 0;
 
 	@include media-breakpoint-down(sm) {
 		flex-direction: column;
-		margin: $margin-mobile 0;
+		padding: $padding-mobile 0;
 	}
 
 	&::before {
 		background: url('https://cdn.thetrackernetwork.com/cdn/fm/AFDAllama.jpg');
+		background-size: cover;
 
-		width: 100%;
-		height: 100%;
-
-		z-index: -1;
 		display: block;
-		position: absolute;
 		content: ' ';
+		z-index: -1;
 
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+
+		filter: blur(5px);
 	}
 
 	&--logo-box {
