@@ -22,7 +22,7 @@
 		@include center-items();
 		@include transition(sh);
 		@include shadow(sm);
-		@include white-background(0.9);
+		@include white-background(1);
 
 		&:hover, &:focus {
 			@include shadow(md);
@@ -32,7 +32,8 @@
 		&:disabled {
 			cursor: default;
 			@include shadow(sm);
-			@include white-background(0.3);
+			@include black-color(0.6);
+			@include black-background(0.03);
 		}
 
 		&--previous {
