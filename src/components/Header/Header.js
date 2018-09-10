@@ -4,16 +4,16 @@ import Logo from '../Logo';
 
 import './styles.scss';
 
-export class StartInfo extends Component {
+export class Header extends Component {
 	render() {
 		return (
 			<header>
-				<div className={'start-info'}>
-					<div className={'start-info--logo-box'}>
+				<div className={'header'}>
+					<div className={'header--logo-box'}>
 						<Logo/>
 					</div>
-					<h1 className={'start-info--text'}>
-						<span className={'start-info--text--bold'}>Hello. </span>
+					<h1 className={'header--text'}>
+						<span className={'header--text--bold'}>Hello. </span>
 						Welcome to StoreSpy.<br/>
 						Messenger shop notifier.
 					</h1>
@@ -23,4 +23,4 @@ export class StartInfo extends Component {
 	}
 }
 
-export default StartInfo;
+export default Header;
