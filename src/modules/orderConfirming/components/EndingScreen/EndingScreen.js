@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {hideEndingScreen} from '../../actions';
+
 import CodeCopier from '../CodeCopier';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import MessengerLink from '../../../../components/MessengerLink';
@@ -32,7 +34,8 @@ export class EndingScreen extends Component {
 }
 
 EndingScreen.propTypes = {
-	endingScreenOpened: PropTypes.bool //redux
+	endingScreenOpened: PropTypes.bool, //redux
+	hideEndingScreen: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
@@ -41,4 +44,6 @@ const mapStateToProps = (state) => {
 	return {endingScreenOpened};
 };
 
-export default connect(mapStateToProps, null)(EndingScreen);
+const mapDispatchToProps = {hideEndingScreen};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EndingScreen);
