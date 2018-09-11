@@ -1,7 +1,32 @@
 @import '~scss/_input';
+@import '~scss/_transition';
+@import '~scss/_shadow';
+@import '~scss/_center-items';
 
 .messenger-link {
-	@include default-input();
+	$messenger-color: #0084ff;
 
-	border: 5px solid black;
+	font-weight: 400;
+	text-align: center;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&--button {
+		@include default-input();
+		@include center-items();
+
+		border: 1px solid $messenger-color;
+		background-color: $messenger-color;
+		color: white;
+
+		@include transition(sh);
+		@include shadow(sm);
+
+		&:hover {
+			background-color: white;
+			color: $messenger-color;
+		}
+	}
 }
