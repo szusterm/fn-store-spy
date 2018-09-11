@@ -12,11 +12,14 @@ import './styles.scss';
 
 export class EndingScreen extends Component {
 	render() {
-		const {endingScreenOpened} = this.props;
+		const {endingScreenOpened, hideEndingScreen} = this.props;
 
 		return (
 			<div>
-				<BlackCurtain show={endingScreenOpened}/>
+				<BlackCurtain
+					show={endingScreenOpened}
+					onClick={hideEndingScreen}
+				/>
 				<div className={`ending-screen ${(!endingScreenOpened) ? 'ending-screen--hidden' : ''}`}>
 					<div className={'ending-screen--prompt'}>
 						<h2 className={'prompt--text'}>Just send this code to the Messenger Bot</h2>
