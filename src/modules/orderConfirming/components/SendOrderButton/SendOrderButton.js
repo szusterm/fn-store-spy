@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {sendOrder} from '../../actions';
+import {closeOrderList} from '../../../orderCreator/actions';
 
 import './styles.scss';
 
@@ -24,6 +25,8 @@ export class SendOrderButton extends Component {
 		await this.props.sendOrder(itemsIds);
 
 		this.setSendingOrderState(false);
+
+		this.props.closeOrderList();
 	}
 
 	getItemsIds() {
@@ -80,7 +83,8 @@ export class SendOrderButton extends Component {
 SendOrderButton.propTypes = {
 	orderedItems: PropTypes.array, //redux
 	maxItemsInOrder: PropTypes.number, //redux
-	sendOrder: PropTypes.func //redux
+	sendOrder: PropTypes.func, //redux
+	closeOrderList: PropTypes.func //redux
 };
 
 const mapStateToProps = (state) => {
@@ -93,6 +97,6 @@ const mapStateToProps = (state) => {
 	};
 };
 
-const mapDispatchToProps = {sendOrder};
+const mapDispatchToProps = {sendOrder, closeOrderList};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SendOrderButton);
