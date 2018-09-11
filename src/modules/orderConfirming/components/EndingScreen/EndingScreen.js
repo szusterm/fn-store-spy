@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import CodeCopier from '../CodeCopier';
+import MessengerLink from '../../../../components/MessengerLink';
 
 import './styles.scss';
 
@@ -22,6 +23,7 @@ export class EndingScreen extends Component {
 						<CodeCopier/>
 					</div>
 					<div className={'row container--buttons'}>
+						<MessengerLink/>
 					</div>
 				</div>
 			</div>
