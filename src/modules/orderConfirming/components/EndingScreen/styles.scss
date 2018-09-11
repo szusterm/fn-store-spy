@@ -10,8 +10,9 @@
 	left: 50%;
 	z-index: 100;
 
-	width: 500px;
-	padding: 20px;
+	width: 400px;
+	padding: 50px 40px;
+	border-radius: 10px;
 	transform: translate(-50%, -50%);
 
 	display: flex;
@@ -32,12 +33,23 @@
 
 		.prompt--text {
 			text-align: center;
-			font-weight: 100;
+			font-weight: 300;
 			font-size: 2em;
+			@include black-color(0.5);
 		}
 	}
 
-	&--code-copier-box, &--buttons {
+	&--propmt, &--code-copier-box, &--buttons {
 		@include center-items();
+		width: 100%;
+	}
+
+	&--code-copier-box {
+		margin-top: 30px;
+		margin-bottom: 60px;
+	}
+
+	&--buttons {
+		padding: 0 20px;
 	}
 }
