@@ -17,3 +17,7 @@ export const sendOrder = (itemsIds) => async (dispatch) => {
 		});
 	}
 };
+
+export const hideEndingScreen = () => ({
+	type: types.HIDE_ORDER_CONFIRMATION
+});
