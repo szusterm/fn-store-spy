@@ -11,7 +11,7 @@ export class MessengerLink extends Component {
 					href={'#'}
 				>
 					<div className={'messenger-link--button'}>
-						Messenger Bot
+						Go to Messenger
 					</div>
 				</a>
 			</div>
