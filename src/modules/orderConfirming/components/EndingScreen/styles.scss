@@ -46,7 +46,8 @@
 			}
 
 			&--buttons {
-				padding-top: 200px;
+				@include center-items();
+				margin-bottom: 100px;
 			}
 		}
 	}
