@@ -47,6 +47,21 @@ describe('SendOrderButton Component', () => {
 		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsIds);
 	});
 
+	it('closes OrderInfo after send the order', async () => {
+		const promiseToReturn = Promise.resolve(true);
+
+		const {wrapper, props} = setup({
+			sendOrder: jest.fn().mockReturnValueOnce(promiseToReturn),
+			closeOrderList: jest.fn()
+		});
+
+		wrapper.find('button').simulate('click');
+
+		await promiseToReturn;
+
+		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
+	});
+
 	it('makes disabled, during sending the order', () => {
 		const {wrapper} = setup({
 			sendOrder: jest.fn(() => Promise.resolve(true))
