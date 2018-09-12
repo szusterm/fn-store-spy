@@ -24,6 +24,7 @@
 		border: 1px solid $messenger-color;
 		background-color: $messenger-color;
 		color: white;
+		margin: 0;
 
 		@include transition(sh);
 		@include shadow(sm);
