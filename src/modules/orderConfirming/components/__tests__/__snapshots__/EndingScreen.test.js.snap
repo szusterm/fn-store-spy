@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EndingScreen
     endingScreenOpened={true}
+    hideEndingScreen={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -19,14 +20,16 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="container-fluid ending-screen--container"
-      >
+      "children": Array [
+        <BlackCurtain
+          onClick={[Function]}
+          show={true}
+        />,
         <div
-          className="row container--prompt"
+          className="ending-screen "
         >
           <div
-            className="col-6"
+            className="ending-screen--prompt"
           >
             <h2
               className="prompt--text"
@@ -34,58 +37,44 @@ ShallowWrapper {
               Just send this code to the Messenger Bot
             </h2>
           </div>
-        </div>
-        <div
-          className="row container--code-copier-box"
-        >
-          <Connect(CodeCopier) />
-        </div>
-        <div
-          className="row container--buttons"
-        />
-      </div>,
-      "className": "ending-screen ",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
           <div
-            className="row container--prompt"
-          >
-            <div
-              className="col-6"
-            >
-              <h2
-                className="prompt--text"
-              >
-                Just send this code to the Messenger Bot
-              </h2>
-            </div>
-          </div>,
-          <div
-            className="row container--code-copier-box"
+            className="ending-screen--code-copier-box"
           >
             <Connect(CodeCopier) />
-          </div>,
+          </div>
           <div
-            className="row container--buttons"
-          />,
-        ],
-        "className": "container-fluid ending-screen--container",
+            className="ending-screen--buttons"
+          >
+            <MessengerLink />
+            <CancelButton
+              onClick={[Function]}
+            />
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "onClick": [Function],
+          "show": true,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="ending-screen--prompt"
             >
               <h2
                 className="prompt--text"
@@ -93,10 +82,25 @@ ShallowWrapper {
                 Just send this code to the Messenger Bot
               </h2>
             </div>,
-            "className": "row container--prompt",
-          },
-          "ref": null,
-          "rendered": Object {
+            <div
+              className="ending-screen--code-copier-box"
+            >
+              <Connect(CodeCopier) />
+            </div>,
+            <div
+              className="ending-screen--buttons"
+            >
+              <MessengerLink />
+              <CancelButton
+                onClick={[Function]}
+              />
+            </div>,
+          ],
+          "className": "ending-screen ",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -106,7 +110,7 @@ ShallowWrapper {
               >
                 Just send this code to the Messenger Bot
               </h2>,
-              "className": "col-6",
+              "className": "ending-screen--prompt",
             },
             "ref": null,
             "rendered": Object {
@@ -123,163 +127,13 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <Connect(CodeCopier) />,
-            "className": "row container--code-copier-box",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "row container--buttons",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "div",
-        },
-      ],
-      "type": "div",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="container-fluid ending-screen--container"
-        >
-          <div
-            className="row container--prompt"
-          >
-            <div
-              className="col-6"
-            >
-              <h2
-                className="prompt--text"
-              >
-                Just send this code to the Messenger Bot
-              </h2>
-            </div>
-          </div>
-          <div
-            className="row container--code-copier-box"
-          >
-            <Connect(CodeCopier) />
-          </div>
-          <div
-            className="row container--buttons"
-          />
-        </div>,
-        "className": "ending-screen ",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="row container--prompt"
-            >
-              <div
-                className="col-6"
-              >
-                <h2
-                  className="prompt--text"
-                >
-                  Just send this code to the Messenger Bot
-                </h2>
-              </div>
-            </div>,
-            <div
-              className="row container--code-copier-box"
-            >
-              <Connect(CodeCopier) />
-            </div>,
-            <div
-              className="row container--buttons"
-            />,
-          ],
-          "className": "container-fluid ending-screen--container",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <h2
-                  className="prompt--text"
-                >
-                  Just send this code to the Messenger Bot
-                </h2>
-              </div>,
-              "className": "row container--prompt",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <h2
-                  className="prompt--text"
-                >
-                  Just send this code to the Messenger Bot
-                </h2>,
-                "className": "col-6",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Just send this code to the Messenger Bot",
-                  "className": "prompt--text",
-                },
-                "ref": null,
-                "rendered": "Just send this code to the Messenger Bot",
-                "type": "h2",
-              },
-              "type": "div",
-            },
-            "type": "div",
-          },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": <Connect(CodeCopier) />,
-              "className": "row container--code-copier-box",
+              "className": "ending-screen--code-copier-box",
             },
             "ref": null,
             "rendered": Object {
@@ -298,15 +152,220 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "row container--buttons",
+              "children": Array [
+                <MessengerLink />,
+                <CancelButton
+                  onClick={[Function]}
+                />,
+              ],
+              "className": "ending-screen--buttons",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
             "type": "div",
           },
         ],
         "type": "div",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <BlackCurtain
+            onClick={[Function]}
+            show={true}
+          />,
+          <div
+            className="ending-screen "
+          >
+            <div
+              className="ending-screen--prompt"
+            >
+              <h2
+                className="prompt--text"
+              >
+                Just send this code to the Messenger Bot
+              </h2>
+            </div>
+            <div
+              className="ending-screen--code-copier-box"
+            >
+              <Connect(CodeCopier) />
+            </div>
+            <div
+              className="ending-screen--buttons"
+            >
+              <MessengerLink />
+              <CancelButton
+                onClick={[Function]}
+              />
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onClick": [Function],
+            "show": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="ending-screen--prompt"
+              >
+                <h2
+                  className="prompt--text"
+                >
+                  Just send this code to the Messenger Bot
+                </h2>
+              </div>,
+              <div
+                className="ending-screen--code-copier-box"
+              >
+                <Connect(CodeCopier) />
+              </div>,
+              <div
+                className="ending-screen--buttons"
+              >
+                <MessengerLink />
+                <CancelButton
+                  onClick={[Function]}
+                />
+              </div>,
+            ],
+            "className": "ending-screen ",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h2
+                  className="prompt--text"
+                >
+                  Just send this code to the Messenger Bot
+                </h2>,
+                "className": "ending-screen--prompt",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Just send this code to the Messenger Bot",
+                  "className": "prompt--text",
+                },
+                "ref": null,
+                "rendered": "Just send this code to the Messenger Bot",
+                "type": "h2",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Connect(CodeCopier) />,
+                "className": "ending-screen--code-copier-box",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <MessengerLink />,
+                  <CancelButton
+                    onClick={[Function]}
+                  />,
+                ],
+                "className": "ending-screen--buttons",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],
