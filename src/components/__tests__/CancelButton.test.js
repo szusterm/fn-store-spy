@@ -5,7 +5,7 @@ import {CancelButton} from '../CancelButton/CancelButton';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		closeOrderList: () => true //redux
+		onClick: () => true //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<CancelButton {...props}/>);
@@ -20,13 +20,13 @@ describe('CancelButton Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('calls redux action to hide an order after click', () => {
+	it('calls onClick() prop after click the button', () => {
 		const {wrapper, props} = setup({
-			closeOrderList: jest.fn()
+			onClick: jest.fn()
 		});
 
 		wrapper.find('button').simulate('click');
 
-		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
+		expect(props.onClick).toHaveBeenCalledTimes(1);
 	});
 });
