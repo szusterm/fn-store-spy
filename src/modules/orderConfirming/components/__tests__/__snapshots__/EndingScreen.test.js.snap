@@ -34,7 +34,7 @@ ShallowWrapper {
             <h2
               className="prompt--text"
             >
-              Just send this code to the Messenger Bot
+              Send this code to the bot
             </h2>
           </div>
           <div
@@ -79,7 +79,7 @@ ShallowWrapper {
               <h2
                 className="prompt--text"
               >
-                Just send this code to the Messenger Bot
+                Send this code to the bot
               </h2>
             </div>,
             <div
@@ -108,7 +108,7 @@ ShallowWrapper {
               "children": <h2
                 className="prompt--text"
               >
-                Just send this code to the Messenger Bot
+                Send this code to the bot
               </h2>,
               "className": "ending-screen--prompt",
             },
@@ -118,11 +118,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Just send this code to the Messenger Bot",
+                "children": "Send this code to the bot",
                 "className": "prompt--text",
               },
               "ref": null,
-              "rendered": "Just send this code to the Messenger Bot",
+              "rendered": "Send this code to the bot",
               "type": "h2",
             },
             "type": "div",
@@ -211,7 +211,7 @@ ShallowWrapper {
               <h2
                 className="prompt--text"
               >
-                Just send this code to the Messenger Bot
+                Send this code to the bot
               </h2>
             </div>
             <div
@@ -256,7 +256,7 @@ ShallowWrapper {
                 <h2
                   className="prompt--text"
                 >
-                  Just send this code to the Messenger Bot
+                  Send this code to the bot
                 </h2>
               </div>,
               <div
@@ -285,7 +285,7 @@ ShallowWrapper {
                 "children": <h2
                   className="prompt--text"
                 >
-                  Just send this code to the Messenger Bot
+                  Send this code to the bot
                 </h2>,
                 "className": "ending-screen--prompt",
               },
@@ -295,11 +295,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Just send this code to the Messenger Bot",
+                  "children": "Send this code to the bot",
                   "className": "prompt--text",
                 },
                 "ref": null,
-                "rendered": "Just send this code to the Messenger Bot",
+                "rendered": "Send this code to the bot",
                 "type": "h2",
               },
               "type": "div",
