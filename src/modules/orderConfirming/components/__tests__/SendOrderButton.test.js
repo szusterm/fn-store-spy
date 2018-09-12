@@ -20,7 +20,8 @@ const setup = (propOverrides) => {
 	const props = Object.assign({
 		orderedItems, //redux
 		maxItemsInOrder: 3, //redux
-		sendOrder: () => true //redux
+		sendOrder: () => true, //redux
+		closeOrderList: () => true //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<SendOrderButton {...props}/>);
