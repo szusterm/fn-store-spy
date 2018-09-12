@@ -7,6 +7,7 @@ import {hideEndingScreen} from '../../actions';
 import CodeCopier from '../CodeCopier';
 import BlackCurtain from '../../../../components/BlackCurtain';
 import MessengerLink from '../../../../components/MessengerLink';
+import CancelButton from '../../../../components/CancelButton';
 
 import './styles.scss';
 
@@ -29,6 +30,7 @@ export class EndingScreen extends Component {
 					</div>
 					<div className={'ending-screen--buttons'}>
 						<MessengerLink/>
+						<CancelButton onClick={hideEndingScreen}/>
 					</div>
 				</div>
 			</div>
