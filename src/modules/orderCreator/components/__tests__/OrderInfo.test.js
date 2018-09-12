@@ -57,7 +57,7 @@ describe('Order Component', () => {
 		expect(wrapper.find(hiddenOrderClass).exists()).toBe(false);
 	});
 
-	it('hides if BlackCurtain calls ocClick callback', () => {
+	it('hides if BlackCurtain calls onClick callback', () => {
 		const {wrapper, props} = setup({
 			items: ['item3'],
 			closeOrderList: jest.fn()
