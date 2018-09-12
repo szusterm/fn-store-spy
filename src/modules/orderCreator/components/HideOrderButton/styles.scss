@@ -1,11 +1,14 @@
 @import '~scss/_input';
 @import '~scss/_opacity-colors';
 @import '~scss/_transition';
+@import '~scss/_center-items';
 
 .hide-order-button {
 	$height: 50px;
 
 	@include default-input();
+	@include center-items();
+
 	height: $height;
 	border-radius: $height/2;
 	font-size: 2em;

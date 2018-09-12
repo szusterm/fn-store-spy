@@ -13,10 +13,10 @@ export class HideOrderButton extends Component {
 		return (
 			<div className={'col-8'}>
 				<button
-					className={'material-icons hide-order-button'}
+					className={'hide-order-button'}
 					onClick={closeOrderList}
 				>
-					<span>close</span>
+					<span className={'material-icons'}>close</span>
 				</button>
 			</div>
 		);
