@@ -10,36 +10,46 @@ export class CodeCopier extends Component {
 		super(props);
 
 		this.state = {
-			copied: false
+			lastCopiedCode: ''
 		};
 
-		this.setCopiedTrue = this.setCopiedTrue.bind(this);
+		this.isCurrentCodeCopied = this.isCurrentCodeCopied.bind(this);
 	}
 
-	setCopiedTrue() {
+	updateLastCopiedCode() {
+		const {code} = this.props;
+
 		const newState = Object.assign(
 			this.state,
-			{copied: true}
+			{lastCopiedCode: code}
 		);
 
 		this.setState(newState);
 	}
 
+	isCurrentCodeCopied() {
+		const {lastCopiedCode} = this.state;
+		const {code} = this.props;
+
+		return (code === lastCopiedCode);
+	}
+
 	render() {
 		const {code} = this.props;
-		const {copied} = this.state;
 
 		return (
 			<div className={'code-copier'}>
 				<CopyToClipboard
 					text={code}
-					onCopy={this.setCopiedTrue}
+					onCopy={() => this.updateLastCopiedCode()}
 				>
-					<div className={`code-copier--code ${(copied) ? 'code-copier--code--copied' : ''}`}>{code}</div>
+					<div className={`code-copier--code ${(this.isCurrentCodeCopied()) ? 'code-copier--code--copied' : ''}`}>
+						{code}
+					</div>
 				</CopyToClipboard>
 				<div className={'code-copier--info'}>
-					{(!copied) && <span className={'info--how-to'}>click to copy</span>}
-					{(copied) && <span className={'info--copied'}>copied to clipboard!</span>}
+					{(!this.isCurrentCodeCopied()) && <span className={'info--how-to'}>click to copy</span>}
+					{(this.isCurrentCodeCopied()) && <span className={'info--copied'}>copied to clipboard!</span>}
 				</div>
 			</div>
 		);
