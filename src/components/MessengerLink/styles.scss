@@ -16,8 +16,7 @@
 		@include center-items();
 		flex-direction: row;
 
-		border: 1px solid;
-		border-color: white;
+		border: 1px solid white;
 		background-color: $messenger-color;
 		color: white;
 
@@ -57,12 +56,12 @@
 		}
 
 		&--reversed {
-			border-color: $messenger-color;
+			border-width: 0;
+
 			background-color: white;
 			color: $messenger-color;
 
 			&:hover, &:focus {
-				border-color: white;
 				background-color: $messenger-color;
 				color: white;
 
