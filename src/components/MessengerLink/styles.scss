@@ -7,10 +7,6 @@
 .messenger-link {
 	$messenger-color: #0084ff;
 
-	font-size: 1.1em;
-	font-weight: 400;
-	text-align: center;
-
 	width: 100%;
 
 	&:hover {
@@ -26,6 +22,7 @@
 		border: 1px solid $messenger-color;
 		background-color: $messenger-color;
 		margin: 0;
+		padding: 0 8px;
 
 		@include white-color(1);
 		@include transition(sh);
@@ -35,17 +32,29 @@
 			color: $messenger-color;
 			@include white-background(1);
 
-			.svg-icon--path {
-				fill: $messenger-color;
+			.button--svg-icon {
+				.svg-icon--path {
+					fill: $messenger-color;
+				}
 			}
 		}
-	}
 
-	&--svg-icon {
-		width: 20%;
+		.button {
+			&--svg-icon {
+				width: 35px;
 
-		.svg-icon--path {
-			fill: white;
+				.svg-icon--path {
+					fill: white;
+				}
+			}
+
+			&--title {
+				flex-grow: 1;
+
+				font-size: 1.1em;
+				font-weight: 400;
+				text-align: center;
+			}
 		}
 	}
 }

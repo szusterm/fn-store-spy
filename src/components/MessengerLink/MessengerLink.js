@@ -11,7 +11,7 @@ export class MessengerLink extends Component {
 			>
 				<div className={'messenger-link--button'}>
 					<svg
-						className={'messenger-link--svg-icon'}
+						className={'button--svg-icon'}
 						xmlns={'http://www.w3.org/2000/svg'}
 						role={'img'}
 						viewBox={'0 0 213.25417 213.25417'}
@@ -23,7 +23,7 @@ export class MessengerLink extends Component {
 							/>
 						</g>
 					</svg>
-					<span>Go to Messenger</span>
+					<span className={'button--title'}>Go to Messenger</span>
 				</div>
 			</a>
 		);
