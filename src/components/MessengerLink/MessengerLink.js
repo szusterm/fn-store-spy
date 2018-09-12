@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 export class MessengerLink extends Component {
 	render() {
+		const {reversed} = this.props;
+
 		return (
 			<a
 				className={'messenger-link'}
 				href={'#'}
 			>
-				<div className={'messenger-link--button'}>
+				<div className={`messenger-link--button ${(reversed) ? 'messenger-link--button--reversed' : ''}`}>
 					<svg
 						className={'button--svg-icon'}
 						xmlns={'http://www.w3.org/2000/svg'}
@@ -29,5 +32,9 @@ export class MessengerLink extends Component {
 		);
 	}
 }
+
+MessengerLink.propTypes = {
+	reversed: PropTypes.bool
+};
 
 export default MessengerLink;

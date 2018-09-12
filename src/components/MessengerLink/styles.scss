@@ -1,8 +1,6 @@
 @import '~scss/_input';
 @import '~scss/_transition';
-@import '~scss/_shadow';
 @import '~scss/_center-items';
-@import '~scss/_opacity-colors';
 
 .messenger-link {
 	$messenger-color: #0084ff;
@@ -18,20 +16,20 @@
 		@include center-items();
 		flex-direction: row;
 
-
 		border: 1px solid;
 		border-color: white;
 		background-color: $messenger-color;
+		color: white;
+
 		margin: 0;
 		padding: 0 8px;
 
-		@include white-color(1);
 		@include transition(md);
 
 		&:hover, &:focus {
 			border-color: $messenger-color;
+			background-color: white;
 			color: $messenger-color;
-			@include white-background(1);
 
 			.button--svg-icon {
 				.svg-icon--path {
@@ -55,6 +53,32 @@
 				font-size: 1.1em;
 				font-weight: 400;
 				text-align: center;
+			}
+		}
+
+		&--reversed {
+			border-color: $messenger-color;
+			background-color: white;
+			color: $messenger-color;
+
+			&:hover, &:focus {
+				border-color: white;
+				background-color: $messenger-color;
+				color: white;
+
+				.button--svg-icon {
+					.svg-icon--path {
+						fill: white;
+					}
+				}
+			}
+
+			.button {
+				&--svg-icon {
+					.svg-icon--path {
+						fill: $messenger-color;
+					}
+				}
 			}
 		}
 	}
