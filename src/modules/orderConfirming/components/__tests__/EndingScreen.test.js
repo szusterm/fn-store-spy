@@ -37,12 +37,6 @@ describe('EndingScreen Component', () => {
 		expect(wrapper.find(hiddenEndingScreenClass).exists()).toBe(false);
 	});
 
-	it('renders CodeCopier', () => {
-		const {wrapper} = setup();
-
-		expect(wrapper.find(CodeCopier).exists()).toBe(true);
-	});
-
 	it('hides if BlackCurtain calls onClick callback', () => {
 		const {wrapper, props} = setup({
 			hideEndingScreen: jest.fn()
@@ -71,5 +65,11 @@ describe('EndingScreen Component', () => {
 		wrapper.find(CancelButton).props().onClick();
 
 		expect(props.hideEndingScreen).toHaveBeenCalledTimes(1);
+	});
+
+	it('renders CodeCopier', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(CodeCopier).exists()).toBe(true);
 	});
 });
