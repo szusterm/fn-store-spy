@@ -14,7 +14,7 @@
 
 	overflow: hidden;
 	position: relative;
-	padding: $padding-normal 0 (12/10*$padding-normal);
+	padding: $padding-normal 0 ($padding-normal/1.5);
 
 	@include media-breakpoint-down(sm) {
 		flex-direction: column;
