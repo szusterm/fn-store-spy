@@ -7,13 +7,18 @@
 @import '~scss/_center-items';
 
 .pagination {
+	@include center-items();
+	flex-direction: row;
+
+	padding: 0 15px;
+
 	&--button {
 		@include default-input();
 		$button-height: 50px;
 
 		cursor: pointer;
 
-		width: 100%;
+		width: 50%;
 		height: $button-height;
 		padding: 10px;
 		border-width: 0;

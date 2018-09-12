@@ -23,34 +23,22 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="container-fluid pagination"
+        className="pagination"
       >
-        <div
-          className="row"
+        <button
+          className="pagination--button pagination--button--previous"
+          disabled={true}
+          onClick={[Function]}
         >
-          <div
-            className="col-6"
-          >
-            <button
-              className="pagination--button pagination--button--previous"
-              disabled={true}
-              onClick={[Function]}
-            >
-              Previous
-            </button>
-          </div>
-          <div
-            className="col-6"
-          >
-            <button
-              className="pagination--button pagination--button--next"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Next
-            </button>
-          </div>
-        </div>
+          Previous
+        </button>
+        <button
+          className="pagination--button pagination--button--next"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Next
+        </button>
       </div>,
       "className": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4",
     },
@@ -60,133 +48,55 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <div
-          className="row"
-        >
-          <div
-            className="col-6"
+        "children": Array [
+          <button
+            className="pagination--button pagination--button--previous"
+            disabled={true}
+            onClick={[Function]}
           >
-            <button
-              className="pagination--button pagination--button--previous"
-              disabled={true}
-              onClick={[Function]}
-            >
-              Previous
-            </button>
-          </div>
-          <div
-            className="col-6"
+            Previous
+          </button>,
+          <button
+            className="pagination--button pagination--button--next"
+            disabled={false}
+            onClick={[Function]}
           >
-            <button
-              className="pagination--button pagination--button--next"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Next
-            </button>
-          </div>
-        </div>,
-        "className": "container-fluid pagination",
+            Next
+          </button>,
+        ],
+        "className": "pagination",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="col-6"
-            >
-              <button
-                className="pagination--button pagination--button--previous"
-                disabled={true}
-                onClick={[Function]}
-              >
-                Previous
-              </button>
-            </div>,
-            <div
-              className="col-6"
-            >
-              <button
-                className="pagination--button pagination--button--next"
-                disabled={false}
-                onClick={[Function]}
-              >
-                Next
-              </button>
-            </div>,
-          ],
-          "className": "row",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Previous",
+            "className": "pagination--button pagination--button--previous",
+            "disabled": true,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Previous",
+          "type": "button",
         },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="pagination--button pagination--button--previous"
-                disabled={true}
-                onClick={[Function]}
-              >
-                Previous
-              </button>,
-              "className": "col-6",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Previous",
-                "className": "pagination--button pagination--button--previous",
-                "disabled": true,
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Previous",
-              "type": "button",
-            },
-            "type": "div",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Next",
+            "className": "pagination--button pagination--button--next",
+            "disabled": false,
+            "onClick": [Function],
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="pagination--button pagination--button--next"
-                disabled={false}
-                onClick={[Function]}
-              >
-                Next
-              </button>,
-              "className": "col-6",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Next",
-                "className": "pagination--button pagination--button--next",
-                "disabled": false,
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Next",
-              "type": "button",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
+          "ref": null,
+          "rendered": "Next",
+          "type": "button",
+        },
+      ],
       "type": "div",
     },
     "type": "div",
@@ -198,34 +108,22 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="container-fluid pagination"
+          className="pagination"
         >
-          <div
-            className="row"
+          <button
+            className="pagination--button pagination--button--previous"
+            disabled={true}
+            onClick={[Function]}
           >
-            <div
-              className="col-6"
-            >
-              <button
-                className="pagination--button pagination--button--previous"
-                disabled={true}
-                onClick={[Function]}
-              >
-                Previous
-              </button>
-            </div>
-            <div
-              className="col-6"
-            >
-              <button
-                className="pagination--button pagination--button--next"
-                disabled={false}
-                onClick={[Function]}
-              >
-                Next
-              </button>
-            </div>
-          </div>
+            Previous
+          </button>
+          <button
+            className="pagination--button pagination--button--next"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Next
+          </button>
         </div>,
         "className": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4",
       },
@@ -235,133 +133,55 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="row"
-          >
-            <div
-              className="col-6"
+          "children": Array [
+            <button
+              className="pagination--button pagination--button--previous"
+              disabled={true}
+              onClick={[Function]}
             >
-              <button
-                className="pagination--button pagination--button--previous"
-                disabled={true}
-                onClick={[Function]}
-              >
-                Previous
-              </button>
-            </div>
-            <div
-              className="col-6"
+              Previous
+            </button>,
+            <button
+              className="pagination--button pagination--button--next"
+              disabled={false}
+              onClick={[Function]}
             >
-              <button
-                className="pagination--button pagination--button--next"
-                disabled={false}
-                onClick={[Function]}
-              >
-                Next
-              </button>
-            </div>
-          </div>,
-          "className": "container-fluid pagination",
+              Next
+            </button>,
+          ],
+          "className": "pagination",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="col-6"
-              >
-                <button
-                  className="pagination--button pagination--button--previous"
-                  disabled={true}
-                  onClick={[Function]}
-                >
-                  Previous
-                </button>
-              </div>,
-              <div
-                className="col-6"
-              >
-                <button
-                  className="pagination--button pagination--button--next"
-                  disabled={false}
-                  onClick={[Function]}
-                >
-                  Next
-                </button>
-              </div>,
-            ],
-            "className": "row",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Previous",
+              "className": "pagination--button pagination--button--previous",
+              "disabled": true,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Previous",
+            "type": "button",
           },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <button
-                  className="pagination--button pagination--button--previous"
-                  disabled={true}
-                  onClick={[Function]}
-                >
-                  Previous
-                </button>,
-                "className": "col-6",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Previous",
-                  "className": "pagination--button pagination--button--previous",
-                  "disabled": true,
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Previous",
-                "type": "button",
-              },
-              "type": "div",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Next",
+              "className": "pagination--button pagination--button--next",
+              "disabled": false,
+              "onClick": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <button
-                  className="pagination--button pagination--button--next"
-                  disabled={false}
-                  onClick={[Function]}
-                >
-                  Next
-                </button>,
-                "className": "col-6",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Next",
-                  "className": "pagination--button pagination--button--next",
-                  "disabled": false,
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Next",
-                "type": "button",
-              },
-              "type": "div",
-            },
-          ],
-          "type": "div",
-        },
+            "ref": null,
+            "rendered": "Next",
+            "type": "button",
+          },
+        ],
         "type": "div",
       },
       "type": "div",

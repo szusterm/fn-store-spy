@@ -38,27 +38,21 @@ export class Pagination extends Component {
 
 		return (
 			<div className={'col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4'}>
-				<div className={'container-fluid pagination'}>
-					<div className={'row'}>
-						<div className={'col-6'}>
-							<button
-								className={'pagination--button pagination--button--previous'}
-								disabled={(page <= 1)}
-								onClick={this.setPreviousPage}
-							>
-								Previous
-							</button>
-						</div>
-						<div className={'col-6'}>
-							<button
-								className={'pagination--button pagination--button--next'}
-								disabled={!nextPageAvailable}
-								onClick={this.setNextPage}
-							>
-								Next
-							</button>
-						</div>
-					</div>
+				<div className={'pagination'}>
+					<button
+						className={'pagination--button pagination--button--previous'}
+						disabled={(page <= 1)}
+						onClick={this.setPreviousPage}
+					>
+						Previous
+					</button>
+					<button
+						className={'pagination--button pagination--button--next'}
+						disabled={!nextPageAvailable}
+						onClick={this.setNextPage}
+					>
+						Next
+					</button>
 				</div>
 			</div>
 		);
