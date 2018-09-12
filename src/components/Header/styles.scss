@@ -6,10 +6,11 @@
 @import '~scss/_center-items';
 
 .header {
-	$padding-normal: 140px;
+	$padding-normal: 150px;
 	$padding-mobile: 80px;
 
 	@include center-items();
+	flex-direction: row;
 
 	overflow: hidden;
 	position: relative;
@@ -57,7 +58,7 @@
 		font-weight: 100;
 		margin-bottom: 0;
 		margin-top: 20px;
-		margin-left: 20px;
+		margin-left: 30px;
 
 		@include white-color(0.9);
 
