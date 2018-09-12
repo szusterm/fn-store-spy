@@ -1,19 +1,19 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {HideOrderButton} from '../HideOrderButton/HideOrderButton';
+import {CancelButton} from '../CancelButton/CancelButton';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		closeOrderList: () => true //redux
 	}, propOverrides);
 
-	const wrapper = shallow(<HideOrderButton {...props}/>);
+	const wrapper = shallow(<CancelButton {...props}/>);
 
 	return {props, wrapper};
 };
 
-describe('CircleOrderCount Component', () => {
+describe('CancelButton Component', () => {
 	it('renders correctly', () => {
 		const {wrapper} = setup();
 

@@ -39,7 +39,7 @@ ShallowWrapper {
             <div
               className="row components--button-box"
             >
-              <Connect(HideOrderButton) />
+              <Connect(CancelButton) />
             </div>
             <div
               className="row components--list"
@@ -81,7 +81,7 @@ ShallowWrapper {
             <div
               className="row components--button-box"
             >
-              <Connect(HideOrderButton) />
+              <Connect(CancelButton) />
             </div>
             <div
               className="row components--list"
@@ -107,7 +107,7 @@ ShallowWrapper {
               <div
                 className="row components--button-box"
               >
-                <Connect(HideOrderButton) />
+                <Connect(CancelButton) />
               </div>,
               <div
                 className="row components--list"
@@ -130,7 +130,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <Connect(HideOrderButton) />,
+                "children": <Connect(CancelButton) />,
                 "className": "row components--button-box",
               },
               "ref": null,
@@ -227,7 +227,7 @@ ShallowWrapper {
               <div
                 className="row components--button-box"
               >
-                <Connect(HideOrderButton) />
+                <Connect(CancelButton) />
               </div>
               <div
                 className="row components--list"
@@ -269,7 +269,7 @@ ShallowWrapper {
               <div
                 className="row components--button-box"
               >
-                <Connect(HideOrderButton) />
+                <Connect(CancelButton) />
               </div>
               <div
                 className="row components--list"
@@ -295,7 +295,7 @@ ShallowWrapper {
                 <div
                   className="row components--button-box"
                 >
-                  <Connect(HideOrderButton) />
+                  <Connect(CancelButton) />
                 </div>,
                 <div
                   className="row components--list"
@@ -318,7 +318,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <Connect(HideOrderButton) />,
+                  "children": <Connect(CancelButton) />,
                   "className": "row components--button-box",
                 },
                 "ref": null,

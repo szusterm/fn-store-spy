@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import BlackCurtain from '../../../../components/BlackCurtain';
-import HideOrderButton from '../HideOrderButton';
+import CancelButton from '../CancelButton';
 import OrderList from '../OrderList';
 import FullOrderCount from '../FullOrderCount';
 import ConfirmOrderButton from '../../../orderConfirming/components/SendOrderButton';
@@ -78,10 +78,10 @@ describe('Order Component', () => {
 		expect(showProp).toBe(props.listOpened);
 	});
 
-	it('renders HideOrderButton', () => {
+	it('renders CancelButton', () => {
 		const {wrapper} = setup();
 
-		expect(wrapper.find(HideOrderButton).exists()).toBe(true);
+		expect(wrapper.find(CancelButton).exists()).toBe(true);
 	});
 
 	it('renders OrderList', () => {

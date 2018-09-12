@@ -6,14 +6,14 @@ import {closeOrderList} from '../../actions';
 
 import './styles.scss';
 
-export class HideOrderButton extends Component {
+export class CancelButton extends Component {
 	render() {
 		const {closeOrderList} = this.props;
 
 		return (
 			<div className={'col-8'}>
 				<button
-					className={'hide-order-button'}
+					className={'cancel-button'}
 					onClick={closeOrderList}
 				>
 					<span className={'material-icons'}>close</span>
@@ -23,10 +23,10 @@ export class HideOrderButton extends Component {
 	}
 }
 
-HideOrderButton.propTypes = {
+CancelButton.propTypes = {
 	closeOrderList: PropTypes.func //redux
 };
 
 const mapDispatchToProps = {closeOrderList};
 
-export default connect(null, mapDispatchToProps)(HideOrderButton);
+export default connect(null, mapDispatchToProps)(CancelButton);

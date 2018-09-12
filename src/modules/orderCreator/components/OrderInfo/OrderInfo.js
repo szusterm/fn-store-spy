@@ -6,7 +6,7 @@ import {closeOrderList} from '../../actions';
 
 import OrderList from '../OrderList';
 import BlackCurtain from '../../../../components/BlackCurtain';
-import HideOrderButton from '../HideOrderButton';
+import HideOrderButton from '../CancelButton';
 import FullOrderCount from '../FullOrderCount';
 import SendOrderButton from '../../../orderConfirming/components/SendOrderButton';
 
