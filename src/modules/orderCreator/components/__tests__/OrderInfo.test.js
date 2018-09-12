@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import BlackCurtain from '../../../../components/BlackCurtain';
-import CancelButton from '../CancelButton';
+import CancelButton from '../../../../components/CancelButton';
 import OrderList from '../OrderList';
 import FullOrderCount from '../FullOrderCount';
 import ConfirmOrderButton from '../../../orderConfirming/components/SendOrderButton';
