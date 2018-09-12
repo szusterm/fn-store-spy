@@ -64,4 +64,16 @@ describe('Order Confirming Actions', () => {
 			expect(mockDispatch).toHaveBeenCalledTimes(0);
 		});
 	});
+
+	describe('hideEndingScreen()', () => {
+		it('calls reducer to hide order confirmation', () => {
+			const expectedChange = {
+				type: types.HIDE_ORDER_CONFIRMATION
+			};
+
+			const returnedChange = actions.hideEndingScreen(expectedChange.payload);
+
+			expect(returnedChange).toEqual(expectedChange);
+		});
+	});
 });
