@@ -2,6 +2,7 @@
 @import '~scss/_transition';
 @import '~scss/_shadow';
 @import '~scss/_center-items';
+@import '~scss/_opacity-colors';
 
 .messenger-link {
 	$messenger-color: #0084ff;
@@ -19,19 +20,32 @@
 	&--button {
 		@include default-input();
 		@include center-items();
+		flex-direction: row;
 
 
 		border: 1px solid $messenger-color;
 		background-color: $messenger-color;
-		color: white;
 		margin: 0;
 
+		@include white-color(1);
 		@include transition(sh);
 		@include shadow(sm);
 
 		&:hover {
-			background-color: white;
 			color: $messenger-color;
+			@include white-background(1);
+
+			.svg-icon--path {
+				fill: $messenger-color;
+			}
+		}
+	}
+
+	&--svg-icon {
+		width: 20%;
+
+		.svg-icon--path {
+			fill: white;
 		}
 	}
 }
