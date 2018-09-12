@@ -47,7 +47,7 @@ describe('SendOrderButton Component', () => {
 		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsIds);
 	});
 
-	it('makes disabled, during sending the order', async () => {
+	it('makes disabled, during sending the order', () => {
 		const {wrapper} = setup({
 			sendOrder: jest.fn(() => Promise.resolve(true))
 		});
