@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
 @import '~scss/_opacity-colors';
 @import '~scss/_transition';
 @import '~scss/_center-items';
@@ -11,6 +15,7 @@
 	z-index: 100;
 
 	width: 400px;
+	height: 80%;
 	padding: 50px 40px 5px;
 	border-radius: 10px;
 	transform: translate(-50%, -50%);
@@ -22,6 +27,12 @@
 	@include white-background(1);
 	@include transition(sh);
 	transition-property: opacity;
+
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+	};
 
 	&--hidden {
 		transform: translate(200%, 0);
@@ -45,8 +56,10 @@
 	}
 
 	&--code-copier-box {
-		margin-top: 30px;
-		margin-bottom: 70px;
+		justify-content: flex-start;
+		padding-top: 25px;
+		flex-basis: 0;
+		flex-grow: 1;
 	}
 
 	&--buttons {
