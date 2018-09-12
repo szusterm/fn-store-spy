@@ -4,6 +4,7 @@ import {shallow} from 'enzyme';
 import CodeCopier from '../CodeCopier';
 import CancelButton from '../../../../components/CancelButton';
 import BlackCurtain from '../../../../components/BlackCurtain';
+import MessengerLink from '../../../../components/MessengerLink';
 
 import {EndingScreen} from '../EndingScreen/EndingScreen';
 
@@ -71,5 +72,11 @@ describe('EndingScreen Component', () => {
 		const {wrapper} = setup();
 
 		expect(wrapper.find(CodeCopier).exists()).toBe(true);
+	});
+
+	it('renders MessengerLink', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(MessengerLink).exists()).toBe(true);
 	});
 });
