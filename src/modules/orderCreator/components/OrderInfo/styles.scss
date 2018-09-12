@@ -47,14 +47,14 @@
 			}
 
 			&--list {
-				height: 100%;
+				flex-basis: 0;
+				flex-grow: 1;
 			}
 
 			&--confirmation-box {
 				@include center-items();
-				justify-content: space-around;
 				padding-top: 5px;
-				padding-bottom: 60px;
+				padding-bottom: 15px;
 			}
 		}
 	}
