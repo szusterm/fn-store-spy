@@ -6,6 +6,7 @@ import {CodeCopier} from '../CodeCopier/CodeCopier';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
+		lastCopiedCode: 'fru',
 		code: 'fnh4y' //redux
 	}, propOverrides);
 
@@ -41,29 +42,37 @@ describe('CodeCopier Component', () => {
 		expect(textToCopy).toBe(props.code);
 	});
 
-	it('changes information text after copy', () => {
+	it('changes an information text, if the last copied code equals to the current code', () => {
 		const {wrapper} = setup();
 
 		const howToTextClass = '.info--how-to';
 		const copiedTextClass = '.info--copied';
 
+		wrapper.setState({lastCopiedCode: 'meme'});
+		wrapper.setProps({code: 'youe'});
+
 		expect(wrapper.find(howToTextClass).exists()).toBe(true);
 		expect(wrapper.find(copiedTextClass).exists()).toBe(false);
 
-		wrapper.setState({copied: true});
+		wrapper.setState({lastCopiedCode: 'ziu'});
+		wrapper.setProps({code: 'ziu'});
 
 		expect(wrapper.find(howToTextClass).exists()).toBe(false);
 		expect(wrapper.find(copiedTextClass).exists()).toBe(true);
 	});
 
-	it('changes information text after copy', () => {
+	it('changes the code background color, if the last copied code equals to the current code', () => {
 		const {wrapper} = setup();
 
 		const codeCopiedClass = '.code-copier--code--copied';
 
+		wrapper.setState({lastCopiedCode: 'meme'});
+		wrapper.setProps({code: 'youe'});
+
 		expect(wrapper.find(codeCopiedClass).exists()).toBe(false);
 
-		wrapper.setState({copied: true});
+		wrapper.setState({lastCopiedCode: 'ziu'});
+		wrapper.setProps({code: 'ziu'});
 
 		expect(wrapper.find(codeCopiedClass).exists()).toBe(true);
 	});
