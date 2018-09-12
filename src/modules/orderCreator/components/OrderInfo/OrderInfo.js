@@ -37,7 +37,7 @@ export class OrderInfo extends Component {
 				<div className={`order-info ${(!listOpened || this.isOrderEmpty()) && 'order-info--hidden'}`}>
 					<div className={'container-fluid order-info--components'}>
 						<div className={'row components--button-box'}>
-							<HideOrderButton/>
+							<HideOrderButton onClick={closeOrderList}/>
 						</div>
 						<div className={'row components--list'}>
 							<OrderList/>
