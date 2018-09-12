@@ -62,9 +62,11 @@ describe('SendOrderButton Component', () => {
 		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
 	});
 
-	it('makes disabled, during sending the order', () => {
+	it('makes disabled, during sending the order', async () => {
+		const promiseToReturn = Promise.resolve(true);
+
 		const {wrapper} = setup({
-			sendOrder: jest.fn(() => Promise.resolve(true))
+			sendOrder: jest.fn().mockReturnValueOnce(promiseToReturn)
 		});
 
 		expect(wrapper.find('button').props().disabled).toBe(false);
@@ -72,6 +74,11 @@ describe('SendOrderButton Component', () => {
 		wrapper.find('button').simulate('click');
 
 		expect(wrapper.find('button').props().disabled).toBe(true);
+
+		await promiseToReturn;
+
+		wrapper.update();
+		expect(wrapper.find('button').props().disabled).toBe(false);
 	});
 
 	it('makes disabled if the order is empty', () => {
