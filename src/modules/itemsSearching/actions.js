@@ -21,16 +21,12 @@ export const updateItems = () => async (dispatch, getState) => {
 	return !response.err;
 };
 
-export const setPageFilter = (page) => {
-	return {
-		type: types.SET_PAGE,
-		payload: page
-	};
-};
+export const setPageFilter = (page) => ({
+	type: types.SET_PAGE,
+	payload: page
+});
 
-export const setNameFilter = (name) => {
-	return {
-		type: types.SET_NAME,
-		payload: name
-	};
-};
+export const setNameFilter = (name) => ({
+	type: types.SET_NAME,
+	payload: name
+});
