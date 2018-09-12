@@ -19,15 +19,17 @@
 		flex-direction: row;
 
 
-		border: 1px solid $messenger-color;
+		border: 1px solid;
+		border-color: white;
 		background-color: $messenger-color;
 		margin: 0;
-		padding: 0 7px;
+		padding: 0 8px;
 
 		@include white-color(1);
 		@include transition(md);
 
 		&:hover, &:focus {
+			border-color: $messenger-color;
 			color: $messenger-color;
 			@include white-background(1);
 
@@ -40,7 +42,7 @@
 
 		.button {
 			&--svg-icon {
-				width: 36px;
+				width: 34px;
 
 				.svg-icon--path {
 					fill: white;
