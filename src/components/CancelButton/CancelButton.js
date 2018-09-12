@@ -8,14 +8,12 @@ export class CancelButton extends Component {
 		const {onClick} = this.props;
 
 		return (
-			<div className={'col-8'}>
-				<button
-					className={'cancel-button'}
-					onClick={onClick}
-				>
-					<span className={'material-icons'}>close</span>
-				</button>
-			</div>
+			<button
+				className={'cancel-button'}
+				onClick={onClick}
+			>
+				<span className={'material-icons'}>close</span>
+			</button>
 		);
 	}
 }
