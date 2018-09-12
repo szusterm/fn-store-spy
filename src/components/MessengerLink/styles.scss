@@ -7,7 +7,7 @@
 .messenger-link {
 	$messenger-color: #0084ff;
 
-	width: 100%;
+	margin: 10px 0;
 
 	&:hover {
 		text-decoration: none;
@@ -22,13 +22,12 @@
 		border: 1px solid $messenger-color;
 		background-color: $messenger-color;
 		margin: 0;
-		padding: 0 8px;
+		padding: 0 7px;
 
 		@include white-color(1);
-		@include transition(sh);
-		@include shadow(sm);
+		@include transition(md);
 
-		&:hover {
+		&:hover, &:focus {
 			color: $messenger-color;
 			@include white-background(1);
 
@@ -41,7 +40,7 @@
 
 		.button {
 			&--svg-icon {
-				width: 35px;
+				width: 36px;
 
 				.svg-icon--path {
 					fill: white;
@@ -49,7 +48,7 @@
 			}
 
 			&--title {
-				flex-grow: 1;
+				padding: 0 15px;
 
 				font-size: 1.1em;
 				font-weight: 400;

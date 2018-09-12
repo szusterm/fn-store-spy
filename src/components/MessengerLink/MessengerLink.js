@@ -23,7 +23,7 @@ export class MessengerLink extends Component {
 							/>
 						</g>
 					</svg>
-					<span className={'button--title'}>Go to Messenger</span>
+					<span className={'button--title'}>Messenger Bot</span>
 				</div>
 			</a>
 		);
