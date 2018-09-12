@@ -23,7 +23,7 @@ export class EndingScreen extends Component {
 				/>
 				<div className={`ending-screen ${(!endingScreenOpened) ? 'ending-screen--hidden' : ''}`}>
 					<div className={'ending-screen--prompt'}>
-						<h2 className={'prompt--text'}>Just send this code to the Messenger Bot</h2>
+						<h2 className={'prompt--text'}>Send this code to the bot</h2>
 					</div>
 					<div className={'ending-screen--code-copier-box'}>
 						<CodeCopier/>

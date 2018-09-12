@@ -15,8 +15,8 @@
 	z-index: 100;
 
 	width: 400px;
-	height: 80%;
-	padding: 50px 40px 5px;
+	height: 70%;
+	padding: 40px 30px 5px;
 	border-radius: 10px;
 	transform: translate(-50%, -50%);
 
@@ -45,8 +45,8 @@
 		.prompt--text {
 			text-align: center;
 			font-weight: 300;
-			font-size: 2em;
-			@include black-color(0.5);
+			font-size: 1.6em;
+			@include black-color(0.6);
 		}
 	}
 
@@ -57,12 +57,12 @@
 
 	&--code-copier-box {
 		justify-content: flex-start;
-		padding-top: 25px;
+		padding-top: 15px;
 		flex-basis: 0;
 		flex-grow: 1;
 	}
 
 	&--buttons {
-		padding: 20px 40px 0;
+		padding: 20px 20px 0;
 	}
 }
