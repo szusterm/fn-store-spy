@@ -22,7 +22,7 @@ const setup = (propOverrides) => {
 	return {props, wrapper};
 };
 
-describe('Order Component', () => {
+describe('OrderInfo Component', () => {
 	it('renders correctly', () => {
 		const {wrapper} = setup();
 
@@ -78,10 +78,15 @@ describe('Order Component', () => {
 		expect(showProp).toBe(props.listOpened);
 	});
 
-	it('renders CancelButton', () => {
-		const {wrapper} = setup();
+	it('hides if CancelButton calls onClick callback', () => {
+		const {wrapper, props} = setup({
+			items: ['item3'],
+			closeOrderList: jest.fn()
+		});
 
-		expect(wrapper.find(CancelButton).exists()).toBe(true);
+		wrapper.find(CancelButton).props().onClick();
+
+		expect(props.closeOrderList).toHaveBeenCalledTimes(1);
 	});
 
 	it('renders OrderList', () => {
