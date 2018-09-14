@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessengerLink Component renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MessengerLink
+    reversed={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="messenger-link--button "
+      >
+        <svg
+          className="button--svg-icon"
+          role="img"
+          viewBox="0 0 213.25417 213.25417"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            transform="translate(0 -83.746)"
+          >
+            <path
+              className="svg-icon--path"
+              d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+            />
+          </g>
+        </svg>
+        <span
+          className="button--title"
+        >
+          Messenger Bot
+        </span>
+      </div>,
+      "className": "messenger-link",
+      "href": "#",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <svg
+            className="button--svg-icon"
+            role="img"
+            viewBox="0 0 213.25417 213.25417"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              transform="translate(0 -83.746)"
+            >
+              <path
+                className="svg-icon--path"
+                d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+              />
+            </g>
+          </svg>,
+          <span
+            className="button--title"
+          >
+            Messenger Bot
+          </span>,
+        ],
+        "className": "messenger-link--button ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <g
+              transform="translate(0 -83.746)"
+            >
+              <path
+                className="svg-icon--path"
+                d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+              />
+            </g>,
+            "className": "button--svg-icon",
+            "role": "img",
+            "viewBox": "0 0 213.25417 213.25417",
+            "xmlns": "http://www.w3.org/2000/svg",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <path
+                className="svg-icon--path"
+                d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+              />,
+              "transform": "translate(0 -83.746)",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "svg-icon--path",
+                "d": "m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "path",
+            },
+            "type": "g",
+          },
+          "type": "svg",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Messenger Bot",
+            "className": "button--title",
+          },
+          "ref": null,
+          "rendered": "Messenger Bot",
+          "type": "span",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "a",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="messenger-link--button "
+        >
+          <svg
+            className="button--svg-icon"
+            role="img"
+            viewBox="0 0 213.25417 213.25417"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              transform="translate(0 -83.746)"
+            >
+              <path
+                className="svg-icon--path"
+                d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+              />
+            </g>
+          </svg>
+          <span
+            className="button--title"
+          >
+            Messenger Bot
+          </span>
+        </div>,
+        "className": "messenger-link",
+        "href": "#",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <svg
+              className="button--svg-icon"
+              role="img"
+              viewBox="0 0 213.25417 213.25417"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                transform="translate(0 -83.746)"
+              >
+                <path
+                  className="svg-icon--path"
+                  d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+                />
+              </g>
+            </svg>,
+            <span
+              className="button--title"
+            >
+              Messenger Bot
+            </span>,
+          ],
+          "className": "messenger-link--button ",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <g
+                transform="translate(0 -83.746)"
+              >
+                <path
+                  className="svg-icon--path"
+                  d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+                />
+              </g>,
+              "className": "button--svg-icon",
+              "role": "img",
+              "viewBox": "0 0 213.25417 213.25417",
+              "xmlns": "http://www.w3.org/2000/svg",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <path
+                  className="svg-icon--path"
+                  d="m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z"
+                />,
+                "transform": "translate(0 -83.746)",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "svg-icon--path",
+                  "d": "m106.63 83.746a106.63 106.63 0 0 0 -106.63 106.63 106.63 106.63 0 0 0 106.63 106.63 106.63 106.63 0 0 0 106.63 -106.63 106.63 106.63 0 0 0 -106.63 -106.63zm69.466 75.368-58.237 61.795-27.604-28.661-53.092 29.383 58.238-61.796 27.604 28.662z",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "path",
+              },
+              "type": "g",
+            },
+            "type": "svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Messenger Bot",
+              "className": "button--title",
+            },
+            "ref": null,
+            "rendered": "Messenger Bot",
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "a",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
