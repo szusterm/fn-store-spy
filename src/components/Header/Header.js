@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 
 import MessengerLink from '../MessengerLink';
 
-import Logo from '../Logo';
-
 import './styles.scss';
 
 export class Header extends Component {
@@ -12,9 +10,10 @@ export class Header extends Component {
 			<header>
 				<div className={'header'}>
 					<div className={'header--site-info'}>
-						<div className={'site-info--logo-box'}>
-							<Logo/>
-						</div>
+						<img
+							className={'site-info--logo'}
+							src={'../images/logo.svg'}
+						/>
 						<h1 className={'site-info--text'}>
 							<span className={'site-info--text--bold'}>Hello. </span>
 							Welcome to StoreSpy.<br/>
