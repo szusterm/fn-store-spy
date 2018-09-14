@@ -38,12 +38,12 @@ class Api {
 		return await this.callApiRequest(requestData);
 	}
 
-	async addOrder(itemsIds) {
+	async addOrder(itemsFnbrIds) {
 		const requestData = {
 			method: 'post',
 			url: '/order/add',
 			data: {
-				itemsIds
+				itemsFnbrIds
 			}
 		};
 

@@ -95,7 +95,7 @@ describe('API', () => {
 			method: 'post',
 			url: '/order/add',
 			data: {
-				itemsIds: ['45y5y', '7i7k7k']
+				itemsFnbrIds: ['45y5y', '7i7k7k']
 			}
 		};
 
@@ -104,7 +104,7 @@ describe('API', () => {
 		afterEach(() => mockCallApiRequest.mockRestore());
 
 		it('sends request through callApiRequest() with items ids', async () => {
-			await api.addOrder(requestData.data.itemsIds);
+			await api.addOrder(requestData.data.itemsFnbrIds);
 
 			expect(mockCallApiRequest).toHaveBeenCalledWith(requestData);
 		});
