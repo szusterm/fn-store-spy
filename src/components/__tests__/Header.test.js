@@ -1,6 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
+import MessengerLink from '../MessengerLink';
+
 import {Header} from '../Header/Header';
 
 const setup = (propOverrides) => {
@@ -16,5 +18,19 @@ describe('Header Component', () => {
 		const {wrapper} = setup();
 
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('renders MessengerLink', () => {
+		const {wrapper} = setup();
+
+		expect(wrapper.find(MessengerLink).exists()).toBe(true);
+	});
+
+	it('puts reversed prop to MessengerLink', () => {
+		const {wrapper} = setup();
+
+		const reversed = wrapper.find(MessengerLink).props().reversed;
+
+		expect(reversed).toBe(true);
 	});
 });
