@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const ItemSchema = new mongoose.Schema({
+	fnbrId: String,
 	name: String,
 	type: String,
 	rarity: String,
