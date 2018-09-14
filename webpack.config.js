@@ -1,11 +1,10 @@
 require('babel-polyfill');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: ['babel-polyfill', './src/index.js'],
 	output: {
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, 'public/dist'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -33,11 +32,5 @@ module.exports = {
 		alias: {
 			'scss': path.resolve(__dirname, './src/scss')
 		}
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Fn Store Spy',
-			template: './src/index.html'
-		})
-	]
+	}
 };
