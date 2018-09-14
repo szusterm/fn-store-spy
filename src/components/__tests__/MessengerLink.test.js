@@ -19,4 +19,16 @@ describe('MessengerLink Component', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('changes styles, if reversed prop is true', () => {
+		const {wrapper} = setup();
+
+		const reversedClass = '.messenger-link--button--reversed';
+
+		wrapper.setProps({reversed: false});
+		expect(wrapper.find(reversedClass).exists()).toBe(false);
+
+		wrapper.setProps({reversed: true});
+		expect(wrapper.find(reversedClass).exists()).toBe(true);
+	});
 });
