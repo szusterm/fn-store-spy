@@ -9,6 +9,7 @@ ShallowWrapper {
       Array [
         Object {
           "_id": "3h5i34uh53i4",
+          "fnbrId": "6u69uj6kuj",
           "imageSrc": "https://example.com",
           "name": "Super Axe",
           "price": "2000",
@@ -17,6 +18,7 @@ ShallowWrapper {
         },
         Object {
           "_id": "56b7h8678b",
+          "fnbrId": "4395ytj4f905",
           "imageSrc": "https://example.pl",
           "name": "Something",
           "price": "800",
@@ -45,7 +47,7 @@ ShallowWrapper {
           className="row no-gutter"
         >
           <Connect(ItemSearchCard)
-            _id="3h5i34uh53i4"
+            fnbrId="6u69uj6kuj"
             imageSrc="https://example.com"
             name="Super Axe"
             price="2000"
@@ -53,7 +55,7 @@ ShallowWrapper {
             type="axe"
           />
           <Connect(ItemSearchCard)
-            _id="56b7h8678b"
+            fnbrId="4395ytj4f905"
             imageSrc="https://example.pl"
             name="Something"
             price="800"
@@ -74,7 +76,7 @@ ShallowWrapper {
           className="row no-gutter"
         >
           <Connect(ItemSearchCard)
-            _id="3h5i34uh53i4"
+            fnbrId="6u69uj6kuj"
             imageSrc="https://example.com"
             name="Super Axe"
             price="2000"
@@ -82,7 +84,7 @@ ShallowWrapper {
             type="axe"
           />
           <Connect(ItemSearchCard)
-            _id="56b7h8678b"
+            fnbrId="4395ytj4f905"
             imageSrc="https://example.pl"
             name="Something"
             price="800"
@@ -100,7 +102,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Connect(ItemSearchCard)
-              _id="3h5i34uh53i4"
+              fnbrId="6u69uj6kuj"
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -108,7 +110,7 @@ ShallowWrapper {
               type="axe"
             />,
             <Connect(ItemSearchCard)
-              _id="56b7h8678b"
+              fnbrId="4395ytj4f905"
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -125,7 +127,7 @@ ShallowWrapper {
             "key": "3h5i34uh53i4",
             "nodeType": "class",
             "props": Object {
-              "_id": "3h5i34uh53i4",
+              "fnbrId": "6u69uj6kuj",
               "imageSrc": "https://example.com",
               "name": "Super Axe",
               "price": "2000",
@@ -141,7 +143,7 @@ ShallowWrapper {
             "key": "56b7h8678b",
             "nodeType": "class",
             "props": Object {
-              "_id": "56b7h8678b",
+              "fnbrId": "4395ytj4f905",
               "imageSrc": "https://example.pl",
               "name": "Something",
               "price": "800",
@@ -172,7 +174,7 @@ ShallowWrapper {
             className="row no-gutter"
           >
             <Connect(ItemSearchCard)
-              _id="3h5i34uh53i4"
+              fnbrId="6u69uj6kuj"
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -180,7 +182,7 @@ ShallowWrapper {
               type="axe"
             />
             <Connect(ItemSearchCard)
-              _id="56b7h8678b"
+              fnbrId="4395ytj4f905"
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -201,7 +203,7 @@ ShallowWrapper {
             className="row no-gutter"
           >
             <Connect(ItemSearchCard)
-              _id="3h5i34uh53i4"
+              fnbrId="6u69uj6kuj"
               imageSrc="https://example.com"
               name="Super Axe"
               price="2000"
@@ -209,7 +211,7 @@ ShallowWrapper {
               type="axe"
             />
             <Connect(ItemSearchCard)
-              _id="56b7h8678b"
+              fnbrId="4395ytj4f905"
               imageSrc="https://example.pl"
               name="Something"
               price="800"
@@ -227,7 +229,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Connect(ItemSearchCard)
-                _id="3h5i34uh53i4"
+                fnbrId="6u69uj6kuj"
                 imageSrc="https://example.com"
                 name="Super Axe"
                 price="2000"
@@ -235,7 +237,7 @@ ShallowWrapper {
                 type="axe"
               />,
               <Connect(ItemSearchCard)
-                _id="56b7h8678b"
+                fnbrId="4395ytj4f905"
                 imageSrc="https://example.pl"
                 name="Something"
                 price="800"
@@ -252,7 +254,7 @@ ShallowWrapper {
               "key": "3h5i34uh53i4",
               "nodeType": "class",
               "props": Object {
-                "_id": "3h5i34uh53i4",
+                "fnbrId": "6u69uj6kuj",
                 "imageSrc": "https://example.com",
                 "name": "Super Axe",
                 "price": "2000",
@@ -268,7 +270,7 @@ ShallowWrapper {
               "key": "56b7h8678b",
               "nodeType": "class",
               "props": Object {
-                "_id": "56b7h8678b",
+                "fnbrId": "4395ytj4f905",
                 "imageSrc": "https://example.pl",
                 "name": "Something",
                 "price": "800",
