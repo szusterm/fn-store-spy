@@ -96,8 +96,8 @@ describe('Order Factory', () => {
 		it('returns items array ready to add to an order', () => {
 			const itemsIds = ['123', '666'];
 			const readyItemsIds = [
-				{id: itemsIds[0], done: false},
-				{id: itemsIds[1], done: false}
+				{fnbrId: itemsIds[0], done: false},
+				{fnbrId: itemsIds[1], done: false}
 			];
 
 			const returnedItemsArray = order._createItemsArray(itemsIds);

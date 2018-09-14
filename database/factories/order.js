@@ -2,9 +2,9 @@ const OrderModel = require('../models/order.model');
 const getObject = require('../../helpers/getResponseObject');
 
 class Order {
-	async add(itemIds = [], code) {
+	async add(itemFnbrIds = [], code) {
 		try {
-			const items = this._createItemsArray(itemIds);
+			const items = this._createItemsArray(itemFnbrIds);
 
 			const order = new OrderModel({
 				code,
@@ -40,11 +40,11 @@ class Order {
 		}
 	}
 
-	_createItemsArray(itemIds) {
+	_createItemsArray(itemFnbrIds) {
 		const items = [];
-		for(const itemId of itemIds) {
+		for(const itemId of itemFnbrIds) {
 			items.push({
-				id: itemId,
+				fnbrId: itemId,
 				done: false
 			});
 		}
