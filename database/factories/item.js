@@ -33,6 +33,7 @@ class Item {
 	_getFilterFunctions() {
 		return {
 			ids: (data) => this._filterByIds(data),
+			fnbrIds: (data) => this._filterByFnbrIds(data),
 			name: (data) => this._filterByNameContainingText(data),
 			names: (data) => this._filterByNames(data),
 			type: (data) => this._filterByType(data),
@@ -44,6 +45,13 @@ class Item {
 	_filterByIds(ids = null) {
 		if (ids) {
 			this._findingQuery.where('_id').in(ids);
+		}
+		return this._getFilterFunctions();
+	}
+
+	_filterByFnbrIds(ids = null) {
+		if (ids) {
+			this._findingQuery.where('fnbrId').in(ids);
 		}
 		return this._getFilterFunctions();
 	}
