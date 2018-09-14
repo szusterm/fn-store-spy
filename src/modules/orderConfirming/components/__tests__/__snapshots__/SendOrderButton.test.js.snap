@@ -10,11 +10,13 @@ ShallowWrapper {
     orderedItems={
       Array [
         Object {
-          "_id": "45y5tnr5",
+          "_id": "ipym596h",
+          "fnbrId": "45y5tnr5",
           "name": "Something",
         },
         Object {
-          "_id": "56ug657i",
+          "_id": "34t3095tj",
+          "fnbrId": "56ug657i",
           "name": "Axe",
         },
       ]

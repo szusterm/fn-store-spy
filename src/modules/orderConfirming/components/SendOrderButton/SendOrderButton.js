@@ -33,7 +33,7 @@ export class SendOrderButton extends Component {
 		const {orderedItems} = this.props;
 
 		const itemsIds = [];
-		for (const {_id: orderedItemId} of orderedItems) {
+		for (const {fnbrId: orderedItemId} of orderedItems) {
 			itemsIds.push(orderedItemId);
 		}
 

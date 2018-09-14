@@ -3,15 +3,17 @@ import {shallow} from 'enzyme';
 
 import {SendOrderButton} from '../SendOrderButton/SendOrderButton';
 
-const orderedItemsIds = ['45y5tnr5', '56ug657i'];
+const orderedItemsFnbrIds = ['45y5tnr5', '56ug657i'];
 
 const orderedItems = [
 	{
-		_id: orderedItemsIds[0],
+		_id: 'ipym596h',
+		fnbrId: orderedItemsFnbrIds[0],
 		name: 'Something'
 	},
 	{
-		_id: orderedItemsIds[1],
+		_id: '34t3095tj',
+		fnbrId: orderedItemsFnbrIds[1],
 		name: 'Axe'
 	}
 ];
@@ -44,7 +46,7 @@ describe('SendOrderButton Component', () => {
 
 		wrapper.find('button').simulate('click');
 
-		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsIds);
+		expect(props.sendOrder).toHaveBeenCalledWith(orderedItemsFnbrIds);
 	});
 
 	it('closes OrderInfo after send the order', async () => {
