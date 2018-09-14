@@ -16,6 +16,6 @@ module.exports = async (data) => {
 		}
 	}
 	catch (error) {
-		return getResponseObject(true, error);
+		return getResponseObject(true, error.message);
 	}
 };
