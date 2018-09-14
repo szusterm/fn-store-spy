@@ -6,9 +6,33 @@
 	$messenger-color: #0084ff;
 
 	margin: 10px 0;
+	outline: none !important;
 
-	&:hover {
+	&:hover, &:focus {
 		text-decoration: none;
+
+		.messenger-link--button {
+			border-color: $messenger-color;
+			background-color: white;
+			color: $messenger-color;
+
+			.button--svg-icon {
+				.svg-icon--path {
+					fill: $messenger-color;
+				}
+			}
+
+			&--reversed {
+				background-color: $messenger-color;
+				color: white;
+
+				.button--svg-icon {
+					.svg-icon--path {
+						fill: white;
+					}
+				}
+			}
+		}
 	}
 
 	&--button {
@@ -24,18 +48,6 @@
 		padding: 0 8px;
 
 		@include transition(md);
-
-		&:hover, &:focus {
-			border-color: $messenger-color;
-			background-color: white;
-			color: $messenger-color;
-
-			.button--svg-icon {
-				.svg-icon--path {
-					fill: $messenger-color;
-				}
-			}
-		}
 
 		.button {
 			&--svg-icon {
@@ -60,17 +72,6 @@
 
 			background-color: white;
 			color: $messenger-color;
-
-			&:hover, &:focus {
-				background-color: $messenger-color;
-				color: white;
-
-				.button--svg-icon {
-					.svg-icon--path {
-						fill: white;
-					}
-				}
-			}
 
 			.button {
 				&--svg-icon {
