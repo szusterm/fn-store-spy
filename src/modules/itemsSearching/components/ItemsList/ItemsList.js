@@ -15,12 +15,12 @@ export class ItemsList extends Component {
 					<div className={'row no-gutter'}>
 						{
 							items.map((item) => {
-								const {_id, name, price, rarity, type, imageSrc} = item;
+								const {_id, fnbrId, name, price, rarity, type, imageSrc} = item;
 
 								return (
 									<ItemCard
 										key={_id}
-										_id={_id}
+										fnbrId={fnbrId}
 										name={name}
 										price={price}
 										rarity={rarity}

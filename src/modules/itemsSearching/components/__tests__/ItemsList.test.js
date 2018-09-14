@@ -8,6 +8,7 @@ import ItemCard from '../ItemSearchCard';
 const exampleItemsList = [
 	{
 		_id: '3h5i34uh53i4',
+		fnbrId: '6u69uj6kuj',
 		name: 'Super Axe',
 		price: '2000',
 		rarity: 'uncommon',
@@ -16,6 +17,7 @@ const exampleItemsList = [
 	},
 	{
 		_id: '56b7h8678b',
+		fnbrId: '4395ytj4f905',
 		name: 'Something',
 		price: '800',
 		rarity: 'rare',
@@ -57,6 +59,8 @@ describe('ItemsList Component', () => {
 		});
 
 		for (const [index, itemProps] of props.items.entries()) {
+			delete itemProps._id;
+
 			const itemCardIns = wrapper.find(ItemCard).at(index);
 			expect(itemCardIns.props()).toEqual({...itemProps});
 		}
