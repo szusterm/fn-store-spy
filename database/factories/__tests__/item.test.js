@@ -114,6 +114,19 @@ describe('Item Factory', () => {
 		it(returningFilters.description, () => returningFilters.test('_filterByIds'));
 	});
 
+	describe('_filterByFnbrIds()', () => {
+		it('adds an fnbrId filter with an fnbr ids array', () => {
+			const ids = ['123', '432'];
+
+			item._filterByFnbrIds(ids);
+
+			expect(ItemModel.where).toHaveBeenCalledWith('fnbrId');
+			expect(ItemModel.in).toHaveBeenCalledWith(ids);
+		});
+
+		it(returningFilters.description, () => returningFilters.test('_filterByFnbrIds'));
+	});
+
 	describe('_filterByNameContainingText()', () => {
 		let mockGetNameRegExp;
 		beforeEach(() => mockGetNameRegExp = jest.spyOn(item, '_getNameRegExp'));
