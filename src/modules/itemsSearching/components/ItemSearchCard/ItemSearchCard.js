@@ -7,7 +7,6 @@ import {addItemToOrder, removeItemFromOrderByIndex} from '../../../orderCreator/
 import ItemCoin from '../../../../components/ItemCoin';
 
 import './styles.scss';
-import orderCreator from "../../../orderCreator/reducer";
 
 export class ItemSearchCard extends Component {
 	constructor() {
@@ -18,13 +17,13 @@ export class ItemSearchCard extends Component {
 	}
 
 	switchOrder() {
-		const {_id, name, rarity, imageSrc} = this.props;
+		const {fnbrId, name, rarity, imageSrc} = this.props;
 
 		const indexInOrder = this.getIndexInOrder();
 
 		if (indexInOrder === null) {
 			const item = {
-				_id,
+				fnbrId,
 				name,
 				rarity,
 				imageSrc
@@ -38,13 +37,13 @@ export class ItemSearchCard extends Component {
 	}
 
 	getIndexInOrder() {
-		const {_id} = this.props;
+		const {fnbrId} = this.props;
 		const {orderedItems} = this.props;
 
 		let indexInOrder = null;
 
 		orderedItems.find((orderedItem, orderedItemIndex) => {
-			if (_id === orderedItem._id) {
+			if (fnbrId === orderedItem.fnbrId) {
 				indexInOrder = orderedItemIndex;
 			}
 		});
@@ -94,7 +93,7 @@ export class ItemSearchCard extends Component {
 }
 
 ItemSearchCard.propTypes = {
-	_id: PropTypes.string.isRequired,
+	fnbrId: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,

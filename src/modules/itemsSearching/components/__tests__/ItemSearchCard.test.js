@@ -7,7 +7,7 @@ import {ItemSearchCard} from '../ItemSearchCard/ItemSearchCard';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		_id: 'eg8er3478e',
+		fnbrId: 'eg8er3478e',
 		name: 'Super Axe',
 		price: '2000',
 		rarity: 'uncommon',
@@ -80,9 +80,9 @@ describe('ItemSearchCard Component', () => {
 		expect(imageSrcInItemCoin).toBe(props.imageSrc);
 	});
 
-	it('after click the component, adds the item to an order, if it is not ordered', () => {
+	it('after click the component, adds the item to the order, if it is not ordered', () => {
 		const {wrapper, props} = setup({
-			_id: 'abc45g',
+			fnbrId: 'abc45g',
 			addItemToOrder: jest.fn(),
 			orderedItems: []
 		});
@@ -92,13 +92,13 @@ describe('ItemSearchCard Component', () => {
 		expect(props.addItemToOrder).toHaveBeenCalledTimes(1);
 	});
 
-	it('after click the component, removes the item from an order, if it is ordered', () => {
+	it('after click the component, removes the item from the order, if it is ordered', () => {
 		const {wrapper, props} = setup({
-			_id: 'superid',
+			fnbrId: 'superid',
 			removeItemFromOrderByIndex: jest.fn(),
 			orderedItems: [
-				{_id: 'xddd'},
-				{_id: 'superid'}
+				{fnbrId: 'xddd'},
+				{fnbrId: 'superid'}
 			]
 		});
 
@@ -109,7 +109,7 @@ describe('ItemSearchCard Component', () => {
 
 	it('shows confirmation, if the item is ordered', () => {
 		const {wrapper, props} = setup({
-			_id: 'superid',
+			fnbrId: 'superid',
 			orderedItems: []
 		});
 
@@ -125,7 +125,7 @@ describe('ItemSearchCard Component', () => {
 		expect(iconWithoutOrder).not.toBe(confirmationIcon);
 
 		wrapper.setProps({
-			orderedItems: [{_id: props._id}]
+			orderedItems: [{fnbrId: props.fnbrId}]
 		});
 
 		const confirmationWithOrder = wrapper.find(confirmationClass);

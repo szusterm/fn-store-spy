@@ -5,8 +5,8 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ItemSearchCard
-    _id="eg8er3478e"
     addItemToOrder={[Function]}
+    fnbrId="eg8er3478e"
     imageSrc="https://example.com"
     name="Super Axe"
     orderedItems={Array []}
