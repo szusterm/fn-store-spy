@@ -13,17 +13,6 @@ class Shop {
 		}
 	}
 
-	async _updateItemsWithDatabase(itemsNames) {
-		const response = await item.find().names(itemsNames).exec();
-		if (!response.err) {
-			this._items = response.data;
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
 	_getMergedFeaturedAndDaily(shop) {
 		const {featured, daily} = shop;
 
