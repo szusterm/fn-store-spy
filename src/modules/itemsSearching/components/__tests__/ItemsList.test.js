@@ -53,6 +53,17 @@ describe('ItemsList Component', () => {
 		expect(items.length).toBe(props.items.length);
 	});
 
+	it('passes _id as a key prop to every ItemSearchCard', () => {
+		const {wrapper, props} = setup({
+			items: exampleItemsList
+		});
+
+		for (const [index, itemProps] of props.items.entries()) {
+			const itemCardIns = wrapper.find(ItemCard).at(index);
+			expect(itemCardIns.key()).toEqual(itemProps._id);
+		}
+	});
+
 	it('passes props to every ItemSearchCard', () => {
 		const {wrapper, props} = setup({
 			items: exampleItemsList
