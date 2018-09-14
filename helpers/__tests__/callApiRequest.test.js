@@ -1,4 +1,4 @@
-const api = require('../../services/fnbr/api');
+const callApiRequest = require('../callApiRequest');
 const axios = require('axios');
 const getResponseObject = require('../getResponseObject');
 const isRequestSuccessful = require('../isRequestSuccessful');
@@ -19,7 +19,7 @@ describe('callApiRequest()', () => {
 	};
 
 	it('calls request with a passed data', async () => {
-		await api.callApiRequest(exampleRequestData);
+		await callApiRequest(exampleRequestData);
 
 		expect(axios).toHaveBeenCalledWith(exampleRequestData);
 	});
@@ -33,7 +33,7 @@ describe('callApiRequest()', () => {
 		axios.mockReturnValueOnce(Promise.resolve(exampleResponse));
 		isRequestSuccessful.mockReturnValueOnce(true);
 
-		await api.callApiRequest(exampleRequestData);
+		await callApiRequest(exampleRequestData);
 
 		expect(getResponseObject).toHaveBeenCalledWith(false, exampleResponse.data);
 	});
@@ -46,13 +46,13 @@ describe('callApiRequest()', () => {
 
 		axios.mockReturnValueOnce(Promise.resolve(exampleErrorResponse));
 		isRequestSuccessful.mockReturnValueOnce(false);
-		await api.callApiRequest(exampleRequestData);
+		await callApiRequest(exampleRequestData);
 
 		expect(getResponseObject).toHaveBeenCalledWith(true, exampleErrorResponse.data);
 
 		axios.mockReturnValueOnce(Promise.reject(exampleErrorResponse));
 		isRequestSuccessful.mockReturnValueOnce(false);
-		await api.callApiRequest(exampleRequestData);
+		await callApiRequest(exampleRequestData);
 
 		expect(getResponseObject).toHaveBeenCalledWith(true, exampleErrorResponse.data);
 	});
