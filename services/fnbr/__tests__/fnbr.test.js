@@ -1,5 +1,5 @@
-const fetchShop = require('../fnbr/fetchShop');
-const callApiRequest = require('../../helpers/callApiRequest');
+const fetchShop = require('../fetchShop');
+const callApiRequest = require('../../../helpers/callApiRequest');
 
 jest.mock('../../helpers/callApiRequest');
 
