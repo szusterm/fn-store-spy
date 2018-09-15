@@ -75,14 +75,14 @@ describe('Shop Controller', () => {
 			});
 		});
 
-		describe('ids', () => {
-			it('returns an items ids array', () => {
+		describe('fnbrIds', () => {
+			it('returns an items fnbr ids array', () => {
 				const itemsIds = [
 					items[0].id,
 					items[1].id
 				];
 
-				expect(shop.ids).toEqual(itemsIds);
+				expect(shop.fnbrIds).toEqual(itemsIds);
 			});
 		});
 
