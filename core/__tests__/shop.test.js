@@ -15,7 +15,8 @@ describe('Shop Controller', () => {
 			err: false,
 			data: {
 				data: {
-					items: []
+					featured: ['item0'],
+					daily: ['item65']
 				}
 			}
 		};
@@ -29,17 +30,26 @@ describe('Shop Controller', () => {
 		});
 
 		it('calls fetchShop() from fnbr api to get the current store offer', async () => {
-			const exampleItems = [
-				{name: 'Some Axe'},
-				{name: 'Super Backapck'}
-			];
-
 			fetchShop.mockReturnValueOnce(Promise.resolve(exampleFetchShopResponse));
 			mockGetMergedFeaturedAndDaily.mockReturnValueOnce([]);
 
 			await shop.update();
 
 			expect(fetchShop).toHaveBeenCalledTimes(1);
+		});
+
+		it('updates _items with returned value of _getMergedFeaturedAndDaily()', async () => {
+			const {featured, daily} = exampleFetchShopResponse.data.data;
+			const itemsToReturn = [...featured, ...daily];
+
+			shop._items = [];
+
+			fetchShop.mockReturnValueOnce(Promise.resolve(exampleFetchShopResponse));
+			mockGetMergedFeaturedAndDaily.mockReturnValueOnce(itemsToReturn);
+
+			await shop.update();
+
+			expect(shop._items).toEqual(itemsToReturn);
 		});
 	});
 
