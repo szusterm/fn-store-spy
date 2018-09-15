@@ -1,7 +1,7 @@
 const fetchShop = require('../fetchShop');
 const callApiRequest = require('../../../helpers/callApiRequest');
 
-jest.mock('../../helpers/callApiRequest');
+jest.mock('../../../helpers/callApiRequest');
 
 describe('fetchShop()', () => {
 	beforeEach(() => {
