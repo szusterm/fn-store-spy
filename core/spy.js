@@ -12,7 +12,7 @@ class Spy {
 
 		for (const {items} of matchingOrders) {
 			for (const {id, done} of items) {
-				if (!done && shop.ids.includes(id)) {
+				if (!done && shop.fnbrIds.includes(id)) {
 					onMatch();
 					console.log('Got:', id);
 				}
@@ -21,7 +21,7 @@ class Spy {
 	}
 
 	async _getOrdersMatchingToOffer() {
-		const offeredItemsIds = shop.ids;
+		const offeredItemsIds = shop.fnbrIds;
 		const response = await order.findMatchingByIds(offeredItemsIds);
 		if (!response.err) {
 			return response.data;

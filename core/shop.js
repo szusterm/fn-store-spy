@@ -23,7 +23,7 @@ class Shop {
 		return this._items;
 	}
 
-	get ids() {
+	get fnbrIds() {
 		const ids = [];
 		for (const {id} of this._items) {
 			ids.push(id);
