@@ -38,7 +38,7 @@ describe('Shop Controller', () => {
 			expect(fetchShop).toHaveBeenCalledTimes(1);
 		});
 
-		it('updates _items with returned value of _getMergedFeaturedAndDaily()', async () => {
+		it('updates _items with returned value of _getMergedFeaturedAndDaily(), if it is no error', async () => {
 			const {featured, daily} = exampleFetchShopResponse.data.data;
 			const itemsToReturn = [...featured, ...daily];
 
