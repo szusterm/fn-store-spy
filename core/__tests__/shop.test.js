@@ -1,7 +1,9 @@
 const shop = require('../shop');
 const itemFactory = require('../../database/factories/item');
+const fetchShop = require('../../services/fnbr/fetchShop');
 
 jest.mock('../../database/factories/item');
+jest.mock('../../services/fnbr/fetchShop');
 
 describe('Shop Controller', () => {
 	beforeEach(() => {
@@ -9,39 +11,35 @@ describe('Shop Controller', () => {
 	});
 
 	describe('update()', () => {
-		let mockUpdateItemsWithDatabase;
-		let mockGetNamesFromObjects;
+		const exampleFetchShopResponse = {
+			err: false,
+			data: {
+				data: {
+					items: []
+				}
+			}
+		};
+
+		let mockGetMergedFeaturedAndDaily;
 		beforeEach(() => {
-			mockUpdateItemsWithDatabase = jest.spyOn(shop, '_updateItemsWithDatabase');
-			mockGetNamesFromObjects = jest.spyOn(shop, '_getNamesFromObjects');
+			mockGetMergedFeaturedAndDaily = jest.spyOn(shop, '_getMergedFeaturedAndDaily');
 		});
 		afterEach(() => {
-			mockUpdateItemsWithDatabase.mockRestore();
-			mockGetNamesFromObjects.mockRestore();
+			mockGetMergedFeaturedAndDaily.mockRestore();
 		});
 
-		it('updates a shop offer', async () => {
+		it('calls fetchShop() from fnbr api to get the current store offer', async () => {
 			const exampleItems = [
 				{name: 'Some Axe'},
 				{name: 'Super Backapck'}
 			];
-			const itemsNamesArray = [
-				exampleItems[0].name,
-				exampleItems[1].name
-			];
 
-			shop._items = [];
-			mockUpdateItemsWithDatabase.mockImplementationOnce(() => {
-				shop._items = exampleItems;
-				return true;
-			});
-			mockGetNamesFromObjects.mockReturnValueOnce(itemsNamesArray);
+			fetchShop.mockReturnValueOnce(Promise.resolve(exampleFetchShopResponse));
+			mockGetMergedFeaturedAndDaily.mockReturnValueOnce([]);
 
-			const response = await shop.update();
+			await shop.update();
 
-			expect(shop._items).toEqual(exampleItems);
-			expect(response).toBeTruthy();
-			expect(mockUpdateItemsWithDatabase).toHaveBeenCalledWith(itemsNamesArray);
+			expect(fetchShop).toHaveBeenCalledTimes(1);
 		});
 	});
 
