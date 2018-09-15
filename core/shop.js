@@ -1,4 +1,4 @@
-const {fetchShop} = require('../helpers/callApiRequest');
+const {fetchShop} = require('../services/fnbr');
 
 class Shop {
 	constructor() {
@@ -6,10 +6,10 @@ class Shop {
 	}
 
 	async update() {
-		const {err, data: currentShop} = await fetchShop();
+		const {err, data: responseData} = await fetchShop();
 
 		if (!err) {
-			this._items = this._getMergedFeaturedAndDaily(currentShop);
+			this._items = this._getMergedFeaturedAndDaily(responseData.data);
 		}
 	}
 
