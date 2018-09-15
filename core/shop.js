@@ -1,4 +1,4 @@
-const {fetchShop} = require('../services/fnbr');
+const {fetchShop} = require('../services/fnbr/api');
 
 class Shop {
 	constructor() {
