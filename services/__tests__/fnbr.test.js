@@ -1,4 +1,4 @@
-const api = require('../../services/fnbr/api');
+const fetchShop = require('../fnbr/fetchShop');
 const callApiRequest = require('../../helpers/callApiRequest');
 
 jest.mock('../../helpers/callApiRequest');
@@ -10,7 +10,7 @@ describe('fnbr Api', () => {
 
 	describe('fetchShop()', () => {
 		it('sends request through callApiRequest() to get shop items', async () => {
-			await api.fetchShop();
+			await fetchShop();
 
 			expect(callApiRequest).toHaveBeenCalledTimes(1);
 		});
@@ -19,7 +19,7 @@ describe('fnbr Api', () => {
 			const exampleResponse = 'resp';
 
 			callApiRequest.mockReturnValueOnce(Promise.resolve(exampleResponse));
-			const returnedResponse = await api.fetchShop();
+			const returnedResponse = await fetchShop();
 
 			expect(returnedResponse).toBe(exampleResponse);
 		});
