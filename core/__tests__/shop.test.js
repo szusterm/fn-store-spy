@@ -21,6 +21,11 @@ describe('Shop Controller', () => {
 			}
 		};
 
+		const exampleFetchShopResponseWithError = {
+			err: true,
+			data: 'error'
+		};
+
 		let mockGetMergedFeaturedAndDaily;
 		beforeEach(() => {
 			mockGetMergedFeaturedAndDaily = jest.spyOn(shop, '_getMergedFeaturedAndDaily');
@@ -50,6 +55,16 @@ describe('Shop Controller', () => {
 			await shop.update();
 
 			expect(shop._items).toEqual(itemsToReturn);
+		});
+
+		it('does not change items, if it is error in request', async () => {
+			fetchShop.mockReturnValueOnce(exampleFetchShopResponseWithError);
+
+			shop._items = [];
+
+			await shop.update();
+
+			expect(shop._items).toEqual([]);
 		});
 	});
 
