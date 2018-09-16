@@ -1,6 +1,6 @@
 const order = {
 	add: jest.fn(),
-	findMatchingByIds: jest.fn()
+	findMatchingByFnbrIds: jest.fn()
 };
 
 module.exports = order;
