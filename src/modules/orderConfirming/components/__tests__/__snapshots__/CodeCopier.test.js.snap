@@ -5,8 +5,8 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CodeCopier
-    code="fnh4y"
-    lastCopiedCode="fru"
+    code="h4yz"
+    codePrefix="fn"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -23,12 +23,12 @@ ShallowWrapper {
       "children": Array [
         <CopyToClipboard
           onCopy={[Function]}
-          text="fnh4y"
+          text="fnh4yz"
         >
           <div
             className="code-copier--code "
           >
-            fnh4y
+            fnh4yz
           </div>
         </CopyToClipboard>,
         <div
@@ -53,11 +53,11 @@ ShallowWrapper {
           "children": <div
             className="code-copier--code "
           >
-            fnh4y
+            fnh4yz
           </div>,
           "onCopy": [Function],
           "options": undefined,
-          "text": "fnh4y",
+          "text": "fnh4yz",
         },
         "ref": null,
         "rendered": Object {
@@ -65,11 +65,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "fnh4y",
+            "children": "fnh4yz",
             "className": "code-copier--code ",
           },
           "ref": null,
-          "rendered": "fnh4y",
+          "rendered": "fnh4yz",
           "type": "div",
         },
         "type": [Function],
@@ -119,12 +119,12 @@ ShallowWrapper {
         "children": Array [
           <CopyToClipboard
             onCopy={[Function]}
-            text="fnh4y"
+            text="fnh4yz"
           >
             <div
               className="code-copier--code "
             >
-              fnh4y
+              fnh4yz
             </div>
           </CopyToClipboard>,
           <div
@@ -149,11 +149,11 @@ ShallowWrapper {
             "children": <div
               className="code-copier--code "
             >
-              fnh4y
+              fnh4yz
             </div>,
             "onCopy": [Function],
             "options": undefined,
-            "text": "fnh4y",
+            "text": "fnh4yz",
           },
           "ref": null,
           "rendered": Object {
@@ -161,11 +161,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "fnh4y",
+              "children": "fnh4yz",
               "className": "code-copier--code ",
             },
             "ref": null,
-            "rendered": "fnh4y",
+            "rendered": "fnh4yz",
             "type": "div",
           },
           "type": [Function],

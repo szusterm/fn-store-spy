@@ -6,8 +6,8 @@ import {CodeCopier} from '../CodeCopier/CodeCopier';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		lastCopiedCode: 'fru',
-		code: 'fnh4y' //redux
+		code: 'h4yz', //redux
+		codePrefix: 'fn' //redux
 	}, propOverrides);
 
 	const wrapper = shallow(<CodeCopier {...props}/>);
@@ -22,24 +22,26 @@ describe('CodeCopier Component', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('shows the code from a store', () => {
+	it('shows the code from a store with a specified prefix', () => {
 		const {wrapper, props} = setup({
-			code: 'fn5g6u'
+			code: '5g6u',
+			codePrefix: 'ss'
 		});
 
 		const inputValue = wrapper.find('.code-copier--code').text();
 
-		expect(inputValue).toBe(props.code);
+		expect(inputValue).toBe(props.codePrefix + props.code);
 	});
 
-	it('copies the code after click through CopyToClipboard', () => {
+	it('copies the code with the prefix after click through CopyToClipboard', () => {
 		const {wrapper, props} = setup({
-			code: 'fn5g6u'
+			code: '5g6u',
+			codePrefix: 'fn'
 		});
 
 		const textToCopy = wrapper.find(CopyToClipboard).props().text;
 
-		expect(textToCopy).toBe(props.code);
+		expect(textToCopy).toBe(props.codePrefix + props.code);
 	});
 
 	it('changes an information text, if the last copied code equals to the current code', () => {
