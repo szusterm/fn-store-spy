@@ -22,6 +22,12 @@ describe('Spy', () => {
 
 			expect(shop.update).toHaveBeenCalledTimes(1);
 		});
+
+		it('calls _sendMessagesToUsersWithMatchingOrders()', async () => {
+			await spy.run();
+
+			expect(mockSendMessagesToUsersWithMatchingOrders).toHaveBeenCalledTimes(1);
+		});
 	});
 
 	describe('_callFuncAfterFindItemInOrder()', () => {
