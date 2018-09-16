@@ -11,12 +11,12 @@ describe('Spy', () => {
 	});
 
 	describe('run()', () => {
-		let mockSendMessagesToUsersWithMatchingOrders;
-		beforeEach(() => mockSendMessagesToUsersWithMatchingOrders = jest.spyOn(spy, '_sendMessagesToUsersWithMatchingOrders'));
-		afterEach(() => mockSendMessagesToUsersWithMatchingOrders.mockRestore());
+		let mockCallActionsInCheckingOrders;
+		beforeEach(() => mockCallActionsInCheckingOrders = jest.spyOn(spy, '_callActionsInCheckingOrders'));
+		afterEach(() => mockCallActionsInCheckingOrders.mockRestore());
 
 		it('calls shop to update', async () => {
-			mockSendMessagesToUsersWithMatchingOrders.mockReturnValueOnce(true);
+			mockCallActionsInCheckingOrders.mockReturnValueOnce(true);
 
 			await spy.run();
 
@@ -26,14 +26,11 @@ describe('Spy', () => {
 		it('calls _sendMessagesToUsersWithMatchingOrders()', async () => {
 			await spy.run();
 
-			expect(mockSendMessagesToUsersWithMatchingOrders).toHaveBeenCalledTimes(1);
+			expect(mockCallActionsInCheckingOrders).toHaveBeenCalledTimes(1);
 		});
 	});
 
-	describe('_callFuncAfterFindItemInOrder()', () => {
-		let mockGetOrdersMatchingToOffer;
-		beforeEach(() => mockGetOrdersMatchingToOffer = jest.spyOn(spy, '_getOrdersMatchingToOffer'));
-		afterEach(() => mockGetOrdersMatchingToOffer.mockRestore());
+	describe('_sendMessagesToUsersWithMatchingOrders()', () => {
 
 		it('calls a callback after find an offered item in matching orders, if this item is not done', async () => {
 			const offeredItemsIds = ['666', '213'];
@@ -55,9 +52,7 @@ describe('Spy', () => {
 			const mockCallback = jest.fn();
 
 			shop.ids = offeredItemsIds;
-			mockGetOrdersMatchingToOffer.mockReturnValueOnce(matchingOffers);
 
-			await spy._callFuncAfterFindItemInOrder(mockCallback);
 
 			expect(mockCallback).toHaveBeenCalledTimes(2);
 		});
