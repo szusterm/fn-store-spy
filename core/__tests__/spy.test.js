@@ -1,4 +1,4 @@
-const spy = require('../spy');
+const spyInstance = require('../spy');
 const orderFactory = require('../../database/factories/order');
 const shop = require('../shop');
 
@@ -6,8 +6,15 @@ jest.mock('../../database/factories/order');
 jest.mock('../shop');
 
 describe('Spy', () => {
+	let spy = null;
+
 	beforeEach(() => {
+		spy = spyInstance;
 		jest.clearAllMocks();
+	});
+
+	afterEach(() => {
+		spy = null;
 	});
 
 	describe('run()', () => {
@@ -95,7 +102,7 @@ describe('Spy', () => {
 		});
 	});
 
-	describe('_getOrdersMatchingToOffer()', () => {
+	describe('_updateOrdersMatchingToOffer()', () => {
 		it('downloads orders matching to a current offer', async () => {
 			const offerItemsFnbrIds = ['666'];
 			const matchingOrders = [{items: []}, {items: []}];
