@@ -2,31 +2,28 @@ const order = require('../database/factories/order');
 const shop = require('./shop');
 
 class Spy {
+	constructor() {
+		this._matchingOrders = [];
+	}
+
 	async run() {
 		await shop.update();
+
+		const response = await this._getOrdersMatchingToOffer();
+		this._matchingOrders = (response) ? response : [];
+
 		await this._sendMessagesToUsersWithMatchingOrders();
 	}
 
 	async _sendMessagesToUsersWithMatchingOrders() {
-		await this._callFuncForEachOrder((order) => {
+		for (const order of this._matchingOrders) {
 			for (const {fnbrId, done} of order.items) {
 				if (!done && shop.fnbrIds.includes(fnbrId)) {
 					//send this item
 					console.log('Got:', fnbrId);
 				}
 			}
-		});
-	}
-
-	async _callFuncForEachOrder(callback) {
-		const matchingOrders = await this._getOrdersMatchingToOffer();
-
-		if (matchingOrders) {
-			for (const matchingOrder of matchingOrders) {
-				callback(matchingOrder);
-			}
 		}
-
 	}
 
 	async _getOrdersMatchingToOffer() {
