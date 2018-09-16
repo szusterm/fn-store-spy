@@ -49,7 +49,11 @@ describe('Spy', () => {
 
 		beforeEach(() => {
 			spy._matchingOrders = offers;
-			shop.fnbrIds = [offers[0].items[0], offers[0].items[2], offers[1].items[1]];
+			shop.fnbrIds = [
+				offers[0].items[0].fnbrId,
+				offers[0].items[2].fnbrId,
+				offers[1].items[0].fnbrId
+			];
 		});
 
 		it('calls onFindUser() from actions param after start checking the next order', async () => {
@@ -58,6 +62,14 @@ describe('Spy', () => {
 			await spy._callActionsInCheckingOrders({onFindUser: mockOnFindUser});
 
 			expect(mockOnFindUser).toHaveBeenCalledTimes(2);
+		});
+
+		it('calls onFindItem() from actions param after find a matching item in the order', async () => {
+			const mockOnFindItem = jest.fn();
+
+			await spy._callActionsInCheckingOrders({onFindItem: mockOnFindItem});
+
+			expect(mockOnFindItem).toHaveBeenCalledTimes(2);
 		});
 	});
 
