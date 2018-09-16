@@ -30,31 +30,34 @@ describe('Spy', () => {
 		});
 	});
 
-	describe('_sendMessagesToUsersWithMatchingOrders()', () => {
+	describe('_callActionsInCheckingOrders()', () => {
+		const offers = [
+			{
+				items: [
+					{fnbrId: '345y5y5', done: false}, //in store
+					{fnbrId: '698ju69', done: false},
+					{fnbrId: '324r34r', done: true} //in store
+				]
+			},
+			{
+				items: [
+					{fnbrId: '53ty345', done: false}, //in store
+					{fnbrId: '23rd34t', done: true}
+				]
+			}
+		];
 
-		it('calls a callback after find an offered item in matching orders, if this item is not done', async () => {
-			const offeredItemsIds = ['666', '213'];
-			const matchingOffers = [
-				{
-					items: [
-						{id: offeredItemsIds[0], done: false},
-						{id: '123', done: false}
-					]
-				},
-				{
-					items: [
-						{id: offeredItemsIds[0], done: true},
-						{id: offeredItemsIds[1], done: false}
-					]
-				}
-			];
+		beforeEach(() => {
+			spy._matchingOrders = offers;
+			shop.fnbrIds = [offers[0].items[0], offers[0].items[2], offers[1].items[1]];
+		});
 
-			const mockCallback = jest.fn();
+		it('calls onFindUser() from actions param after start checking the next order', async () => {
+			const mockOnFindUser = jest.fn();
 
-			shop.ids = offeredItemsIds;
+			await spy._callActionsInCheckingOrders({onFindUser: mockOnFindUser});
 
-
-			expect(mockCallback).toHaveBeenCalledTimes(2);
+			expect(mockOnFindUser).toHaveBeenCalledTimes(2);
 		});
 	});
 
