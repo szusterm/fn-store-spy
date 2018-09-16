@@ -1,4 +1,11 @@
 const codeInstance = require('../code');
+const config = require('../../config');
+
+jest.mock('../../config', () => ({
+	ordering: {
+		codeLength: 4
+	}
+}));
 
 describe('Code', () => {
 	let code = null;
@@ -9,6 +16,20 @@ describe('Code', () => {
 	});
 
 	afterEach(() => code = null);
+
+	describe('generate()', () => {
+		let mockGetRandomChar;
+		beforeEach(() => mockGetRandomChar = jest.spyOn(code, '_getRandomChar'));
+		afterEach(() => mockGetRandomChar.mockRestore());
+
+		it('returns a random code with a specified length', () => {
+			mockGetRandomChar.mockReturnValue('c');
+
+			const generatedCode = code.generate();
+
+			expect(generatedCode).toBe('cccc');
+		});
+	});
 
 	describe('_getRandomChar()', () => {
 		let mockGetRandomNumber;
