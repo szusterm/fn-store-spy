@@ -27,6 +27,12 @@ export class CodeCopier extends Component {
 		this.setState(newState);
 	}
 
+	getCodeWithPrefix() {
+		const {code, codePrefix} = this.props;
+
+		return codePrefix + code;
+	}
+
 	isCurrentCodeCopied() {
 		const {lastCopiedCode} = this.state;
 		const {code} = this.props;
@@ -35,16 +41,14 @@ export class CodeCopier extends Component {
 	}
 
 	render() {
-		const {code} = this.props;
-
 		return (
 			<div className={'code-copier'}>
 				<CopyToClipboard
-					text={code}
+					text={this.getCodeWithPrefix()}
 					onCopy={() => this.updateLastCopiedCode()}
 				>
 					<div className={`code-copier--code ${(this.isCurrentCodeCopied()) ? 'code-copier--code--copied' : ''}`}>
-						{code}
+						{this.getCodeWithPrefix()}
 					</div>
 				</CopyToClipboard>
 				<div className={'code-copier--info'}>
@@ -57,13 +61,15 @@ export class CodeCopier extends Component {
 }
 
 CodeCopier.propTypes = {
-	code: PropTypes.string //redux
+	code: PropTypes.string, //redux
+	codePrefix: PropTypes.string //redux
 };
 
 const mapStateToProps = (state) => {
 	const {code} = state.orderConfirming;
+	const {codePrefix} = state.config;
 
-	return {code};
+	return {code, codePrefix};
 };
 
 export default connect(mapStateToProps, null)(CodeCopier);
