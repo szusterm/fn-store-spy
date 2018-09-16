@@ -68,6 +68,21 @@ describe('Shop Controller', () => {
 		});
 	});
 
+	describe('_getMergedFeaturedAndDaily()', () => {
+		it('returns items array with merged featured and daily offer', () => {
+			const items = ['item2', 'item0', 'item6'];
+
+			const offer = {
+				featured: [items[0], items[1]],
+				daily: [items[2]]
+			};
+
+			const returnedItems = shop._getMergedFeaturedAndDaily(offer);
+
+			expect(returnedItems).toEqual(items);
+		});
+	});
+
 	describe('GETTERS', () => {
 		const items = [
 			{
