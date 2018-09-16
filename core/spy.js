@@ -15,14 +15,23 @@ class Spy {
 		await this._callActionsInCheckingOrders();
 	}
 
-	async _callActionsInCheckingOrders() {
+	async _callActionsInCheckingOrders(actions) {
+		const {
+			onFindUser = () => true,
+			onFindItem = () => true,
+			onLeaveUser = () => true
+		} = actions;
+
 		for (const order of this._matchingOrders) {
+			await onFindUser();
+
 			for (const {fnbrId, done} of order.items) {
 				if (!done && shop.fnbrIds.includes(fnbrId)) {
-					//send this item
-					console.log('Got:', fnbrId);
+					await onFindItem();
 				}
 			}
+
+			await onLeaveUser();
 		}
 	}
 
