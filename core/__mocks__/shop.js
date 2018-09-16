@@ -1,5 +1,5 @@
 const shop = {
-	update: jest.fn(),
+	update: jest.fn(() => true),
 	items: [],
 	ids: [],
 	names: []
