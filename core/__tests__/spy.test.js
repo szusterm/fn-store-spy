@@ -12,18 +12,26 @@ describe('Spy', () => {
 
 	describe('run()', () => {
 		let mockCallActionsInCheckingOrders;
-		beforeEach(() => mockCallActionsInCheckingOrders = jest.spyOn(spy, '_callActionsInCheckingOrders'));
-		afterEach(() => mockCallActionsInCheckingOrders.mockRestore());
+		let mockUpdateOrdersMatchingToOffer;
+		beforeEach(() => {
+			mockCallActionsInCheckingOrders = jest.spyOn(spy, '_callActionsInCheckingOrders');
+			mockUpdateOrdersMatchingToOffer = jest.spyOn(spy, '_updateOrdersMatchingToOffer');
+
+			mockCallActionsInCheckingOrders.mockImplementationOnce(() => true);
+			mockUpdateOrdersMatchingToOffer.mockImplementationOnce(() => true);
+		});
+		afterEach(() => {
+			mockCallActionsInCheckingOrders.mockRestore();
+			mockUpdateOrdersMatchingToOffer.mockRestore();
+		});
 
 		it('calls shop to update', async () => {
-			mockCallActionsInCheckingOrders.mockReturnValueOnce(true);
-
 			await spy.run();
 
 			expect(shop.update).toHaveBeenCalledTimes(1);
 		});
 
-		it('calls _sendMessagesToUsersWithMatchingOrders()', async () => {
+		it('calls _callActionsInCheckingOrders()', async () => {
 			await spy.run();
 
 			expect(mockCallActionsInCheckingOrders).toHaveBeenCalledTimes(1);
