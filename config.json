@@ -5,6 +5,8 @@
 		"maxNameFilterLength": 26
 	},
 	"ordering": {
+		"codePrefix": "fn",
+		"codeLength": 4,
 		"maxItemsInOrder": 24
 	}
 }
