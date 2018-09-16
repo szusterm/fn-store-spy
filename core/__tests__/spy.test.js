@@ -71,6 +71,14 @@ describe('Spy', () => {
 
 			expect(mockOnFindItem).toHaveBeenCalledTimes(2);
 		});
+
+		it('calls onLeaveUser() from actions param after end checking items in a single user', async () => {
+			const mockOnLeaveUser = jest.fn();
+
+			await spy._callActionsInCheckingOrders({onLeaveUser: mockOnLeaveUser});
+
+			expect(mockOnLeaveUser).toHaveBeenCalledTimes(2);
+		});
 	});
 
 	describe('_getOrdersMatchingToOffer()', () => {
