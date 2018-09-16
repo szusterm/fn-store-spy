@@ -33,8 +33,7 @@ class Spy {
 	}
 
 	async _updateOrdersMatchingToOffer() {
-		const offeredItemsIds = shop.fnbrIds;
-		const response = await order.findMatchingByFnbrIds(offeredItemsIds);
+		const response = await order.findMatchingByFnbrIds(shop.fnbrIds);
 
 		this._matchingOrders = (!response.err) ? response.data : [];
 	}
