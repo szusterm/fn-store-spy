@@ -1,4 +1,4 @@
-const shop = require('../shop');
+const shopInstance = require('../shop');
 const itemFactory = require('../../database/factories/item');
 const fetchShop = require('../../services/fnbr/fetchShop');
 
@@ -6,9 +6,14 @@ jest.mock('../../database/factories/item');
 jest.mock('../../services/fnbr/fetchShop');
 
 describe('Shop Controller', () => {
+	let shop = null;
+
 	beforeEach(() => {
+		shop = shopInstance;
 		jest.clearAllMocks();
 	});
+
+	afterEach(() => shop = null);
 
 	describe('update()', () => {
 		const exampleFetchShopResponse = {
