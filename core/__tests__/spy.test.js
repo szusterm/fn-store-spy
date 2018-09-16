@@ -5,23 +5,22 @@ const shop = require('../shop');
 jest.mock('../../database/factories/order');
 jest.mock('../shop');
 
-describe('Spy Controller', () => {
+describe('Spy', () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 	});
 
 	describe('run()', () => {
-		let mockCallFuncAfterFindItemInOrder;
-		beforeEach(() => mockCallFuncAfterFindItemInOrder = jest.spyOn(spy, '_callFuncAfterFindItemInOrder'));
-		afterEach(() => mockCallFuncAfterFindItemInOrder.mockRestore());
+		let mockSendMessagesToUsersWithMatchingOrders;
+		beforeEach(() => mockSendMessagesToUsersWithMatchingOrders = jest.spyOn(spy, '_sendMessagesToUsersWithMatchingOrders'));
+		afterEach(() => mockSendMessagesToUsersWithMatchingOrders.mockRestore());
 
-		it('runs spy to get orders matching to current shop', async () => {
-			mockCallFuncAfterFindItemInOrder.mockReturnValueOnce(true);
+		it('calls shop to update', async () => {
+			mockSendMessagesToUsersWithMatchingOrders.mockReturnValueOnce(true);
 
 			await spy.run();
 
 			expect(shop.update).toHaveBeenCalledTimes(1);
-			expect(mockCallFuncAfterFindItemInOrder).toHaveBeenCalledTimes(1);
 		});
 	});
 
