@@ -1,8 +1,6 @@
 const shopInstance = require('../shop');
-const itemFactory = require('../../database/factories/item');
 const fetchShop = require('../../services/fnbr/fetchShop');
 
-jest.mock('../../database/factories/item');
 jest.mock('../../services/fnbr/fetchShop');
 
 describe('Shop Controller', () => {
