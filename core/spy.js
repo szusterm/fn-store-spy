@@ -8,10 +8,7 @@ class Spy {
 
 	async run() {
 		await shop.update();
-
-		const response = await this._getOrdersMatchingToOffer();
-		this._matchingOrders = (response) ? response : [];
-
+		await this._updateOrdersMatchingToOffer();
 		await this._callActionsInCheckingOrders();
 	}
 
@@ -35,15 +32,11 @@ class Spy {
 		}
 	}
 
-	async _getOrdersMatchingToOffer() {
+	async _updateOrdersMatchingToOffer() {
 		const offeredItemsIds = shop.fnbrIds;
 		const response = await order.findMatchingByFnbrIds(offeredItemsIds);
-		if (!response.err) {
-			return response.data;
-		}
-		else {
-			return false;
-		}
+
+		this._matchingOrders = (!response.err) ? response.data : [];
 	}
 }
 
