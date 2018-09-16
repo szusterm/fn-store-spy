@@ -103,25 +103,25 @@ describe('Spy', () => {
 	});
 
 	describe('_updateOrdersMatchingToOffer()', () => {
-		it('downloads orders matching to a current offer', async () => {
+		it('updates _matchingOrders to orders matching to a current offer', async () => {
 			const offerItemsFnbrIds = ['666'];
 			const matchingOrders = [{items: []}, {items: []}];
 
 			shop.fnbrIds = offerItemsFnbrIds;
 			orderFactory.findMatchingByFnbrIds.mockReturnValueOnce({err: false, data: matchingOrders});
 
-			const returnedOffers = await spy._getOrdersMatchingToOffer();
+			await spy._updateOrdersMatchingToOffer();
 
 			expect(orderFactory.findMatchingByFnbrIds).toHaveBeenCalledWith(offerItemsFnbrIds);
-			expect(returnedOffers).toEqual(matchingOrders);
+			expect(spy._matchingOrders).toEqual(matchingOrders);
 		});
 
-		it('returns false, if getting from a database has an error', async () => {
+		it('updates _matchingOrders to an empty array, if it is an error in getting orders', async () => {
 			orderFactory.findMatchingByFnbrIds.mockReturnValueOnce({err: true, data: {}});
 
-			const response = await spy._getOrdersMatchingToOffer();
+			await spy._updateOrdersMatchingToOffer();
 
-			expect(response).toBeFalsy();
+			expect(spy._matchingOrders).toEqual([]);
 		});
 	});
 });
