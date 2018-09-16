@@ -12,10 +12,10 @@ class Spy {
 		const response = await this._getOrdersMatchingToOffer();
 		this._matchingOrders = (response) ? response : [];
 
-		await this._sendMessagesToUsersWithMatchingOrders();
+		await this._callActionsInCheckingOrders();
 	}
 
-	async _sendMessagesToUsersWithMatchingOrders() {
+	async _callActionsInCheckingOrders() {
 		for (const order of this._matchingOrders) {
 			for (const {fnbrId, done} of order.items) {
 				if (!done && shop.fnbrIds.includes(fnbrId)) {
