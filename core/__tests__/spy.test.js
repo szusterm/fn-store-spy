@@ -31,6 +31,12 @@ describe('Spy', () => {
 			expect(shop.update).toHaveBeenCalledTimes(1);
 		});
 
+		it('calls _updateOrdersMatchingToOffer()', async () => {
+			await spy.run();
+
+			expect(mockUpdateOrdersMatchingToOffer).toHaveBeenCalledTimes(1);
+		});
+
 		it('calls _callActionsInCheckingOrders()', async () => {
 			await spy.run();
 
