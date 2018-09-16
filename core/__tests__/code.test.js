@@ -39,6 +39,8 @@ describe('Code', () => {
 		it('returns random char from an available collection', () => {
 			code._availableChars = 'abc';
 
+			mockGetRandomNumber.mockReturnValueOnce(1);
+
 			const returnedChar = code._getRandomChar();
 
 			expect(mockGetRandomNumber).toHaveBeenCalledWith(2);
