@@ -1,8 +1,9 @@
 const order = require('../../database/factories/order');
+const code = require('../../core/code');
 
 exports.saveOrder = async (req, res) => {
 	const {itemsFnbrIds} = req.body;
-	const {err, data} = await order.add(itemsFnbrIds, 'fn4rt7');
+	const {err, data} = await order.add(itemsFnbrIds, code.generate());
 
 	if (!err) {
 		res.json(data);
