@@ -3,8 +3,14 @@ exports.receiveEvent = (req, res) => {
 
 	if(body.object === 'page') {
 		for (const entry of body.entry) {
-			const webhook_event = entry.messaging[0];
-			console.log(webhook_event);
+			const webhookEvent = entry.messaging[0];
+
+			if (webhookEvent.message) {
+				const {sender: senderId} = webhookEvent;
+				const {text} = webhookEvent.message;
+
+				//Process message()
+			}
 		}
 
 		res.status(200).send('EVENT_RECEIVED');
@@ -23,7 +29,7 @@ exports.verify = (req, res) => {
 
 	if (mode && token) {
 		if (mode === 'subscribe' && token === MESSENGER_VERIFY_TOKEN) {
-			console.log('WEBHOOK_VERIFIED');
+			console.log('Webhook has been verified');
 
 			res.status(200).send(challenge);
 		}
