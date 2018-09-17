@@ -12,6 +12,9 @@ router.get('/items/get', itemsController.getItems);
 
 router.post('/order/add', orderController.saveOrder);
 
+
+router.get('/webhook', webhookController.verify);
+
 router.post('/webhook', webhookController.receiveEvent);
 
 module.exports = router;
