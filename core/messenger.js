@@ -11,15 +11,14 @@ class Messenger {
 			method: 'post',
 			headers: {'content-type': 'application/json'},
 			data: {
-				messaging_type: '',
 				recipient: {id: userId},
-				message: {test: message}
+				message: {text: message}
 			}
 		};
 
-		const {err} = await callApiRequest(data);
+		const response = await callApiRequest(data);
 
-		return !err;
+		return (!response.err && data.recipient_id);
 	}
 }
 
