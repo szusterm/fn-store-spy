@@ -1,4 +1,6 @@
-exports.receiveEvent = (req, res) => {
+const messenger = require('../../core/messenger');
+
+exports.receiveEvent = async (req, res) => {
 	const body = req.body;
 
 	if(body.object === 'page') {
@@ -6,10 +8,10 @@ exports.receiveEvent = (req, res) => {
 			const webhookEvent = entry.messaging[0];
 
 			if (webhookEvent.message) {
-				const {sender: senderId} = webhookEvent;
+				const {id: userId} = webhookEvent.sender;
 				const {text} = webhookEvent.message;
 
-				//Process message()
+				await messenger.sendMessage(userId, 'It works!');
 			}
 		}
 
