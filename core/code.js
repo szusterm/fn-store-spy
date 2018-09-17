@@ -30,7 +30,6 @@ class Code {
 	isCode(message)  {
 		const codeTemplate = new RegExp(`\\b(${codePrefix})([a-zA-Z0-9]{${codeLength}})\\b`);
 
-
 		return codeTemplate.test(message);
 	}
 }
