@@ -28,9 +28,10 @@ class Code {
 	}
 
 	isCode(message)  {
-		const codeTemplate = new RegExp(`\\b(${codePrefix})([a-zA-Z0-9]{${codeLength}})\\b`);
+		const codeTemplate = new RegExp(`\\b(${codePrefix})([a-z0-9]{${codeLength}})\\b`);
+		const lowerCaseMessage = message.toLowerCase();
 
-		return codeTemplate.test(message);
+		return codeTemplate.test(lowerCaseMessage);
 	}
 }
 
