@@ -12,7 +12,7 @@ exports.receiveEvent = async (req, res) => {
 					const {id: userId} = webhookEvent.sender;
 					const {text} = webhookEvent.message;
 
-					await messenger.sendMessage(userId, 'It works!');
+					await messenger.handle(userId, text);
 				}
 			}
 		}
