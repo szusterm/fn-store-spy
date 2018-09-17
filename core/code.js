@@ -1,5 +1,5 @@
 const config = require('../config');
-const {codeLength} = config.ordering;
+const {codeLength, codePrefix} = config.ordering;
 
 class Code {
 	constructor() {
@@ -25,6 +25,13 @@ class Code {
 
 	_getRandomNumber(max) {
 		return Math.round(Math.random()*max);
+	}
+
+	isCode(message)  {
+		const codeTemplate = new RegExp(`\\b(${codePrefix})([a-zA-Z0-9]{${codeLength}})\\b`);
+
+
+		return codeTemplate.test(message);
 	}
 }
 
