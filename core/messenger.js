@@ -23,4 +23,4 @@ class Messenger {
 	}
 }
 
-module.exports = () => new Messenger();
+module.exports = new Messenger();
