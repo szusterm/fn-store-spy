@@ -3,6 +3,7 @@ const config = require('../../config');
 
 jest.mock('../../config', () => ({
 	ordering: {
+		codePrefix: 'fn',
 		codeLength: 4
 	}
 }));
@@ -60,6 +61,30 @@ describe('Code', () => {
 			const random = code._getRandomNumber(1);
 
 			expect((random === 0 || random === 1)).toBe(true);
+		});
+	});
+
+	describe('isCode()', () => {
+		it('returns true/false if a param is the code', () => {
+			const exampleCodes = [
+				'fnde5h', //code
+				'fndrt8', //code
+				'ds45th',
+				'd',
+				'fn',
+				'fner',
+				'fn34t34g'
+			];
+
+			let trueCodesLength = 0;
+
+			for (const singleCode of exampleCodes) {
+				if (code.isCode(singleCode)) {
+					trueCodesLength++;
+				}
+			}
+
+			expect(trueCodesLength).toBe(2);
 		});
 	});
 });
