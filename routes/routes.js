@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const itemsController = require('./controllers/items');
-const ordersController = require('./controllers/orders');
-const configsController = require('./controllers/configs');
+const orderController = require('./controllers/order');
+const configController = require('./controllers/config');
 
-router.get('/config', configsController.getConfig);
+router.get('/config', configController.getConfig);
 
 router.get('/items/get', itemsController.getItems);
 
-router.post('/order/add', ordersController.saveOrder);
+router.post('/order/add', orderController.saveOrder);
 
 module.exports = router;
