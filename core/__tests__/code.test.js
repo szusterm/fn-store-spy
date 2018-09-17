@@ -69,6 +69,8 @@ describe('Code', () => {
 			const exampleCodes = [
 				'fnde5h', //code
 				'fndrt8', //code
+				'FnsUi3', //code
+				'FN234d', //code
 				'ds45th',
 				'd',
 				'fn',
@@ -84,7 +86,7 @@ describe('Code', () => {
 				}
 			}
 
-			expect(trueCodesLength).toBe(2);
+			expect(trueCodesLength).toBe(4);
 		});
 	});
 });
