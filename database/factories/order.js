@@ -21,7 +21,14 @@ class Order {
 		}
 	}
 
-	async _find(data) {
+	find() {
+		return {
+			code: async (data) => await this._findByCode(data),
+			matchingByFnbrIds: async (data) => await this._findMatchingByFnbrIds(data)
+		};
+	}
+
+	async _findByQuery(data) {
 		try {
 			const query = OrderModel.find(data);
 			const response = await query.exec();
@@ -33,8 +40,12 @@ class Order {
 		}
 	}
 
-	async findMatchingByFnbrIds(itemsIds = []) {
-		return await this._find({
+	async _findByCode() {
+
+	}
+
+	async _findMatchingByFnbrIds(itemsIds = []) {
+		return await this._findByQuery({
 			'items.fnbrId': {$in: itemsIds}
 		});
 	}
