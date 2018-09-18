@@ -28,10 +28,9 @@ class Order {
 		};
 	}
 
-	async _findByQuery(data) {
+	async _findByQuery(query) {
 		try {
-			const query = OrderModel.find(data);
-			const response = await query.exec();
+			const response = await OrderModel.find(query).exec();
 
 			return getObject(false, response);
 		}
