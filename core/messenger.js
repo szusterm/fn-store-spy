@@ -12,7 +12,7 @@ class Messenger {
 			await this._handleCodeMessage(userId, receivedCode);
 		}
 		else {
-			await this.sendText(userId, 'Some shit');
+			await this.sendTextMessage(userId, 'Some shit');
 		}
 	}
 
@@ -27,7 +27,7 @@ class Messenger {
 					const {err} = await order.update().connect(receivedCode, userId);
 
 					if (!err) {
-						await this.sendText(userId, 'Code connected');
+						await this.sendTextMessage(userId, 'Code connected');
 					}
 				}
 				else {
@@ -39,11 +39,11 @@ class Messenger {
 			}
 		}
 		else {
-			await this.sendText(userId, 'I have an error, please wait');
+			await this.sendTextMessage(userId, 'I have an error, please wait');
 		}
 	}
 
-	async sendText(userId, message) {
+	async sendTextMessage(userId, message) {
 		const {FB_PAGE_ACCESS_TOKEN} = process.env;
 		const url = `https://graph.facebook.com/v2.6/me/messages?access_token=${FB_PAGE_ACCESS_TOKEN}`;
 
@@ -65,7 +65,7 @@ class Messenger {
 	async sendTemplateMessage(userId, messageType) {
 		const text = this._getRandomMessage(messageType);
 
-		return await this.sendText(userId, text);
+		return await this.sendTextMessage(userId, text);
 	}
 
 	_getRandomMessage(messageType = '') {
