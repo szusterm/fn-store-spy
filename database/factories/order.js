@@ -51,9 +51,13 @@ class Order {
 		}
 	}
 
-	async _disconnectByUserId(userId) {
+	async _disconnectByUserId(userId = '') {
 		if (userId) {
-			return await this._updateByQuery({userId}, {connected: false});
+			const updateData = {
+				connected: false
+			};
+
+			return await this._updateByQuery({userId}, updateData);
 		}
 	}
 
