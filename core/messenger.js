@@ -5,7 +5,7 @@ const getRandomNumber = require('../helpers/getRandomNumber');
 const botMessages = require('../botMessages');
 
 class Messenger {
-	async sendMessage(userId, message) {
+	async sendText(userId, message) {
 		const {FB_PAGE_ACCESS_TOKEN} = process.env;
 		const url = `https://graph.facebook.com/v2.6/me/messages?access_token=${FB_PAGE_ACCESS_TOKEN}`;
 
@@ -31,7 +31,7 @@ class Messenger {
 			await this._handleCodeMessage(userId, receivedCode);
 		}
 		else {
-			await this.sendMessage(userId, 'Some shit');
+			await this.sendText(userId, 'Some shit');
 		}
 	}
 
@@ -46,19 +46,19 @@ class Messenger {
 					const {err} = await order.update().connect(receivedCode, userId);
 
 					if (!err) {
-						await this.sendMessage(userId, 'Code connected');
+						await this.sendText(userId, 'Code connected');
 					}
 				}
 				else {
-					await this.sendMessage(userId, 'Bad code');
+					await this.sendText(userId, 'Bad code');
 				}
 			}
 			else {
-				await this.sendMessage(userId, 'Bad code');
+				await this.sendText(userId, 'Bad code');
 			}
 		}
 		else {
-			await this.sendMessage(userId, 'I have an error, please wait');
+			await this.sendText(userId, 'I have an error, please wait');
 		}
 	}
 
