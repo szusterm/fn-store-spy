@@ -34,22 +34,9 @@ class Order {
 	}
 
 	async findMatchingByFnbrIds(itemsIds = []) {
-		try {
-			if (itemsIds.length > 0) {
-				const query = OrderModel.find({
-					'items.fnbrId': {$in: itemsIds}
-				});
-				const response = await query.exec();
-
-				return getObject(false, response);
-			}
-			else {
-				throw new Error();
-			}
-		}
-		catch (error) {
-			return getObject(true, error);
-		}
+		return await this._find({
+			'items.fnbrId': {$in: itemsIds}
+		});
 	}
 
 	_createItemsArray(itemFnbrIds) {
