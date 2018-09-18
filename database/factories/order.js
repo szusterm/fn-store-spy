@@ -39,6 +39,12 @@ class Order {
 		}
 	}
 
+	async _disconnectByUserId(userId) {
+		if (userId) {
+			return await this._updateByQuery({userId}, {connected: false});
+		}
+	}
+
 	async _findByQuery(query) {
 		try {
 			const response = await OrderModel.find(query).exec();
