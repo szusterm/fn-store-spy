@@ -23,7 +23,7 @@ class Order {
 
 	find() {
 		return {
-			code: async (data) => await this._findByCode(data),
+			byCode: async (data) => await this._findByCode(data),
 			matchingByFnbrIds: async (data) => await this._findMatchingByFnbrIds(data)
 		};
 	}
