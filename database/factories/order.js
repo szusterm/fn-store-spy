@@ -23,7 +23,7 @@ class Order {
 
 	update() {
 		return {
-			connect: async (...data) => await this._connectBycode(...data),
+			connect: async (...data) => await this._connectByCode(...data),
 			disconnect: async (...data) => await this._disconnectByUserId(...data)
 		};
 	}
@@ -46,7 +46,7 @@ class Order {
 		}
 	}
 
-	async _connectBycode(code = '', userId = '') {
+	async _connectByCode(code = '', userId = '') {
 		if (code && userId) {
 			const updateData = {
 				userId,
