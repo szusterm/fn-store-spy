@@ -27,6 +27,13 @@ class Code {
 		return Math.round(Math.random()*max);
 	}
 
+	removePrefix(code) {
+		const findPrefixTemplate = new RegExp('^(fn)', 'g');
+		const lowerCaseCode = code.toLowerCase();
+
+		return lowerCaseCode.replace(findPrefixTemplate, '');
+	}
+
 	isCode(message)  {
 		const codeTemplate = new RegExp(`\\b(${codePrefix})([a-z0-9]{${codeLength}})\\b`);
 		const lowerCaseMessage = message.toLowerCase();
