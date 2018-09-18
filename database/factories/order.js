@@ -40,6 +40,17 @@ class Order {
 		}
 	}
 
+	async _updateByQuery(query, updateData) {
+		try {
+			const response = await OrderModel.find(query, updateData).exec();
+
+			return getObject(false, response);
+		}
+		catch (error) {
+			return getObject(true, error);
+		}
+	}
+
 	async _findByCode(code = '') {
 		if (code) {
 			return await this._findByQuery({code});
