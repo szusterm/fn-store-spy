@@ -1,3 +1,4 @@
+const getRandomNumber = require('../helpers/getRandomNumber')
 const config = require('../config');
 const {codeLength, codePrefix} = config.ordering;
 
@@ -18,13 +19,9 @@ class Code {
 
 	_getRandomChar() {
 		const lastCharIndex = this._availableChars.length - 1;
-		const randomCharIndex = this._getRandomNumber(lastCharIndex);
+		const randomCharIndex = getRandomNumber(lastCharIndex);
 
 		return this._availableChars.charAt(randomCharIndex);
-	}
-
-	_getRandomNumber(max) {
-		return Math.round(Math.random()*max);
 	}
 
 	removePrefix(code) {

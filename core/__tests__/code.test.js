@@ -1,6 +1,8 @@
 const codeInstance = require('../code');
+const getRandomNumber = require('../../helpers/getRandomNumber');
 const config = require('../../config');
 
+jest.mock('../../helpers/getRandomNumber');
 jest.mock('../../config', () => ({
 	ordering: {
 		codePrefix: 'fn',
@@ -33,34 +35,15 @@ describe('Code', () => {
 	});
 
 	describe('_getRandomChar()', () => {
-		let mockGetRandomNumber;
-		beforeEach(() => mockGetRandomNumber = jest.spyOn(code, '_getRandomNumber'));
-		afterEach(() => mockGetRandomNumber.mockRestore());
-
 		it('returns random char from an available collection', () => {
 			code._availableChars = 'abc';
 
-			mockGetRandomNumber.mockReturnValueOnce(1);
+			getRandomNumber.mockReturnValueOnce(1);
 
 			const returnedChar = code._getRandomChar();
 
-			expect(mockGetRandomNumber).toHaveBeenCalledWith(2);
+			expect(getRandomNumber).toHaveBeenCalledWith(2);
 			expect(returnedChar).toBe('b');
-		});
-	});
-
-	describe('_getRandomNumber', () => {
-		it('returns random number between 0 and number in param', () => {
-			const firstRandom = code._getRandomNumber(10000000);
-			const secondRandom = code._getRandomNumber(10000000);
-
-			expect(firstRandom).not.toBe(secondRandom);
-		});
-
-		it('returns rounded number', () => {
-			const random = code._getRandomNumber(1);
-
-			expect((random === 0 || random === 1)).toBe(true);
 		});
 	});
 
