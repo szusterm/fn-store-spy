@@ -1,0 +1,1 @@
+module.exports = (max) => Math.round(Math.random()*max);
