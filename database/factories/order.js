@@ -41,7 +41,7 @@ class Order {
 
 	async _updateByQuery(query, updateData) {
 		try {
-			const response = await OrderModel.find(query, updateData).exec();
+			const response = await OrderModel.findOneAndUpdate(query, updateData).exec();
 
 			return getObject(false, response);
 		}
