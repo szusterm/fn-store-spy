@@ -25,14 +25,14 @@ exports.receiveEvent = async (req, res) => {
 };
 
 exports.verify = (req, res) => {
-	const {FB_PAGE_ACCESS_TOKEN} = process.env;
+	const {MESSENGER_VERIFY_TOKEN} = process.env;
 
 	const mode = req.query['hub.mode'];
 	const token = req.query['hub.verify_token'];
 	const challenge = req.query['hub.challenge'];
 
 	if (mode && token) {
-		if (mode === 'subscribe' && token === FB_PAGE_ACCESS_TOKEN) {
+		if (mode === 'subscribe' && token === MESSENGER_VERIFY_TOKEN) {
 			console.log('Webhook has been verified');
 
 			res.status(200).send(challenge);
