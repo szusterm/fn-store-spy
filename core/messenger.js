@@ -67,7 +67,7 @@ class Messenger {
 			const lastTestIndex = botMessages[messageType].length - 1;
 			const randomTextIndex = getRandomNumber(lastTestIndex);
 
-			return botMessages[messageType].charAt(randomTextIndex);
+			return botMessages[messageType][randomTextIndex];
 		}
 	}
 }
