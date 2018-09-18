@@ -31,11 +31,11 @@ class Messenger {
 					}
 				}
 				else {
-					await this.sendText(userId, 'Bad code');
+					await this.sendTemplateMessage(userId, 'badCode');
 				}
 			}
 			else {
-				await this.sendText(userId, 'Bad code');
+				await this.sendTemplateMessage(userId, 'badCode');
 			}
 		}
 		else {
@@ -60,6 +60,12 @@ class Messenger {
 		const response = await callApiRequest(data);
 
 		return (!response.err && data.recipient_id);
+	}
+
+	async sendTemplateMessage(userId, messageType) {
+		const text = this._getRandomMessage(messageType);
+
+		return await this.sendText(userId, text);
 	}
 
 	_getRandomMessage(messageType = '') {
