@@ -10,7 +10,11 @@ class Messenger {
 
 			if (!err) {
 				if (foundOrders.length === 1) {
-					await this.sendMessage(userId, 'Good code');
+					const {err} = await order.update().connect(receivedCode, userId);
+
+					if (!err) {
+						await this.sendMessage(userId, 'Code connected');
+					}
 				}
 				else {
 					await this.sendMessage(userId, 'Bad code');
