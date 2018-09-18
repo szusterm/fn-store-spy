@@ -38,10 +38,17 @@ class Messenger {
 
 		if (!err) {
 			if (foundOrders.length === 1) {
-				const {err} = await order.update().connect(receivedCode, userId);
+				const singleOrder = foundOrders[0];
 
-				if (!err) {
-					await this.sendMessage(userId, 'Code connected');
+				if (singleOrder.used === false) {
+					const {err} = await order.update().connect(receivedCode, userId);
+
+					if (!err) {
+						await this.sendMessage(userId, 'Code connected');
+					}
+				}
+				else {
+					await this.sendMessage(userId, 'Bad code');
 				}
 			}
 			else {
