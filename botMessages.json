@@ -12,5 +12,13 @@
 		"Now, I accept only codes",
 		"Bro, It is not the code",
 		"Man, send me only codes"
+	],
+
+	"error": [
+		"I got an error",
+		"Give me a while. I got an error",
+		"I can't, try for a moment. It's an error",
+		"I got \"ERROR 608\". What is it?",
+		"Bro, I can't do it now. We have an accident."
 	]
 }
