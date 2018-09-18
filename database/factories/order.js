@@ -40,8 +40,10 @@ class Order {
 		}
 	}
 
-	async _findByCode() {
-
+	async _findByCode(code = '') {
+		if (code) {
+			return await this._findByQuery({code});
+		}
 	}
 
 	async _findMatchingByFnbrIds(itemsIds = []) {
