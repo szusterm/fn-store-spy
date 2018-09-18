@@ -5,25 +5,6 @@ const getRandomNumber = require('../helpers/getRandomNumber');
 const botMessages = require('../botMessages');
 
 class Messenger {
-	async sendText(userId, message) {
-		const {FB_PAGE_ACCESS_TOKEN} = process.env;
-		const url = `https://graph.facebook.com/v2.6/me/messages?access_token=${FB_PAGE_ACCESS_TOKEN}`;
-
-		const data = {
-			url,
-			method: 'post',
-			headers: {'content-type': 'application/json'},
-			data: {
-				recipient: {id: userId},
-				message: {text: message}
-			}
-		};
-
-		const response = await callApiRequest(data);
-
-		return (!response.err && data.recipient_id);
-	}
-
 	async handle(userId, message) {
 		if (code.isCode(message)) {
 			const receivedCode = code.removePrefix(message);
@@ -60,6 +41,25 @@ class Messenger {
 		else {
 			await this.sendText(userId, 'I have an error, please wait');
 		}
+	}
+
+	async sendText(userId, message) {
+		const {FB_PAGE_ACCESS_TOKEN} = process.env;
+		const url = `https://graph.facebook.com/v2.6/me/messages?access_token=${FB_PAGE_ACCESS_TOKEN}`;
+
+		const data = {
+			url,
+			method: 'post',
+			headers: {'content-type': 'application/json'},
+			data: {
+				recipient: {id: userId},
+				message: {text: message}
+			}
+		};
+
+		const response = await callApiRequest(data);
+
+		return (!response.err && data.recipient_id);
 	}
 
 	_getRandomMessage(messageType = '') {
