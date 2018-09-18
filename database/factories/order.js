@@ -39,6 +39,18 @@ class Order {
 		}
 	}
 
+	async _connectBycode(code = '', userId = '') {
+		if (code && userId) {
+			const updateData = {
+				userId,
+				connected: true
+			};
+
+			await this._disconnectByUserId(userId);
+			return await this._updateByQuery({code}, updateData);
+		}
+	}
+
 	async _disconnectByUserId(userId) {
 		if (userId) {
 			return await this._updateByQuery({userId}, {connected: false});
