@@ -39,7 +39,7 @@ class Messenger {
 			}
 		}
 		else {
-			await this.sendTextMessage(userId, 'I have an error, please wait');
+			await this.sendTemplateMessage(userId, 'error');
 		}
 	}
 
