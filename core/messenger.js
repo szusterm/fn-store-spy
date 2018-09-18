@@ -12,7 +12,7 @@ class Messenger {
 			await this._handleCodeMessage(userId, receivedCode);
 		}
 		else {
-			await this.sendTextMessage(userId, 'Some shit');
+			await this.sendTemplateMessage(userId, 'notCode');
 		}
 	}
 
