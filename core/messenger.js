@@ -1,10 +1,24 @@
+const order = require('../database/factories/order');
 const code = require('./code');
 const callApiRequest = require('../helpers/callApiRequest');
 
 class Messenger {
 	async handle(userId, message) {
 		if (code.isCode(message)) {
-			await this.sendMessage(userId, 'Code');
+			const receivedCode = code.removePrefix(message);
+			const {err, data: foundOrders} = await order.find().byCode(receivedCode);
+
+			if (!err) {
+				if (foundOrders.length === 1) {
+					await this.sendMessage(userId, 'Good code');
+				}
+				else {
+					await this.sendMessage(userId, 'Bad code');
+				}
+			}
+			else {
+				await this.sendMessage(userId, 'I have an error, please wait');
+			}
 		}
 		else {
 			await this.sendMessage(userId, 'Some shit');
