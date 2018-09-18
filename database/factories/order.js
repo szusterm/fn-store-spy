@@ -21,6 +21,13 @@ class Order {
 		}
 	}
 
+	update() {
+		return {
+			connect: async (...data) => await this._connectBycode(...data),
+			disconnect: async (...data) => await this._disconnectByUserId(...data)
+		};
+	}
+
 	find() {
 		return {
 			byCode: async (data) => await this._findByCode(data),
