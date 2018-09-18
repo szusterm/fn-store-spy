@@ -21,6 +21,18 @@ class Order {
 		}
 	}
 
+	async _find(data) {
+		try {
+			const query = OrderModel.find(data);
+			const response = await query.exec();
+
+			return getObject(false, response);
+		}
+		catch (error) {
+			return getObject(true, error);
+		}
+	}
+
 	async findMatchingByFnbrIds(itemsIds = []) {
 		try {
 			if (itemsIds.length > 0) {
@@ -35,14 +47,14 @@ class Order {
 				throw new Error();
 			}
 		}
-		catch(error) {
+		catch (error) {
 			return getObject(true, error);
 		}
 	}
 
 	_createItemsArray(itemFnbrIds) {
 		const items = [];
-		for(const itemId of itemFnbrIds) {
+		for (const itemId of itemFnbrIds) {
 			items.push({
 				fnbrId: itemId,
 				done: false
