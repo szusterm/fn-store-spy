@@ -50,6 +50,7 @@ class Order {
 		if (code && userId) {
 			const updateData = {
 				userId,
+				used: true,
 				connected: true
 			};
 
