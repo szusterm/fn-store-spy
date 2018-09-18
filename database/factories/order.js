@@ -28,9 +28,9 @@ class Order {
 		};
 	}
 
-	async _findByQuery(query) {
+	async _updateByQuery(query, updateData) {
 		try {
-			const response = await OrderModel.find(query).exec();
+			const response = await OrderModel.findOneAndUpdate(query, updateData).exec();
 
 			return getObject(false, response);
 		}
@@ -39,9 +39,9 @@ class Order {
 		}
 	}
 
-	async _updateByQuery(query, updateData) {
+	async _findByQuery(query) {
 		try {
-			const response = await OrderModel.findOneAndUpdate(query, updateData).exec();
+			const response = await OrderModel.find(query).exec();
 
 			return getObject(false, response);
 		}
