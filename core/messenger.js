@@ -1,6 +1,8 @@
 const order = require('../database/factories/order');
 const code = require('./code');
 const callApiRequest = require('../helpers/callApiRequest');
+const getRandomNumber = require('../helpers/getRandomNumber');
+const botMessages = require('../botMessages');
 
 class Messenger {
 	async sendMessage(userId, message) {
@@ -57,6 +59,15 @@ class Messenger {
 		}
 		else {
 			await this.sendMessage(userId, 'I have an error, please wait');
+		}
+	}
+
+	_getRandomMessage(messageType = '') {
+		if (messageType) {
+			const lastTestIndex = botMessages[messageType].length - 1;
+			const randomTextIndex = getRandomNumber(lastTestIndex);
+
+			return botMessages[messageType].charAt(randomTextIndex);
 		}
 	}
 }
