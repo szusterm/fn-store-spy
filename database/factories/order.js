@@ -45,9 +45,11 @@ class Order {
 	}
 
 	async _findMatchingByFnbrIds(itemsIds = []) {
-		return await this._findByQuery({
-			'items.fnbrId': {$in: itemsIds}
-		});
+		if (itemsIds) {
+			return await this._findByQuery({
+				'items.fnbrId': {$in: itemsIds}
+			});
+		}
 	}
 
 	_createItemsArray(itemFnbrIds) {
