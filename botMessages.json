@@ -44,10 +44,10 @@
 	],
 
 	"ORDER_FOUND": [
-		"Today is your lucky day",
-		"I have something for you",
-		"Look what I found for you",
-		"I succeeded, look what I have"
+		"Today is your lucky day:",
+		"I have something for you:",
+		"Look what I found for you:",
+		"I succeeded, look what I have:"
 	],
 
 	"BETWEEN_ITEM_NAME_AND_PRICE": "for",
