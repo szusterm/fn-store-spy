@@ -90,12 +90,12 @@ describe('Spy', () => {
 			];
 		});
 
-		it('calls onFindUser() from actions param after start checking the next order', async () => {
-			const mockOnFindUser = jest.fn();
+		it('calls onEnterOrder() from actions param after start checking the next order', async () => {
+			const mockOnEnterOrder = jest.fn();
 
-			await spy._callActionsInCheckingOrders({onFindUser: mockOnFindUser});
+			await spy._callActionsInCheckingOrders({onEnterOrder: mockOnEnterOrder});
 
-			expect(mockOnFindUser).toHaveBeenCalledTimes(2);
+			expect(mockOnEnterOrder).toHaveBeenCalledTimes(2);
 		});
 
 		it('calls onFindItem() from actions param after find a matching item in the order', async () => {
@@ -106,12 +106,12 @@ describe('Spy', () => {
 			expect(mockOnFindItem).toHaveBeenCalledTimes(2);
 		});
 
-		it('calls onLeaveUser() from actions param after end checking items in a single user', async () => {
-			const mockOnLeaveUser = jest.fn();
+		it('calls onLeaveOrder() from actions param after end checking items in a single user', async () => {
+			const mockOnLeaveOrder = jest.fn();
 
-			await spy._callActionsInCheckingOrders({onLeaveUser: mockOnLeaveUser});
+			await spy._callActionsInCheckingOrders({onLeaveOrder: mockOnLeaveOrder});
 
-			expect(mockOnLeaveUser).toHaveBeenCalledTimes(2);
+			expect(mockOnLeaveOrder).toHaveBeenCalledTimes(2);
 		});
 	});
 
