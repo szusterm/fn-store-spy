@@ -19,16 +19,18 @@ class Spy {
 			onLeaveUser = () => true
 		} = actions;
 
-		for (const order of this._matchingOrders) {
-			await onFindUser();
+		for (const {items, userId} of this._matchingOrders) {
+			await onFindUser(userId);
 
-			for (const {fnbrId, done} of order.items) {
+			for (const singleItem of items) {
+				const {fnbrId, done} = singleItem;
+
 				if (!done && shop.fnbrIds.includes(fnbrId)) {
-					await onFindItem();
+					await onFindItem(userId, singleItem);
 				}
 			}
 
-			await onLeaveUser();
+			await onLeaveUser(userId);
 		}
 	}
 
