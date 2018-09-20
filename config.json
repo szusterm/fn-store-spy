@@ -1,6 +1,10 @@
 {
 	"general": {
-		"siteUrl": "https://fnstorespy.com"
+		"siteUrl": "https://fnstorespy.com",
+		"checkingTime": {
+			"hour": 1,
+			"minute": 0
+		}
 	},
 	"searching": {
 		"maxItemsPerPage": 12,

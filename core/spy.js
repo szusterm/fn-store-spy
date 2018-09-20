@@ -1,3 +1,5 @@
+const {scheduleJob} = require('node-schedule');
+
 const order = require('../database/factories/order');
 const shop = require('./shop');
 const messenger = require('./messenger');
@@ -7,7 +9,15 @@ class Spy {
 		this._matchingOrders = [];
 	}
 
-	async run() {
+	run(time) {
+		const {hour = 0, minute = 0} = time;
+
+		const cron = `${minute} ${hour} * * *`;
+
+		scheduleJob(cron, async () => await this.check());
+	}
+
+	async check() {
 		await shop.update();
 		await this._updateOrdersMatchingToOffer();
 
