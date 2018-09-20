@@ -80,6 +80,14 @@ class Messenger {
 		return await this.sendTextMessage(userId, text);
 	}
 
+	async sendItemMessage(userId, item) {
+		const {name, price} = item;
+
+		const message = `${name} for ${price}`;
+
+		return await this.sendTextMessage(userId, message);
+	}
+
 	async sendUrlInfoMessage(userId) {
 		const {siteUrl} = config.general;
 
