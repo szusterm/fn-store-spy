@@ -1,4 +1,13 @@
 {
+	"connectedCode": [
+		"The code connected",
+		"Everything works, the code connected"
+	],
+
+	"remindInfo": [
+		"I will notify you when skins will be available"
+	],
+
 	"badCode": [
 		"This code is bad",
 		"Bro, I haven't this order",
@@ -6,6 +15,7 @@
 		"Did you copy this well?",
 		"Man, did you copy this well?"
 	],
+
 	"notCode": [
 		"It's not the code",
 		"What do you try to say?",

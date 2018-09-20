@@ -27,7 +27,8 @@ class Messenger {
 					const {err} = await order.update().connect(receivedCode, userId);
 
 					if (!err) {
-						await this.sendTextMessage(userId, 'Code connected');
+						await this.sendTemplateMessage(userId, 'connectedCode');
+						await this.sendTemplateMessage(userId, 'remindInfo');
 					}
 				}
 				else {
