@@ -1,8 +1,11 @@
 const order = require('../database/factories/order');
 const code = require('./code');
+
 const callApiRequest = require('../helpers/callApiRequest');
 const getRandomNumber = require('../helpers/getRandomNumber');
+
 const botMessages = require('../botMessages');
+const config = require('../config');
 
 class Messenger {
 	async handle(userId, message) {
@@ -13,6 +16,7 @@ class Messenger {
 		}
 		else {
 			await this.sendTemplateMessage(userId, 'NOT_CODE');
+			await this.sendUrlInfoMessage(userId);
 		}
 	}
 
@@ -67,6 +71,15 @@ class Messenger {
 		const text = this._getRandomMessage(messageType);
 
 		return await this.sendTextMessage(userId, text);
+	}
+
+	async sendUrlInfoMessage(userId) {
+		const {siteUrl} = config.general;
+
+		const infoText = this._getRandomMessage('SITE_URL_INFO');
+		const message = `${infoText} ${siteUrl}`;
+
+		return await this.sendTextMessage(userId, message);
 	}
 
 	_getRandomMessage(messageType = '') {
