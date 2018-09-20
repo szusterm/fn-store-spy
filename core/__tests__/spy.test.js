@@ -24,37 +24,43 @@ describe('Spy', () => {
 		spy = null;
 	});
 
-	describe('run()', () => {
-		let mockCallActionsInCheckingOrders;
-		let mockUpdateOrdersMatchingToOffer;
+	describe('check()', () => {
 		beforeEach(() => {
-			mockCallActionsInCheckingOrders = jest.spyOn(spy, '_callActionsInCheckingOrders');
-			mockUpdateOrdersMatchingToOffer = jest.spyOn(spy, '_updateOrdersMatchingToOffer');
-
-			mockCallActionsInCheckingOrders.mockImplementationOnce(() => true);
-			mockUpdateOrdersMatchingToOffer.mockImplementationOnce(() => true);
-		});
-		afterEach(() => {
-			mockCallActionsInCheckingOrders.mockRestore();
-			mockUpdateOrdersMatchingToOffer.mockRestore();
+			spy._callActionsInCheckingOrders = jest.fn(() => true);
+			spy._updateOrdersMatchingToOffer = jest.fn(() => true);
 		});
 
 		it('calls shop to update', async () => {
-			await spy.run();
+			await spy.check();
 
 			expect(shop.update).toHaveBeenCalledTimes(1);
 		});
 
 		it('calls _updateOrdersMatchingToOffer()', async () => {
-			await spy.run();
+			await spy.check();
 
-			expect(mockUpdateOrdersMatchingToOffer).toHaveBeenCalledTimes(1);
+			expect(spy._updateOrdersMatchingToOffer).toHaveBeenCalledTimes(1);
 		});
 
 		it('calls _callActionsInCheckingOrders()', async () => {
-			await spy.run();
+			await spy.check();
 
-			expect(mockCallActionsInCheckingOrders).toHaveBeenCalledTimes(1);
+			expect(spy._callActionsInCheckingOrders).toHaveBeenCalledTimes(1);
+		});
+
+		it('puts Messenger() methods as actions to send information to a user', async () => {
+			spy._callActionsInCheckingOrders.mockImplementationOnce(async (actions) => {
+				await actions.onEnterOrder();
+				await actions.onFindItem();
+				await actions.onLeaveOrder();
+			});
+
+			await spy.check();
+
+			expect(messenger.sendTemplateMessage).toHaveBeenCalledTimes(1);
+			expect(messenger.sendItemMessage).toHaveBeenCalledTimes(1);
+			expect(messenger.sendDonateInfoMessage).toHaveBeenCalledTimes(1);
+
 		});
 	});
 
