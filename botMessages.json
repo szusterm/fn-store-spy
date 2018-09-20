@@ -9,12 +9,15 @@
 
 	"REMIND_INFO": [
 		"I will notify you when skins will be available",
-		"I'm getting to work, wait for notifications"
+		"I'm getting to work, wait for notifications",
+		"Just wait. I will notify you when your skins will be in store"
 	],
 
 	"CONNECTED_CODE": [
 		"The code connected",
-		"Everything works, the code connected"
+		"Everything works, the code connected",
+		"I found your order, let's get started",
+		"Your order is ready to go"
 	],
 
 	"BAD_CODE": [
@@ -35,7 +38,9 @@
 	],
 
 	"CODE_DISCONNECTED": [
-		"The code disconnected"
+		"The code disconnected",
+		"Your order is no longer available",
+		"My work here ends, thanks"
 	],
 
 	"ERROR": [
