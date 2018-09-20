@@ -1,6 +1,7 @@
 {
 	"general": {
 		"siteUrl": "https://fnstorespy.com",
+		"donateUrl": "https://paypal.com",
 		"checkingTime": {
 			"hour": 1,
 			"minute": 10
