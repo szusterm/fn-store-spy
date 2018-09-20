@@ -1,3 +1,4 @@
+const item = require('../database/factories/item');
 const order = require('../database/factories/order');
 const code = require('./code');
 
@@ -80,12 +81,17 @@ class Messenger {
 		return await this.sendTextMessage(userId, text);
 	}
 
-	async sendItemMessage(userId, item) {
-		const {name, price} = item;
+	async sendItemMessage(userId, fnbrId) {
+		const {err, data} = await item.find().fnbrIds([fnbrId]).exec();
 
-		const message = `${name} for ${price}`;
+		if (!err) {
+			const {name, price} = data.items[0];
+			const message = `${name} for ${price}`;
 
-		return await this.sendTextMessage(userId, message);
+			return await this.sendTextMessage(userId, message);
+		}
+
+		return await this.sendTextMessage(userId, 'ERROR');
 	}
 
 	async sendUrlInfoMessage(userId) {
