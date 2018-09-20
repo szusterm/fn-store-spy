@@ -38,7 +38,7 @@ class Order {
 	async _updateByQuery(query, updateData) {
 		try {
 			const response = await OrderModel.findOneAndUpdate(query, updateData).exec();
-
+			console.log(response);
 			return getObject(false, response);
 		}
 		catch (error) {
@@ -66,11 +66,16 @@ class Order {
 
 	async _disconnectByUserId(userId = '') {
 		if (userId) {
+			const queryData = {
+				userId,
+				connected: true
+			};
+
 			const updateData = {
 				connected: false
 			};
 
-			return await this._updateByQuery({userId}, updateData);
+			return await this._updateByQuery(queryData, updateData);
 		}
 	}
 
