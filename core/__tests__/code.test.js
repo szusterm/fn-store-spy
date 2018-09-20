@@ -1,4 +1,5 @@
 const codeInstance = require('../code');
+
 const getRandomNumber = require('../../helpers/getRandomNumber');
 const config = require('../../config');
 

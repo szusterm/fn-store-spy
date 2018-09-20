@@ -1,4 +1,5 @@
 const shopInstance = require('../shop');
+
 const fetchShop = require('../../services/fnbr/fetchShop');
 
 jest.mock('../../services/fnbr/fetchShop');

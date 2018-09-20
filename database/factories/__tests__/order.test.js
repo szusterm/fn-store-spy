@@ -1,4 +1,5 @@
 const orderInstance = require('../../factories/order');
+
 const OrderModel = require('../../models/order.model');
 const getResponseObject = require('../../../helpers/getResponseObject');
 
