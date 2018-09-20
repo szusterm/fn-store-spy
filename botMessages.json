@@ -1,14 +1,15 @@
 {
-	"REMIND_INFO": [
-		"I will notify you when skins will be available"
-	],
-
 	"SITE_URL_INFO": [
 		"Generate own code on",
 		"Get your code on",
 		"Create the code on",
 		"Choose your skins on",
 		"Choose skins you want on"
+	],
+
+	"REMIND_INFO": [
+		"I will notify you when skins will be available",
+		"I'm getting to work, wait for notifications"
 	],
 
 	"CONNECTED_CODE": [
