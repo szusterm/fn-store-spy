@@ -1,5 +1,6 @@
 const order = require('../database/factories/order');
 const shop = require('./shop');
+const messenger = require('./messenger');
 
 class Spy {
 	constructor() {
@@ -9,18 +10,23 @@ class Spy {
 	async run() {
 		await shop.update();
 		await this._updateOrdersMatchingToOffer();
-		await this._callActionsInCheckingOrders();
+
+		await this._callActionsInCheckingOrders({
+			onEnterOrder: async (userId) => await messenger.sendTemplateMessage(userId, 'ORDER_FOUND'),
+			onFindItem: async (userId, item) => await messenger.sendItemMessage(userId, item),
+			onLeaveOrder: (userId) => true
+		});
 	}
 
 	async _callActionsInCheckingOrders(actions) {
 		const {
-			onFindUser = () => true,
+			onEnterOrder = () => true,
 			onFindItem = () => true,
-			onLeaveUser = () => true
+			onLeaveOrder = () => true
 		} = actions;
 
 		for (const {items, userId} of this._matchingOrders) {
-			await onFindUser(userId);
+			await onEnterOrder(userId);
 
 			for (const singleItem of items) {
 				const {fnbrId, done} = singleItem;
@@ -30,7 +36,7 @@ class Spy {
 				}
 			}
 
-			await onLeaveUser(userId);
+			await onLeaveOrder(userId);
 		}
 	}
 
