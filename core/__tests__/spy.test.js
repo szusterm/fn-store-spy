@@ -1,5 +1,7 @@
 const spyInstance = require('../spy');
 
+const {scheduleJob} = require('node-schedule');
+
 const orderFactory = require('../../database/factories/order');
 const shop = require('../shop');
 const messenger = require('../messenger');
@@ -22,6 +24,31 @@ describe('Spy', () => {
 
 	afterEach(() => {
 		spy = null;
+	});
+
+	describe('run()', () => {
+		const time = {
+			hour: 21,
+			minute: 37
+		};
+
+		beforeEach(() => spy.check = jest.fn(() => true));
+
+		it('sets schedule up to check offers periodically', () => {
+			scheduleJob.mockImplementationOnce((time, jobToDo) => jobToDo());
+
+			spy.run(time);
+
+			expect(spy.check).toHaveBeenCalledTimes(1);
+		});
+
+		it('passes time param as cron string to scheduleJob()', () => {
+			const cronTime = `${time.minute} ${time.hour} * * *`;
+
+			spy.run(time);
+
+			expect(scheduleJob.mock.calls[0][0]).toBe(cronTime);
+		});
 	});
 
 	describe('check()', () => {
