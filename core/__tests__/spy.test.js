@@ -121,16 +121,19 @@ describe('Spy', () => {
 			const matchingOrders = [{items: []}, {items: []}];
 
 			shop.fnbrIds = offerItemsFnbrIds;
-			orderFactory.findMatchingByFnbrIds.mockReturnValueOnce({err: false, data: matchingOrders});
+			orderFactory
+				.find()
+				.matchingByFnbrIds
+				.mockReturnValueOnce(Promise.resolve({err: false, data: matchingOrders}));
 
 			await spy._updateOrdersMatchingToOffer();
 
-			expect(orderFactory.findMatchingByFnbrIds).toHaveBeenCalledWith(offerItemsFnbrIds);
+			expect(orderFactory.find().matchingByFnbrIds).toHaveBeenCalledWith(offerItemsFnbrIds);
 			expect(spy._matchingOrders).toEqual(matchingOrders);
 		});
 
 		it('updates _matchingOrders to an empty array, if it is an error in getting orders', async () => {
-			orderFactory.findMatchingByFnbrIds.mockReturnValueOnce({err: true, data: {}});
+			orderFactory.find().matchingByFnbrIds.mockReturnValueOnce({err: true, data: {}});
 
 			await spy._updateOrdersMatchingToOffer();
 
