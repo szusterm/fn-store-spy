@@ -14,6 +14,13 @@ class Messenger {
 
 			await this._handleCodeMessage(userId, receivedCode);
 		}
+		else if (this._isStopMessage(message)) {
+			const {err} = await order.update().disconnect(userId);
+
+			const responseTemplate = (err) ? 'ERROR' : 'CODE_DISCONNECTED';
+
+			await this.sendTemplateMessage(userId, responseTemplate);
+		}
 		else {
 			await this.sendTemplateMessage(userId, 'NOT_CODE');
 			await this.sendUrlInfoMessage(userId);
@@ -89,6 +96,10 @@ class Messenger {
 
 			return botMessages[messageType][randomTextIndex];
 		}
+	}
+
+	_isStopMessage(message) {
+		return (message.toLowerCase() === 'stop');
 	}
 }
 
