@@ -54,8 +54,13 @@ class Order {
 				connected: true
 			};
 
-			await this._disconnectByUserId(userId);
-			return await this._updateByQuery({code}, updateData);
+			const disconnectionResponse = await this._disconnectByUserId(userId);
+
+			if (!disconnectionResponse.err) {
+				return await this._updateByQuery({code}, updateData);
+			}
+
+			return disconnectionResponse;
 		}
 	}
 
