@@ -1,14 +1,14 @@
 {
-	"connectedCode": [
+	"CONNECTED_CODE": [
 		"The code connected",
 		"Everything works, the code connected"
 	],
 
-	"remindInfo": [
+	"REMIND_INFO": [
 		"I will notify you when skins will be available"
 	],
 
-	"badCode": [
+	"BAD_CODE": [
 		"This code is bad",
 		"Bro, I haven't this order",
 		"Dude, this code is bad",
@@ -16,7 +16,7 @@
 		"Man, did you copy this well?"
 	],
 
-	"notCode": [
+	"NOT_CODE": [
 		"It's not the code",
 		"What do you try to say?",
 		"Now, I accept only codes",
@@ -25,7 +25,7 @@
 		"Just give me the code. I don't need nothing more"
 	],
 
-	"error": [
+	"ERROR": [
 		"I got an error",
 		"Give me a while. I got an error",
 		"I can't, try for a moment. It's an error",

@@ -12,7 +12,7 @@ class Messenger {
 			await this._handleCodeMessage(userId, receivedCode);
 		}
 		else {
-			await this.sendTemplateMessage(userId, 'notCode');
+			await this.sendTemplateMessage(userId, 'NOT_CODE');
 		}
 	}
 
@@ -27,20 +27,20 @@ class Messenger {
 					const {err} = await order.update().connect(receivedCode, userId);
 
 					if (!err) {
-						await this.sendTemplateMessage(userId, 'connectedCode');
-						await this.sendTemplateMessage(userId, 'remindInfo');
+						await this.sendTemplateMessage(userId, 'CONNECTED_CODE');
+						await this.sendTemplateMessage(userId, 'REMIND_INFO');
 					}
 				}
 				else {
-					await this.sendTemplateMessage(userId, 'badCode');
+					await this.sendTemplateMessage(userId, 'BAD_CODE');
 				}
 			}
 			else {
-				await this.sendTemplateMessage(userId, 'badCode');
+				await this.sendTemplateMessage(userId, 'BAD_CODE');
 			}
 		}
 		else {
-			await this.sendTemplateMessage(userId, 'error');
+			await this.sendTemplateMessage(userId, 'ERROR');
 		}
 	}
 
