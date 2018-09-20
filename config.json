@@ -1,4 +1,7 @@
 {
+	"general": {
+		"siteUrl": "https://fnstorespy.com"
+	},
 	"searching": {
 		"maxItemsPerPage": 12,
 		"minNameFilterLength": 3,
