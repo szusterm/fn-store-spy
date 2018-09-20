@@ -82,11 +82,13 @@ class Messenger {
 	}
 
 	async sendItemMessage(userId, fnbrId) {
+		const {BETWEEN_ITEM_NAME_AND_PRICE} = botMessages;
+
 		const {err, data} = await item.find().fnbrIds([fnbrId]).exec();
 
 		if (!err) {
 			const {name, price} = data.items[0];
-			const message = `${name} for ${price}`;
+			const message = `${name} ${BETWEEN_ITEM_NAME_AND_PRICE} ${price}`;
 
 			return await this.sendTextMessage(userId, message);
 		}

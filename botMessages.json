@@ -50,6 +50,8 @@
 		"I succeeded, look what I have"
 	],
 
+	"BETWEEN_ITEM_NAME_AND_PRICE": "for",
+
 	"ERROR": [
 		"I got an error",
 		"Give me a while. I got an error",
