@@ -13,7 +13,7 @@ class Spy {
 
 		await this._callActionsInCheckingOrders({
 			onEnterOrder: async (userId) => await messenger.sendTemplateMessage(userId, 'ORDER_FOUND'),
-			onFindItem: async (userId, item) => await messenger.sendItemMessage(userId, item),
+			onFindItem: async (userId, fnbrId) => await messenger.sendItemMessage(userId, fnbrId),
 			onLeaveOrder: (userId) => true
 		});
 	}
@@ -28,11 +28,9 @@ class Spy {
 		for (const {items, userId} of this._matchingOrders) {
 			await onEnterOrder(userId);
 
-			for (const singleItem of items) {
-				const {fnbrId, done} = singleItem;
-
+			for (const {fnbrId, done} of items) {
 				if (!done && shop.fnbrIds.includes(fnbrId)) {
-					await onFindItem(userId, singleItem);
+					await onFindItem(userId, fnbrId);
 				}
 			}
 
