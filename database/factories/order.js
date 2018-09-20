@@ -96,10 +96,11 @@ class Order {
 		}
 	}
 
-	async _findMatchingByFnbrIds(itemsIds = []) {
+	async _findMatchingByFnbrIds(itemsIds = [], connected = true) {
 		if (itemsIds) {
 			return await this._findByQuery({
-				'items.fnbrId': {$in: itemsIds}
+				'items.fnbrId': {$in: itemsIds},
+				connected
 			});
 		}
 	}
