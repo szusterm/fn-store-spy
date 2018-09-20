@@ -3,7 +3,7 @@
 		"siteUrl": "https://fnstorespy.com",
 		"checkingTime": {
 			"hour": 1,
-			"minute": 0
+			"minute": 10
 		}
 	},
 	"searching": {
