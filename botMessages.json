@@ -2,7 +2,7 @@
 	"SITE_URL_INFO": [
 		"Generate own code on",
 		"Get your code on",
-		"Create the code on",
+		"Create a code on",
 		"Choose your skins on",
 		"Choose skins you want on"
 	],
@@ -33,12 +33,12 @@
 	],
 
 	"NOT_CODE": [
-		"It's not the code",
+		"It's not a code",
 		"What do you try to say?",
 		"Now, I accept only codes",
-		"Bro, It is not the code",
+		"Bro, It is not a code",
 		"Man, send me only codes",
-		"Just give me the code. I don't need nothing more"
+		"Just give me a code. I don't need nothing more"
 	],
 
 	"CODE_DISCONNECTED": [
