@@ -43,6 +43,13 @@
 		"My work here ends, thanks"
 	],
 
+	"ORDER_FOUND": [
+		"Today is your lucky day",
+		"I have something for you",
+		"Look what I found for you",
+		"I succeeded, look what I have"
+	],
+
 	"ERROR": [
 		"I got an error",
 		"Give me a while. I got an error",
