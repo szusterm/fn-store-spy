@@ -21,6 +21,7 @@ class Messenger {
 			const responseTemplate = (err) ? 'ERROR' : 'CODE_DISCONNECTED';
 
 			await this.sendTemplateMessage(userId, responseTemplate);
+			await this.sendDonateInfoMessage(userId);
 		}
 		else {
 			await this.sendTemplateMessage(userId, 'NOT_CODE');
@@ -103,6 +104,22 @@ class Messenger {
 		const message = `${infoText} ${siteUrl}`;
 
 		return await this.sendTextMessage(userId, message);
+	}
+
+	async sendDonateInfoMessage(userId) {
+		const randomNumber = getRandomNumber(100);
+		const percent = 50;
+
+		if (randomNumber <= percent) {
+			const {donateUrl} = config.general;
+
+			const infoText = this._getRandomMessage('DONATE_URL_INFO');
+			const message = `${infoText} ${donateUrl}`;
+
+			return await this.sendTextMessage(userId, message);
+		}
+
+		return true;
 	}
 
 	_getRandomMessage(messageType = '') {

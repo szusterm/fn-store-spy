@@ -24,7 +24,7 @@ class Spy {
 		await this._callActionsInCheckingOrders({
 			onEnterOrder: async (userId) => await messenger.sendTemplateMessage(userId, 'ORDER_FOUND'),
 			onFindItem: async (userId, fnbrId) => await messenger.sendItemMessage(userId, fnbrId),
-			onLeaveOrder: (userId) => true
+			onLeaveOrder: async (userId) => await messenger.sendDonateInfoMessage(userId)
 		});
 	}
 
