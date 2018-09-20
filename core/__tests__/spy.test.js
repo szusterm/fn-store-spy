@@ -1,9 +1,15 @@
 const spyInstance = require('../spy');
 const orderFactory = require('../../database/factories/order');
 const shop = require('../shop');
+const messenger = require('../messenger');
 
 jest.mock('../../database/factories/order');
 jest.mock('../shop');
+jest.mock('../messenger');
+
+jest.mock('node-schedule', () => ({
+	scheduleJob: jest.fn(() => true)
+}));
 
 describe('Spy', () => {
 	let spy = null;
