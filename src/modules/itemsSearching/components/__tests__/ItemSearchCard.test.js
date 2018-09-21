@@ -69,6 +69,16 @@ describe('ItemSearchCard Component', () => {
 		expect(imageSrcInItemCoin).toBe(props.imageSrc);
 	});
 
+	it('puts name prop to ItemCoin', () => {
+		const {wrapper, props} = setup({
+			name: 'Warthog'
+		});
+
+		const nameInItemCoin = wrapper.find(ItemCoin).props().name;
+
+		expect(nameInItemCoin).toBe(props.name);
+	});
+
 	it('after click the component, adds the item to the order, if it is not ordered', () => {
 		const {wrapper, props} = setup({
 			fnbrId: 'abc45g',

@@ -69,6 +69,7 @@ export class ItemSearchCard extends Component {
 							<ItemCoin
 								imageSrc={imageSrc}
 								rarity={rarity}
+								name={name}
 							/>
 							<div
 								className={`visual-box--action-box ${(this.isItemOrdered()) && 'visual-box--action-box--active'}`}
