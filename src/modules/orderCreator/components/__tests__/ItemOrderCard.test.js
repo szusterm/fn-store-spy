@@ -8,6 +8,7 @@ import {ItemOrderCard} from '../ItemOrderCard/ItemOrderCard';
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		index: 0,
+		name: 'Trooper',
 		imageSrc: 'example.com',
 		rarity: 'uncommon',
 		removeItemFromOrderByIndex: () => true //redux
