@@ -7,17 +7,19 @@ class Order {
 	async add(itemsFnbrIds = [], code) {
 		try {
 			if (this._isArrayWithCorrectLength(itemsFnbrIds)) {
-				const items = this._createItemsArray(itemsFnbrIds);
+				if (await this._areFnbrIdsCorrect(itemsFnbrIds)) {
+					const items = this._createItemsArray(itemsFnbrIds);
 
-				const order = new OrderModel({
-					code,
-					connected: false,
-					items
-				});
+					const order = new OrderModel({
+						code,
+						connected: false,
+						items
+					});
 
-				await order.save();
+					await order.save();
 
-				return getObject(false, {code, items});
+					return getObject(false, {code, items});
+				}
 			}
 
 			throw new Error('Incorrect fnbrIds array');
