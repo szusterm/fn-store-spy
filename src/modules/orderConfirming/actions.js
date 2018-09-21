@@ -1,8 +1,8 @@
 import * as types from './actionTypes';
-import api from '../../api';
+import {addOrder} from '../../api';
 
 export const sendOrder = (itemsIds) => async (dispatch) => {
-	const {err, data} = await api.addOrder(itemsIds);
+	const {err, data} = await addOrder(itemsIds);
 
 	if (!err) {
 		const {code} = data;
