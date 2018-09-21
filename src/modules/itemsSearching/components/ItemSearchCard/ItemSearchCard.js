@@ -101,7 +101,6 @@ ItemSearchCard.propTypes = {
 	name: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
-	type: PropTypes.string.isRequired,
 	imageSrc: PropTypes.string.isRequired,
 	orderedItems: PropTypes.array, //redux,
 	addItemToOrder: PropTypes.func, //redux
