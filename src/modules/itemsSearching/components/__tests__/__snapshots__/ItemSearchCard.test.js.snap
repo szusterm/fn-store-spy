@@ -66,6 +66,7 @@ ShallowWrapper {
             className="bot-part--description"
           >
             <img
+              alt="vbucks"
               className="description--vbucks-icon"
               src="../images/vbucks.png"
             />
@@ -122,6 +123,7 @@ ShallowWrapper {
               className="bot-part--description"
             >
               <img
+                alt="vbucks"
                 className="description--vbucks-icon"
                 src="../images/vbucks.png"
               />
@@ -267,6 +269,7 @@ ShallowWrapper {
                 className="bot-part--description"
               >
                 <img
+                  alt="vbucks"
                   className="description--vbucks-icon"
                   src="../images/vbucks.png"
                 />
@@ -300,6 +303,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <img
+                    alt="vbucks"
                     className="description--vbucks-icon"
                     src="../images/vbucks.png"
                   />,
@@ -318,6 +322,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
+                    "alt": "vbucks",
                     "className": "description--vbucks-icon",
                     "src": "../images/vbucks.png",
                   },
@@ -394,6 +399,7 @@ ShallowWrapper {
               className="bot-part--description"
             >
               <img
+                alt="vbucks"
                 className="description--vbucks-icon"
                 src="../images/vbucks.png"
               />
@@ -450,6 +456,7 @@ ShallowWrapper {
                 className="bot-part--description"
               >
                 <img
+                  alt="vbucks"
                   className="description--vbucks-icon"
                   src="../images/vbucks.png"
                 />
@@ -595,6 +602,7 @@ ShallowWrapper {
                   className="bot-part--description"
                 >
                   <img
+                    alt="vbucks"
                     className="description--vbucks-icon"
                     src="../images/vbucks.png"
                   />
@@ -628,6 +636,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <img
+                      alt="vbucks"
                       className="description--vbucks-icon"
                       src="../images/vbucks.png"
                     />,
@@ -646,6 +655,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
+                      "alt": "vbucks",
                       "className": "description--vbucks-icon",
                       "src": "../images/vbucks.png",
                     },

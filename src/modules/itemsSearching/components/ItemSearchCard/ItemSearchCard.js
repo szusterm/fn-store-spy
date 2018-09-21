@@ -86,6 +86,7 @@ export class ItemSearchCard extends Component {
 							<img
 								className={'description--vbucks-icon'}
 								src={'../images/vbucks.png'}
+								alt={'vbucks'}
 							/>
 							<span className={'description--price'}>{price}</span>
 						</div>
