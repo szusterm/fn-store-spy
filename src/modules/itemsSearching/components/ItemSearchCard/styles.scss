@@ -154,6 +154,8 @@
 				font-weight: 500;
 				text-align: center;
 				padding: 0 $padding;
+
+				@include black-color(0.85);
 			}
 
 			&--description {
