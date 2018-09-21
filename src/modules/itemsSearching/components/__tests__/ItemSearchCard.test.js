@@ -11,7 +11,6 @@ const setup = (propOverrides) => {
 		name: 'Super Axe',
 		price: '2000',
 		rarity: 'uncommon',
-		type: 'axe',
 		imageSrc: 'https://example.com',
 		orderedItems: [], //redux
 		addItemToOrder: () => true, //redux
@@ -48,16 +47,6 @@ describe('ItemSearchCard Component', () => {
 		const displayedPrice = wrapper.find('.description--price').text();
 
 		expect(displayedPrice).toBe(props.price);
-	});
-
-	it('shows a type from prop', () => {
-		const {wrapper, props} = setup({
-			type: 'axe'
-		});
-
-		const displayedType = wrapper.find('.description--type').text();
-
-		expect(displayedType).toBe(props.type);
 	});
 
 	it('puts rarity prop to ItemCoin', () => {

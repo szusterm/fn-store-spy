@@ -13,7 +13,6 @@ ShallowWrapper {
     price="2000"
     rarity="uncommon"
     removeItemFromOrderByIndex={[Function]}
-    type="axe"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -65,16 +64,15 @@ ShallowWrapper {
           <div
             className="bot-part--description"
           >
-            <div
-              className="description--type"
-            >
-              axe
-            </div>
-            <div
+            <img
+              className="description--vbucks-icon"
+              src="../images/vbucks.png"
+            />
+            <span
               className="description--price"
             >
               2000
-            </div>
+            </span>
           </div>
         </div>
       </button>,
@@ -121,16 +119,15 @@ ShallowWrapper {
             <div
               className="bot-part--description"
             >
-              <div
-                className="description--type"
-              >
-                axe
-              </div>
-              <div
+              <img
+                className="description--vbucks-icon"
+                src="../images/vbucks.png"
+              />
+              <span
                 className="description--price"
               >
                 2000
-              </div>
+              </span>
             </div>
           </div>,
         ],
@@ -264,16 +261,15 @@ ShallowWrapper {
               <div
                 className="bot-part--description"
               >
-                <div
-                  className="description--type"
-                >
-                  axe
-                </div>
-                <div
+                <img
+                  className="description--vbucks-icon"
+                  src="../images/vbucks.png"
+                />
+                <span
                   className="description--price"
                 >
                   2000
-                </div>
+                </span>
               </div>,
             ],
             "className": "item-search-card--bot-part",
@@ -298,16 +294,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <div
-                    className="description--type"
-                  >
-                    axe
-                  </div>,
-                  <div
+                  <img
+                    className="description--vbucks-icon"
+                    src="../images/vbucks.png"
+                  />,
+                  <span
                     className="description--price"
                   >
                     2000
-                  </div>,
+                  </span>,
                 ],
                 "className": "bot-part--description",
               },
@@ -318,12 +313,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "axe",
-                    "className": "description--type",
+                    "className": "description--vbucks-icon",
+                    "src": "../images/vbucks.png",
                   },
                   "ref": null,
-                  "rendered": "axe",
-                  "type": "div",
+                  "rendered": null,
+                  "type": "img",
                 },
                 Object {
                   "instance": null,
@@ -335,7 +330,7 @@ ShallowWrapper {
                   },
                   "ref": null,
                   "rendered": "2000",
-                  "type": "div",
+                  "type": "span",
                 },
               ],
               "type": "div",
@@ -392,16 +387,15 @@ ShallowWrapper {
             <div
               className="bot-part--description"
             >
-              <div
-                className="description--type"
-              >
-                axe
-              </div>
-              <div
+              <img
+                className="description--vbucks-icon"
+                src="../images/vbucks.png"
+              />
+              <span
                 className="description--price"
               >
                 2000
-              </div>
+              </span>
             </div>
           </div>
         </button>,
@@ -448,16 +442,15 @@ ShallowWrapper {
               <div
                 className="bot-part--description"
               >
-                <div
-                  className="description--type"
-                >
-                  axe
-                </div>
-                <div
+                <img
+                  className="description--vbucks-icon"
+                  src="../images/vbucks.png"
+                />
+                <span
                   className="description--price"
                 >
                   2000
-                </div>
+                </span>
               </div>
             </div>,
           ],
@@ -591,16 +584,15 @@ ShallowWrapper {
                 <div
                   className="bot-part--description"
                 >
-                  <div
-                    className="description--type"
-                  >
-                    axe
-                  </div>
-                  <div
+                  <img
+                    className="description--vbucks-icon"
+                    src="../images/vbucks.png"
+                  />
+                  <span
                     className="description--price"
                   >
                     2000
-                  </div>
+                  </span>
                 </div>,
               ],
               "className": "item-search-card--bot-part",
@@ -625,16 +617,15 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <div
-                      className="description--type"
-                    >
-                      axe
-                    </div>,
-                    <div
+                    <img
+                      className="description--vbucks-icon"
+                      src="../images/vbucks.png"
+                    />,
+                    <span
                       className="description--price"
                     >
                       2000
-                    </div>,
+                    </span>,
                   ],
                   "className": "bot-part--description",
                 },
@@ -645,12 +636,12 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "axe",
-                      "className": "description--type",
+                      "className": "description--vbucks-icon",
+                      "src": "../images/vbucks.png",
                     },
                     "ref": null,
-                    "rendered": "axe",
-                    "type": "div",
+                    "rendered": null,
+                    "type": "img",
                   },
                   Object {
                     "instance": null,
@@ -662,7 +653,7 @@ ShallowWrapper {
                     },
                     "ref": null,
                     "rendered": "2000",
-                    "type": "div",
+                    "type": "span",
                   },
                 ],
                 "type": "div",

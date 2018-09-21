@@ -14,7 +14,6 @@ ShallowWrapper {
           "name": "Super Axe",
           "price": "2000",
           "rarity": "uncommon",
-          "type": "axe",
         },
         Object {
           "_id": "56b7h8678b",
@@ -23,7 +22,6 @@ ShallowWrapper {
           "name": "Something",
           "price": "800",
           "rarity": "rare",
-          "type": "boots",
         },
       ]
     }
@@ -52,7 +50,6 @@ ShallowWrapper {
             name="Super Axe"
             price="2000"
             rarity="uncommon"
-            type="axe"
           />
           <Connect(ItemSearchCard)
             fnbrId="4395ytj4f905"
@@ -60,7 +57,6 @@ ShallowWrapper {
             name="Something"
             price="800"
             rarity="rare"
-            type="boots"
           />
         </div>
       </div>,
@@ -81,7 +77,6 @@ ShallowWrapper {
             name="Super Axe"
             price="2000"
             rarity="uncommon"
-            type="axe"
           />
           <Connect(ItemSearchCard)
             fnbrId="4395ytj4f905"
@@ -89,7 +84,6 @@ ShallowWrapper {
             name="Something"
             price="800"
             rarity="rare"
-            type="boots"
           />
         </div>,
         "className": "container-fluid",
@@ -107,7 +101,6 @@ ShallowWrapper {
               name="Super Axe"
               price="2000"
               rarity="uncommon"
-              type="axe"
             />,
             <Connect(ItemSearchCard)
               fnbrId="4395ytj4f905"
@@ -115,7 +108,6 @@ ShallowWrapper {
               name="Something"
               price="800"
               rarity="rare"
-              type="boots"
             />,
           ],
           "className": "row no-gutter",
@@ -132,7 +124,6 @@ ShallowWrapper {
               "name": "Super Axe",
               "price": "2000",
               "rarity": "uncommon",
-              "type": "axe",
             },
             "ref": null,
             "rendered": null,
@@ -148,7 +139,6 @@ ShallowWrapper {
               "name": "Something",
               "price": "800",
               "rarity": "rare",
-              "type": "boots",
             },
             "ref": null,
             "rendered": null,
@@ -179,7 +169,6 @@ ShallowWrapper {
               name="Super Axe"
               price="2000"
               rarity="uncommon"
-              type="axe"
             />
             <Connect(ItemSearchCard)
               fnbrId="4395ytj4f905"
@@ -187,7 +176,6 @@ ShallowWrapper {
               name="Something"
               price="800"
               rarity="rare"
-              type="boots"
             />
           </div>
         </div>,
@@ -208,7 +196,6 @@ ShallowWrapper {
               name="Super Axe"
               price="2000"
               rarity="uncommon"
-              type="axe"
             />
             <Connect(ItemSearchCard)
               fnbrId="4395ytj4f905"
@@ -216,7 +203,6 @@ ShallowWrapper {
               name="Something"
               price="800"
               rarity="rare"
-              type="boots"
             />
           </div>,
           "className": "container-fluid",
@@ -234,7 +220,6 @@ ShallowWrapper {
                 name="Super Axe"
                 price="2000"
                 rarity="uncommon"
-                type="axe"
               />,
               <Connect(ItemSearchCard)
                 fnbrId="4395ytj4f905"
@@ -242,7 +227,6 @@ ShallowWrapper {
                 name="Something"
                 price="800"
                 rarity="rare"
-                type="boots"
               />,
             ],
             "className": "row no-gutter",
@@ -259,7 +243,6 @@ ShallowWrapper {
                 "name": "Super Axe",
                 "price": "2000",
                 "rarity": "uncommon",
-                "type": "axe",
               },
               "ref": null,
               "rendered": null,
@@ -275,7 +258,6 @@ ShallowWrapper {
                 "name": "Something",
                 "price": "800",
                 "rarity": "rare",
-                "type": "boots",
               },
               "ref": null,
               "rendered": null,

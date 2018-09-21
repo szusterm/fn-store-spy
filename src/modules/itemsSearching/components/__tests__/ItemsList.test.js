@@ -12,7 +12,6 @@ const exampleItemsList = [
 		name: 'Super Axe',
 		price: '2000',
 		rarity: 'uncommon',
-		type: 'axe',
 		imageSrc: 'https://example.com'
 	},
 	{
@@ -21,7 +20,6 @@ const exampleItemsList = [
 		name: 'Something',
 		price: '800',
 		rarity: 'rare',
-		type: 'boots',
 		imageSrc: 'https://example.pl'
 	}
 ];

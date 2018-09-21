@@ -15,7 +15,7 @@ export class ItemsList extends Component {
 					<div className={'row no-gutter'}>
 						{
 							items.map((item) => {
-								const {_id, fnbrId, name, price, rarity, type, imageSrc} = item;
+								const {_id, fnbrId, name, price, rarity, imageSrc} = item;
 
 								return (
 									<ItemCard
@@ -24,7 +24,6 @@ export class ItemsList extends Component {
 										name={name}
 										price={price}
 										rarity={rarity}
-										type={type}
 										imageSrc={imageSrc}
 									/>
 								);

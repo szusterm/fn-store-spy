@@ -56,7 +56,7 @@ export class ItemSearchCard extends Component {
 	}
 
 	render() {
-		const {name, price, rarity, type, imageSrc} = this.props;
+		const {name, price, rarity, imageSrc} = this.props;
 
 		return (
 			<div className={'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3'}>
