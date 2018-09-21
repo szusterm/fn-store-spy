@@ -20,6 +20,7 @@ describe('Spy', () => {
 	beforeEach(() => {
 		spy = spyInstance;
 		jest.clearAllMocks();
+		jest.restoreAllMocks();
 	});
 
 	afterEach(() => {
@@ -32,14 +33,15 @@ describe('Spy', () => {
 			minute: 37
 		};
 
-		beforeEach(() => spy.check = jest.fn(() => true));
+		let mockCheck;
+		beforeEach(() => mockCheck = jest.spyOn(spy, 'check').mockImplementation(() => true));
 
 		it('sets schedule up to check offers periodically', () => {
 			scheduleJob.mockImplementationOnce((time, jobToDo) => jobToDo());
 
 			spy.run(time);
 
-			expect(spy.check).toHaveBeenCalledTimes(1);
+			expect(mockCheck).toHaveBeenCalledTimes(1);
 		});
 
 		it('passes time param as cron string to scheduleJob()', () => {
@@ -52,9 +54,14 @@ describe('Spy', () => {
 	});
 
 	describe('check()', () => {
+		let mockCallActionsInCheckingOrders;
+		let mockUpdateOrdersMatchingToOffer;
 		beforeEach(() => {
-			spy._callActionsInCheckingOrders = jest.fn(() => true);
-			spy._updateOrdersMatchingToOffer = jest.fn(() => true);
+			mockCallActionsInCheckingOrders = jest.spyOn(spy, '_callActionsInCheckingOrders');
+			mockUpdateOrdersMatchingToOffer = jest.spyOn(spy, '_updateOrdersMatchingToOffer');
+
+			mockCallActionsInCheckingOrders.mockImplementation(() => true);
+			mockUpdateOrdersMatchingToOffer.mockImplementation(() => true);
 		});
 
 		it('calls shop to update', async () => {
@@ -66,17 +73,17 @@ describe('Spy', () => {
 		it('calls _updateOrdersMatchingToOffer()', async () => {
 			await spy.check();
 
-			expect(spy._updateOrdersMatchingToOffer).toHaveBeenCalledTimes(1);
+			expect(mockUpdateOrdersMatchingToOffer).toHaveBeenCalledTimes(1);
 		});
 
 		it('calls _callActionsInCheckingOrders()', async () => {
 			await spy.check();
 
-			expect(spy._callActionsInCheckingOrders).toHaveBeenCalledTimes(1);
+			expect(mockCallActionsInCheckingOrders).toHaveBeenCalledTimes(1);
 		});
 
 		it('puts Messenger() methods as actions to send information to a user', async () => {
-			spy._callActionsInCheckingOrders.mockImplementationOnce(async (actions) => {
+			mockCallActionsInCheckingOrders.mockImplementation(async (actions) => {
 				await actions.onEnterOrder();
 				await actions.onFindItem();
 				await actions.onLeaveOrder();
