@@ -1,63 +1,38 @@
-import axios from 'axios';
+import callApiRequest from '../helpers/callApiRequest';
 
-import getResponseObject from '../helpers/getResponseObject';
-import isRequestSuccessful from '../helpers/isRequestSuccessful';
+export const fetchItems = async (data) => {
+	const {name, type, page} = data;
 
-class Api {
-	async callApiRequest(data) {
-		try {
-			const response = await axios(data);
-
-			const requestSuccessful = isRequestSuccessful(response.status);
-
-			if (requestSuccessful) {
-				return getResponseObject(false, response.data);
-			}
-			else {
-				throw new Error(response.data);
-			}
+	const requestData = {
+		method: 'get',
+		url: '/items/get',
+		params: {
+			name,
+			type,
+			page
 		}
-		catch (error) {
-			return getResponseObject(true, error.message);
+	};
+
+	return await callApiRequest(requestData);
+};
+
+export const addOrder = async (itemsFnbrIds) => {
+	const requestData = {
+		method: 'post',
+		url: '/order/add',
+		data: {
+			itemsFnbrIds
 		}
-	}
+	};
 
-	async fetchItems(data) {
-		const {name, type, page} = data;
+	return await callApiRequest(requestData);
+};
 
-		const requestData = {
-			method: 'get',
-			url: '/items/get',
-			params: {
-				name,
-				type,
-				page
-			}
-		};
+export const fetchConfig = async () => {
+	const requestData = {
+		method: 'get',
+		url: '/config'
+	};
 
-		return await this.callApiRequest(requestData);
-	}
-
-	async addOrder(itemsFnbrIds) {
-		const requestData = {
-			method: 'post',
-			url: '/order/add',
-			data: {
-				itemsFnbrIds
-			}
-		};
-
-		return await this.callApiRequest(requestData);
-	}
-
-	async fetchConfig() {
-		const requestData = {
-			method: 'get',
-			url: '/config'
-		};
-
-		return await this.callApiRequest(requestData);
-	}
-}
-
-export default new Api();
+	return await callApiRequest(requestData);
+};
