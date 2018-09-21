@@ -147,6 +147,7 @@
 
 		.bot-part {
 			text-align: center;
+			padding-bottom: 5px;
 
 			&--name {
 				font-size: 1.1em;
@@ -157,14 +158,24 @@
 
 			&--description {
 				width: 100%;
-				padding: $padding;
+				padding: $padding $padding ($padding + 5px);
 
 				@include center-items();
+				flex-direction: row;
 
 				.description {
+					&--vbucks-icon {
+						width: 1.5em;
+						height: auto;
+					}
+
 					&--price {
+						margin-left: 5px;
+
 						font-size: 1em;
-						font-weight: 100;
+						font-weight: 400;
+
+						@include black-color(0.5);
 					}
 				}
 			}
