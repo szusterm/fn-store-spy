@@ -32,12 +32,13 @@ describe('Order Factory', () => {
 	let order;
 
 	beforeEach(() => {
-		jest.clearAllMocks();
 		order = orderInstance;
 	});
 
 	afterEach(() => {
 		order = null;
+		jest.clearAllMocks();
+		jest.restoreAllMocks();
 	});
 
 	describe('add()', () => {
@@ -47,14 +48,24 @@ describe('Order Factory', () => {
 			{id: itemsIds[1], done: false}
 		];
 		const code = 'fn23d';
-		let createItemsArray;
+
+		let mockIsArrayWithCorrectLength;
+		let mockAreFnbrIdsCorrect;
+		let mockCreateItemsArray;
 
 		beforeEach(() => {
-			createItemsArray = jest
+			mockIsArrayWithCorrectLength = jest
+				.spyOn(order, '_isArrayWithCorrectLength')
+				.mockReturnValue(true);
+
+			mockAreFnbrIdsCorrect = jest
+				.spyOn(order, '_areFnbrIdsCorrect')
+				.mockReturnValue(true);
+
+			mockCreateItemsArray = jest
 				.spyOn(order, '_createItemsArray')
 				.mockReturnValue(itemsIdsToSave);
 		});
-		afterEach(() => createItemsArray.mockRestore());
 
 		it('adds new order to a database', async () => {
 			await order.add(itemsIds, code);
@@ -80,6 +91,26 @@ describe('Order Factory', () => {
 
 			await order.add(itemsIds, code);
 			expect(getResponseObject).toHaveBeenCalledWith(true, returnedError);
+		});
+
+		it('does not add the order if _isArrayWithCorrectLength returns false', async () => {
+			mockIsArrayWithCorrectLength.mockReturnValueOnce(false);
+
+			mockOrderModel.save.mockReturnValueOnce(Promise.resolve());
+
+			await order.add(itemsIds, code);
+
+			expect(mockOrderModel.save).toHaveBeenCalledTimes(0);
+		});
+
+		it('does not add the order if _areFnbrIdsCorrect returns false', async () => {
+			mockAreFnbrIdsCorrect.mockReturnValueOnce(false);
+
+			mockOrderModel.save.mockReturnValueOnce(Promise.resolve());
+
+			await order.add(itemsIds, code);
+
+			expect(mockOrderModel.save).toHaveBeenCalledTimes(0);
 		});
 	});
 
