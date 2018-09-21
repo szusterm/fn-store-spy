@@ -10,11 +10,13 @@ ShallowWrapper {
         Object {
           "_id": "item0",
           "imageSrc": "https://example.com",
+          "name": "Trooper",
           "rarity": "legendary",
         },
         Object {
           "_id": "item1",
           "imageSrc": "https://example.com",
+          "name": "Trooper",
           "rarity": "legendary",
         },
       ]
@@ -44,6 +46,7 @@ ShallowWrapper {
             <Connect(ItemOrderCard)
               imageSrc="https://example.com"
               index={0}
+              name="Trooper"
               rarity="legendary"
             />
           </div>
@@ -53,6 +56,7 @@ ShallowWrapper {
             <Connect(ItemOrderCard)
               imageSrc="https://example.com"
               index={1}
+              name="Trooper"
               rarity="legendary"
             />
           </div>
@@ -75,6 +79,7 @@ ShallowWrapper {
             <Connect(ItemOrderCard)
               imageSrc="https://example.com"
               index={0}
+              name="Trooper"
               rarity="legendary"
             />
           </div>
@@ -84,6 +89,7 @@ ShallowWrapper {
             <Connect(ItemOrderCard)
               imageSrc="https://example.com"
               index={1}
+              name="Trooper"
               rarity="legendary"
             />
           </div>
@@ -103,6 +109,7 @@ ShallowWrapper {
               <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={0}
+                name="Trooper"
                 rarity="legendary"
               />
             </div>,
@@ -112,6 +119,7 @@ ShallowWrapper {
               <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={1}
+                name="Trooper"
                 rarity="legendary"
               />
             </div>,
@@ -128,6 +136,7 @@ ShallowWrapper {
               "children": <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={0}
+                name="Trooper"
                 rarity="legendary"
               />,
               "className": "col-4 order-list--item-box",
@@ -140,6 +149,7 @@ ShallowWrapper {
               "props": Object {
                 "imageSrc": "https://example.com",
                 "index": 0,
+                "name": "Trooper",
                 "rarity": "legendary",
               },
               "ref": null,
@@ -156,6 +166,7 @@ ShallowWrapper {
               "children": <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={1}
+                name="Trooper"
                 rarity="legendary"
               />,
               "className": "col-4 order-list--item-box",
@@ -168,6 +179,7 @@ ShallowWrapper {
               "props": Object {
                 "imageSrc": "https://example.com",
                 "index": 1,
+                "name": "Trooper",
                 "rarity": "legendary",
               },
               "ref": null,
@@ -201,6 +213,7 @@ ShallowWrapper {
               <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={0}
+                name="Trooper"
                 rarity="legendary"
               />
             </div>
@@ -210,6 +223,7 @@ ShallowWrapper {
               <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={1}
+                name="Trooper"
                 rarity="legendary"
               />
             </div>
@@ -232,6 +246,7 @@ ShallowWrapper {
               <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={0}
+                name="Trooper"
                 rarity="legendary"
               />
             </div>
@@ -241,6 +256,7 @@ ShallowWrapper {
               <Connect(ItemOrderCard)
                 imageSrc="https://example.com"
                 index={1}
+                name="Trooper"
                 rarity="legendary"
               />
             </div>
@@ -260,6 +276,7 @@ ShallowWrapper {
                 <Connect(ItemOrderCard)
                   imageSrc="https://example.com"
                   index={0}
+                  name="Trooper"
                   rarity="legendary"
                 />
               </div>,
@@ -269,6 +286,7 @@ ShallowWrapper {
                 <Connect(ItemOrderCard)
                   imageSrc="https://example.com"
                   index={1}
+                  name="Trooper"
                   rarity="legendary"
                 />
               </div>,
@@ -285,6 +303,7 @@ ShallowWrapper {
                 "children": <Connect(ItemOrderCard)
                   imageSrc="https://example.com"
                   index={0}
+                  name="Trooper"
                   rarity="legendary"
                 />,
                 "className": "col-4 order-list--item-box",
@@ -297,6 +316,7 @@ ShallowWrapper {
                 "props": Object {
                   "imageSrc": "https://example.com",
                   "index": 0,
+                  "name": "Trooper",
                   "rarity": "legendary",
                 },
                 "ref": null,
@@ -313,6 +333,7 @@ ShallowWrapper {
                 "children": <Connect(ItemOrderCard)
                   imageSrc="https://example.com"
                   index={1}
+                  name="Trooper"
                   rarity="legendary"
                 />,
                 "className": "col-4 order-list--item-box",
@@ -325,6 +346,7 @@ ShallowWrapper {
                 "props": Object {
                   "imageSrc": "https://example.com",
                   "index": 1,
+                  "name": "Trooper",
                   "rarity": "legendary",
                 },
                 "ref": null,

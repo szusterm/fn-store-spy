@@ -7,6 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ItemOrderCard
     imageSrc="example.com"
     index={0}
+    name="Trooper"
     rarity="uncommon"
     removeItemFromOrderByIndex={[Function]}
   />,
@@ -25,6 +26,7 @@ ShallowWrapper {
       "children": Array [
         <ItemCoin
           imageSrc="example.com"
+          name="Trooper"
           rarity="uncommon"
         />,
         <div
@@ -50,6 +52,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "imageSrc": "example.com",
+          "name": "Trooper",
           "rarity": "uncommon",
         },
         "ref": null,
@@ -109,6 +112,7 @@ ShallowWrapper {
         "children": Array [
           <ItemCoin
             imageSrc="example.com"
+            name="Trooper"
             rarity="uncommon"
           />,
           <div
@@ -134,6 +138,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "imageSrc": "example.com",
+            "name": "Trooper",
             "rarity": "uncommon",
           },
           "ref": null,
