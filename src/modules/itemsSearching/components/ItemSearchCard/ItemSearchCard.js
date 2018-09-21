@@ -82,8 +82,7 @@ export class ItemSearchCard extends Component {
 					<div className={'item-search-card--bot-part'}>
 						<div className={'bot-part--name'}>{name}</div>
 						<div className={'bot-part--description'}>
-							<div className={'description--type'}>{type}</div>
-							<div className={'description--price'}>{price}</div>
+							<span className={'description--price'}>{price}</span>
 						</div>
 					</div>
 				</button>
