@@ -10,6 +10,7 @@ const generateExampleItems = (length) => {
 	for (let index = 0; index < length; index++) {
 		exampleItems.push({
 			_id: `item${index}`,
+			name: 'Trooper',
 			imageSrc: 'https://example.com',
 			rarity: 'legendary'
 		});

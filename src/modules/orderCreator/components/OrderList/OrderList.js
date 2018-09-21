@@ -21,7 +21,7 @@ export class OrderList extends Component {
 					<div className={'row'}>
 						{
 							items.map((item, index) => {
-								const {_id, imageSrc, rarity} = item;
+								const {_id, name, imageSrc, rarity} = item;
 
 								return (
 									<div
@@ -30,6 +30,7 @@ export class OrderList extends Component {
 									>
 										<ItemOrderCard
 											index={index}
+											name={name}
 											imageSrc={imageSrc}
 											rarity={rarity}
 										/>
