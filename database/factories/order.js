@@ -1,5 +1,6 @@
 const OrderModel = require('../models/order.model');
 const getObject = require('../../helpers/getResponseObject');
+const config = require('../../config');
 
 class Order {
 	async add(itemFnbrIds = [], code) {
@@ -103,6 +104,20 @@ class Order {
 				connected
 			});
 		}
+	}
+
+	_isArrayWithCorrectLength(fnbrIds = []) {
+		const {maxItemsInOrder} = config.ordering;
+
+		if (fnbrIds) {
+			if (Array.isArray(fnbrIds)) {
+				if (fnbrIds.length > 0 && fnbrIds.length <= maxItemsInOrder) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	_createItemsArray(itemFnbrIds) {
