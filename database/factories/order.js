@@ -1,4 +1,5 @@
 const OrderModel = require('../models/order.model');
+const item = require('./item');
 const getObject = require('../../helpers/getResponseObject');
 const config = require('../../config');
 
@@ -108,6 +109,22 @@ class Order {
 				connected
 			});
 		}
+	}
+
+	async _areFnbrIdsCorrect(fnbrIds = []) {
+		if (fnbrIds) {
+			const {err, data} = await item.find().fnbrIds(fnbrIds).exec();
+
+			if (!err) {
+				const {items} = data;
+
+				if (items.length === fnbrIds.length) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	_isArrayWithCorrectLength(fnbrIds = []) {
