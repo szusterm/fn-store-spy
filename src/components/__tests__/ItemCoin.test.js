@@ -6,7 +6,8 @@ import {ItemCoin} from '../ItemCoin/ItemCoin';
 const setup = (propOverrides) => {
 	const props = Object.assign({
 		imageSrc: 'https://example.com',
-		rarity: 'uncommon'
+		rarity: 'uncommon',
+		name: 'Super axe'
 	}, propOverrides);
 
 	const wrapper = shallow(<ItemCoin {...props}/>);
@@ -40,5 +41,15 @@ describe('CircleOrderCount Component', () => {
 		const displayedImgSrc = wrapper.find('.item-coin--image').props().src;
 
 		expect(displayedImgSrc).toBe(props.imageSrc);
+	});
+
+	it('puts a name prop as an alt attribute of an item image', () => {
+		const {wrapper, props} = setup({
+			name: 'Backpack'
+		});
+
+		const displayedImgAlt = wrapper.find('.item-coin--image').props().alt;
+
+		expect(displayedImgAlt).toBe(props.name);
 	});
 });
