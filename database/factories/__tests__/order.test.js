@@ -2,8 +2,14 @@ const orderInstance = require('../../factories/order');
 
 const OrderModel = require('../../models/order.model');
 const getResponseObject = require('../../../helpers/getResponseObject');
+const config = require('../../../config');
 
-jest.mock('../../../helpers/getResponseObject', () => jest.fn());
+jest.mock('../../../helpers/getResponseObject');
+jest.mock('../../../config', () => ({
+	ordering: {
+		maxItemsInOrder: 3
+	}
+}));
 
 const mockOrderModel = {
 	save: jest.fn(),
@@ -20,9 +26,9 @@ jest.mock('../../models/order.model', () => {
 	});
 });
 
-let order;
-
 describe('Order Factory', () => {
+	let order;
+
 	beforeEach(() => {
 		jest.clearAllMocks();
 		order = orderInstance;
@@ -90,6 +96,25 @@ describe('Order Factory', () => {
 				'items.id': {$in: itemsIds}
 			});
 			expect(mockOrderModel.exec).toHaveBeenCalledTimes(1);
+		});
+	});
+
+	describe('_isArrayWithCorrectLength()', () => {
+		it('returns true if fnbrIds is an array', () => {
+			expect(order._isArrayWithCorrectLength(['thing'])).toBe(true);
+			expect(order._isArrayWithCorrectLength('some string')).toBe(false);
+			expect(order._isArrayWithCorrectLength(2137)).toBe(false);
+			expect(order._isArrayWithCorrectLength({meme: false})).toBe(false);
+		});
+
+		it('returns true if fnbrIds array length is longer than 0 or shorter than max', () => {
+			const ideal = ['someId', 'differentId'];
+			const empty = [];
+			const tooLong = ['a', 'b', 'c', 'd', 'e'];
+
+			expect(order._isArrayWithCorrectLength(ideal)).toBe(true);
+			expect(order._isArrayWithCorrectLength(empty)).toBe(false);
+			expect(order._isArrayWithCorrectLength(tooLong)).toBe(false);
 		});
 	});
 
