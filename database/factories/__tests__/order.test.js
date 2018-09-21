@@ -1,9 +1,11 @@
 const orderInstance = require('../../factories/order');
 
 const OrderModel = require('../../models/order.model');
+const itemFactory = require('../item');
 const getResponseObject = require('../../../helpers/getResponseObject');
 const config = require('../../../config');
 
+jest.mock('../item');
 jest.mock('../../../helpers/getResponseObject');
 jest.mock('../../../config', () => ({
 	ordering: {
@@ -96,6 +98,43 @@ describe('Order Factory', () => {
 				'items.id': {$in: itemsIds}
 			});
 			expect(mockOrderModel.exec).toHaveBeenCalledTimes(1);
+		});
+	});
+
+	describe('_areFnbrIdsCorrect()', () => {
+		it('returns true if param fnbrIds length equals to got matching items', async () => {
+			const fnbrIds = ['item0'];
+
+			const matchingResponse = {
+				err: false,
+				data: {
+					items: ['item0']
+				}
+			};
+
+			const mismatchingResponse = {
+				err: false,
+				data: {
+					items: ['item0', 'item2']
+				}
+			};
+
+			itemFactory.exec.mockReturnValueOnce(Promise.resolve(matchingResponse));
+			itemFactory.exec.mockReturnValueOnce(Promise.resolve(mismatchingResponse));
+
+			expect(await order._areFnbrIdsCorrect(fnbrIds)).toBe(true);
+			expect(await order._areFnbrIdsCorrect(fnbrIds)).toBe(false);
+		});
+
+		it('returns false if getting items returns err true', async () => {
+			const responseWithError = {
+				err: true,
+				data: {}
+			};
+
+			itemFactory.exec.mockReturnValueOnce(Promise.resolve(responseWithError));
+
+			expect(await order._areFnbrIdsCorrect([])).toBe(false);
 		});
 	});
 
