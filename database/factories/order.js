@@ -3,19 +3,23 @@ const getObject = require('../../helpers/getResponseObject');
 const config = require('../../config');
 
 class Order {
-	async add(itemFnbrIds = [], code) {
+	async add(itemsFnbrIds = [], code) {
 		try {
-			const items = this._createItemsArray(itemFnbrIds);
+			if (this._isArrayWithCorrectLength(itemsFnbrIds)) {
+				const items = this._createItemsArray(itemsFnbrIds);
 
-			const order = new OrderModel({
-				code,
-				connected: false,
-				items
-			});
+				const order = new OrderModel({
+					code,
+					connected: false,
+					items
+				});
 
-			await order.save();
+				await order.save();
 
-			return getObject(false, {code, items});
+				return getObject(false, {code, items});
+			}
+
+			throw new Error('Incorrect fnbrIds array');
 		}
 		catch (error) {
 			return getObject(true, error);
