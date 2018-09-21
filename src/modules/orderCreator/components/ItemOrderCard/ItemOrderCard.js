@@ -21,7 +21,7 @@ export class ItemOrderCard extends Component {
 	}
 
 	render() {
-		const {imageSrc, rarity} = this.props;
+		const {name, imageSrc, rarity} = this.props;
 
 		return (
 			<button
@@ -31,6 +31,7 @@ export class ItemOrderCard extends Component {
 				<ItemCoin
 					imageSrc={imageSrc}
 					rarity={rarity}
+					name={name}
 				/>
 				<div className={'item-order-card--action-box'}>
 					<div className={'material-icons action-box--sign'}>
@@ -44,6 +45,7 @@ export class ItemOrderCard extends Component {
 
 ItemOrderCard.propTypes = {
 	index: PropTypes.number.isRequired,
+	name: PropTypes.string.isRequired,
 	imageSrc: PropTypes.string.isRequired,
 	rarity: PropTypes.string.isRequired,
 	removeItemFromOrderByIndex: PropTypes.func //redux

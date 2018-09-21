@@ -45,6 +45,16 @@ describe('CircleOrderCount Component', () => {
 		expect(imageSrcInItemCoin).toBe(props.imageSrc);
 	});
 
+	it('puts name to ItemCoin', () => {
+		const {wrapper, props} = setup({
+			name: 'Trooper'
+		});
+
+		const nameInItemCoin = wrapper.find(ItemCoin).props().name;
+
+		expect(nameInItemCoin).toBe(props.name);
+	});
+
 	it('after click the component, removes the item from an order', () => {
 		const {wrapper, props} = setup({
 			index: 5,
