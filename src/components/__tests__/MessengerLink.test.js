@@ -5,7 +5,8 @@ import {MessengerLink} from '../MessengerLink/MessengerLink';
 
 const setup = (propOverrides) => {
 	const props = Object.assign({
-		reversed: false
+		reversed: false,
+		messengerUrl: 'https://m.me'
 	}, propOverrides);
 
 	const wrapper = shallow(<MessengerLink {...props}/>);
@@ -18,6 +19,16 @@ describe('MessengerLink Component', () => {
 		const {wrapper} = setup();
 
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('puts messengerUrl from a store to href in "a" element', () => {
+		const {wrapper, props} = setup({
+			messengerUrl: 'https://m.me'
+		});
+
+		const hrefLink = wrapper.find('a').props().href;
+
+		expect(hrefLink).toBe(props.messengerUrl);
 	});
 
 	it('changes styles, if reversed prop is true', () => {
