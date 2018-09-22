@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 import './styles.scss';
 
 export class MessengerLink extends Component {
 	render() {
-		const {reversed} = this.props;
+		const {reversed, messengerUrl} = this.props;
 
 		return (
 			<a
 				className={'messenger-link'}
-				href={'#'}
+				target={'_blank'}
+				href={messengerUrl}
 			>
 				<div className={`messenger-link--button ${(reversed) ? 'messenger-link--button--reversed' : ''}`}>
 					<svg
@@ -34,7 +36,14 @@ export class MessengerLink extends Component {
 }
 
 MessengerLink.propTypes = {
-	reversed: PropTypes.bool
+	reversed: PropTypes.bool,
+	messengerUrl: PropTypes.string //redux
 };
 
-export default MessengerLink;
+const mapStateToProps = (state) => {
+	const {messengerUrl} = state.config;
+
+	return {messengerUrl};
+};
+
+export default connect(mapStateToProps, null)(MessengerLink);
