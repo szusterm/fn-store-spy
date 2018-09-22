@@ -11,6 +11,7 @@ export class CancelButton extends Component {
 			<button
 				className={'cancel-button'}
 				onClick={onClick}
+				aria-label={'Cancel'}
 			>
 				<span className={'material-icons'}>close</span>
 			</button>
