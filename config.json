@@ -2,6 +2,7 @@
 	"general": {
 		"siteUrl": "https://fnstorespy.com",
 		"donateUrl": "https://paypal.com",
+		"messengerUrl": "https://m.me/fnStoreSpy",
 		"checkingTime": {
 			"hour": 1,
 			"minute": 10
