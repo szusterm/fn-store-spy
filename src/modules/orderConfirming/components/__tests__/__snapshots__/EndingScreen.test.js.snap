@@ -45,7 +45,7 @@ ShallowWrapper {
           <div
             className="ending-screen--buttons"
           >
-            <MessengerLink />
+            <Connect(MessengerLink) />
             <CancelButton
               onClick={[Function]}
             />
@@ -90,7 +90,7 @@ ShallowWrapper {
             <div
               className="ending-screen--buttons"
             >
-              <MessengerLink />
+              <Connect(MessengerLink) />
               <CancelButton
                 onClick={[Function]}
               />
@@ -153,7 +153,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <MessengerLink />,
+                <Connect(MessengerLink) />,
                 <CancelButton
                   onClick={[Function]}
                 />,
@@ -222,7 +222,7 @@ ShallowWrapper {
             <div
               className="ending-screen--buttons"
             >
-              <MessengerLink />
+              <Connect(MessengerLink) />
               <CancelButton
                 onClick={[Function]}
               />
@@ -267,7 +267,7 @@ ShallowWrapper {
               <div
                 className="ending-screen--buttons"
               >
-                <MessengerLink />
+                <Connect(MessengerLink) />
                 <CancelButton
                   onClick={[Function]}
                 />
@@ -330,7 +330,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <MessengerLink />,
+                  <Connect(MessengerLink) />,
                   <CancelButton
                     onClick={[Function]}
                   />,

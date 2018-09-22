@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MessengerLink
+    messengerUrl="https://m.me"
     reversed={false}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -44,7 +45,8 @@ ShallowWrapper {
         </span>
       </div>,
       "className": "messenger-link",
-      "href": "#",
+      "href": "https://m.me",
+      "target": "_blank",
     },
     "ref": null,
     "rendered": Object {
@@ -173,7 +175,8 @@ ShallowWrapper {
           </span>
         </div>,
         "className": "messenger-link",
-        "href": "#",
+        "href": "https://m.me",
+        "target": "_blank",
       },
       "ref": null,
       "rendered": Object {
