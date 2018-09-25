@@ -9,6 +9,7 @@ import Searching from './modules/itemsSearching/components/Searching';
 import OrderInformation from './modules/orderCreator/components/OrderInfo';
 import OrderOpenButton from './modules/orderCreator/components/OrderOpenButton';
 import EndingScreen from './modules/orderConfirming/components/EndingScreen';
+import Footer from './components/Footer/Footer';
 
 import './scss/app.scss';
 
@@ -25,6 +26,7 @@ class App extends Component {
 				<OrderInformation/>
 				<OrderOpenButton/>
 				<EndingScreen/>
+				<Footer/>
 			</div>
 		);
 	}
