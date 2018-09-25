@@ -80,6 +80,7 @@ class Order {
 			};
 
 			const updateData = {
+				userId: '',
 				connected: false
 			};
 
