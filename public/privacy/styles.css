@@ -63,3 +63,13 @@
 
 	color: rgba(0, 0, 0, 0.5);
 }
+
+.privacy--link {
+	font-weight: 700;
+
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.privacy--link:hover, .privacy--link:focus {
+	color: rgba(0, 0, 0, 0.7);
+}
