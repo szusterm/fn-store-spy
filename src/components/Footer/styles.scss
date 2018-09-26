@@ -29,7 +29,9 @@
 				color: $md-blue-500;
 
 				&:hover, &:focus {
-					color: $md-blue-600;
+					text-decoration: none;
+					color: $md-blue-700;
+					outline: none;
 				}
 			}
 		}
