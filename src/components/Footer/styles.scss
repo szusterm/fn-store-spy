@@ -1,0 +1,37 @@
+@import '~material-colors/dist/colors';
+
+@import '~scss/_opacity-colors';
+@import '~scss/_shadow';
+@import '~scss/_center-items';
+
+.footer {
+	width: 100%;
+
+	padding: 40px;
+
+	@include center-items();
+	@include shadow(lg);
+	@include white-background(1);
+
+	&--row {
+		font-size: 1.1em;
+
+		&--fnbr {
+			font-size: 1.1em;
+			font-weight: 700;
+
+			@include black-color(0.25);
+		}
+
+		.row {
+			&--fnbr-link {
+				text-transform: uppercase;
+				color: $md-blue-500;
+
+				&:hover, &:focus {
+					color: $md-blue-600;
+				}
+			}
+		}
+	}
+}
