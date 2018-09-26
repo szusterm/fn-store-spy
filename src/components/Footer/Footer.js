@@ -10,11 +10,19 @@ export class Footer extends Component{
 					<div className={'footer--row footer--row--fnbr'}>
 						<span>Items are delivered by </span>
 						<a
-							className={'row--fnbr-link'}
+							className={'row--link row--link--fnbr'}
 							target={'_blank'}
 							href={'https://fnbr.co'}
 						>
 							fnbr.co
+						</a>
+					</div>
+					<div className={'footer--row'}>
+						<a
+							className={'row--link row--link--privacy'}
+							href={'/privacy'}
+						>
+							Privacy Policy
 						</a>
 					</div>
 				</div>
