@@ -7,31 +7,47 @@
 .footer {
 	width: 100%;
 
-	padding: 40px;
+	padding: 20px;
 
 	@include center-items();
-	@include shadow(lg);
-	@include white-background(1);
+	//@include shadow(lg);
+	//@include white-background(1);
 
 	&--row {
 		font-size: 1.1em;
+		font-weight: 700;
+		margin: 10px 0;
 
 		&--fnbr {
 			font-size: 1.1em;
-			font-weight: 700;
 
 			@include black-color(0.25);
 		}
 
 		.row {
-			&--fnbr-link {
-				text-transform: uppercase;
-				color: $md-blue-500;
+
+			&--link {
+				outline: none;
 
 				&:hover, &:focus {
 					text-decoration: none;
-					color: $md-blue-700;
-					outline: none;
+				}
+
+				&--fnbr {
+					text-transform: uppercase;
+					color: $md-blue-500;
+
+					&:hover, &:focus {
+						color: $md-blue-700;
+					}
+				}
+
+				&--privacy {
+					@include black-color(0.5);
+
+					&:hover, &:focus {
+						@include black-color(0.65);
+					}
 				}
 			}
 		}
