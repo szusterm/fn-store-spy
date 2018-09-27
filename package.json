@@ -1,6 +1,6 @@
 {
 	"name": "fortnite-store-spy",
-	"version": "0.0.0",
+	"version": "0.4.1",
 	"private": true,
 	"scripts": {
 		"start": "node ./bin/www",
